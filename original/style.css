@@ -74,14 +74,13 @@ p {
  font-size: 5px;
  height: 5px;
 }
-.tilesfor1-512 {
+.tile {
  width: 150px;
  height: 150px;
- font-size: 75px;
  text-align: center;
  /*position: absolute;*/
 }
-textfor1-512 {
+text {
  display: inline-block;
  vertical-align: middle;
  line-height: normal;
