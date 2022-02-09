@@ -23,6 +23,9 @@ h1 {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
+h2 {
+  font-size: 59px;
+  
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
@@ -42,9 +45,15 @@ h1 {
 .tiles {
  width: 100px;
  height: 100px;
+ text-align: center;
 }
 .level-1 .tiles {
- color: 
+ color: #eee4da;
+ 
+}
+@media screen and (max-width: 600px) {
+h1 {font-size: 40px}
+}
 /* images and videos max out at full width */
 img,
 video {

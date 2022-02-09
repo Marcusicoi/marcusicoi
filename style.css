@@ -47,6 +47,11 @@ a:hover {
   height: 29px;
   box-shadow: inset 0 -3px rgba(0, 0, 0, 0.15);
 }
+a:active {
+  top: 4px;
+  height: 26px;
+  box-shadow: inset 0 -25px rgba(0, 0, 0, 0.15);
+}
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
