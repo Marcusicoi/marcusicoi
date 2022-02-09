@@ -47,13 +47,12 @@
     </div>
     <script>
     function Function() {
-     
-      var x = detail;
-      //x.style.display = 'none';
-      if (x.style.display === 'none') {
-         x.style.display = 'block';
+      var x1 = document.getElementById("detail1");
+      var x2 = document.getElementById("detail2");
+      if ((x1, x2).style.display === 'none') {
+         (x1, x2).style.display = 'block';
          } else {
-         x.style.display = 'none';
+         (x1, x2).style.display = 'none';
          }
       var i = document.getElementById("toggleoption");
       if (i.innerHTML === 'Hide Details') {
