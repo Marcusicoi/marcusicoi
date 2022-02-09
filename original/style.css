@@ -84,7 +84,6 @@ text {
  display: inline-block;
  vertical-align: middle;
  line-height: normal;
- margin-top: 5px;
  font: 'ClearSansBold';
 }
 @media screen and (max-width: 600px) {
