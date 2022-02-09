@@ -33,7 +33,7 @@
     </div>
     <script>
     function showOrHideText() {
-      var x = document.getElementById("detailed");
+      var x = document.getElementById("detail");
       //x.style.display = 'none';
       if (x.style.display === 'none') {
          x.style.display = 'block';
@@ -42,14 +42,14 @@
          }
     };
     function changeText() {
-      var i = document.getElementById("toggleoption");
-      if (i.innerHTML === 'Hide Details') {
-         i.innerHTML = 'Show Details';
-         } else {
+      const i = document.getElementById("toggleoption");
+      if (i.innerHTML === 'Show Details') {
          i.innerHTML = 'Hide Details';
+         } else {
+         i.innerHTML = 'Show Details';
          }
       };
-    function rtfsaodt() {showOrHideText(), changeText()};
+    function rtfsaodt() {showOrHideText()};
     </script>
   </body>
 </html>
