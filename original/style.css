@@ -42,13 +42,11 @@ h2 {
   96% {color: #ff0000}
   100% {color: red}
 }
-.tiles.level-1 {
- width: 100px;
- height: 100px;
+.tiles {
+ width: 500px;
+ height: 500px;
+
  text-align: center;
- 
- background: #eee4da;
- 
 }
 @media screen and (max-width: 600px) {
 h1, h2 {font-size: 40px}
