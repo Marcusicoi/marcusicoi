@@ -79,7 +79,7 @@ p {
  height: 150px;
  font-size: 75px;
  text-align: center;
- position: absolute;
+ /*position: absolute;*/
 }
 textfor1-512 {
  display: inline-block;
