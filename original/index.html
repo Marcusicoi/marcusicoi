@@ -18,7 +18,7 @@
     <h1>2048 Tiles Original</h1>
     <h2>The Original 2048 Tiles.</h2>
     <h3>Tiles made by NO!. Current Level - 0/2800</h3>
-    <a onclick="showOrHideText() changeText()" id="toggleoption">Show Details</a>
+    <a onclick="rtfsaodt()" id="toggleoption">Show Details</a>
     <div class="tilesfor1-512" style="background:#eee4da">
     <textfor1-512>2</textfor1-512>
     <p id="detail">
@@ -34,6 +34,7 @@
     <script>
     function showOrHideText() {
       var x = document.getElementById("detailed");
+      //x.style.display = 'none';
       if (x.style.display === 'none') {
          x.style.display = 'block';
          } else {
@@ -46,7 +47,9 @@
          i.innerHTML = 'Show Details';
          } else {
          i.innerHTML = 'Hide Details';
-         
+         }
+      };
+    function rtfsaodt() {showOrHideText(), changeText()};
     </script>
   </body>
 </html>
