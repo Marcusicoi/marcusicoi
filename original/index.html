@@ -18,6 +18,7 @@
     <h1>2048 Tiles Original</h1>
     <h2>The Original 2048 Tiles.</h2>
     <h3>Tiles made by NO!. Current Level - 0/2800</h3>
+    <a onclick="showOrHideText()">Show Details</a>
     <div class="tilesfor1-512" style="background:#eee4da">
     <textfor1-512>2</textfor1-512>
     <p>
@@ -30,7 +31,15 @@
     BackgroundColor: #eee4da,
     TextColor: black</p>
     </div>
-      
- 
+    <script>
+    function showOrHideText() {
+      var x = document.getElementById("p");
+      if (x.style.display === 'block') {
+         x.style.display = 'none';
+         } else {
+         x.style.display = 'block';
+         }
+      };
+    </script>
   </body>
 </html>
