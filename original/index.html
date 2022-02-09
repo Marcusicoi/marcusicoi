@@ -18,7 +18,8 @@
     <h1>2048 Tiles Original</h1>
     <h2>The Original 2048 Tiles.</h2>
     <h3>Tiles made by NO!. Current Level - 0/2800</h3>
-    <a onclick="changeText(), showOrHideText()" id="toggleoption">Hide Details</a>
+    <a onclick="Function()" id="toggleoption">Hide Details</a>
+    <h4 onclick="changeAnotherText()" id="toggleoptionexp">Hide Details = Hides the details under the number of the tile</h4>
     <div class="tilesfor1-512" style="background:#eee4da">
     <textfor1-512>2</textfor1-512>
     <p id="detail">
@@ -32,7 +33,7 @@
     TextColor: black</p>
     </div>
     <script>
-    function showOrHideText() {
+    function Function() {
       var x = document.getElementById("detail");
       //x.style.display = 'none';
       if (x.style.display === 'none') {
@@ -40,15 +41,19 @@
          } else {
          x.style.display = 'none';
          }
-    };
-    function changeText() {
       var i = document.getElementById("toggleoption");
       if (i.innerHTML === 'Hide Details') {
          i.innerHTML = 'Show Details';
          } else {
          i.innerHTML = 'Hide Details';
          }
-      };
+      var o = document.getElementById("toggleoptionexp");
+      if (o.innerHTML === 'Hide Details = Hides the details under the number of the tile') {
+         o.innerHTML = 'Show Details = Shows the details under the number of the tile';
+         } else {
+         o.innerHTML = 'Hide Details = Hides the details under the number of the tile';
+         }
+    };
    // i.onclick = function(){showOrHideText(); changeText()};
     </script>
   </body>
