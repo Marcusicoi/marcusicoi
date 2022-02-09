@@ -13,10 +13,28 @@ html {
 /* adjust typography defaults */
 body {
   margin: 1rem;
-  font-family: sans-serif;
+  font-family: 'ClearSansMediumRegular';
   line-height: 1.5;
 }
-
+h1 {
+  font-size: 59px;
+  font: 'ClearSansMediumRegular';
+  animation-name: rainbow;
+}
+@keyframes rainbow {
+  0% {color: #ff0000}
+  7% {color: #ff7700}
+  14% {color: #ffff00}
+  21% {color: #aaff00}
+  28% {color: #00ff00}
+  35% {color: #00ffaa}
+  42% {color: #00ffff}
+  % {color: #00aaff}
+  72% {color: #0000ff}
+  81% {color: #7700ff}
+  90% {color: #ff00ff}
+  99% {color: #ff0077}
+  100% {color: #ff0000}
 /* images and videos max out at full width */
 img,
 video {
