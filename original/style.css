@@ -23,30 +23,6 @@ h1 {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-
-a {
- display: inline-block;
-  position: relative;
-  margin: 2px;
-  border: 0px;
-  padding: 5px;
-  /*width: 70px;*/
-  height: 30px;
-  font-size: smaller;
-  color: white;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  text-decoration: none;
-  cursor: pointer;
-  background: #B58EFD;
-  border-radius: 5px;
-  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.15);
-}
-a:hover {
-  top: 1px;
-  height: 29px;
-  box-shadow: inset 0 -3px rgba(0, 0, 0, 0.15);
-}
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
@@ -63,6 +39,12 @@ a:hover {
   96% {color: #ff0000}
   100% {color: red}
 }
+.tiles {
+ width: 100px;
+ height: 100px;
+}
+.level-1 .tiles {
+ color: 
 /* images and videos max out at full width */
 img,
 video {
