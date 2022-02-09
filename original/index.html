@@ -18,10 +18,10 @@
     <h1>2048 Tiles Original</h1>
     <h2>The Original 2048 Tiles.</h2>
     <h3>Tiles made by NO!. Current Level - 0/2800</h3>
-    <a onclick="showOrHideText()">Show Details</a>
+    <a onclick="showOrHideText() changeText()" id="toggleoption">Show Details</a>
     <div class="tilesfor1-512" style="background:#eee4da">
     <textfor1-512>2</textfor1-512>
-    <p>
+    <p id="detail">
     Level: 1,
     Section: 1,
     Shape: 1,
@@ -33,13 +33,20 @@
     </div>
     <script>
     function showOrHideText() {
-      var x = document.getElementById("p");
-      if (x.style.display === 'block') {
-         x.style.display = 'none';
-         } else {
+      var x = document.getElementById("detailed");
+      if (x.style.display === 'none') {
          x.style.display = 'block';
+         } else {
+         x.style.display = 'none';
          }
-      };
+    };
+    function changeText() {
+      var i = document.getElementById("toggleoption");
+      if (i.innerHTML === 'Hide Details') {
+         i.innerHTML = 'Show Details';
+         } else {
+         i.innerHTML = 'Hide Details';
+         
     </script>
   </body>
 </html>
