@@ -85,6 +85,7 @@ text {
  vertical-align: middle;
  line-height: normal;
  margin-top: 5px;
+ font: 'ClearSansBold';
 }
 @media screen and (max-width: 600px) {
 h1, h2 {font-size: 40px}
