@@ -22,11 +22,14 @@
     <script>
   var x = setInterval(function() {
   // Get the current date
-  var maxDate = new Date('January 18, 2023 20:24:00').getTime();
+  var maxDate = new Date('January 12, 2023 20:26:00').getTime();
   var now = maxDate - new Date().getTime();
 
   // Time calculations for time
-  var years = Math.floor(now / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12));
+  var milleniums = Math.floor(now / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10 * 10));
+  var centuries = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10 * 10)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10));
+  var decades = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10));
+  var years = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12));
   var months = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4));
   var weeks = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4)) / (10 * 10 * 10 * 60 * 60 * 24 * 7));
   var days = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7)) / (10 * 10 * 10 * 60 * 60 * 24));
@@ -36,8 +39,15 @@
   var deciseconds = Math.floor((now % (10 * 10 * 10)) / (10 * 10));
   var centiseconds = Math.floor((now % (10 * 10)) / 10);
   // Display the result in the element with id="time"
-  document.getElementById("time").innerHTML = years + "y " + months + "mo " + weeks + "w " + days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s " + deciseconds + "ds " + centiseconds + "cs";
+  document.getElementById("time").innerHTML = milleniums + "mm " +
+                                              centuries + "c " +
+                                              decade + "dc " + 
+                                              years + "y " + 
+                                              months + "mo " + 
+                                              weeks + "w " + 
+                                              days + "d " + 
+                                              hours + "h " +
+                                              minutes + "m " + seconds + "s " + deciseconds + "ds " + centiseconds + "cs";
   //If the count down is finished, write some text
   if (now < 0) {
     clearInterval(x);
