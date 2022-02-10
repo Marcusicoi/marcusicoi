@@ -33,11 +33,10 @@
   var minutes = Math.floor((now % (10 * 10 * 10 * 60 * 60)) / (10 * 10 * 10 * 60));
   var seconds = Math.floor((now % (10 * 10 * 10 * 60)) / (10 * 10 * 10));
   var deciseconds = Math.floor((now % (10 * 10 * 10)) / (10 * 10));
-  var centiseconds = Math.floor((now % (10 * 10)) / 10)
-  var milliseconds = Math.floor((now % (10)
+  var centiseconds = Math.floor((now % (10 * 10)) / 10);
   // Display the result in the element with id="time"
   document.getElementById("time").innerHTML = months + "mo " + weeks + "w " + days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s " + deciseconds + "ds " + centiseconds + "cs";
+  + minutes + "m " + seconds + "s " + deciseconds + "ds " + centiseconds + "cs " + milliseconds + "ms";
   /*If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
