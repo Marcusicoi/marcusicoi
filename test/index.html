@@ -22,7 +22,7 @@
     <script>
   var x = setInterval(function() {
   // Get the current date
-  var maxDate = new Date('January 12, 2023 20:26:00').getTime();
+  var maxDate = new Date('January 12, 3023 8:41:00').getTime();
   var now = maxDate - new Date().getTime();
 
   // Time calculations for time
@@ -41,13 +41,16 @@
   // Display the result in the element with id="time"
   document.getElementById("time").innerHTML = milleniums + "mm " +
                                               centuries + "c " +
-                                              decade + "dc " + 
+                                              decades + "dc " + 
                                               years + "y " + 
                                               months + "mo " + 
                                               weeks + "w " + 
                                               days + "d " + 
                                               hours + "h " +
-                                              minutes + "m " + seconds + "s " + deciseconds + "ds " + centiseconds + "cs";
+                                              minutes + "m " + 
+                                              seconds + "s " + 
+                                              deciseconds + "ds " + 
+                                              centiseconds + "cs";
   //If the count down is finished, write some text
   if (now < 0) {
     clearInterval(x);
