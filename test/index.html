@@ -23,16 +23,14 @@
     <a style="background:red" id="resetButton">Reset</a>
     <p id="time"></p>
     <script>
-  // Get the maximum date the time
-  var maxDate = new Date(8640000000000000).getTime()
   // Update the count down every 1 second
  /* document.getElementById("startButton").onclick*/ var x = setInterval(function() {
 
   // Get the minimum date and time
-  var minDate = new Date(-8640000000000000).getTime();
-
+  var maxDate = new Date(10000, 0, 0, 0, 0, 0, 0).getTime();
+  var now = new Date().getTime();
   // Find the distance between now and the count down date
-  var distance = maxDate + minDate;
+  var distance = new Date(2021, 0, 0, 0, 0, 0, 0).getTime();
 
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
