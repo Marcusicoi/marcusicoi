@@ -15,12 +15,8 @@
   </head>
   <body>
     <!-- this is the start of content -->
-    <h1>Its a test.</h1>
-    <h2>Im trying to do counting up xd</h2>
-    <h3>You can click that button</h3>
-    <a style="background:lime" id="startButton">Start</a>
-    <a style="background:orange" id="stopButton">Stop</a>
-    <a style="background:red" id="resetButton">Reset</a>
+    <h1>Time Now</h1>
+    <h2>Date and time Right Now.</h2>
     <p id="time"></p>
     <script>
   // Update the count down every 1 second
@@ -30,16 +26,17 @@
   var maxDate = new Date(10000, 0, 0, 0, 0, 0, 0).getTime();
   var now = new Date().getTime();
   // Find the distance between now and the count down date
-  var distance = new Date(2021, 0, 0, 0, 0, 0, 0).getTime();
+  var distance = new Date().getTime();
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  // Time calculations for time
+  var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+  var days = Math.floor(distance % (1000 * 60 * 60 * 24 * 7) / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("time").innerHTML = days + "d " + hours + "h "
+  document.getElementById("time").innerHTML = weeks + "w" days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
   /*If the count down is finished, write some text
   if (distance < 0) {
