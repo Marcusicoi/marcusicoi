@@ -26,22 +26,24 @@
   var now = maxDate - new Date().getTime();
 
   // Time calculations for time
-  var months = Math.floor(now / (100 * 10 * 60 * 60 * 24 * 7 * 4));
-  var weeks = Math.floor((now % (100 * 10 * 60 * 60 * 24 * 7 * 4)) / (100 * 10 * 60 * 60 * 24 * 7));
-  var days = Math.floor((now % (100 * 10 * 60 * 60 * 24 * 7)) / (100 * 10 * 60 * 60 * 24));
-  var hours = Math.floor((now % (100 * 10 * 60 * 60 * 24)) / (100 * 10 * 60 * 60));
-  var minutes = Math.floor((now % (100 * 10 * 60 * 60)) / (100 * 10 * 60));
-  var seconds = Math.floor((now % (100 * 10 * 60)) / (100 * 10));
-  var deciseconds = Math.floor((now % (100 * 10)) / 100);
+  var months = Math.floor(now / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4));
+  var weeks = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4)) / (10 * 10 * 10 * 60 * 60 * 24 * 7));
+  var days = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7)) / (10 * 10 * 10 * 60 * 60 * 24));
+  var hours = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24)) / (10 * 10 * 10 * 60 * 60));
+  var minutes = Math.floor((now % (10 * 10 * 10 * 60 * 60)) / (10 * 10 * 10 * 60));
+  var seconds = Math.floor((now % (10 * 10 * 10 * 60)) / (10 * 10 * 10));
+  var deciseconds = Math.floor((now % (10 * 10 * 10)) / (10 * 10));
+  var centiseconds = Math.floor((now % (10 * 10)) / 10)
+  var milliseconds = Math.floor((now % (10)
   // Display the result in the element with id="time"
   document.getElementById("time").innerHTML = months + "mo " + weeks + "w " + days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s " + deciseconds + "ds";
+  + minutes + "m " + seconds + "s " + deciseconds + "ds " + centiseconds + "cs";
   /*If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
   }*/
-}, 100);
+}, 10);
     </script>
   </body>
 </html>
