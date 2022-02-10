@@ -15,13 +15,15 @@
   </head>
   <body>
     <!-- this is the start of content -->
-    <h1>Time Now</h1>
-    <h2>Date and time Right Now.</h2>
+    <h1>Timer Countdown</h1>
+    <h2>The time is counting down until 1/1/23
+    </h2>
     <p id="time">ERROR</p>
     <script>
+  var x = setInterval(function() {
   // Get the current date
-  //var maxDate = new Date(10000, 0, 0, 0, 0, 0, 0).getTime();
-  var now = new Date().getTime();
+  var maxDate = new Date('January 1, 2023 12:00:00').getTime();
+  var now = maxDate - new Date().getTime();
 
   // Time calculations for time
   var months = Math.floor(now / (1000 * 60 * 60 * 24 * 7 * 4));
