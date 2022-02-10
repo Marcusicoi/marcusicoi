@@ -22,11 +22,12 @@
     <script>
   var x = setInterval(function() {
   // Get the current date
-  var maxDate = new Date('Febuary 10, 2022 11:59:00').getTime();
+  var maxDate = new Date('May 10, 2023 20:13:00').getTime();
   var now = maxDate - new Date().getTime();
 
   // Time calculations for time
-  var months = Math.floor(now / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4));
+  var years = Math.floor(now / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12));
+  var months = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4));
   var weeks = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4)) / (10 * 10 * 10 * 60 * 60 * 24 * 7));
   var days = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7)) / (10 * 10 * 10 * 60 * 60 * 24));
   var hours = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24)) / (10 * 10 * 10 * 60 * 60));
@@ -35,7 +36,7 @@
   var deciseconds = Math.floor((now % (10 * 10 * 10)) / (10 * 10));
   var centiseconds = Math.floor((now % (10 * 10)) / 10);
   // Display the result in the element with id="time"
-  document.getElementById("time").innerHTML = months + "mo " + weeks + "w " + days + "d " + hours + "h "
+  document.getElementById("time").innerHTML = years + "y " + months + "mo " + weeks + "w " + days + "d " + hours + "h "
   + minutes + "m " + seconds + "s " + deciseconds + "ds " + centiseconds + "cs";
   /*If the count down is finished, write some text
   if (distance < 0) {
