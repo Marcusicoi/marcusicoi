@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>
     <!-- import the webpage's javascript file -->
-    <script src="test/script.js" defer></script>
+    <script src="/script.js" defer></script>
   </head>
   <body>
     <!-- this is the start of content -->
@@ -22,5 +22,23 @@
     <a style="background:orange" id="stopButton">Stop</a>
     <a style="background:red" id="resetButton">Reset</a>
     <p id="time"></p>
+    <script>
+    var begin = document.getElementById("startButton");
+    var end = document getElementById("
+    var timer = document.getElementById("time");
+
+function start() {
+  begin = new Date();
+  timer = setInterval(update, 1000);
+}
+
+function update() {
+  end = new Date();
+  elapsed = end - begin;
+
+  // convert the milliseconds into hours, minutes and seconds here
+  // update your HTML elements
+}
+    </script>
   </body>
 </html>
