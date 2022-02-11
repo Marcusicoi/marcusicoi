@@ -18,12 +18,17 @@
     <h1>Stopwatch</h1>
     <h2>It's a stopwatch.
     </h2>
-    <a style="background:lime">Start</a>
+    <a onclick="" style="background:lime">Start</a>
     <a style="background:yellow">Stop</a>
     <a style="background:red">Reset</a>
     <p id="time">ERROR</p>
     <script>
-  function 
+  function stopwatch(countFrom) {
+  //Define the variables here
+  countFrom = new Date(countFrom).getTime();
+  var now = new Date(),
+  countFrom = new Date(countFrom), 
+  distance = (now - countFrom)
   // Time calculations for time
   var milleniums = Math.floor(now / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10 * 10));
   var centuries = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10 * 10)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10));
@@ -50,6 +55,9 @@
                                               seconds + "s " + 
                                               deciseconds + "ds " + 
                                               centiseconds + "cs";
+    }
+    let start = stopwatch.interval = setTimeout(function(){ stopwatch(countFrom); }, 1000);
+    let stop = stopwatch.interval = clearTimeout(stopwatch.interval);
     </script>
   </body>
 </html>
