@@ -18,31 +18,12 @@
     <h1>Stopwatch</h1>
     <h2>It's a stopwatch.
     </h2>
-    <a onclick="" style="background:lime">Start</a>
-    <a style="background:yellow">Stop</a>
+    <a onclick="start" style="background:lime">Start</a>
+    <a onclick="stop" style="background:yellow">Stop</a>
     <a style="background:red">Reset</a>
     <p id="time">ERROR</p>
     <script>
-  function stopwatch(countFrom) {
-  //Define the variables here
-  countFrom = new Date(countFrom).getTime();
-  var now = new Date(),
-  countFrom = new Date(countFrom), 
-  distance = (now - countFrom)
-  // Time calculations for time
-  var milleniums = Math.floor(now / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10 * 10));
-  var centuries = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10 * 10)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10));
-  var decades = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10 * 10)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10));
-  var years = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12 * 10)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12));
-  var months = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4 * 12)) / (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4));
-  var weeks = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7 * 4)) / (10 * 10 * 10 * 60 * 60 * 24 * 7));
-  var days = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24 * 7)) / (10 * 10 * 10 * 60 * 60 * 24));
-  var hours = Math.floor((now % (10 * 10 * 10 * 60 * 60 * 24)) / (10 * 10 * 10 * 60 * 60));
-  var minutes = Math.floor((now % (10 * 10 * 10 * 60 * 60)) / (10 * 10 * 10 * 60));
-  var seconds = Math.floor((now % (10 * 10 * 10 * 60)) / (10 * 10 * 10));
-  var deciseconds = Math.floor((now % (10 * 10 * 10)) / (10 * 10));
-  var centiseconds = Math.floor((now % (10 * 10)) / 10);
-  // Display the result in the element with id="time"
+  /*
   document.getElementById("time").innerHTML = milleniums + "mm " +
                                               centuries + "c " +
                                               decades + "dc " + 
@@ -56,8 +37,8 @@
                                               deciseconds + "ds " + 
                                               centiseconds + "cs";
     }
-    let start = stopwatch.interval = setTimeout(function(){ stopwatch(countFrom); }, 1000);
-    let stop = stopwatch.interval = clearTimeout(stopwatch.interval);
+    let start = stopwatch.interval = setTimeout(function(){ stopwatch('January 1, 2014 0:00:00'); }, 1000);
+    let stop = stopwatch.interval = clearTimeout(stopwatch.interval);*/
     </script>
   </body>
 </html>
