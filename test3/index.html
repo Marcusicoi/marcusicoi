@@ -16,13 +16,27 @@
   <body>
     <!-- this is the start of content -->
     <h1>3 Tests. wtf</h1>
+    <a onclick="start()" style="background:blue">Start</a>
+    <a onclick="stop()" style="background:red">Stop</a>
     <p id="time"></p>
     <script>
-    var x = setInterval(function() {
-    let seconds = 0;
-    seconds += 1;
+    let seconds = 0, timeout, timer = false;
+    function count() {
+    seconds++;
     document.getElementById("time").innerHTML = seconds;
-    }, 1000);
+    timeout = setTimeout(start(), 1000);
+    }
+    function start() {
+    if (!timer) {
+    timer = true;
+    count();
+      }
+    }
+    function stop() {
+    timer = false;
+    clearTimeout(timeout);
+      }
+    }
     </script>
   </body>
 </html>
