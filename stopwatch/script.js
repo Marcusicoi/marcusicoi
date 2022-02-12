@@ -40,7 +40,7 @@
             hr = 0;
             min = 0;
             sec = 0;
-        }
+        }/*
         if (sec < 10 || sec == 0) {
             sec = '0' + sec;
         };
@@ -52,7 +52,7 @@
         };
         if (dy < 10 || hr == 0) {
             dy = '0' + dy;
-        };
+        };*/
         //Set the timeout and change the timer by every second
         timer.getElementsByClassName('days')[0].innerHTML = dy;
         timer.getElementsByClassName('hours')[0].innerHTML = hr;
@@ -63,10 +63,10 @@
    }
 //Reset the stopwatch
 function resetStopwatch() {
-    timer.getElementsByClassName('days')[0].innerHTML = '00';
-    timer.getElementsByClassName('hours')[0].innerHTML = '00';
-    timer.getElementsByClassName('minutes')[0].innerHTML = '00';
-    timer.getElementsByClassName('seconds')[0].innerHTML = '00';
+    timer.getElementsByClassName('days')[0].innerHTML = '0';
+    timer.getElementsByClassName('hours')[0].innerHTML = '0';
+    timer.getElementsByClassName('minutes')[0].innerHTML = '0';
+    timer.getElementsByClassName('seconds')[0].innerHTML = '0';
     stoptime = true;
     sec = 0; min = 0; hr = 0; dy = 0;
 };
@@ -93,3 +93,6 @@ reset.onclick = function() {
   start.style.visibility = 'visible';
   resetStopwatch();
 };
+//
+function randomgradient(id, id2, id3, id4) {
+  function creategradient(dir, 
