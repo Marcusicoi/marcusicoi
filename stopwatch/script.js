@@ -64,12 +64,17 @@ start.onclick = function() {
   reset.style.visibility = 'visible';
   start.style.visibility = 'hidden';
   startStopwatch();
-}
+};
 stop.onclick = function() {
   if (start.innerHTML === 'Start') {start.innerHTML = 'Resume'};
   stop.style.visibility = 'hidden';
   start.style.visibility = 'visible';
   stopStopwatch();
-}
+};
 reset.onclick = function() {
-  if (start.innerHTML === '
+  if (start.innerHTML === 'Resume') {start.innerHTML = 'Start'}; 
+  stop.style.visibility = 'hidden';
+  reset.style.visibility = 'hidden';
+  start.style.visibility = 'visible';
+  resetStopwatch();
+};
