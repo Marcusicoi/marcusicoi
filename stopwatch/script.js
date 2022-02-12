@@ -94,5 +94,15 @@ reset.onclick = function() {
   resetStopwatch();
 };
 //
-function randomgradient(id, id2, id3, id4) {
-  function creategradient(dir, 
+function randomGradient(id, id2, id3, id4) {
+  let createGradient = (dir, hex) => {
+    if (dir === 't') {'top'};
+    if (dir === 'r') {'right'};
+    if (dir === 'b') {'bottom'};
+    if (dir === 'l') {'left'};
+    if (dir === 'tr') {'top right'};
+    if (dir === 'tl') {'bottom'};
+    if (dir === 'l') {'left'};
+  }
+ 
+}
