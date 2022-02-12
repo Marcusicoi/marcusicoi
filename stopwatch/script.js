@@ -24,7 +24,7 @@
         sec = parseInt(sec);
         min = parseInt(min);
         hr = parseInt(hr);
-        sec -= 1;
+        sec += 1;
         //Time calculations
         if (sec == 60) {
             min += 1;
@@ -58,7 +58,7 @@
         timer.getElementsByClassName('hours')[0].innerHTML = hr;
         timer.getElementsByClassName('minutes')[0].innerHTML = min;
         timer.getElementsByClassName('seconds')[0].innerHTML = sec; 
-        setTimeout("stopwatchCycle()", 0.0000000000000000000000000000000000000000000000000000000000000000000000001);
+        setTimeout("stopwatchCycle()", 1000);
     };
    }
 //Reset the stopwatch
