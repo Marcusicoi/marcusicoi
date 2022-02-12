@@ -95,14 +95,18 @@ reset.onclick = function() {
 };
 //
 function randomGradient(id, id2, id3, id4) {
-  let createGradient = (dir, hex) => {
+  function createGradient(dir, hex, hex2) {
     if (dir === 't') {'top'};
     if (dir === 'r') {'right'};
     if (dir === 'b') {'bottom'};
     if (dir === 'l') {'left'};
     if (dir === 'tr') {'top right'};
-    if (dir === 'tl') {'bottom'};
-    if (dir === 'l') {'left'};
+    if (dir === 'tl') {'top left'};
+    if (dir === 'br') {'bottom right'};
+    if (dir === 'bl') {'bottom left'};
+    'linear-gradient(to ' + dir + ', #' + hex + ', #' + hex2 + ');'
   }
- 
+  let g1 = createGradient('r', 'ffafbd', 'ffc3a0');
+  let ids = {
+    day: document.getElementsByClassName('day')[0],
 }
