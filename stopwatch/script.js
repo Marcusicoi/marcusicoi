@@ -3,7 +3,6 @@
     const start = document.getElementById('startbutton');
     const stop = document.getElementById('pausebutton');
     const reset = document.getElementById('resetbutton'); 
-    const 
     //Define Variables
     var day = 0, hr = 0, min = 0, sec = 0, stoptime = true;
     //Start the stopwatch
@@ -46,13 +45,17 @@
             hr = '0' + hr;
         };
         //Set the timeout and change the timer by every second
-        timer.innerHTML = hr + ':' + min + ':' + sec;
+        timer.getElementsByClassName('hours')[0].innerHTML = hr;
+        timer.getElementsByClassName('minutes')[0].innerHTML = min;
+        timer.getElementsByClassName('seconds')[0].innerHTML = sec; 
         setTimeout("stopwatchCycle()", 1000);
     };
    }
 //Reset the stopwatch
 function resetStopwatch() {
-    timer.innerHTML = '00:00:00';
+    timer.getElementsByClassName('hours')[0].innerHTML = '00';
+    timer.getElementsByClassName('minutes')[0].innerHTML = '00';
+    timer.getElementsByClassName('seconds')[0].innerHTML = '00';
     stoptime = true;
     sec = 0; min = 0; hr = 0;
 };
