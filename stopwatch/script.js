@@ -55,13 +55,21 @@ function resetStopwatch() {
     stoptime = true;
     sec = 0; min = 0; hr = 0;
 };
-//
-stop.style.display = 'none';
-reset.style.display = 'none';
+//Make the two buttons invisible
+stop.style.visibility = 'hidden';
+reset.style.visibility = 'hidden';
+//Onclicks
 start.onclick = function() {
-  if (stop.style.display = 'none') {
-  stop.style.display = 'block';
+  stop.style.visibility = 'visible';
+  reset.style.visibility = 'visible';
+  startStopwatch();
+}
+stop.onclick = function() {
+  if (start.innerHTML === 'Start') {
+    start.innerHTML = 'Resume';
   } else {
-  stop.style.display = 'none';
+    start.innerHTML = 'Start';
   }
+  stop.style.visibility = 'hidden';
+  stopStopwatch();
 }
