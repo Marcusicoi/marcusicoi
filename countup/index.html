@@ -18,9 +18,9 @@
     <h1>Countup</h1>
     <h2>The stopwatch will count up from any date thats past now</h2>
     <div id="stopwatch">00:00:00</div>
-    <a onclick="startStopwatch()" style="background:lime">Start</a>
-    <a onclick="stopStopwatch()" style="background:yellow">Stop</a>
-    <a onclick="resetStopwatch()" style="background:red">Reset</a>
+    <button onclick="startStopwatch()" style="background:lime">Start</button>
+    <button onclick="stopStopwatch()" style="background:yellow">Stop</button>
+    <button onclick="resetStopwatch()" style="background:red">Reset</button>
     <script>
     const timer = document.getElementById('stopwatch')
     var hr = 0, min = 0, sec = 0, stoptime = true;
@@ -30,13 +30,13 @@
           timerCycle();
       }
     }
-    function stopTimer() {
+    function stopStopwatch() {
       if (stoptime == false) {
           stoptime = true;
       }
     }
 
-    function timerCycle() {
+    function stopwatchCycle() {
     if (stoptime == false) {
         sec = parseInt(sec);
         min = parseInt(min);
@@ -61,10 +61,10 @@
             hr = '0' + hr;
         }
         timer.innerHTML = hr + ':' + min + ':' + sec;
-        setTimeout("timerCycle()", 1000);
+        setTimeout("stopwatchCycle()", 1000);
     }
    }
-function resetTimer() {
+function resetStopwatch() {
     timer.innerHTML = '00:00:00';
     stoptime = true;
     sec = 0, min = 0, hr = 0;
