@@ -1,24 +1,31 @@
- 
+    //Get IDs from Index.html
     const timer = document.getElementById('stopwatch');
+    const start = document.getElementById('startbutton');
+    const stop = document.getElementById('pausebutton');
+    const reset = document.getElementById('resetbutton'); 
+    //Define Variables
     var hr = 0, min = 0, sec = 0, stoptime = true;
+    //Start the stopwatch
     function startStopwatch() {
       if (stoptime == true) {
           stoptime = false;
           stopwatchCycle();
       }
     };
+    //Stop the stopwatch
     function stopStopwatch() {
       if (stoptime == false) {
           stoptime = true;
       }
     };
-
+    //Stopwatch Cycle
     function stopwatchCycle() {
     if (stoptime == false) {
         sec = parseInt(sec);
         min = parseInt(min);
         hr = parseInt(hr);
-        sec = sec + 1;
+        sec += 1;
+        //Time 
         if (sec == 60) {
             min = min + 1;
             sec = 0;

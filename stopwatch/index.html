@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>
     <!-- import the webpage's javascript file -->
-    <script src="countup/script.js" defer></script>
+    <script src="stopwatch/script.js" defer></script>
   </head>
   <body>
     <!-- this is the start of content -->
     <h1>Stopwatch</h1>
     <h2>Click one of the buttons here that controlls the stopwatch!</h2>
-    <div id="stopwatch">00:00:00</div>
-    <a onclick="startStopwatch()" style="background:lime">Start</button>
-    <a onclick="stopStopwatch()" style="background:yellow">Stop</button>
-    <button onclick="resetStopwatch()" style="background:red">Reset</button>
+    <h1 id="stopwatch">00:00:00</h1>
+    <a onclick="startStopwatch()" style="background:lime" id="startbutton">Start</a>
+    <a onclick="stopStopwatch()" style="background:yellow" id="pausebutton">Pause</a>
+    <a onclick="resetStopwatch()" style="background:red" id="resetbutton">Reset</a>
   </body>
 </html>
