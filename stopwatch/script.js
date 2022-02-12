@@ -60,16 +60,16 @@ stop.style.visibility = 'hidden';
 reset.style.visibility = 'hidden';
 //Onclicks
 start.onclick = function() {
+  if (start.innerHTML === 'Resume') {
+    start.innerHTML = 'Start'; 
+    start.style.
   stop.style.visibility = 'visible';
   reset.style.visibility = 'visible';
+  start.style.visibility = 'hidden';
   startStopwatch();
 }
 stop.onclick = function() {
-  if (start.innerHTML === 'Start') {
-    start.innerHTML = 'Resume';
-  } else {
-    start.innerHTML = 'Start';
-  }
+  if (start.innerHTML === 'Start') {start.innerHTML = 'Resume'};
   stop.style.visibility = 'hidden';
   stopStopwatch();
 }
