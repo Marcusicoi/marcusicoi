@@ -24,7 +24,7 @@
         sec = parseInt(sec);
         min = parseInt(min);
         hr = parseInt(hr);
-        sec += 30;
+        sec -= 1;
         //Time calculations
         if (sec == 60) {
             min += 1;
