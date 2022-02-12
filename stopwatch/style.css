@@ -66,9 +66,10 @@ a:active {
   margin-left: 00px;
   border-radius: 10px 0 0 10px;
 }
-.stopwatches .timed {
+.stopwatches span[class*="timed second"] {
   border-radius: 0 10px 10px 0;
-  margin-right: 12px;
+  margin-left: 0;
+  right: 11px;
   padding: 11px;
   background: #e8c152;
   color: black;
