@@ -92,9 +92,9 @@ reset.onclick = function() {
   reset.style.visibility = 'hidden';
   start.style.visibility = 'visible';
   resetStopwatch();
-};
-//
-function randomGradient(id, id2, id3, id4) {
+}; 
+/*
+function randomGradient() {
   function createGradient(dir, hex, hex2) {
     if (dir === 't') {'top'};
     if (dir === 'r') {'right'};
@@ -108,5 +108,10 @@ function randomGradient(id, id2, id3, id4) {
   }
   let g1 = createGradient('r', 'ffafbd', 'ffc3a0');
   let ids = {
-    day: document.getElementsByClassName('day')[0],
-}
+    day: document.getElementsByClassName('day'),
+    hour: document.getElementsByClassName('hour'),
+    min: document.getElementsByClassName('minute'),
+    sec: document.getElementsByClassName('second')
+  }
+  ids.day[0].style.background = g1;
+}*/

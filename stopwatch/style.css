@@ -71,7 +71,7 @@ a:active {
   margin-left: -4px;
   display: inline-block;
   padding: 10px;
-  background: linear-gradient(to bottom right, #a1c4fd, #c2e9fd);
+  /*background: linear-gradient(to bottom right, #a1c4fd, #c2e9fd);*/
   color: black;
 }
 .stopwatches span[class*="timed minute"] {
@@ -79,7 +79,7 @@ a:active {
   margin-left: -5px;
   display: inline-block;
   padding: 10px;
-  background: linear-gradient(to bottom right, #89f7fe, #66a6ff);
+  /*background: linear-gradient(to bottom right, #89f7fe, #66a6ff);*/
   color: black;
 }
 .stopwatches span[class*="timed hour"] {
@@ -87,7 +87,15 @@ a:active {
   margin-left: -4px;
   display: inline-block;
   padding: 10px;
-  background: linear-gradient(to bottom right, #84c6ef, #6f86d6);
+  /*background: linear-gradient(to bottom right, #84c6ef, #6f86d6);*/
+  color: black;
+}
+.stopwatches span[class*="timed day"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: -4px;
+  display: inline-block;
+  padding: 10px;
+  /*background: linear-gradient(to bottom right, #84c6ef, #6f86d6);*/
   color: black;
 }
 @keyframes rainbow {
