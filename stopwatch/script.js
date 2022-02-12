@@ -25,7 +25,7 @@
         min = parseInt(min);
         hr = parseInt(hr);
         sec += 1;
-        //Time 
+        //Time calculations
         if (sec == 60) {
             min = min + 1;
             sec = 0;
@@ -44,12 +44,24 @@
         if (hr < 10 || hr == 0) {
             hr = '0' + hr;
         };
+        //Set the timeout and change the timer by every second
         timer.innerHTML = hr + ':' + min + ':' + sec;
         setTimeout("stopwatchCycle()", 1000);
     };
    }
+//Reset the stopwatch
 function resetStopwatch() {
     timer.innerHTML = '00:00:00';
     stoptime = true;
     sec = 0; min = 0; hr = 0;
 };
+//
+stop.style.display = 'none';
+reset.style.display = 'none';
+start.onclick = function() {
+  if (stop.style.display = 'none') {
+  stop.style.display = 'block';
+  } else {
+  stop.style.display = 'none';
+  }
+}
