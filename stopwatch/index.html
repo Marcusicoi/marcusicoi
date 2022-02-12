@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
 
-    <title>Marcusicoi.</title>
+    <title>Hello world!</title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="countup/script.js" defer></script>
   </head>
   <body>
     <!-- this is the start of content -->
-    <h1>Marcusicoi.</h1>
-    <h2>Yes its me. Marcusicoi.</h2>
-    <h3>This project was made by me, Marcusicoi was made by me, Coded by me, Everything in this project was made by me.</h3>
-    <p>trust me pls, click one  those random buttons</p>
-    <a style="background:#0000ff" href="/2048">2048 Tiles</a>
-    <a style="background:#00aaff" href="/countdown">Countdown to 2023</a>
-    <a style="background:#00ffff" href="https://arrasicoi2.glitch.me">Arrasicoi</a>
+    <h1>Stopwatch</h1>
+    <h2>Click one of the buttons here that controlls the stopwatch!</h2>
+    <div id="stopwatch">00:00:00</div>
+    <a onclick="startStopwatch()" style="background:lime">Start</button>
+    <a onclick="stopStopwatch()" style="background:yellow">Stop</button>
+    <button onclick="resetStopwatch()" style="background:red">Reset</button>
   </body>
 </html>

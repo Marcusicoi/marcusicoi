@@ -1,33 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-
-    <title>Hello world!</title>
-
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <!-- this is the start of content -->
-    <h1>Countup</h1>
-    <h2>The stopwatch will count up from any date thats past now</h2>
-    <div id="stopwatch">00:00:00</div>
-    <button onclick="startStopwatch()" style="background:lime">Start</button>
-    <button onclick="stopStopwatch()" style="background:yellow">Stop</button>
-    <button onclick="resetStopwatch()" style="background:red">Reset</button>
-    <script>
+ 
     const timer = document.getElementById('stopwatch');
     var hr = 0, min = 0, sec = 0, stoptime = true;
     function startStopwatch() {
       if (stoptime == true) {
           stoptime = false;
-          timerCycle();
+          stopwatchCycle();
       }
     };
     function stopStopwatch() {
@@ -69,6 +46,3 @@ function resetStopwatch() {
     stoptime = true;
     sec = 0; min = 0; hr = 0;
 };
-  </script>
-  </body>
-</html>
