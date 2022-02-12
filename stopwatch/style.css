@@ -71,7 +71,23 @@ a:active {
   margin-left: -4px;
   display: inline-block;
   padding: 10px;
-  background: linear-gradient(to right, 
+  background: linear-gradient(to bottom right, #a1c4fd, #c2e9fd);
+  color: black;
+}
+.stopwatches span[class*="timed minutes"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: -4px;
+  display: inline-block;
+  padding: 10px;
+  background: linear-gradient(to bottom right, #89f7fe #66a66f);
+  color: black;
+}
+.stopwatches span[class*="timed hour"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: -4px;
+  display: inline-block;
+  padding: 10px;
+  background: linear-gradient(to bottom right, #84c6ef, #6f86d6);
   color: black;
 }
 @keyframes rainbow {

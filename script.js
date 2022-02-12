@@ -1,1 +1,2 @@
-//i coded hard for this file. WaH: 230, X: 25, Y: 680
+//i coded hard for this file.
+console.log("hi");
