@@ -3,8 +3,9 @@
     const start = document.getElementById('startbutton');
     const stop = document.getElementById('pausebutton');
     const reset = document.getElementById('resetbutton'); 
+    const 
     //Define Variables
-    var hr = 0, min = 0, sec = 0, stoptime = true;
+    var day = 0, hr = 0, min = 0, sec = 0, stoptime = true;
     //Start the stopwatch
     function startStopwatch() {
       if (stoptime == true) {
