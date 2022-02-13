@@ -118,8 +118,10 @@ a:active {
   .stopwatches span[class*="timed"] {
     height: 100px; width: 100px;
   }
-  .stopwatches .
- }
+  .stopwatches .timet {
+    height: 100px; width: 100px;
+  }
+}
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
