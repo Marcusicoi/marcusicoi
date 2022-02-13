@@ -191,6 +191,7 @@ window.onload = function() {randomGradient()};
 //Tile number generator.
 //Always get the ids xD
 const gen = document.getElementById("generate");
+const text = document.getElementById("text");
 //Define some variables
 var num = Math.floor(Math.random() * 999),
 ones = ['U', 'D', 'T', 'q', 'Q', 's', 'S', 'O', 'N'],
@@ -206,4 +207,12 @@ quintillions = ['Fem', 'DFem', 'TFem', 'qFem', 'QFem', 'sFem', 'SFem', 'OFem', '
 sextillions = ['Att', 'DAtt', 'TAtt', 'qAtt', 'QAtt', 'sAtt', 'SAtt', 'OAtt', 'NAtt'],
 septillions = ['Zep', 'DZep', 'TZep', 'qZep', 'QZep', 'sZep', 'SZep', 'OZep', 'NZep'],
 octillions = ['Yoc', 'DYoc', 'TYoc', 'qYoc', 'QYoc', 'sYoc', 'SYoc', 'OYoc', 'NYoc'],
-nonillions = ['Xon', 'DXon', 'TXo', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'],
+nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NXon'],
+decillions = ['Myr', 'Dyr', 'Tyr', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'];
+//Functions
+function ran(i) {Math.floor(Math.random() * i)};
+function length(i) {i.length};
+function inner(i) {text.innerHTML = i};
+
+//"if"
+if (ran = 1) {inner(ran(length(ones2)))};
