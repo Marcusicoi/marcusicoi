@@ -96,7 +96,7 @@ reset.onclick = function() {
 
 function randomGradient() {
  let g1 = 'linear-gradient(red, blue)';
- let g2 = 'linear-gradient(lime, yellow)';
+ let g2 = 'linear-gradient(lime, yellow)';           
  let ran = 
- timer.getElementsByClassName('day')[0].style.background = g1;
+ timer.getElementsByClassName('day')[0].style.background = ran;
 }
