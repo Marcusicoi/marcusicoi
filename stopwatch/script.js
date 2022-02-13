@@ -114,9 +114,9 @@ function randomGradient() {
                   'linear-gradient(to right, #7b4397, #dc2430)', //Virgin America
                   'linear-gradient(to right, #43cea2, #185a9d)', //Endless River
                   'linear-gradient(to right, #ba5370, #f4e2d8)', //Purple White
-                  'linear-gradient(to right, #ff512f, #2c3e50)', //50 Shades of gray
-                  'linear-gradient(to right, #de6262, #ffb88c)', //A Lost Memory
-                  'linear-gradient(to right, #06beb6, #48b1bf)', //Socialive
+                  'linear-gradient(to right, #ff512f, #dd2476)', //Bloody Mary
+                  'linear-gradient(to right, #4568dc, #b06ab3)', //Can you feel the love tonight
+                  'linear-gradient(to right, #ec6f66, #f3a183)', //Bourbon
                   ];
  let num = Math.floor(Math.random() * gradients.length);
  let ran = gradients[num];
