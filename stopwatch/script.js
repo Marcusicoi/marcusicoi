@@ -94,10 +94,17 @@ reset.onclick = function() {
   resetStopwatch();
 }; 
 
-function randomGradient() {
+function randomGradient(classname) {
  let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', 
-                  'linear-gradient(to right, #2193b0, #6dd5ed)'];
- let num = Math.floor(Math.random() * 2);
+                  'linear-gradient(to right, #2193b0, #6dd5ed)',
+                  'linear-gradient(to right, #cc2b5e, #753a88)', 
+                  'linear-gradient(to right, #ee9ca7, #ffdde1)',
+                  'linear-gradient(to right, #42275a, #734b6d)', 
+                  'linear-gradient(to right, #bdc3c7, #2c3e50)',
+                  'linear-gradient(to right, #de6262, #ffb88c)', 
+                  'linear-gradient(to right, #06beb6, #48b1bf)',];
+ let num = Math.floor(Math.random() * gradients.length);
  let ran = gradients[num];
- timer.getElementsByClassName('day')[0].style.background = ran;
+ timer.getElementsByClassName(classname)[0].style.color = 'white'
+ timer.getElementsByClassName(classname)[0].style.background = ran;
 }
