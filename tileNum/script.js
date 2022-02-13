@@ -19,8 +19,9 @@ septillions = ['Zep', 'DZep', 'TZep', 'qZep', 'QZep', 'sZep', 'SZep', 'OZep', 'N
 octillions = ['Yoc', 'DYoc', 'TYoc', 'qYoc', 'QYoc', 'sYoc', 'SYoc', 'OYoc', 'NYoc'],
 nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NXon'],
 decillions = ['Myr', 'Dyr', 'Tyr', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'];
-//Variables again
-var random = Math.floor(Math.random() * 2)
+//Random Variables
+var random = Math.floor(Math.random() * 2),
+o2ran = ones2[Math.floor(Math.random() * ones2.length)];
 //"if"
-if (random = 1) {text.innerHTML = Math.floor(Math.random() * ones.length)};
-gen.onclick = function() {document.getElementById('generate').innerHTML = 'test'};
+if (random = 1) {text.innerHTML = o2ran};
+gen.onclick = function() {random};
