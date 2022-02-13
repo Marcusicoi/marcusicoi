@@ -70,18 +70,28 @@ function resetStopwatch() {
     timer.getElementsByClassName('seconds')[0].innerHTML = '0';
     stoptime = true;
     sec = 0; min = 0; hr = 0; dy = 0;
-};
+};/*
+function randomColors() {
 let colors = ['red', 'orange', 'yellow', '#ccff00', 'lime',
               '##00ffaa', 'cyan', '#00aaff', 'blue', 'purple',
               'pink', '#ff0077'];
- let num = Math.floor(Math.random() * gradients.length);
- let ran = gradients[num];
- let num2 = Math.floor(Math.random() * gradients.length);
- let ran2 = gradients[num2];
- let num3 = Math.floor(Math.random() * gradients.length);
- let ran3 = gradients[num3];
- let num4 = Math.floor(Math.random() * gradients.length);
- let ran4 = gradients[num4];
+ let number = Math.floor(Math.random() * colors.length);
+ let random = colors[number];
+ let number2 = Math.floor(Math.random() * colors.length);
+ let random2 = colors[number2];
+ let number3 = Math.floor(Math.random() * colors.length);
+ let random3 = colors[number3];
+ let number4 = Math.floor(Math.random() * colors.length);
+ let random4 = colors[number4];
+ timer.getElementsByClassName('day')[0].style.color = 'white'
+ timer.getElementsByClassName('day')[0].style.background = random;
+ timer.getElementsByClassName('hour')[0].style.color = 'white'
+ timer.getElementsByClassName('hour')[0].style.background = random2;
+ timer.getElementsByClassName('minute')[0].style.color = 'white'
+ timer.getElementsByClassName('minute')[0].style.background = random3;
+ timer.getElementsByClassName('second')[0].style.color = 'white'
+ timer.getElementsByClassName('second')[0].style.background = random4;
+};*/
 function randomGradient() {
  let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', 
                   'linear-gradient(to right, #2193b0, #6dd5ed)',
@@ -107,7 +117,7 @@ function randomGradient() {
  timer.getElementsByClassName('minute')[0].style.background = ran3;
  timer.getElementsByClassName('second')[0].style.color = 'white'
  timer.getElementsByClassName('second')[0].style.background = ran4;
-}
+};
 //Make the two buttons invisible
 stop.style.visibility = 'hidden';
 reset.style.visibility = 'hidden';
@@ -131,4 +141,5 @@ reset.onclick = function() {
   start.style.visibility = 'visible';
   resetStopwatch();
 }; 
-useless.onclick = function() {randomGradient()};
+window.onload = function() {randomGradient()};
+//useless.onclick = function() {randomGradient()};
