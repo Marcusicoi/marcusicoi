@@ -114,6 +114,12 @@ a:active {
   /*background: linear-gradient(to bottom right, #2193b0, #6dd5ed);*/
   color: black;
 }
+@media screen and (max-width: 600px) {
+  .stopwatches span[class*="timed"] {
+    height: 100px; width: 100px;
+  }
+  .stopwatches .
+ }
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
