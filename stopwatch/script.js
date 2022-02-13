@@ -78,7 +78,7 @@ start.onclick = function() {
   stop.style.visibility = 'visible';
   reset.style.visibility = 'visible';
   start.style.visibility = 'hidden';
-  startStopwatch();
+  startStopwatch(); randomGradient();
 };
 stop.onclick = function() {
   if (start.innerHTML === 'Start') {start.innerHTML = 'Resume'};
@@ -95,12 +95,8 @@ reset.onclick = function() {
 }; 
 
 function randomGradient() {
-  let rtrn = '';
-  let prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
-  for (let i = 0; i < prefixes.length; i++) {
-  let g1 = prefixes[i] + 'linear-gradient(to top, red, blue);';
-  docume.getElementsByClassName('day')[0].style.background = g1;
-  if (document.getElementsByClassName('day')) { rtrn = prefixes[i] }
-  document.getElementsByClassName('day') = null;
-  delete document.getElementsByClassName('day');
-}}
+ let g1 = 'linear-gradient(red, blue)';
+ let g2 = 'linear-gradient(lime, yellow)';
+ let ran = 
+ timer.getElementsByClassName('day')[0].style.background = g1;
+}
