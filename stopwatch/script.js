@@ -95,8 +95,9 @@ reset.onclick = function() {
 }; 
 
 function randomGradient() {
- let g1 = 'linear-gradient(red, blue)';
- let g2 = 'linear-gradient(lime, yellow)';           
- let ran = 
+ let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', 
+                  'linear-gradient(to right, #2193b0, #6dd5ed)'];
+ let num = Math.floor(Math.random() * 2);
+ let ran = gradients[num];
  timer.getElementsByClassName('day')[0].style.background = ran;
 }
