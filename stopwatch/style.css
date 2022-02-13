@@ -98,6 +98,22 @@ a:active {
   /*background: linear-gradient(to bottom right, #2193b0, #6dd5ed);*/
   color: black;
 }
+.stopwatches span[class*="timed week"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: -4px;
+  display: inline-block;
+  padding: 10px;
+ /*background: linear-gradient(to bottom right, #84c6ef, #6f86d6);*/
+  color: black;
+}
+.stopwatches span[class*="timed month"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: -4px;
+  display: inline-block;
+  padding: 10px;
+  /*background: linear-gradient(to bottom right, #2193b0, #6dd5ed);*/
+  color: black;
+}
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}

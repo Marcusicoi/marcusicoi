@@ -5,7 +5,7 @@
     const reset = document.getElementById('resetbutton'); 
 //    const useless = document.getElementById('randombutton');
     //Define Variables
-    var dy = 0, hr = 0, min = 0, sec = 0, stoptime = true;
+    var mn = 0, wk = 0, dy = 0, hr = 0, min = 0, sec = 0, stoptime = true;
     //Start the stopwatch
     function startStopwatch() {
       if (stoptime == true) {
@@ -25,6 +25,9 @@
         sec = parseInt(sec);
         min = parseInt(min);
         hr = parseInt(hr);
+        dy = parseInt(dy);
+        wk = parseInt(wk);
+        mn = parseInt(mn);
         sec += 1;
         //Time calculations
         if (sec == 60) {
@@ -41,35 +44,42 @@
             hr = 0;
             min = 0;
             sec = 0;
-        }/*
-        if (sec < 10 || sec == 0) {
-            sec = '0' + sec;
-        };
-        if (min < 10 || min == 0) {
-            min = '0' + min;
-        };
-        if (hr < 10 || hr == 0) {
-            hr = '0' + hr;
-        };
-        if (dy < 10 || hr == 0) {
-            dy = '0' + dy;
-        };*/
+        }
+        if (dy == 7) {
+            wk += 1;
+            dy = 0;
+            hr = 0;
+            min = 0;
+            sec = 0;
+        }
+        if (wk == 4.32524) {
+            mn += 1;
+            wk = 0;
+            dy = 0;
+            hr = 0;
+            min = 0;
+            sec = 0;
+        }
         //Set the timeout and change the timer by every second
+        timer.getElementsByClassName('months')[0].innerHTML = mn;
+        timer.getElementsByClassName('weeks')[0].innerHTML = wk;
         timer.getElementsByClassName('days')[0].innerHTML = dy;
         timer.getElementsByClassName('hours')[0].innerHTML = hr;
         timer.getElementsByClassName('minutes')[0].innerHTML = min;
         timer.getElementsByClassName('seconds')[0].innerHTML = sec; 
-        setTimeout("stopwatchCycle()", 1000);
+        setTimeout(stopwatchCycle(), 1000);
     };
    }
 //Reset the stopwatch
 function resetStopwatch() {
+    timer.getElementsByClassName('months')[0].innerHTML = '0';
+    timer.getElementsByClassName('weeks')[0].innerHTML = '0';
     timer.getElementsByClassName('days')[0].innerHTML = '0';
     timer.getElementsByClassName('hours')[0].innerHTML = '0';
     timer.getElementsByClassName('minutes')[0].innerHTML = '0';
     timer.getElementsByClassName('seconds')[0].innerHTML = '0';
     stoptime = true;
-    sec = 0; min = 0; hr = 0; dy = 0;
+    sec = 0; min = 0; hr = 0; dy = 0; wk = 0; mn = 0;
 };/*
 function randomColors() {
 let colors = ['red', 'orange', 'yellow', '#ccff00', 'lime',
@@ -126,14 +136,22 @@ function randomGradient() {
  let ran3 = gradients[num3];
  let num4 = Math.floor(Math.random() * gradients.length);
  let ran4 = gradients[num4];
+ let num5 = Math.floor(Math.random() * gradients.length);
+ let ran5 = gradients[num5];
+ let num6 = Math.floor(Math.random() * gradients.length);
+ let ran6 = gradients[num6];
+ timer.getElementsByClassName('month')[0].style.color = 'white'
+ timer.getElementsByClassName('month')[0].style.background = ran6;
+ timer.getElementsByClassName('week')[0].style.color = 'white'
+ timer.getElementsByClassName('week')[0].style.background = ran5;
  timer.getElementsByClassName('day')[0].style.color = 'white'
- timer.getElementsByClassName('day')[0].style.background = ran;
+ timer.getElementsByClassName('day')[0].style.background = ran4;
  timer.getElementsByClassName('hour')[0].style.color = 'white'
- timer.getElementsByClassName('hour')[0].style.background = ran2;
+ timer.getElementsByClassName('hour')[0].style.background = ran3;
  timer.getElementsByClassName('minute')[0].style.color = 'white'
- timer.getElementsByClassName('minute')[0].style.background = ran3;
+ timer.getElementsByClassName('minute')[0].style.background = ran2;
  timer.getElementsByClassName('second')[0].style.color = 'white'
- timer.getElementsByClassName('second')[0].style.background = ran4;
+ timer.getElementsByClassName('second')[0].style.background = ran;
 };
 //Make the two buttons invisible
 stop.style.visibility = 'hidden';
