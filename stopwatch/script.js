@@ -71,6 +71,17 @@ function resetStopwatch() {
     stoptime = true;
     sec = 0; min = 0; hr = 0; dy = 0;
 };
+let colors = ['red', 'orange', 'yellow', '#ccff00', 'lime',
+              '##00ffaa', 'cyan', '#00aaff', 'blue', 'purple',
+              'pink', '#ff0077'];
+ let num = Math.floor(Math.random() * gradients.length);
+ let ran = gradients[num];
+ let num2 = Math.floor(Math.random() * gradients.length);
+ let ran2 = gradients[num2];
+ let num3 = Math.floor(Math.random() * gradients.length);
+ let ran3 = gradients[num3];
+ let num4 = Math.floor(Math.random() * gradients.length);
+ let ran4 = gradients[num4];
 function randomGradient() {
  let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', 
                   'linear-gradient(to right, #2193b0, #6dd5ed)',
@@ -82,14 +93,20 @@ function randomGradient() {
                   'linear-gradient(to right, #06beb6, #48b1bf)',];
  let num = Math.floor(Math.random() * gradients.length);
  let ran = gradients[num];
+ let num2 = Math.floor(Math.random() * gradients.length);
+ let ran2 = gradients[num2];
+ let num3 = Math.floor(Math.random() * gradients.length);
+ let ran3 = gradients[num3];
+ let num4 = Math.floor(Math.random() * gradients.length);
+ let ran4 = gradients[num4];
  timer.getElementsByClassName('day')[0].style.color = 'white'
  timer.getElementsByClassName('day')[0].style.background = ran;
  timer.getElementsByClassName('hour')[0].style.color = 'white'
- timer.getElementsByClassName('hour')[0].style.background = ran;
+ timer.getElementsByClassName('hour')[0].style.background = ran2;
  timer.getElementsByClassName('minute')[0].style.color = 'white'
- timer.getElementsByClassName('minute')[0].style.background = ran;
+ timer.getElementsByClassName('minute')[0].style.background = ran3;
  timer.getElementsByClassName('second')[0].style.color = 'white'
- timer.getElementsByClassName('second')[0].style.background = ran;
+ timer.getElementsByClassName('second')[0].style.background = ran4;
 }
 //Make the two buttons invisible
 stop.style.visibility = 'hidden';
