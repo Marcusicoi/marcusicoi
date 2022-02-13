@@ -9,7 +9,7 @@
     function startStopwatch() {
       if (stoptime == true) {
           stoptime = false;
-          stopwatchCycle(); randomGradient();
+          stopwatchCycle(); 
       }
     };
     //Stop the stopwatch
@@ -95,6 +95,12 @@ reset.onclick = function() {
 }; 
 
 function randomGradient() {
-  let g1 = 'linear-gradient(to top, red, blue);';
-  document.getElementsByClassName('day')[0].style.background = g1;
-}
+  let rtrn = '';
+  let prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
+  for (let i = 0; i < prefixes.length; i++) {
+  let g1 = prefixes[i] + 'linear-gradient(to top, red, blue);';
+  docume.getElementsByClassName('day')[0].style.background = g1;
+  if (document.getElementsByClassName('day')) { rtrn = prefixes[i] }
+  document.getElementsByClassName('day') = null;
+  delete document.getElementsByClassName('day');
+}}
