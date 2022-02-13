@@ -28,7 +28,7 @@
         dy = parseInt(dy);
         wk = parseInt(wk);
         mn = parseInt(mn);
-        sec += 1; min = 59; hr = 23; dy = 6;
+        sec += 1;
         //Time calculations
         if (sec == 60) {
             min += 1;
