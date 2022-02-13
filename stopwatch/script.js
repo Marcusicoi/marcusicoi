@@ -127,6 +127,22 @@ function randomGradient() {
                   'linear-gradient(to right, #ff512f, #dd2476)', //Bloody Mary
                   'linear-gradient(to right, #4568dc, #b06ab3)', //Can you feel the love tonight
                   'linear-gradient(to right, #ec6f66, #f3a183)', //Bourbon
+                  'linear-gradient(to right, #ffd89b, #19547b)', //Dusk
+         'linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b)', //Relay
+                  'linear-gradient(to right, #4ca1af, #c4e0e5)', //Decent
+                  'linear-gradient(to right, #ff5f6d, #ffce71)', //Sweet Morning
+                  'linear-gradient(to right, #36d1dc, #5b86e5)', //Scooter
+                  'linear-gradient(to right, #c33764, #1d2671)', //Celestial
+                  'linear-gradient(to right, #141e30, #243b55)', //Royal
+                  'linear-gradient(to right, #ff7e5f, #48b1bf)', //Socialive
+                  'linear-gradient(to right, #eb3349, #f45c43)', //Cherry
+                  'linear-gradient(to right, #dd5e89, #f7bb97)', //Pinky
+                  'linear-gradient(to right, #56ab2f, #a8e063)', //Lush
+                  'linear-gradient(to right, #614385, #516395)', //Kashmir
+                  'linear-gradient(to right, #eecda3, #ef629f)', //Tranquil
+                  'linear-gradient(to right, #eacda3, #d6ae7b)', //Pale Wood
+           'linear-gradient(to bottom right, #02aab0, #00cdac)', //Green Beach
+                  'linear-gradient(to right, #d66d75, #e29587)', //Sha La La
                   ];
  let num = Math.floor(Math.random() * gradients.length);
  let ran = gradients[num];
