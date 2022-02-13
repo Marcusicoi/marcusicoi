@@ -142,4 +142,3 @@ reset.onclick = function() {
   resetStopwatch();
 }; 
 window.onload = function() {randomGradient()};
-//useless.onclick = function() {randomGradient()};
