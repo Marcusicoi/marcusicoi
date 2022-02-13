@@ -3,7 +3,7 @@
     const start = document.getElementById('startbutton');
     const stop = document.getElementById('pausebutton');
     const reset = document.getElementById('resetbutton'); 
-    const useless = document.getElementById('randombutton');
+//    const useless = document.getElementById('randombutton');
     //Define Variables
     var dy = 0, hr = 0, min = 0, sec = 0, stoptime = true;
     //Start the stopwatch
@@ -93,14 +93,23 @@ let colors = ['red', 'orange', 'yellow', '#ccff00', 'lime',
  timer.getElementsByClassName('second')[0].style.background = random4;
 };*/
 function randomGradient() {
- let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', 
-                  'linear-gradient(to right, #2193b0, #6dd5ed)',
-                  'linear-gradient(to right, #cc2b5e, #753a88)', 
-                  'linear-gradient(to right, #ee9ca7, #ffdde1)',
-                  'linear-gradient(to right, #42275a, #734b6d)', 
-                  'linear-gradient(to right, #bdc3c7, #2c3e50)',
-                  'linear-gradient(to right, #de6262, #ffb88c)', 
-                  'linear-gradient(to right, #06beb6, #48b1bf)',];
+ let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', //Roseannna
+                  'linear-gradient(to right, #2193b0, #6dd5ed)', //Sexy Blue
+                  'linear-gradient(to right, #cc2b5e, #753a88)', //Purple Love
+                  'linear-gradient(to right, #ee9ca7, #ffdde1)', //Piglet
+                  'linear-gradient(to right, #42275a, #734b6d)', //Mauve
+                  'linear-gradient(to right, #bdc3c7, #2c3e50)', //50 Shades of gray
+                  'linear-gradient(to right, #de6262, #ffb88c)', //A Lost Memory
+                  'linear-gradient(to right, #06beb6, #48b1bf)', //Socialive
+                  'linear-gradient(to right, #eb3349, #f45c43)', //Cherry
+                  'linear-gradient(to right, #dd5e89, #f7bb97)', //Pinky
+                  'linear-gradient(to right, #56ab2f, #a8e063)', //Lush
+                  'linear-gradient(to right, #614385, #516395)', //Kashmir
+                  'linear-gradient(to right, #42275a, #734b6d)', //Mauve
+                  'linear-gradient(to right, #bdc3c7, #2c3e50)', //50 Shades of gray
+                  'linear-gradient(to right, #de6262, #ffb88c)', //A Lost Memory
+                  'linear-gradient(to right, #06beb6, #48b1bf)', //Socialive
+                  ];
  let num = Math.floor(Math.random() * gradients.length);
  let ran = gradients[num];
  let num2 = Math.floor(Math.random() * gradients.length);
