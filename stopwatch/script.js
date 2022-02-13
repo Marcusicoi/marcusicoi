@@ -3,6 +3,7 @@
     const start = document.getElementById('startbutton');
     const stop = document.getElementById('pausebutton');
     const reset = document.getElementById('resetbutton'); 
+    const useless = document.getElementById('randombutton');
     //Define Variables
     var dy = 0, hr = 0, min = 0, sec = 0, stoptime = true;
     //Start the stopwatch
@@ -70,6 +71,26 @@ function resetStopwatch() {
     stoptime = true;
     sec = 0; min = 0; hr = 0; dy = 0;
 };
+function randomGradient() {
+ let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', 
+                  'linear-gradient(to right, #2193b0, #6dd5ed)',
+                  'linear-gradient(to right, #cc2b5e, #753a88)', 
+                  'linear-gradient(to right, #ee9ca7, #ffdde1)',
+                  'linear-gradient(to right, #42275a, #734b6d)', 
+                  'linear-gradient(to right, #bdc3c7, #2c3e50)',
+                  'linear-gradient(to right, #de6262, #ffb88c)', 
+                  'linear-gradient(to right, #06beb6, #48b1bf)',];
+ let num = Math.floor(Math.random() * gradients.length);
+ let ran = gradients[num];
+ timer.getElementsByClassName('day')[0].style.color = 'white'
+ timer.getElementsByClassName('day')[0].style.background = ran;
+ timer.getElementsByClassName('hour')[0].style.color = 'white'
+ timer.getElementsByClassName('hour')[0].style.background = ran;
+ timer.getElementsByClassName('minute')[0].style.color = 'white'
+ timer.getElementsByClassName('minute')[0].style.background = ran;
+ timer.getElementsByClassName('second')[0].style.color = 'white'
+ timer.getElementsByClassName('second')[0].style.background = ran;
+}
 //Make the two buttons invisible
 stop.style.visibility = 'hidden';
 reset.style.visibility = 'hidden';
@@ -78,7 +99,7 @@ start.onclick = function() {
   stop.style.visibility = 'visible';
   reset.style.visibility = 'visible';
   start.style.visibility = 'hidden';
-  startStopwatch(); randomGradient();
+  startStopwatch();
 };
 stop.onclick = function() {
   if (start.innerHTML === 'Start') {start.innerHTML = 'Resume'};
@@ -93,18 +114,4 @@ reset.onclick = function() {
   start.style.visibility = 'visible';
   resetStopwatch();
 }; 
-
-function randomGradient(classname) {
- let gradients = ['linear-gradient(to right, #ffafbd, #ffc3a0)', 
-                  'linear-gradient(to right, #2193b0, #6dd5ed)',
-                  'linear-gradient(to right, #cc2b5e, #753a88)', 
-                  'linear-gradient(to right, #ee9ca7, #ffdde1)',
-                  'linear-gradient(to right, #42275a, #734b6d)', 
-                  'linear-gradient(to right, #bdc3c7, #2c3e50)',
-                  'linear-gradient(to right, #de6262, #ffb88c)', 
-                  'linear-gradient(to right, #06beb6, #48b1bf)',];
- let num = Math.floor(Math.random() * gradients.length);
- let ran = gradients[num];
- timer.getElementsByClassName(classname)[0].style.color = 'white'
- timer.getElementsByClassName(classname)[0].style.background = ran;
-}
+useless.onclick = function() {randomGradient()};
