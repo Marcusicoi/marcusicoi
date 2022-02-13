@@ -1,5 +1,13 @@
-i knew it! the bet was right! i know your gonna check the source of this project because the html is too fancy
+click any file if gay
 
-btw watcha doin here boy
+view the source code if straight
 
-damn hes viewing files
+remix if dreamsexual
+
+look at the website if straight
+
+copy code with credit if straight
+
+copy code without credit if dreamsexual
+
+pick one.

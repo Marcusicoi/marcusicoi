@@ -109,6 +109,14 @@ function randomGradient() {
                   'linear-gradient(to right, #eacda3, #d6ae7b)', //Pale Wood
            'linear-gradient(to bottom right, #02aab0, #00cdac)', //Green Beach
                   'linear-gradient(to right, #d66d75, #e29587)', //Sha La La
+                  'linear-gradient(to right, #000428, #004e92)', //Frost
+                  'linear-gradient(to right, #ddd6fe, #faaca8)', //Almost
+                  'linear-gradient(to right, #7b4397, #dc2430)', //Virgin America
+                  'linear-gradient(to right, #43cea2, #185a9d)', //Endless River
+                  'linear-gradient(to right, #ba5370, #f4e2d8)', //Purple White
+                  'linear-gradient(to right, #ff512f, #2c3e50)', //50 Shades of gray
+                  'linear-gradient(to right, #de6262, #ffb88c)', //A Lost Memory
+                  'linear-gradient(to right, #06beb6, #48b1bf)', //Socialive
                   ];
  let num = Math.floor(Math.random() * gradients.length);
  let ran = gradients[num];
