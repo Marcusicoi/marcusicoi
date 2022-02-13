@@ -1,7 +1,7 @@
 //Tile number generator.
 //Always get the ids xD
-const gen = document.getElementById("generate");
-const text = document.getElementById("text");
+const gen = document.getElementById('generate');
+const text = document.getElementById('text');
 //Define some variables
 var num = Math.floor(Math.random() * 999),
 ones = ['U', 'D', 'T', 'q', 'Q', 's', 'S', 'O', 'N'],
@@ -19,3 +19,8 @@ septillions = ['Zep', 'DZep', 'TZep', 'qZep', 'QZep', 'sZep', 'SZep', 'OZep', 'N
 octillions = ['Yoc', 'DYoc', 'TYoc', 'qYoc', 'QYoc', 'sYoc', 'SYoc', 'OYoc', 'NYoc'],
 nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NXon'],
 decillions = ['Myr', 'Dyr', 'Tyr', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'];
+//Variables again
+var random = Math.floor(Math.random() * 2)
+//"if"
+if (random = 1) {text.innerHTML = Math.floor(Math.random() * ones.length)};
+gen.onclick = function() {document.getElementById('generate').innerHTML = 'test'};

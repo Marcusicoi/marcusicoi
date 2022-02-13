@@ -189,8 +189,3 @@ reset.onclick = function() {
 //Use the randomGradient function while the website is onload
 window.onload = function() {randomGradient()};
 
-//Variables again
-var random = Math.floor(Math.random() * 2)
-//"if"
-if (random = 1) {text.innerHTML = Math.floor(Math.random() * ones.length)};
-gen.onclick = random;
