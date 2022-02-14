@@ -3,11 +3,7 @@
 const gen = document.getElementById('generate');
 const text = document.getElementById('text');
 //Define some variables
-var number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
-ranum = Math.floor(Math.random() * number.length), 
-ranum2 = Math.floor(Math.random() * number.length), 
-ranum3 = Math.floor(Math.random() * number.length), 
-num = ranum,ranum2,ranum3,
+var num = Math.floor(Math.random() * 999),
 ones = ['U', 'D', 'T', 'q', 'Q', 's', 'S', 'O', 'N'],
 ones2 = ['M', 'B', 'T', 'q', 'Q', 's', 'S', 'O', 'N'],
 tens = ['D', 'V', 'TR', 'QU', 'QI', 'Sx', 'Sp', 'Oc', 'No'],
