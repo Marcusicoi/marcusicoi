@@ -2,6 +2,7 @@
 //Always get the ids xD
 const gen = document.getElementById('generate');
 const gen2 = document.getElementById('generate2').value;
+const but = document.getElementById('button');
 const text = document.getElementById('text');
 //Define some variables
 var num = Math.floor(Math.random() * 999),
@@ -22,7 +23,7 @@ nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NX
 decillions = ['Vec', 'DVec', 'TVec', 'qVec', 'QVec', 'sVec', 'SVec', 'OVec', 'NVec'];
 function textResult() {
 //Random Variables
-var random = Math.floor(Math.random() * 2),
+var random = Math.floor(Math.random() * 65),
 o2ran = ones2[Math.floor(Math.random() * ones2.length)],
 oran = ones[Math.floor(Math.random() * ones.length)],
 tran = tens[Math.floor(Math.random() * tens.length)],
@@ -39,8 +40,7 @@ o3ran = octillions[Math.floor(Math.random() * octillions.length)],
 nran = nonillions[Math.floor(Math.random() * nonillions.length)],
 dran = decillions[Math.floor(Math.random() * decillions.length)];
 //"if"
-if (
-if (random === 1) {text.innerHTML = num + dran + nran + o3ran + s2ran + sran + q2ran + qran + t3ran + bran + mran + t2ran + oran + tran + hran};/*
+if (random === 1) {text.innerHTML = num};
 if (random === 2) {text.innerHTML = num + o2ran};
 if (random === 3) {text.innerHTML = num + tran};
 if (random === 4) {text.innerHTML = num + oran + tran};
@@ -102,6 +102,8 @@ if (random === 59) {text.innerHTML = num + bran + mran + t2ran + oran + tran};
 if (random === 60) {text.innerHTML = num + bran + mran + t2ran + hran};
 if (random === 61) {text.innerHTML = num + bran + mran + t2ran + oran + hran};
 if (random === 62) {text.innerHTML = num + bran + mran + t2ran + tran + hran};
-if (random === 63) {text.innerHTML = num + bran + mran + t2ran + oran + tran + hran};*/
+if (random === 63) {text.innerHTML = num + bran + mran + t2ran + oran + tran + hran};
 }
 gen.onclick = function() {textResult()};
+function textResult2() {
+if (gen2 === "arras") {text.innerHTML = 
