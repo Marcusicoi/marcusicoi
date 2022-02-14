@@ -29,9 +29,16 @@ hran = hundreds[Math.floor(Math.random() * hundreds.length)],
 t2ran = thousands[Math.floor(Math.random() * thousands.length)],
 mran = millions[Math.floor(Math.random() * millions.length)],
 bran = billions[Math.floor(Math.random() * billions.length)],
-t3ran = trillions[Math.floor(Math.random() * trillions.length)];
+t3ran = trillions[Math.floor(Math.random() * trillions.length)],
+qran = quadrillions[Math.floor(Math.random() * quadrillions.length)],
+q2ran = quintillions[Math.floor(Math.random() * quintillions.length)],
+sran = sextillions[Math.floor(Math.random() * sextillions.length)],
+s2ran = septillions[Math.floor(Math.random() *  septillions.length)],
+o3ran = octillions[Math.floor(Math.random() * octillions.length)],
+nran = nonillions[Math.floor(Math.random() * nonillions.length)],
+dran = decillions[Math.floor(Math.random() * decillions.length)];
 //"if"
-if (random === 1) {text.innerHTML = num};
+if (random === 1) {text.innerHTML = num + dran + nran + o3ran + s2ran + sran + q2ran + qran + t3ran + bran + mran + t2ran + h;/*
 if (random === 2) {text.innerHTML = num + o2ran};
 if (random === 3) {text.innerHTML = num + tran};
 if (random === 4) {text.innerHTML = num + oran + tran};
@@ -93,6 +100,6 @@ if (random === 59) {text.innerHTML = num + bran + mran + t2ran + oran + tran};
 if (random === 60) {text.innerHTML = num + bran + mran + t2ran + hran};
 if (random === 61) {text.innerHTML = num + bran + mran + t2ran + oran + hran};
 if (random === 62) {text.innerHTML = num + bran + mran + t2ran + tran + hran};
-if (random === 63) {text.innerHTML = num + bran + mran + t2ran + oran + tran + hran};
+if (random === 63) {text.innerHTML = num + bran + mran + t2ran + oran + tran + hran};*/
 }
 gen.onclick = function() {textResult()};
