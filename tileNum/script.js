@@ -79,37 +79,7 @@ ov = octovigintillions[Math.floor(Math.random() * octovigintillions.length)],
 nv = novemvigintillions[Math.floor(Math.random() * novemvigintillions.length)],
 tr = trigintillions[Math.floor(Math.random() * trigintillions.length)],
 utr = untrigintillions[Math.floor(Math.random() * untrigintillions.length)];
+let num2 = 1;
 text.innerHTML = (text.innerHTML * 2);
-  //num + utr + tr + nv + ov + Sv + sv + Qv + qv + tv + dv + uv + v + nd + od + Sd + sd + Qd + qd + td + dd + ud + d + n + O + S + s + Q + q + tri + b + m + k + o + t + h;
-function createAbbreviation(x,m){
-  var stages = [decillions];
-  var main = ones[x%10] + tens[Math.floor(x/10)%10] + hundreds[Math.floor(x/100)%10];
-  if(m == 0){
-    if(x < 10){
-      return o2ran[x]
-    } else if(x < 1000){
-      return main;
-    } else {
-      return createAbbreviation(Math.floor(x/1000),m+1) + main;
-    }
-  }
-  if(m > 0){
-    if(x == 1){
-      return stages[m]
-    } else if(x < 1000) {
-      return main + stages[m];
-    } else {
-      return createAbbreviation(Math.floor(x/1000),m+1) + main + stages[m];
-    }
-  }
-}
-function createNumber(tl){
-  var lt = tl*Math.log10(2);
-  if(tl < 70){
-    return 2**tl;
-  } else {
-    return Math.floor(10**(lt%3))+createAbbreviation(Math.floor(lt/3-1),0);
-  }
-}
 }
 gen.onclick = function() {textResult();};
