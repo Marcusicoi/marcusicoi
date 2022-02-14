@@ -20,7 +20,12 @@ nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NX
 decillions = ['Vec', 'DVec', 'TVec', 'qVec', 'QVec', 'sVec', 'SVec', 'OVec', 'NVec'],
 undecillions = ['Mec', 'DMec', 'TMec', 'qMec', 'QMec', 'sMec', 'SMec', 'OMec', 'NMec'],
 duodecillions = ['Duec', 'DDuec', 'TDuec', 'qDuec', 'QDuec', 'sDuec', 'SDuec', 'ODuec', 'NDuec'],
-tredecillions = ['M', 'D', 'T', 'q', 'Q', 's', 'S', 'O', 'N'],
+tredecillions = ['Trec', 'DTrec', 'TTrec', 'qTrec', 'QTrec', 'sTrec', 'STrec', 'OTrec', 'NTrec'],
+quattuordecillions = ['Tetc', 'DTetc', 'TTetc', 'qTetc', 'QTetc', 'sTetc', 'STetc', 'OTetc', 'NTetc'],
+quintdecillions = ['Penc', 'DPenc', 'TPenc', 'qPenc', 'QPenc', 'sPenc', 'SPenc', 'OPenc', 'NPenc'],
+sexdecillions = ['Hexc', 'DHexc', 'THexc', 'qHexc', 'QHexc', 'sHexc', 'SHexc', 'OHexc', 'NHexc'],
+septemdecillions = ['Hepc', 'DHepc', 'THepc', 'qHepc', 'QHepc', 'sHepc', 'SHepc', 'OHepc', 'NHepc'],
+octodecillions = ['Octc', 'DOctc', 'T', 'q', 'Q', 's', 'S', 'O', 'N'],
 
 function textResult() {
 //Random Variables
