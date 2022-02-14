@@ -21,7 +21,7 @@ nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NX
 decillions = ['Myr', 'Dyr', 'Tyr', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'];
 function textResult() {
 //Random Variables
-var random = Math.floor(Math.random() * 33),
+var random = Math.floor(Math.random() * 64),
 o2ran = ones2[Math.floor(Math.random() * ones2.length)],
 oran = ones[Math.floor(Math.random() * ones.length)],
 tran = tens[Math.floor(Math.random() * tens.length)],
@@ -62,5 +62,36 @@ if (random === 29) {text.innerHTML = num + mran + t2ran + hran};
 if (random === 30) {text.innerHTML = num + mran + t2ran + oran + hran};
 if (random === 31) {text.innerHTML = num + mran + t2ran + tran + hran};
 if (random === 32) {text.innerHTML = num + mran + t2ran + oran + tran + hran};
+if (random === 33) {text.innerHTML = num + bran + oran};
+if (random === 34) {text.innerHTML = num + bran + tran};
+if (random === 35) {text.innerHTML = num + bran + oran + tran};
+if (random === 36) {text.innerHTML = num + bran + hran};;
+if (random === 37) {text.innerHTML = num + bran + oran + hran};
+if (random === 38) {text.innerHTML = num + bran + tran + hran};
+if (random === 39) {text.innerHTML = num + bran + oran + tran + hran};
+if (random === 40) {text.innerHTML = num + bran + t2ran};
+if (random === 41) {text.innerHTML = num + bran + t2ran + oran};
+if (random === 42) {text.innerHTML = num + bran + t2ran + tran};
+if (random === 43) {text.innerHTML = num + bran + t2ran + oran + tran};
+if (random === 44) {text.innerHTML = num + bran + t2ran + hran};
+if (random === 45) {text.innerHTML = num + bran + t2ran + oran + hran};
+if (random === 46) {text.innerHTML = num + bran + t2ran + tran + hran};
+if (random === 47) {text.innerHTML = num + bran + t2ran + oran + tran + hran};
+if (random === 48) {text.innerHTML = num + bran + mran};
+if (random === 49) {text.innerHTML = num + bran + mran + oran};
+if (random === 50) {text.innerHTML = num + bran + mran + tran};
+if (random === 51) {text.innerHTML = num + bran + mran + oran + tran};
+if (random === 52) {text.innerHTML = num + bran + mran + hran};
+if (random === 53) {text.innerHTML = num + bran + mran + oran + hran};
+if (random === 54) {text.innerHTML = num + bran + mran + tran + hran};
+if (random === 55) {text.innerHTML = num + bran + mran + oran + tran + hran};
+if (random === 56) {text.innerHTML = num + bran + mran + t2ran};
+if (random === 57) {text.innerHTML = num + bran + mran + t2ran + oran};
+if (random === 58) {text.innerHTML = num + bran + mran + t2ran + tran};
+if (random === 59) {text.innerHTML = num + bran + mran + t2ran + oran + tran};
+if (random === 60) {text.innerHTML = num + bran + mran + t2ran + hran};
+if (random === 61) {text.innerHTML = num + bran + mran + t2ran + oran + hran};
+if (random === 62) {text.innerHTML = num + bran + mran + t2ran + tran + hran};
+if (random === 63) {text.innerHTML = num + bran + mran + t2ran + oran + tran + hran};
 }
 gen.onclick = function() {textResult()};
