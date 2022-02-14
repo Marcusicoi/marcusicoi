@@ -25,7 +25,12 @@ quattuordecillions = ['Tetc', 'DTetc', 'TTetc', 'qTetc', 'QTetc', 'sTetc', 'STet
 quintdecillions = ['Penc', 'DPenc', 'TPenc', 'qPenc', 'QPenc', 'sPenc', 'SPenc', 'OPenc', 'NPenc'],
 sexdecillions = ['Hexc', 'DHexc', 'THexc', 'qHexc', 'QHexc', 'sHexc', 'SHexc', 'OHexc', 'NHexc'],
 septemdecillions = ['Hepc', 'DHepc', 'THepc', 'qHepc', 'QHepc', 'sHepc', 'SHepc', 'OHepc', 'NHepc'],
-octodecillions = ['Octc', 'DOctc', 'T', 'q', 'Q', 's', 'S', 'O', 'N'],
+octodecillions = ['Octc', 'DOctc', 'TOctc', 'qOctc', 'QOctc', 'sOctc', 'SOctc', 'OOctc', 'NOctc'],
+novemdecillions = ['Ennc', 'DEnnc', 'TEnnc', 'qEnnc', 'QEnnc', 'sEnnc', 'SEnnc', 'OEnnc', 'NEnnc'],
+vigintillions = ['Icos', 'DIcos', 'TIcos', 'qIcos', 'QIcos', 'sIcos', 'SIcos', 'OIcos', 'NIcos'],
+unvigintillions = ['Dico', 'DDico', 'TDico', 'qDico', 'QDico', 'sDico', 'SDico', 'ODico', 'NDico'],
+duovigintillions = ['Trio', 'DTrio', 'TTrio', 'qTrio', 'QTrio', 'sTrio', 'STrio', 'OTrio', 'NTrio'],
+trevigintillions = ['Teto', 'DTeto', 'TTeto', 'qTeto', 'QTeto', 'sTeto', 'STeto', 'OTeto', 'NTeto'],
 
 function textResult() {
 //Random Variables
