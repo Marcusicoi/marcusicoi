@@ -21,7 +21,7 @@ nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NX
 decillions = ['Myr', 'Dyr', 'Tyr', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'];
 function textResult() {
 //Random Variables
-var random = Math.floor(Math.random() * 127),
+var random = Math.floor(Math.random() * 2),
 o2ran = ones2[Math.floor(Math.random() * ones2.length)],
 oran = ones[Math.floor(Math.random() * ones.length)],
 tran = tens[Math.floor(Math.random() * tens.length)],
@@ -38,7 +38,7 @@ o3ran = octillions[Math.floor(Math.random() * octillions.length)],
 nran = nonillions[Math.floor(Math.random() * nonillions.length)],
 dran = decillions[Math.floor(Math.random() * decillions.length)];
 //"if"
-if (random === 1) {text.innerHTML = num + dran + nran + o3ran + s2ran + sran + q2ran + qran + t3ran + bran + mran + t2ran + h;/*
+if (random === 1) {text.innerHTML = num + dran + nran + o3ran + s2ran + sran + q2ran + qran + t3ran + bran + mran + t2ran + oran + tran + hran};/*
 if (random === 2) {text.innerHTML = num + o2ran};
 if (random === 3) {text.innerHTML = num + tran};
 if (random === 4) {text.innerHTML = num + oran + tran};
