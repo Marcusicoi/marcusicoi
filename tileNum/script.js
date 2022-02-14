@@ -35,6 +35,10 @@ quattuorvigintillions = ['Peno', 'DPeno', 'TPeno', 'qPeno', 'QPeno', 'sPeno', 'S
 quintvigintillions = ['Hexo', 'DHexo', 'THexo', 'qHexo', 'QHexo', 'sHexo', 'SHexo', 'OHexo', 'NHexo'],
 sexvigintillions = ['Hepto', 'DHepto', 'THepto', 'qHepto', 'QHepto', 'sHepto', 'SHepto', 'OHepto', 'NHepto'],
 septemvigintillions = ['Octic', 'DOctic', 'TOctic', 'qOctic', 'QOctic', 'sOctic', 'SOctic', 'OOctic', 'NOctic'],
+octovigintillions = ['Ennic', 'DEnnic', 'TEnnic', 'qEnnic', 'QEnnic', 'sEnnic', 'SEnnic', 'OEnnic', 'NEnnic'],
+novemvigintillions = ['Trico', 'DTrico', 'TTrico', 'qTrico', 'QTrico', 'sTrico', 'STrico', 'OTrico', 'NTrico'],
+trigintillions = ['Metco', 'DMetco', 'TMetco', 'qMetco', 'QMecto', 'sMecto', 'SMecto', 'OMecto', 'NMecto'],
+untrigintillions = ['Dueco', 'DDueco', 'TDueco', 'qDueco', 'QDueco', 'sDueco', 'SDueco', 'ODueco', 'NDueco'],
 
 function textResult() {
 //Random Variables
