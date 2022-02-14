@@ -1,6 +1,7 @@
 //Tile number generator.
 //Always get the ids xD
 const gen = document.getElementById('generate');
+const gen2 = document.getElementById('generate2').value;
 const text = document.getElementById('text');
 //Define some variables
 var num = Math.floor(Math.random() * 999),
@@ -38,6 +39,7 @@ o3ran = octillions[Math.floor(Math.random() * octillions.length)],
 nran = nonillions[Math.floor(Math.random() * nonillions.length)],
 dran = decillions[Math.floor(Math.random() * decillions.length)];
 //"if"
+if (
 if (random === 1) {text.innerHTML = num + dran + nran + o3ran + s2ran + sran + q2ran + qran + t3ran + bran + mran + t2ran + oran + tran + hran};/*
 if (random === 2) {text.innerHTML = num + o2ran};
 if (random === 3) {text.innerHTML = num + tran};
