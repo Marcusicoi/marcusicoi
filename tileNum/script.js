@@ -19,9 +19,28 @@ septillions = ['Zep', 'DZep', 'TZep', 'qZep', 'QZep', 'sZep', 'SZep', 'OZep', 'N
 octillions = ['Yoc', 'DYoc', 'TYoc', 'qYoc', 'QYoc', 'sYoc', 'SYoc', 'OYoc', 'NYoc'],
 nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NXon'],
 decillions = ['Myr', 'Dyr', 'Tyr', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'];
+function textResult() {
 //Random Variables
-var random = Math.floor(Math.random() * 2),
-o2ran = ones2[Math.floor(Math.random() * ones2.length)];
+var random = Math.floor(Math.random() * 15),
+o2ran = ones2[Math.floor(Math.random() * ones2.length)],
+oran = ones[Math.floor(Math.random() * ones.length)],
+tran = tens[Math.floor(Math.random() * tens.length)],
+hran = hundreds[Math.floor(Math.random() * hundreds.length)],
+t2ran = thousands[Math.floor(Math.random() * thousands.length)];
 //"if"
 if (random = 1) {text.innerHTML = o2ran};
-gen.onclick = function() {random};
+if (random = 2) {text.innerHTML = tran};
+if (random = 3) {text.innerHTML = oran + tran};
+if (random = 4) {text.innerHTML = hran};;
+if (random = 5) {text.innerHTML = oran + hran};
+if (random = 6) {text.innerHTML = tran + hran};
+if (random = 7) {text.innerHTML = oran + tran + hran};
+if (random = 8) {text.innerHTML = t2ran};
+if (random = 9) {text.innerHTML = t2ran + oran};
+if (random = 10) {text.innerHTML = t2ran + tran};
+if (random = 11) {text.innerHTML = t2ran + hran};
+if (random = 12) {text.innerHTML = t2ran + hran + oran};
+if (random = 13) {text.innerHTML = t2ran + hran + tran};
+if (random = 14) {text.innerHTML = t2ran + hran + tran + oran};
+}
+gen.onclick = function() {textResult()};
