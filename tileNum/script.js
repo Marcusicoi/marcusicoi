@@ -21,26 +21,41 @@ nonillions = ['Xon', 'DXon', 'TXon', 'qXon', 'QXon', 'sXon', 'SXon', 'OXon', 'NX
 decillions = ['Myr', 'Dyr', 'Tyr', 'qyr', 'Qyr', 'syr', 'Syr', 'Oyr', 'Nyr'];
 function textResult() {
 //Random Variables
-var random = Math.floor(Math.random() * 15),
+var random = Math.floor(Math.random() * 30),
 o2ran = ones2[Math.floor(Math.random() * ones2.length)],
 oran = ones[Math.floor(Math.random() * ones.length)],
 tran = tens[Math.floor(Math.random() * tens.length)],
 hran = hundreds[Math.floor(Math.random() * hundreds.length)],
-t2ran = thousands[Math.floor(Math.random() * thousands.length)];
+t2ran = thousands[Math.floor(Math.random() * thousands.length)],
+mran = millions[Math.floor(Math.random() * millions.length)],
+bran = billions[Math.floor(Math.random() * billions.length)];
 //"if"
-if (random = 1) {text.innerHTML = o2ran};
-if (random = 2) {text.innerHTML = tran};
-if (random = 3) {text.innerHTML = oran + tran};
-if (random = 4) {text.innerHTML = hran};;
-if (random = 5) {text.innerHTML = oran + hran};
-if (random = 6) {text.innerHTML = tran + hran};
-if (random = 7) {text.innerHTML = oran + tran + hran};
-if (random = 8) {text.innerHTML = t2ran};
-if (random = 9) {text.innerHTML = t2ran + oran};
-if (random = 10) {text.innerHTML = t2ran + tran};
-if (random = 11) {text.innerHTML = t2ran + hran};
-if (random = 12) {text.innerHTML = t2ran + hran + oran};
-if (random = 13) {text.innerHTML = t2ran + hran + tran};
-if (random = 14) {text.innerHTML = t2ran + hran + tran + oran};
+if (random === 1) {text.innerHTML = num};
+if (random === 2) {text.innerHTML = num + o2ran};
+if (random === 3) {text.innerHTML = num + tran};
+if (random === 4) {text.innerHTML = num + oran + tran};
+if (random === 5) {text.innerHTML = num + hran};;
+if (random === 6) {text.innerHTML = num + oran + hran};
+if (random === 7) {text.innerHTML = num + tran + hran};
+if (random === 8) {text.innerHTML = num + oran + tran + hran};
+if (random === 9) {text.innerHTML = num + t2ran};
+if (random === 10) {text.innerHTML = num + t2ran + oran};
+if (random === 11) {text.innerHTML = num + t2ran + tran};
+if (random === 12) {text.innerHTML = num + t2ran + oran + tran};
+if (random === 13) {text.innerHTML = num + t2ran + hran};
+if (random === 14) {text.innerHTML = num + t2ran + oran + hran};
+if (random === 15) {text.innerHTML = num + t2ran + tran + hran};
+if (random === 16) {text.innerHTML = num + t2ran + oran + tran + hran};
+if (random === 2) {text.innerHTML = num + mran};
+if (random === 2) {text.innerHTML = num + mran + oran};
+if (random === 2) {text.innerHTML = num + mran + tran};
+if (random === 2) {text.innerHTML = num + mran + oran + tran};
+if (random === 2) {text.innerHTML = num + mran + hran};
+if (random === 2) {text.innerHTML = num + mran + oran + hran};
+if (random === 2) {text.innerHTML = num + mran + tran + hran};
+if (random === 2) {text.innerHTML = num + mran + oran + tran + hran};
+if (random === 2) {text.innerHTML = num + mran + t2ran};
+if (random === 2) {text.innerHTML = num + mran + oran + t2ran};
+if (random === 2) {text.innerHTML = num + o2ran};
 }
 gen.onclick = function() {textResult()};
