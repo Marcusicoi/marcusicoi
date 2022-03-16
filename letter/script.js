@@ -8,12 +8,16 @@ consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', '
 //Third, Functions.
 function Generate() {
 //Randomize the letters
-let ranv = vowels[Math.floor(Math.random() * vowels.length)],
-ranc = consonants[Math.floor(Math.random() * consonants.length)],
+let ranv = Math.floor(Math.random() * vowels.length),
+ranc = Math.floor(Math.random() * consonants.length),
 vandc = [vowels, consonants],
-letter = vandc[Math.floor(Math.random() * vandc.length)];
-//Make another function that manages how many characters
-function Characters(id, value) {
-if (
-  
-  
+letter = Math.floor(Math.random() * vandc.length);
+//Make another function that manages the text and the input
+function Text() {
+//First, Let's generate vowels and consonants based of characters
+let value = input.value;
+let result = "";
+for (let i; i != count; i++) result += value;
+text.innerHTML = result
+//Second, Let's now fix the unpronounceable letters
+if (result = vowels[1] + 
