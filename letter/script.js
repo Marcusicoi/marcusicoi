@@ -17,7 +17,8 @@ function Text() {
 //First, Let's generate vowels and consonants based of characters
 let value = input.value;
 let result = "";
-for (let i; i != count; i++) result += value;
+for (let i; i != value; i++) result += vandc[letter];
 text.innerHTML = result
 //Second, Let's now fix the unpronounceable letters
-if (result = vowels[1] + 
+if (result = vowels[1] + vowels[ranv]) result = "";
+}}
