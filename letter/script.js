@@ -8,5 +8,9 @@ consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', '
 function Generate() {
 //Randomize the letters
 let ranv = vowels[Math.floor(Math.random() * vowels.length)],
-ranc = consonants[Math.floor(Math.random() * consonants.length)];.
+ranc = consonants[Math.floor(Math.random() * consonants.length)],
+vandc = [vowels, consonants],
+letter = vandc[Math.floor(Math.random() * vandc.length)];
+//Text
+text.innerHTML = 
 //Convert it
