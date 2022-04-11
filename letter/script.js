@@ -9,15 +9,15 @@ const word4 = document.getElementById("fourthword");
 const word5 = document.getElementById("fifthword");
 //Second, define the variables.
 var words = [word1, word2, word3, word4, word5];
-var ran1 = words[Math.floor(Math.random() * 5)];
-var ran2 = words[Math.floor(Math.random() * 5)];
-var ran3 = words[Math.floor(Math.random() * 5)];
-var ran4 = words[Math.floor(Math.random() * 5)];
-var ran5 = words[Math.floor(Math.random() * 5)];
+var ran1 = words[Math.floor(Math.random() * words.length)];
+var ran2 = words[Math.floor(Math.random() * words.length)];
+var ran3 = words[Math.floor(Math.random() * words.length)];
+var ran4 = words[Math.floor(Math.random() * words.length)];
+var ran5 = words[Math.floor(Math.random() * words.length)];
 //Thrid, functions.
 function generate() {
-  let num = "ran" + numbers[Math.floor(Math.random() * 5)];
-  let ran = "word" + num;
+  let o = [ran1, ran2, ran3, ran4, ran5];
+  let ran = o[Math.floor(Math.random() * o.length)];
   let result = "";
   for (let i = 0; i != input.value; i++) { result += ran }
   text.innerHTML = result;
