@@ -2,23 +2,19 @@
 const text = document.getElementById("text");
 const gen = document.getElementById("button");
 const input = document.getElementById("input");
-//Second, Define the variables.
-var vowels = ['a', 'e', 'i', 'o', 'u'],
-consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];  
-//Third, Functions.
-function Generate() {
-//Randomize the letters
-let ranv = Math.floor(Math.random() * vowels.length),
-ranc = Math.floor(Math.random() * consonants.length),
-vandc = [vowels, consonants],
-letter = Math.floor(Math.random() * vandc.length);
-//Make another function that manages the text and the input
-function Text() {
-//First, Let's generate vowels and consonants based of characters
-let value = input.value;
-let result = "";
-for (let i; i != value; i++) result += vandc[letter];
-text.innerHTML = result
-//Second, Let's now fix the unpronounceable letters
-if (result = vowels[1] + vowels[ranv]) result = "";
-}}
+const word1 = document.getElementById("firstword");
+const word2 = document.getElementById("secondword");
+const word3 = document.getElementById("thirdword");
+const word4 = document.getElementById("fourthword");
+const word5 = document.getElementById("fifthword");
+//Second, define the variables.
+var numbers = [1, 2, 3, 4, 5];
+var ran1 = numbers[Math.floor(Math.random() * 5)];
+var ran2 = numbers[Math.floor(Math.random() * 5)];
+var ran3 = numbers[Math.floor(Math.random() * 5)];
+var ran4 = numbers[Math.floor(Math.random() * 5)];
+var ran5 = numbers[Math.floor(Math.random() * 5)];
+//Thrid, functions.
+function generate() {
+  let num = ran + numbers[Math.floor(Math.random() * 5)];
+  
