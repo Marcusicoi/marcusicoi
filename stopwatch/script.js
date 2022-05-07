@@ -67,7 +67,7 @@
         timer.getElementsByClassName('hours')[0].innerHTML = hr;
         timer.getElementsByClassName('minutes')[0].innerHTML = min;
         timer.getElementsByClassName('seconds')[0].innerHTML = sec; 
-        setTimeout("stopwatchCycle()", 1000);
+        setInterval("stopwatchCycle()", ((0.0000000001 / 100000000) / 10000000));
     };
    }
 //Reset the stopwatch
