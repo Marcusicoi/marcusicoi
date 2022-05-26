@@ -89,9 +89,33 @@ function countUpFromTime(countFrom) {
   let num = Math.floor(Math.random() * gradients.length);
   let ran = gradients[num];
   document.body.style.background = ran; //4,16,30,33
-  if (gradients[4]) {
-    document.getElementsByClassName('text')[0].style.color = "white";
-    document.getElementsByClassName('text')[1].style.color = "white";
-    document.getElementsByClassName('text')[2].style.color = "white";
-    document.getElementsByClassName('text')[3].style.color = "white";
-  }}
+  document.getElementsByClassName('text').style.color = "white";
+  }
+var min = 0, sec = 0, dec = 0, cen = 0, mil = 0, stoptime = true;
+    //Start the stopwatch
+    function startStopwatch() {
+      if (stoptime == true) {
+          stoptime = false;
+          stopwatchCycle(); 
+      }
+    };
+    //Stop the stopwatch
+    function stopStopwatch() {
+      if (stoptime == false) {
+          stoptime = true;
+      }
+    };
+    //Stopwatch Cycle
+    function stopwatchCycle() {
+    if (stoptime == false) {
+        min = parseInt(min);
+        sec = parseInt(sec);
+        dec = parseInt(dec);
+        cen = parseInt(cen);
+        mil = parseInt(mil);
+        min += 1;
+        //Time calculation
+        if (min == 10) {
+            cen += 1;
+            min = 0;
+        }
