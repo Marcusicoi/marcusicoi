@@ -147,4 +147,7 @@ var min = 0, dec2 = 0, sec = 0, dec = 0, cen = 0, mil = 0, stoptime = true;
             mil = 0;
         };
       //Set the timer
-      document.getElementById("timer").innerHTML = min + ":" + dec2 + sec
+      document.getElementById("timer").innerHTML = min + ":" + dec2 + sec + "." + dec + cen + mil;
+      setTimeout("stopwatchCycle()", 1);
+      }
+}
