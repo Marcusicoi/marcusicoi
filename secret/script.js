@@ -91,7 +91,7 @@ function countUpFromTime(countFrom) {
   document.body.style.background = ran; //4,16,30,33
   document.getElementsByClassName('text').style.color = "white";
   }
-var min = 0, dec2 = 0, sec = 0, dec = 0, cen = 0, mil = 0, stoptime = true;
+var min = 0, dec2 = 0, sec = 0, dec = 0, cen = 0, stoptime = true;
     //Start the stopwatch
     function startStopwatch() {
       if (stoptime == true) {
@@ -113,41 +113,39 @@ var min = 0, dec2 = 0, sec = 0, dec = 0, cen = 0, mil = 0, stoptime = true;
         sec = parseInt(sec);
         dec = parseInt(dec);
         cen = parseInt(cen);
-        mil = parseInt(mil);
-        min += 1;
+        cen += 1;
         //Time calculation
-        if (mil == 10) {
-            cen += 1;
-            mil = 0;
-        };
         if (cen == 10) {
             dec += 1;
             cen = 0;
-            mil = 0;
         };
         if (dec == 10) {
             sec += 1;
             dec = 0;
             cen = 0;
-            mil = 0;
         };
         if (sec == 10) {
             dec2 += 1;
             sec = 0;
             dec = 0;
             cen = 0;
-            mil = 0;
         };
-        if (dec == 6) {
+        if (dec2 == 6) {
             min += 1;
             dec2 = 0;
             sec = 0;
             dec = 0;
             cen = 0;
-            mil = 0;
         };
       //Set the timer
-      document.getElementById("timer").innerHTML = min + ":" + dec2 + sec + "." + dec + cen + mil;
-      setTimeout("stopwatchCycle()", 1);
+      document.getElementById("timer").innerHTML = min + ":" + dec2 + sec + "." + dec + cen;
+      setTimeout("stopwatchCycle()", 10);
       }
 }
+
+//Reset the stopwatch
+function resetStopwatch() {
+    document.getElementById("timer").innerHTML = "0:00.00"
+    stoptime = true;
+    min = 0, dec2 = 0, sec = 0, dec = 0, cen = 0;
+};
