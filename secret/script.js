@@ -89,63 +89,9 @@ function countUpFromTime(countFrom) {
   let num = Math.floor(Math.random() * gradients.length);
   let ran = gradients[num];
   document.body.style.background = ran; //4,16,30,33
-  document.getElementsByClassName('text').style.color = "white";
-  }
-var min = 0, dec2 = 0, sec = 0, dec = 0, cen = 0, stoptime = true;
-    //Start the stopwatch
-    function startStopwatch() {
-      if (stoptime == true) {
-          stoptime = false;
-          stopwatchCycle(); 
-      }
-    };
-    //Stop the stopwatch
-    function stopStopwatch() {
-      if (stoptime == false) {
-          stoptime = true;
-      }
-    };
-    //Stopwatch Cycle
-    function stopwatchCycle() {
-    if (stoptime == false) {
-        min = parseInt(min);
-        dec2 = parseInt(dec2);
-        sec = parseInt(sec);
-        dec = parseInt(dec);
-        cen = parseInt(cen);
-        cen += 1;
-        //Time calculation
-        if (cen == 10) {
-            dec += 1;
-            cen = 0;
-        };
-        if (dec == 10) {
-            sec += 1;
-            dec = 0;
-            cen = 0;
-        };
-        if (sec == 10) {
-            dec2 += 1;
-            sec = 0;
-            dec = 0;
-            cen = 0;
-        };
-        if (dec2 == 6) {
-            min += 1;
-            dec2 = 0;
-            sec = 0;
-            dec = 0;
-            cen = 0;
-        };
-      //Set the timer
-      document.getElementById("timer").innerHTML = min + ":" + dec2 + sec + "." + dec + cen;
-      setTimeout("stopwatchCycle()", 10);
-      }
-}
-
-//Reset the stopwatch
-function resetStopwatch() {
-    document.getElementById("timer").innerHTML = "0:00.00"
-    stoptime = true;
-    min = 0, dec2 = 0, sec = 0, dec = 0, cen = 0;
-};
+  if (gradients[4]) {
+    document.getElementsByClassName('text')[0].style.color = "white";
+    document.getElementsByClassName('text')[1].style.color = "white";
+    document.getElementsByClassName('text')[2].style.color = "white";
+    document.getElementsByClassName('text')[3].style.color = "white";
+  }}
