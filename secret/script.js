@@ -95,3 +95,25 @@ function countUpFromTime(countFrom) {
     document.getElementsByClassName('text')[2].style.color = "white";
     document.getElementsByClassName('text')[3].style.color = "white";
   }}
+////////////////////////////////////////////////
+var AllVersionTotal = 57;
+var BSVersionTotal = (AllVersionTotal - 7);
+var FLWSVersionTotal = (AllVersionTotal - 1);
+var sentries = (AllVersionTotal * 6);
+var bosses = (BSVersionTotal * 9);
+var celestials = (BSVersionTotal * 8);
+var eternals = (BSVersionTotal * 3);
+var woomysentries = (FLWSVersionTotal * 3 + 1);
+var woomyelites = (BSVersionTotal * 8);
+var reanimateds = (AllVersionTotal * 4 + 14);
+var fallens = (FLWSVersionTotal * 6 + 1);
+var splits = (BSVersionTotal * 3);
+var influxes = (BSVersionTotal * 10);
+var nests = (BSVersionTotal * 11);
+var specials = (BSVersionTotal * 17 + 21);
+var armies = (AllVersionTotal * 4);
+var tiers = (BSVersionTotal * 66 + 4);
+var awps = (BSVersionTotal * 26 + 12);
+var woomycelests = (BSVersionTotal * 9);
+var betas = (BSVersionTotal * 75 + 16);
+var devs = (BSVersionTotal * 12 + 13);
