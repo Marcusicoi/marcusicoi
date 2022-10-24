@@ -13,3 +13,4 @@ document.getElementById("C60BT1").onclick = function() {
       C60CH1.innerHTML = "60% " + "> " + (random + 1) + "%";
   }; 
 }
+//Many Petals
