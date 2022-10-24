@@ -14,3 +14,20 @@ document.getElementById("C60BT1").onclick = function() {
   }; 
 }
 //Many Petals
+document.getElementById("C60BT2").onclick = function() {
+  let C60IP2 = document.getElementById("C60IP2");
+  let C60SC2 = document.getElementById("C60SC2");
+  let C60FL2 = document.getElementById("C60FL2");
+  let C60FLA2 = Math.floor(Math.random() * 4);
+  let C60SCS2 = 0;
+  let C60FAL2 = 0;
+  if (59 > random) {
+      C60IP2.value - 5;
+      C60SCS2 = (C60SCS2 + 1);
+  } 
+  if (59 < random) {
+      C60IP2.value - C60FLA2;
+      C60FAL2 = (C60FAL2 + 1);
+  }; 
+  if (C60IP2.v
+}
