@@ -24,14 +24,12 @@ document.getElementById("C60BT2").onclick = function() {
   do {
   if (59 > random) {
       C60IP2.value = (C60IP2.value - 5);
-      C60SCS2 = (C60SCS2 + 1);
+      C60SCS2++;
   } 
   if (59 < random) {
       C60IP2.value = (C60IP2.value - (C60FLL2 + 1));
-      C60FAL2 = (C60FAL2 + 1);
-  } }
-  while (C60IP2.value < 5)
-  if (C60IP2.value < 5) {
+      C60FAL2++;
+  }
       C60SC2.innerHTML = "Successes: " + C60SCS2;
       C60FL2.innerHTML = "Fails: " + C60FAL2;
   }
