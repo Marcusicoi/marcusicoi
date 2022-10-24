@@ -23,11 +23,11 @@ document.getElementById("C60BT2").onclick = function() {
   let C60FAL2 = 0;
   do {
   if (59 > random) {
-      C60IP2.value - 5;
+      C60IP2.value = (C60IP2.value - 5);
       C60SCS2 = (C60SCS2 + 1);
   } 
   if (59 < random) {
-      C60IP2.value - (C60FLL2 + 1);
+      C60IP2.value = (C60IP2.value - (C60FLL2 + 1));
       C60FAL2 = (C60FAL2 + 1);
   } }
   while (C60IP2.value < 5)
