@@ -32,7 +32,6 @@ document.getElementById("C60BT2").onclick = function() {
       C60FAL2++;
   } }
   while (C60IP2.value < 5)
-  }
-      C60SC2.innerHTML = "Successes: " + C60SCS2;
+  } if (C60IP2.value < 5*      C60SC2.innerHTML = "Successes: " + C60SCS2;
       C60FL2.innerHTML = "Fails: " + C60FAL2;
 };
