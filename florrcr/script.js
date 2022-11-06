@@ -21,17 +21,19 @@ document.getElementById("C60BT2").onclick = function() {
   let C60FLL2 = Math.floor(Math.random() * 4);
   let C60SCS2 = 0;
   let C60FAL2 = 0;
-  if (C60IP2.value > 5) {
-  do {
-  if (59 > random) {
-      C60IP2.value = (C60IP2.value - 5);
-      C60SCS2++;
-  } 
-  if (59 < random) {
-      C60IP2.value = (C60IP2.value - (C60FLL2 + 1));
-      C60FAL2++;
+  function probability(n) {
+    return Math.random < n;
+  }
+  for (let i = 0; i < C60IP2.value; i++) {
+  if (probability(0.60)) {
+      C60IP2.value -= 5;
+      C60SCS2 += 1;
+  } else {
+      C60IP2.value -= (C60FLL2 + 1);
+      C60FAL2 += 1;
   } }
-  while (C60IP2.value < 5)
-  } if (C60IP2.value < 5*      C60SC2.innerHTML = "Successes: " + C60SCS2;
+  if (C60IP2.value < 5) {
+      C60SC2.innerHTML = "Successes: " + C60SCS2;
       C60FL2.innerHTML = "Fails: " + C60FAL2;
+  }
 };
