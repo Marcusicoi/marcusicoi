@@ -18,11 +18,12 @@ document.getElementById("C60BT2").onclick = function() {
   let C60IP2 = document.getElementById("C60IP2");
   let C60SC2 = document.getElementById("C60SC2");
   let C60FL2 = document.getElementById("C60FL2");
+  let C60SB2 = document.getElementById("C60SB2");
   let C60FLL2 = Math.floor(Math.random() * 4);
   let C60SCS2 = 0;
   let C60FAL2 = 0;
   function probability(n) {
-    return Math.random < n;
+    return Math.random() < n;
   }
   for (let i = 0; i < C60IP2.value; i++) {
   if (probability(0.60)) {
