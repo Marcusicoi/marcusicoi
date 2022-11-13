@@ -23,3 +23,9 @@ document.getElementById("button").onclick = function() {
    };
    result.innerHTML = choose(text.value) + " " + equation.join(" ");
 };
+document.getElementById("copybutton").onclick = function() {
+  result.select();
+  result.setSelectionRange(0, 8172);
+  navigator.clipboard.writeText(result);
+  alert("Copied equation");
+};
