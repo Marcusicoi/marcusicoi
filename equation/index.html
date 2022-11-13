@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="equation/script.js" defer></script>
   </head>
   <body>
     <!-- this is the start of content -->
@@ -22,21 +22,4 @@
     <a id="button" style="background:#0077ff">Submit</a>
     <h2 id="result"></h2>
   </body>
-  <script>
-   let text = document.getElementById("text");
-   let num = document.getElementById("amount");
-   let result = document.getElementById("result");
-   function choose(argument) {
-     return argument[Math.floor(Math.random() * argument.length];
-   };
-   document.getElementById("button").onclick = function() {
-      let op = ['=', '==', '===', '+', '++', '+=', '-', '--', '-=', '*', '**', '*=,' '/', '/=,' '%', '%=', '**=', '<<=', '<=', '<<', '<', '>', '>>', '>>>', '=>', '=>>', '=>>>', '&', '&&', '&=', '&&=', '^=', '|', '||', '|=', '||=', '!', '!=', '!==', '^', '~', '??'];
-      let equation = [];
-      for (let i = 0; i < amount; i++) {
-        equation.push(`${choose(variables)} ${choose(op)}`)
-      };
-      return choose(variables) + " " + equation.join(" ");
-    };
-   document.getElementById("button").onclick = function() { result.innerHTML = generate([text.value], num.value) };
-  </script>
 </html>
