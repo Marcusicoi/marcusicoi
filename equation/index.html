@@ -19,21 +19,24 @@
     <h2>Generates random nonsense equation</h2>
     <input type="text" id="text" placeholder="x, y, z, ..., i">
     <input type="number" id="amount" placeholder="1~100" min="1" max="100">
-    <button id="button">Submit</button>
+    <a id="button" style="background:#0077ff">Submit</a>
     <h2 id="result"></h2>
   </body>
   <script>
-   let text = document.getElementById("text").value;
-   let num = document.getElementById("amount").value;
+   let text = document.getElementById("text");
+   let num = document.getElementById("amount");
    let result = document.getElementById("result");
-    function generate(variables = [], amount) {
-      function choose(argument) {
-        return argument[Math.floor(Math.random() * argument.length];
-      };
+   function choose(argument) {
+     return argument[Math.floor(Math.random() * argument.length];
+   };
+   document.getElementById("button").onclick = function() {
       let op = ['=', '==', '===', '+', '++', '+=', '-', '--', '-=', '*', '**', '*=,' '/', '/=,' '%', '%=', '**=', '<<=', '<=', '<<', '<', '>', '>>', '>>>', '=>', '=>>', '=>>>', '&', '&&', '&=', '&&=', '^=', '|', '||', '|=', '||=', '!', '!=', '!==', '^', '~', '??'];
-      let equation = new Array(amount).fill(`${choose(text)} ${choose(op)}`);
-      return equation.join(" ");
+      let equation = [];
+      for (let i = 0; i < amount; i++) {
+        equation.push(`${choose(variables)} ${choose(op)}`)
+      };
+      return choose(variables) + " " + equation.join(" ");
     };
-   document.getElementById("button").onclick = function() { result.innerHTML = generate([text], num) };
+   document.getElementById("button").onclick = function() { result.innerHTML = generate([text.value], num.value) };
   </script>
 </html>
