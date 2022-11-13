@@ -3,17 +3,20 @@ const random = Math.floor(Math.random() * 100);
 function probability(n) {
   return Math.random() < (n / 100);
 }
+function oProbability(n) {
+  return Math.random() > (n / 100);
+}
 //C60R?1 TRNG
 document.getElementById("C60BT1").onclick = function() {
   let C60RS1 = document.getElementById("C60RS1");
   let C60CH1 = document.getElementById("C60CH1");
   if (probability(60)) {
       C60RS1.innerHTML = "Success!";
-      C60CH1.innerHTML = "60% " + "> " + (random + 1) + "%";
+      C60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
   } 
   if (probability(60)) {
       C60RS1.innerHTML = "Failed.";
-      C60CH1.innerHTML = "60% " + "> " + (random + 1) + "%";
+      C60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * (100 - 60) + 60)) + "%";
   }; 
 }
 //Many Petals
