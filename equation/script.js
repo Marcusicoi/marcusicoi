@@ -23,7 +23,7 @@ document.getElementById("button").onclick = function() {
      equation.push(`${choose(op)} ${choose(text.value)}`)
    };
    result.innerHTML = choose(text.value) + " " + equation.join(" ");
-   copy.value = result.slice(0, 1) + " " + equation.join(" ");
+   copy.value = choose(text.value) + " " + equation.join(" ");
 }
 document.getElementById("copybutton").onclick = function() {
   copy.select();
