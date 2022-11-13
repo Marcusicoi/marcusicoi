@@ -16,14 +16,14 @@ document.getElementById("C60BT1").onclick = function() {
   if (probability(60)) {
       C60RS1.innerHTML = "Success!";
       C60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
-      C60AT1.innerHTML = "Succeeded at Attempt " + C60AC1;
+      C60AT1.innerHTML = "Succeeded at Attempt " + C60SA1;
       C60AC1 = 1;
   } else {
       C60RS1.innerHTML = "Failed.";
       C60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
-      C60AT1.innreHTML = "Attempt " + C60AC1;
-      C60AC1 += 1;
-      C60SA1 += 1;
+      C60AT1.innerHTML = "Attempt " + C60AC1;
+      C60AC1 + 1;
+      C60SA1 + 1;
   }; 
 }
 //Many Petals
