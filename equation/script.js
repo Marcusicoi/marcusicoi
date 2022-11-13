@@ -21,5 +21,5 @@ document.getElementById("button").onclick = function() {
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`)
    };
-   result.innerHTML = choose(text.valueequation.join(" ");
+   result.innerHTML = choose(text.value) + " " + equation.join(" ");
 };
