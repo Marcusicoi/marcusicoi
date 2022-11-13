@@ -2,6 +2,7 @@
 let text = document.getElementById("text");
 let num = document.getElementById("amount");
 let result = document.getElementById("result");
+let copy = document.getElementById("copy");
 function choose(argument) {
   return argument[Math.floor(Math.random() * argument.length)];
 };
@@ -22,10 +23,11 @@ document.getElementById("button").onclick = function() {
      equation.push(`${choose(op)} ${choose(text.value)}`)
    };
    result.innerHTML = choose(text.value) + " " + equation.join(" ");
+   copy.value = result.slice(0, 1) + " " + equation.join(" ");
 }
 document.getElementById("copybutton").onclick = function() {
-  text.select();
-  text.setSelectionRange(0, 8172);
-  navigator.clipboard.writeText(text.value);
+  copy.select();
+  copy.setSelectionRange(0, 8172);
+  navigator.clipboard.writeText(copy.value);
   alert("Copied equation");
 }
