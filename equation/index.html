@@ -22,7 +22,13 @@
     <button id="button">Submit</button>
   </body>
   <script>
-    function generate(varuzb) {
+    function generate(variables = [], amount) {
+      function choose(argument) {
+        return argument[Math.floor(Math.random() * argument.length];
+      };
+      let text = document.getElementById("text").value;
+      let num = document.getElementById("amount").value;
+      let op = [
     }
   </script>
 </html>
