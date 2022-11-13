@@ -20,16 +20,20 @@
     <input type="text" id="text" placeholder="x, y, z, ..., i">
     <input type="number" id="amount" placeholder="1~100" min="1" max="100">
     <button id="button">Submit</button>
+    <h2 id="result"></h2>
   </body>
   <script>
+   let text = document.getElementById("text").value;
+   let num = document.getElementById("amount").value;
+   let result = document.getElementById("result");
     function generate(variables = [], amount) {
       function choose(argument) {
         return argument[Math.floor(Math.random() * argument.length];
       };
-      let text = document.getElementById("text").value;
-      let num = document.getElementById("amount").value;
       let op = ['=', '==', '===', '+', '++', '+=', '-', '--', '-=', '*', '**', '*=,' '/', '/=,' '%', '%=', '**=', '<<=', '<=', '<<', '<', '>', '>>', '>>>', '=>', '=>>', '=>>>', '&', '&&', '&=', '&&=', '^=', '|', '||', '|=', '||=', '!', '!=', '!==', '^', '~', '??'];
-      let equation = `${choose(
-    }
+      let equation = new Array(amount).fill(`${choose(text)} ${choose(op)}`);
+      return equation.join(" ");
+    };
+   document.getElementById("button").onclick = function() { result.innerHTML = generate(text, num) };
   </script>
 </html>
