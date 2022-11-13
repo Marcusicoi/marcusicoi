@@ -22,8 +22,8 @@ document.getElementById("C60BT1").onclick = function() {
       C60RS1.innerHTML = "Failed.";
       C60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
       C60AT1.innerHTML = "Attempt " + C60AC1;
-      C60AC1 + 1;
-      C60SA1 + 1;
+      C60AC1 += 1;
+      C60SA1 += 1;
   }; 
 }
 //Many Petals
