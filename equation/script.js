@@ -1,10 +1,12 @@
-//
 let text = document.getElementById("text");
 let num = document.getElementById("amount");
 let result = document.getElementById("result");
 let copy = document.getElementById("copy");
 function choose(argument) {
   return argument[Math.floor(Math.random() * argument.length)];
+};
+function probability(n) {
+  return Math.random() < (n / 100)
 };
 document.getElementById("button").onclick = function() {
    let op = [
@@ -18,16 +20,30 @@ document.getElementById("button").onclick = function() {
      '||=', '!', '!=', '!==', '^', 
      '~', '??'
    ];
+   let pOp = ['sin(', 'cos('];
+   let isParenthysis = false;
+   let hasEndPart = false;
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`)
-   };
-   result.innerHTML = choose(text.value) + " " + equation.join(" ");
-   copy.value = choose(text.value) + " " + equation.join(" ");
+     if (probability(25)) { isParenthysis = true };
+     if (isParenthysis === true) {
+       equation.push(`${choose(pOp)}${choose(op)} ${choose(text.value)}`) 
+       if (probability(50)) { hasEndPart = true };
+       if (hasEndPart === true) {
+         equation.push(`${choose(op)} ${choose(text.value)})`)
+         isParenthysis = false;
+         hasEndPart = false;
+      };
+     };
+   }
+   let first = choose(text.value);
+   result.innerHTML = first + " " + equation.join(" ");
+   copy.value = first + " " + equation.join(" ");
 }
 document.getElementById("copybutton").onclick = function() {
   copy.select();
   copy.setSelectionRange(0, 8172);
   navigator.clipboard.writeText(copy.value);
   alert("Copied equation");
-}
+};
