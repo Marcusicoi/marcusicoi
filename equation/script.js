@@ -21,39 +21,9 @@ document.getElementById("button").onclick = function() {
      '~', '??'
    ];
    let pOp = ['sin(', 'cos('];
-   let isParenthysis = false;
-   let hasEndPart = false;
-   let noEndPart = false;
-   let nNoEndParts = 0;
-   let noEndPartOutput = [];
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`)
-     if (probability(10)) { isParenthysis = true };
-     if (isParenthysis === true) {
-       equation.push(`${choose(op)} ${choose(pOp)}${choose(text.value)}`) 
-       if (probability(50)) { hasEndPart = true };
-       if (hasEndPart === true) {
-         equation.push(`${choose(op)} ${choose(text.value)})`)
-         isParenthysis = false;
-         hasEndPart = false;
-       let findEndPart = equation.indexOf(')', equation.indexOf(`${choose(pOp)}`));
-       while (findEndPart !== 1) {
-         noEndPartOutput.push(findEndPart);
-         findEndPart = equation.indexOf(')', equation.indexOf(`${choose(pOp)}` + 1));
-       }
-       if (findEndPart === -1) { noEndPart = true; nNoEndParts += 1 };
-       for (let i = 0; i < nNoEndParts; i++) { findEndPart }
-       if (nNoEndParts > 1) {
-         if (noEndPart === true) {
-           for (let i = 0; i < nNoEndParts; i++) {
-              equation.push(')');
-              nNoEndParts = 0;
-           };
-         };
-       };
-       };
-     };
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
