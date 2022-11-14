@@ -23,24 +23,29 @@ document.getElementById("button").onclick = function() {
    let pOp = ['sin(', 'cos('];
    let isParenthysis = false;
    let hasEndPart = false;
+   let noEndPart = false;
+   let nNoEndParts = 0;
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`)
-     if (probability(25)) { isParenthysis = true };
+     if (probability(10)) { isParenthysis = true };
      if (isParenthysis === true) {
-       equation.push(`${choose(pOp)}${choose(op)} ${choose(text.value)}`) 
+       equation.push(`${choose(op)} ${choose(pOp)}${choose(text.value)}`) 
        if (probability(50)) { hasEndPart = true };
        if (hasEndPart === true) {
          equation.push(`${choose(op)} ${choose(text.value)})`)
          isParenthysis = false;
          hasEndPart = false;
-      };
+         let findEndPart = equation.indexOf(')', equation.indexOf(`${choose(pOp)}`));
+         if (findEndPart === -1) { noEndPart = true; nNoEndParts += 1 };
+         if (noEndPart === true-) 
+       };
      };
-   }
+   };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
    copy.value = first + " " + equation.join(" ");
-}
+};
 document.getElementById("copybutton").onclick = function() {
   copy.select();
   copy.setSelectionRange(0, 8172);
