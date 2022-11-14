@@ -25,7 +25,10 @@ document.getElementById("button").onclick = function() {
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
+     //Parenthysis.
      if (probability(25)) { equation.push(`${choose(op)} ${choose(pOp)}`) };
+     //xNUM.
+     if (probability(25)) { equation.push(`${choose(op)} ${choose(text.value)}${Math.floor(Math.random() * 4) + 1}`) };
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
