@@ -20,15 +20,20 @@ document.getElementById("button").onclick = function() {
      '||=', '!', '!=', '!==', '^', 
      '~', '??'
    ];
+   let xnum = ['-1', '1', '2', '3', '4', '5'];
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos")];
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Parenthysis.
-     if (probability(25)) { equation.push(`${choose(op)} ${choose(pOp)}`) };
+     if (probability(25)) { 
+       equation.push(`${choose(op)} ${choose(pOp)}`) 
+     };
      //xNUM.
-     if (probability(25)) { equation.push(`${choose(op)} ${choose(text.value)}${Math.floor(Math.random() * 4) + 1}`) };
+     if (probability(25)) { 
+       equation.push(`${choose(op)} (${choose(text.value)})${choose(xnum)}`) 
+     };
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
