@@ -24,7 +24,8 @@ document.getElementById("button").onclick = function() {
    let isParenthysis = false;
    let hasEndPart = false;
    let noEndPart = false;
-   let nNoEndParts = 0;
+   let nNoEndParts = -1;
+   let noEndPartOutput = [];
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`)
@@ -36,6 +37,7 @@ document.getElementById("button").onclick = function() {
          equation.push(`${choose(op)} ${choose(text.value)})`)
          isParenthysis = false;
          hasEndPart = false;
+       let findpOp = equation.indexOf(
        let findEndPart = equation.indexOf(')', equation.indexOf(`${choose(pOp)}`));
        if (findEndPart === -1) { noEndPart = true; nNoEndParts += 1 };
        for (let i = 0; i < nNoEndParts; i++) { findEndPart }
@@ -43,7 +45,7 @@ document.getElementById("button").onclick = function() {
          if (noEndPart === true) {
            for (let i = 0; i < nNoEndParts; i++) {
               equation.push(')');
-             nNoEndParts = 0;
+              nNoEndParts = -1;
            };
          };
        };
