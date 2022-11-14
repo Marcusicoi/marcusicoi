@@ -21,9 +21,16 @@ document.getElementById("button").onclick = function() {
      '~', '??'
    ];
    let pOp = ['sin(', 'cos('];
+   let isParenthysis = false;
+   let endPart = false;
    let equation = [];
    for (let i = 0; i < num.value; i++) {
-     equation.push(`${choose(op)} ${choose(text.value)}`)
+     equation.push(`${choose(op)} ${choose(text.value)}`);
+     if (probability(25)) { isParenthysis = true };
+     if (isParenthysis === true) {
+       equation.push(`${choose(pOp)}${choose(text.value)}`);
+       if (probability(90)) { endPart = true     
+     };
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
