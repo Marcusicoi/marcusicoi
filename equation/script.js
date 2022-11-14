@@ -36,14 +36,17 @@ document.getElementById("button").onclick = function() {
          equation.push(`${choose(op)} ${choose(text.value)})`)
          isParenthysis = false;
          hasEndPart = false;
-           let findEndPart = equation.indexOf(')', equation.indexOf(`${choose(pOp)}`));
-           if (findEndPart === -1) { noEndPart = true; nNoEndParts += 1 };
-           if (noEndPart === true) {
-             for (let i = 0; i < nNoEndParts; i++) {
-               equation.push(')');
-             };
+       let findEndPart = equation.indexOf(')', equation.indexOf(`${choose(pOp)}`));
+       if (findEndPart === -1) { noEndPart = true; nNoEndParts += 1 };
+       for (let i = 0; i < nNoEndParts; i++) { findEndPart }
+       if (nNoEndParts > 1) {
+         if (noEndPart === true) {
+           for (let i = 0; i < nNoEndParts; i++) {
+              equation.push(')');
+             nNoEndParts = 0;
            };
          };
+       };
        };
      };
    };
