@@ -20,15 +20,24 @@ document.getElementById("button").onclick = function() {
      '||=', '!', '!=', '!==', '^', 
      '~', '??'
    ];
+   let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))));
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), pOpFunc("In")];
+   let pOp2 = [];
    let xnum = ['-1', '1', '2', '3', '4', '5'];
    let equation = [];
+   //Parenthysis + equation
+   pOp2.push(`${choose(op)} dddddddd${choose(pOp)}${choose(text.value)}`);
+   for (let i = 0; i < thing; i++) {
+     pOp2.push(`hhhhhh${choose(op)} ${choose(text.value)}`);
+     if (i === thing) { pOp2.push(')') };
+   }
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Parenthysis.
      if (probability(5)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
+       if (probability(2.5)) { equation.push(pOp2.join(" ")) };
      };
      //xNUM.
      if (probability(5)) { 
