@@ -22,6 +22,7 @@ document.getElementById("button").onclick = function() {
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    let jP = ['(', '{', '['];
+   let jPr = choose(jP);
    let jPe = [];
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), pOpFunc("In")];
@@ -30,9 +31,9 @@ document.getElementById("button").onclick = function() {
    let xnum = ['-1', '1', '2', '3', '4', '5'];
    let equation = [];
    //Just Parenthysis
-   jP.push(`${choose(op)} (${choose(text.value)}`);
+   jPe.push(`${choose(op)} ${jPr}${choose(text.value)}`);
    for (let i = 0; i < thing; i++) {
-     jP.push(`${choose(op)} ${choose(text.value)}`);
+     jPe.push(`${choose(op)} ${choose(text.value)}`);
    };
    //Type( Parenthysis + equation.
    pOpE.push(`${choose(op)} ${choose(pOp2)}${choose(text.value)}`);
@@ -42,12 +43,18 @@ document.getElementById("button").onclick = function() {
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Just Parenthysis.
-     if (probability(5)) { 
+     if (probability(5)) {
+       let endPart = '';
+       if (jPr === jP[0]) { endPart = ')' };
+       if (jPr === jP[1]) { endPart = '}' };
+       if (jPr === jP[2]) { endPart = ']' };
+       equation.push(jPe.join(" ") + endPart);
+     };
      //Type( Parenthysis.
      if (probability(5)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
        //With equation
-       if (probability(2.5)) { equation.push(pOpOp.join(" ") + ')') };
+       if (probability(2.5)) { equation.push(pOpE.join(" ") + ')') };
      };
      //xNUM.
      if (probability(5)) { 
