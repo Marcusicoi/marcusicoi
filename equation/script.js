@@ -22,7 +22,7 @@ document.getElementById("button").onclick = function() {
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    //
-   let jPe = [];
+   let jP = [];
    //
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), pOpFunc("In")];
@@ -32,37 +32,30 @@ document.getElementById("button").onclick = function() {
    //
    let xnum = ['-1', '1', '2', '3', '4', '5'];
    //
-   let onlist = [];
    let list = [];
    //
    let Fonlist = [];
-   let Flist = [];
    //
    let equation = [];
    //Just Parenthysis
-   jPe.push(`${choose(op)} [${choose(text.value)}`);
+   jP.push(`${choose(op)} [${choose(text.value)}`);
    for (let i = 0; i < thing; i++) {
-     jPe.push(`${choose(op)} ${choose(text.value)}`);
+     jP.push(`${choose(op)} ${choose(text.value)}`);
    };
    //Type( Parenthysis + equation.
    pOpE.push(`${choose(op)} ${choose(pOp2)}${choose(text.value)}`);
    for (let i = 0; i < thing; i++) {
      pOpE.push(`${choose(op)} ${choose(text.value)}`);
    };
-   //Onlist
-   onlist.push(`${choose(text.value)}}`);
-   for (let i = 0; i < (Math.floor(thing / 4) + 1); i++) {
-     onlist.push(`{${choose(text.value)}}`);
-   };
    //List
-   list.push(`${choose(op)} [`);
+   list.push(`{${choose(text.value)}},`);
    for (let i = 0; i < (Math.floor(thing / 4) + 1); i++) {
-     list.push(`{${onlist.join(" ")}`);
+     list.push(`{${choose(text.value)}},`);
    };
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Just Parenthysis.
-     if (probability(5)) { equation.push(jPe.join(" ") + "]"); };
+     if (probability(5)) { equation.push(jP.join(" ") + "]"); };
      //Type( Parenthysis.
      if (probability(5)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
@@ -107,7 +100,7 @@ document.getElementById("button").onclick = function() {
      };
      //List
      if (probability(2.5)) {
-       equation.push(`${choose(op)} ${list.join(" ")} ]`);
+       equation.push(`${choose(op)} [${list.join(" ")} {${choose(text.value)}}]`);
      };
    };
    let first = choose(text.value);
