@@ -52,10 +52,19 @@ document.getElementById("button").onclick = function() {
      };
      //!.
      if (probability(5)) {
-       equation.push(`${choose(op)} ${choose(text.value)}!`);
+       equation.push(`${choose(op)} (${choose(text.value)}!)`);
      };
+     //Sum.
      if (probability(5)) {
        equation.push(`${choose(op)} sum(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
+     };
+     //Sum.
+     if (probability(5)) {
+       equation.push(`${choose(op)} integral(${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)}, x)`);
+     };
+     //°.
+     if (probability(5)) {
+       equation.push(`${choose(op)} ${choose(text.value)}°${choose(text.value)}`);
      };
    };
    let first = choose(text.value);
