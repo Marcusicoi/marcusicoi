@@ -21,14 +21,22 @@ document.getElementById("button").onclick = function() {
      '~', '??'
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
+   //
    let jP = ['(', '{', '['];
    let jPr = choose(jP);
    let jPe = [];
+   //
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), pOpFunc("In")];
+   //
    let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In('];
    let pOpE = [];
+   //
    let xnum = ['-1', '1', '2', '3', '4', '5'];
+   //
+   let onlist = [];
+   let list = [];
+   //
    let equation = [];
    //Just Parenthysis
    jPe.push(`${choose(op)} ${jPr}${choose(text.value)}`);
