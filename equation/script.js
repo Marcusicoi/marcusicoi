@@ -20,9 +20,9 @@ document.getElementById("button").onclick = function() {
      '||=', '!', '!=', '!==', '^', 
      '~', '??'
    ];
-   let xnum = ['-1', '1', '2', '3', '4', '5'];
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
-   let pOp = [pOpFunc("sin"), pOpFunc("cos")];
+   let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("root")];
+   let xnum = ['-1', '1', '2', '3', '4', '5'];
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
@@ -30,9 +30,17 @@ document.getElementById("button").onclick = function() {
      if (probability(25)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
      };
+     if (probability(25)) {
+       for (let i = 0; i < (num.value / Math.floor(Math.random() * (num.value / 2))); i++) {
+          equation.push(`${choose(op)} ${choose(text.value)}`)
+       }; equation.push(')');
+     };  
      //xNUM.
      if (probability(25)) { 
        equation.push(`${choose(op)} (${choose(text.value)})${choose(xnum)}`) 
+     };
+     if (probability(25)) {
+       equation.push(`${choose(op)} frac(${choose(text.value)}/${choose(text.value)})`);
      };
    };
    let first = choose(text.value);
