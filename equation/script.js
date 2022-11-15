@@ -50,14 +50,14 @@ document.getElementById("button").onclick = function() {
      pOpE.push(`${choose(op)} ${choose(text.value)}`);
    };
    //Onlist
-   onlist.push(`{${choose(text.value)},`);
-   for (let i = 0; i < (Math.floor(thing / 2) + 1); i++) {
-     onlist.push(`${choose(text.value)},`);
+   onlist.push(`${choose(text.value)}}`);
+   for (let i = 0; i < (Math.floor(thing / 4) + 1); i++) {
+     onlist.push(`{${choose(text.value)}}`);
    };
    //List
    list.push(`${choose(op)} [`);
-   for (let i = 0; i < (Math.floor(thing / 2) + 1); i++) {
-     list.push(`{${onlist.join(" ")}},`);
+   for (let i = 0; i < (Math.floor(thing / 4) + 1); i++) {
+     list.push(`${onlist.join(" ")}`);
    };
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
@@ -107,7 +107,7 @@ document.getElementById("button").onclick = function() {
      };
      //List
      if (probability(2.5)) {
-       equation.push(`${choose(op)} ${list.join(" ")}, ${choose(text.value}]`);
+       equation.push(`${choose(op)} ${list.join(" ")}]`);
      };
    };
    let first = choose(text.value);
