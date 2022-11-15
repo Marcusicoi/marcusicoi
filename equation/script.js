@@ -37,6 +37,9 @@ document.getElementById("button").onclick = function() {
    let onlist = [];
    let list = [];
    //
+   let Fonlist = [];
+   let Flist = [];
+   //
    let equation = [];
    //Just Parenthysis
    jPe.push(`${choose(op)} ${jPr}${choose(text.value)}`);
@@ -47,6 +50,16 @@ document.getElementById("button").onclick = function() {
    pOpE.push(`${choose(op)} ${choose(pOp2)}${choose(text.value)}`);
    for (let i = 0; i < thing; i++) {
      pOpE.push(`${choose(op)} ${choose(text.value)}`);
+   };
+   //Onlist
+   onlist.push(`${choose(op)} {${choose(text.value)},`);
+   for (let i = 0; i < (Math.flooor(thing / 2) + 1); i++) {
+     onlist.push(`${choose(text.value)},`);
+   };
+   //List
+   list.push(`${choose(op)} [`);
+   for (let i = 0; i < (Math.floor(thing / 2) + 1); i++) {
+     list.push(`{${onlist.`);
    };
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
@@ -100,6 +113,7 @@ document.getElementById("button").onclick = function() {
      if (probability(5)) {
        equation.push(`${choose(op)} ${choose(text.value)}°${choose(text.value)}`);
      };
+     //List
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
