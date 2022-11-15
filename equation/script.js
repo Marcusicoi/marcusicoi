@@ -22,8 +22,6 @@ document.getElementById("button").onclick = function() {
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    //
-   let jP = ['(', '{', '['];
-   let jPr = choose(jP);
    let jPe = [];
    //
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
@@ -42,7 +40,7 @@ document.getElementById("button").onclick = function() {
    //
    let equation = [];
    //Just Parenthysis
-   jPe.push(`${choose(op)} ${jPr}${choose(text.value)}`);
+   jPe.push(`${choose(op)} [${choose(text.value)}`);
    for (let i = 0; i < thing; i++) {
      jPe.push(`${choose(op)} ${choose(text.value)}`);
    };
@@ -52,25 +50,19 @@ document.getElementById("button").onclick = function() {
      pOpE.push(`${choose(op)} ${choose(text.value)}`);
    };
    //Onlist
-   onlist.push(`${choose(op)} {${choose(text.value)},`);
-   for (let i = 0; i < (Math.flooor(thing / 2) + 1); i++) {
+   onlist.push(`{${choose(text.value)},`);
+   for (let i = 0; i < (Math.floor(thing / 2) + 1); i++) {
      onlist.push(`${choose(text.value)},`);
    };
    //List
    list.push(`${choose(op)} [`);
    for (let i = 0; i < (Math.floor(thing / 2) + 1); i++) {
-     list.push(`{${onlist.`);
+     list.push(`{${onlist.join(" ")}},`);
    };
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Just Parenthysis.
-     if (probability(5)) {
-       let endPart = '';
-       if (jPr === jP[0]) { endPart = ')' };
-       if (jPr === jP[1]) { endPart = '}' };
-       if (jPr === jP[2]) { endPart = ']' };
-       equation.push(jPe.join(" ") + endPart);
-     };
+     if (probability(5)) { equation.push(jPe.join(" ") + "]"); };
      //Type( Parenthysis.
      if (probability(5)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
@@ -114,6 +106,9 @@ document.getElementById("button").onclick = function() {
        equation.push(`${choose(op)} ${choose(text.value)}°${choose(text.value)}`);
      };
      //List
+     if (probability(2.5)) {
+       equation.push(`${choose(op)} ${list.join(" ")}, ${choose(text.value}]`);
+     };
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
