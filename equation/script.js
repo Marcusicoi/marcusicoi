@@ -24,6 +24,7 @@ document.getElementById("button").onclick = function() {
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("root")];
    let xnum = ['-1', '1', '2', '3', '4', '5'];
    let equation = [];
+   let pOp2 = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Parenthysis.
@@ -31,9 +32,12 @@ document.getElementById("button").onclick = function() {
        equation.push(`${choose(op)} ${choose(pOp)}`) 
      };
      if (probability(25)) {
-       for (let i = 0; i < (num.value / Math.floor(Math.random() * (num.value / 2))); i++) {
-          equation.push(`${choose(op)} ${choose(text.value)}`)
-       }; equation.push(')');
+       pOp2.push(`dddddd${choose(pOp)}${choose(text.value)}`)
+       for (let i = 0; i < (num.value / Math.floor(Math.random() * (Math.floor(num.value / 2)))); i++) {
+          pOp2.push(`${choose(op)} ${choose(text.value)}`)
+       if (i === (num.value / Math.floor(Math.random() * (Math.floor(num.value/ 2)))) { pOp2.push(')') };
+         
+       equation.push(pOp2.join(" "));
      };  
      //xNUM.
      if (probability(25)) { 
