@@ -57,7 +57,7 @@ document.getElementById("button").onclick = function() {
    //List
    list.push(`${choose(op)} [`);
    for (let i = 0; i < (Math.floor(thing / 4) + 1); i++) {
-     list.push(`${onlist.join(" ")}`);
+     list.push(`{${onlist.join(" ")}`);
    };
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
@@ -107,7 +107,7 @@ document.getElementById("button").onclick = function() {
      };
      //List
      if (probability(2.5)) {
-       equation.push(`${choose(op)} ${list.join(" ")}]`);
+       equation.push(`${choose(op)} ${list.join(" ")} ]`);
      };
    };
    let first = choose(text.value);
