@@ -23,21 +23,21 @@ document.getElementById("button").onclick = function() {
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))));
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), pOpFunc("In")];
-   let pOp2 = [];
+   let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In('];
+   let pOpOp = [];
    let xnum = ['-1', '1', '2', '3', '4', '5'];
    let equation = [];
    //Parenthysis + equation
-   pOp2.push(`${choose(op)} dddddddd${choose(pOp)}${choose(text.value)}`);
+   pOpOp.push(`${choose(op)} ${choose(pOp2)}${choose(text.value)}`);
    for (let i = 0; i < thing; i++) {
-     pOp2.push(`hhhhhh${choose(op)} ${choose(text.value)}`);
-     if (i === thing) { pOp2.push(')') };
-   }
+     pOpOp.push(`${choose(op)} ${choose(text.value)}`);
+   };
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
-     //Parenthysis.
+     //Type( Parenthysis.
      if (probability(5)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
-       if (probability(2.5)) { equation.push(pOp2.join(" ")) };
+       if (probability(25)) { equation.push(pOpOp.join(" ") + ')') };
      };
      //xNUM.
      if (probability(5)) { 
