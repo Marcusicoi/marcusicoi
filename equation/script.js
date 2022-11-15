@@ -20,6 +20,8 @@ document.getElementById("button").onclick = function() {
      '||=', '!', '!=', '!==', '^', 
      '~', '??'
    ];
+   let complicated = num.value / Math.floor(Math.random() * (Math.floor(num.value / 2)));
+   let forLetNum = 0;
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("root")];
    let xnum = ['-1', '1', '2', '3', '4', '5'];
@@ -33,11 +35,12 @@ document.getElementById("button").onclick = function() {
      };
      if (probability(25)) {
        pOp2.push(`dddddd${choose(pOp)}${choose(text.value)}`)
-       for (let i = 0; i < (num.value / Math.floor(Math.random() * (Math.floor(num.value / 2)))); i++) {
-          pOp2.push(`${choose(op)} ${choose(text.value)}`)
-       if (i === (num.value / Math.floor(Math.random() * (Math.floor(num.value/ 2)))) { pOp2.push(')') };
-         
-       equation.push(pOp2.join(" "));
+       for (let i2 = 0; i < complicated; i2++) {
+          i2 = forLetNum;
+          pOp2.push(`hhh${choose(op)} ${choose(text.value)}`)
+       };
+       if (forLetNum === complicated) { pOp2.push(')') };
+       equation.push(pOp2.join(" ") + " " + choose(op));
      };  
      //xNUM.
      if (probability(25)) { 
