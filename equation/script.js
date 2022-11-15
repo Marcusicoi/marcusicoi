@@ -23,6 +23,7 @@ document.getElementById("button").onclick = function() {
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root")];
    let xnum = ['-1', '1', '2', '3', '4', '5'];
+   let π = 3.1415926836;
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
@@ -41,9 +42,15 @@ document.getElementById("button").onclick = function() {
      //Decimals.
      if (probability(25)) {
        equation.push(`${choose(op)} ${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}`);
+       //Decimals X.Y.
        if (probability(10)) {
          equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
-       };}
+       };
+     };
+     //Pi.
+     if (probability(25)) {
+       equation.push(`${choose(op)} ${π}
+     }
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
