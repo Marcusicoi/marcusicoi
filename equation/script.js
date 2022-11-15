@@ -21,36 +21,42 @@ document.getElementById("button").onclick = function() {
      '~', '??'
    ];
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
-   let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root")];
+   let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), pOpFunc("In")];
    let xnum = ['-1', '1', '2', '3', '4', '5'];
-   let π = 3.1415926836;
    let equation = [];
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Parenthysis.
-     if (probability(25)) { 
+     if (probability(5)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
      };
      //xNUM.
-     if (probability(25)) { 
-       equation.push(`${choose(op)} (${choose(text.value)})${choose(xnum)}`) 
+     if (probability(5)) { 
+       equation.push(`${choose(op)} ${choose(text.value)}^(${choose(xnum)})`) 
      };
      //Fraction.
-     if (probability(25)) {
-       equation.push(`${choose(op)} frac(${choose(text.value)}/${choose(text.value)})`);
+     if (probability(5)) {
+       equation.push(`${choose(op)} (${choose(text.value)}/${choose(text.value)})`);
      };
      //Decimals.
-     if (probability(25)) {
+     if (probability(5)) {
        equation.push(`${choose(op)} ${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}`);
        //Decimals X.Y.
-       if (probability(10)) {
+       if (probability(2.5)) {
          equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
        };
      };
      //Pi.
-     if (probability(25)) {
-       equation.push(`${choose(op)} ${π}
-     }
+     if (probability(5)) {
+       equation.push(`${choose(op)} π`);
+     };
+     //!.
+     if (probability(5)) {
+       equation.push(`${choose(op)} ${choose(text.value)}!`);
+     };
+     if (probability(5)) {
+       equation.push(`${choose(op)} sum(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
+     };
    };
    let first = choose(text.value);
    result.innerHTML = first + " " + equation.join(" ");
