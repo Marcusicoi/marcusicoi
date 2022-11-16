@@ -4,10 +4,10 @@ let result = document.getElementById("result");
 function choose(argument) {
   return argument[Math.floor(Math.random() * argument.length)]
 };
-let NAME = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-let name = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-let names = [];
 submit.onclick = function() {
+  let NAME = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  let name = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  let names = [];
   for (let i = 0; i < amount.value; i++) {
   if (NAME === "A") { 
     name = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "v", "w", "x", "y", "z"];
@@ -53,6 +53,21 @@ submit.onclick = function() {
   };
   if (NAME === "O") {
     name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  };
+  if (NAME === "P") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "s", "t", "u", "w", "y"];
+  };
+  if (NAME === "Q") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "s", "u", "w", "y"];
+  };
+  if (NAME === "R") {
+    name = ["a", "e", "h", "i", "o", "r", "u", "y"];
+  };
+  if (NAME === "S") {
+    name = ["a", "e", "i", "o", "r", "u", "w", "y"];
+  };
+  if (NAME === "T") {
+    name = ["a", "e", "i", "o", "u", "w", "y"];
   };
   names.push(choose(name));
   };
