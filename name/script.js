@@ -8,8 +8,6 @@ let NAME = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"
 let name = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let names = [];
 submit.onclick = function() {
-  let RAN = choose(["A", "B", "C"]);
-  names.push(RAN);
   for (let i = 0; i < amount.value; i++) {
   if (NAME === "A") { 
     name = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "v", "w", "x", "y", "z"];
@@ -24,9 +22,39 @@ submit.onclick = function() {
     name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
   };
   if (NAME === "E") {
-    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y" ];
+    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  };
+  if (NAME === "F") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
+  };
+  if (NAME === "G") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "y"];
+  };
+  if (NAME === "H") {
+    name = ["a", "e", "i", "o", "u", "w", "y"];
+  };
+  if (NAME === "I") {
+    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  };
+  if (NAME === "D") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
+  };
+  if (NAME === "E") {
+    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  };
+  if (NAME === "F") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
+  };
+  if (NAME === "G") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "y"];
+  };
+  if (NAME === "H") {
+    name = ["a", "e", "i", "o", "u", "w", "y"];
+  };
+  if (NAME === "I") {
+    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   };
   names.push(choose(name));
   };
-  result.innerHTML = names.join("");
+  result.innerHTML = choose(NAME) + names.join("");
 };
