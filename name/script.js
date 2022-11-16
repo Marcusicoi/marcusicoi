@@ -8,8 +8,8 @@ let NAME = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"
 let name = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let names = [];
 submit.onclick = function() {
-  let RAN = choose(NAME);
-  let ran = choose(name);
+  let RAN = choose(["A", "B", "C"]);
+  names.push(RAN);
   for (let i = 0; i < amount.value; i++) {
   if (NAME === "A") { 
     name = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "v", "w", "x", "y", "z"];
@@ -19,6 +19,14 @@ submit.onclick = function() {
   };
   if (NAME === "C") {
     name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
-  }
   };
+  if (NAME === "D") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
+  };
+  if (NAME === "E") {
+    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y" ];
+  };
+  names.push(choose(name));
+  };
+  result.innerHTML = names.join("");
 };
