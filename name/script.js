@@ -9,49 +9,49 @@ let name = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"
 let names = [];
 submit.onclick = function() {
   for (let i = 0; i < amount.value; i++) {
-  if (NAME === "A") { 
+  if (NAME === "A" && name === "a") { 
     name = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "v", "w", "x", "y", "z"];
   };
-  if (NAME === "B") {
+  if (NAME === "B" && name === "b") {
     name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "C") {
+  if (NAME === "C" && name === "c") {
     name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "D") {
+  if (NAME === "D" && name === "d") {
     name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "E") {
+  if (NAME === "E" && name === "e") {
     name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   };
-  if (NAME === "F") {
+  if (NAME === "F" && name === "f") {
     name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "G") {
+  if (NAME === "G" && name === "g") {
     name = ["a", "e", "h", "i", "l", "o", "r", "u", "y"];
   };
-  if (NAME === "H") {
+  if (NAME === "H" && name === "h") {
     name = ["a", "e", "i", "o", "u", "w", "y"];
   };
-  if (NAME === "I") {
+  if (NAME === "I" && name === "i") {
     name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   };
-  if (NAME === "J") {
+  if (NAME === "J" && name === "j") {
     name = ["a", "e", "h", "i", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "K") {
+  if (NAME === "K" && name === "k") {
     name = ["a", "e", "h", "i", "l", "o", "r", "s", "u", "w", "y"];
   };
-  if (NAME === "L") {
+  if (NAME === "L" && name === "l") {
     name = ["a", "e", "h", "i", "o", "r", "u", "y"];
   };
-  if (NAME === "M") {
+  if (NAME === "M" && name === "m") {
     name = ["a", "e", "i", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "N") {
+  if (NAME === "N" && name === "n") {
     name = ["a", "e", "i", "o", "u", "w", "y"];
   };
-  if (NAME === "O") {
+  if (NAME === "O" & name === "o") {
     name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   };
   names.push(choose(name));
