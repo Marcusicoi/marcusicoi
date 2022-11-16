@@ -34,8 +34,6 @@ document.getElementById("button").onclick = function() {
    //
    let list = [];
    //
-   let Fonlist = [];
-   //
    let equation = [];
    //Just Parenthysis
    jP.push(`${choose(op)} [${choose(text.value)}`);
@@ -49,7 +47,7 @@ document.getElementById("button").onclick = function() {
    };
    //List
    list.push(`{${choose(text.value)}},`);
-   for (let i = 0; i < (Math.floor(thing / 4) + 1); i++) {
+   for (let i = 0; i < (Math.floor(thing / 4)); i++) {
      list.push(`{${choose(text.value)}},`);
    };
    for (let i = 0; i < num.value; i++) {
