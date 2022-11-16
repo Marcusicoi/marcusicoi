@@ -36,23 +36,23 @@ submit.onclick = function() {
   if (NAME === "I") {
     name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   };
-  if (NAME === "D") {
-    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
+  if (NAME === "J") {
+    name = ["a", "e", "h", "i", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "E") {
-    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  if (NAME === "K") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "s", "u", "w", "y"];
   };
-  if (NAME === "F") {
-    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
+  if (NAME === "L") {
+    name = ["a", "e", "h", "i", "o", "r", "u", "y"];
   };
-  if (NAME === "G") {
-    name = ["a", "e", "h", "i", "l", "o", "r", "u", "y"];
+  if (NAME === "M") {
+    name = ["a", "e", "i", "o", "r", "u", "w", "y"];
   };
-  if (NAME === "H") {
+  if (NAME === "N") {
     name = ["a", "e", "i", "o", "u", "w", "y"];
   };
-  if (NAME === "I") {
-    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  if (NAME === "O") {
+    name = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   };
   names.push(choose(name));
   };
