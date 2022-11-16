@@ -15,7 +15,10 @@ submit.onclick = function() {
     name = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "v", "w", "x", "y", "z"];
   };
   if (NAME === "B") {
-    name = ["a", "cdehiloruwy
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
+  };
+  if (NAME === "C") {
+    name = ["a", "e", "h", "i", "l", "o", "r", "u", "w", "y"];
   }
   };
 };
