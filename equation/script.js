@@ -99,9 +99,17 @@ document.getElementById("button").onclick = function() {
      if (probability(chance)) {
        equation.push(`${choose(op)} integral(${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)}, x)`);
      };
-     //Degrees.
+     //Not degree.
      if (probability(chance)) {
        equation.push(`${choose(op)} ${choose(text.value)}°${choose(text.value)}`);
+     };
+     //Degree.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ${choose(text.value)}°`);
+     };
+     //Degree2.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ${choose(text.value)}deg`);
      };
      //List
      if (probability(chance / 2)) {
@@ -142,6 +150,14 @@ document.getElementById("button").onclick = function() {
      //Complex conjegulate.
      if (probability(chance)) {
        equation.push(`${choose(op)} cx̄=${choose(text.value)} `);
+     };
+     //Percentage.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} mx̄=${choose(text.value)}% `);
+     };
+     //% per mille.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} cx̄=${choose(text.value)}‰ `);
      };
    };
    let first = choose(text.value);
