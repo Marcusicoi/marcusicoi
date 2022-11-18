@@ -19,9 +19,13 @@ document.getElementById("button").onclick = function() {
      '&&=', '^=', '|', '||', '|=', 
      '||=', '!', '!=', '!==', '^', 
      '~', '??', ',', ':', '±',
-     '∓'
+     '∓', '≠', '≈', '≪', '≫',
+     '∝', '≡'≤
+inequality
+is less than or equal to	If x≤y, x is less than or equal to y.	5≥
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
+   let chance = 2.5;
    //
    let jP = [];
    //
@@ -34,7 +38,7 @@ document.getElementById("button").onclick = function() {
    let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In(', choose(['-1', '1', '2', '3', '4', '5']) + 'powerRoot('];
    let pOpE = [];
    //
-   let powernum = ['-1', '1', '2', '3', '4', '5'];
+   let powernum = ['-1', '1', '2', '3', '4', '5', choose(text.value)];
    //
    let list = [];
    //
@@ -57,68 +61,76 @@ document.getElementById("button").onclick = function() {
    for (let i = 0; i < num.value; i++) {
      equation.push(`${choose(op)} ${choose(text.value)}`);
      //Just Parenthysis.
-     if (probability(5)) { equation.push(jP.join(" ") + "]"); };
+     if (probability(chance)) { equation.push(jP.join(" ") + "]"); };
      //Type( Parenthysis.
-     if (probability(5)) { 
+     if (probability(chance)) { 
        equation.push(`${choose(op)} ${choose(pOp)}`) 
        //With equation
-       if (probability(2.5)) { equation.push(pOpE.join(" ") + ')') };
+       if (probability(chance / 2)) { equation.push(pOpE.join(" ") + ')') };
      };
      //Power.
-     if (probability(5)) { 
+     if (probability(chance)) { 
        equation.push(`${choose(op)} ${choose(text.value)}^(${choose(powernum)})`) 
      };
      //Fraction.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} (${choose(text.value)}/${choose(text.value)})`);
      };
      //Decimals.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} ${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}`);
        //Decimals Type.Type.
-       if (probability(2.5)) {
+       if (probability(chance / 2)) {
          equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
        };
      };
      //Pi.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} π`);
      };
      //!.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} (${choose(text.value)}!)`);
      };
      //Sum.
-     if (probability(2.5)) {
-       equation.push(`${choose(op)} sum(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
+     if (probability(chance / 2)) {
+       equation.push(`${choose(op)} ∑(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
      };
      //Integrral.
-     if (probability(2.5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} integral(${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)}, x)`);
      };
-     //°.
-     if (probability(5)) {
+     //Degrees.
+     if (probability(chance)) {
        equation.push(`${choose(op)} ${choose(text.value)}°${choose(text.value)}`);
      };
      //List
-     if (probability(2.5)) {
+     if (probability(chance / 2)) {
        equation.push(`${choose(op)} [${list.join(" ")} {${choose(text.value)}}]`);
      };
      //Euler's number.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} e `);
      };
      //Phi.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} ϕ `);
      };
      //Imaginary unit.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} i `);
      };
      //Negative.
-     if (probability(5)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} -${choose(text.value)} `);
+     };
+     //Absolute value.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} |${choose(text.value)}| `);
+     };
+     //Not equal (symbol).
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ${choose(text.value)} `);
      };
    };
    let first = choose(text.value);
