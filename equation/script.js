@@ -18,7 +18,7 @@ document.getElementById("button").onclick = function() {
      '=>>', '=>>>', '&', '&&', '&=', 
      '&&=', '^=', '|', '||', '|=', 
      '||=', '!', '!=', '!==', '^', 
-     '~', '??'
+     '~', '??', ',', ':',
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    //
@@ -99,6 +99,18 @@ document.getElementById("button").onclick = function() {
      //List
      if (probability(2.5)) {
        equation.push(`${choose(op)} [${list.join(" ")} {${choose(text.value)}}]`);
+     };
+     //Euler's number.
+     if (probability(5)) {
+       equation.push(`${choose(op)} e `);
+     };
+     //Phi.
+     if (probability(5)) {
+       equation.push(`${choose(op)} ϕ `);
+     };
+     //Imaginary unit.
+     if (probability(5)) {
+       equation.push(`${choose(op)} i `);
      };
    };
    let first = choose(text.value);
