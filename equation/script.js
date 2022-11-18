@@ -18,19 +18,22 @@ document.getElementById("button").onclick = function() {
      '=>>', '=>>>', '&', '&&', '&=', 
      '&&=', '^=', '|', '||', '|=', 
      '||=', '!', '!=', '!==', '^', 
-     '~', '??', ',', ':',
+     '~', '??', ',', ':', '±',
+     '∓'
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    //
    let jP = [];
    //
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
-   let pOp = [pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), pOpFunc("In")];
+   let pOp = [
+     pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), 
+     pOpFunc("In"), pOpFunc("abs"), `${choose(;
    //
    let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In('];
    let pOpE = [];
    //
-   let xnum = ['-1', '1', '2', '3', '4', '5'];
+   let powernum = ['-1', '1', '2', '3', '4', '5'];
    //
    let list = [];
    //
@@ -60,9 +63,9 @@ document.getElementById("button").onclick = function() {
        //With equation
        if (probability(2.5)) { equation.push(pOpE.join(" ") + ')') };
      };
-     //xNUM.
+     //Power.
      if (probability(5)) { 
-       equation.push(`${choose(op)} ${choose(text.value)}^(${choose(xnum)})`) 
+       equation.push(`${choose(op)} ${choose(text.value)}^(${choose(powernum)})`) 
      };
      //Fraction.
      if (probability(5)) {
@@ -111,6 +114,14 @@ document.getElementById("button").onclick = function() {
      //Imaginary unit.
      if (probability(5)) {
        equation.push(`${choose(op)} i `);
+     };
+     //Negative.
+     if (probability(5)) {
+       equation.push(`${choose(op)} -${choose(text.value)} `);
+     };
+     //Power root.
+     if (probability(5)) {
+       equation.push(`${choose(op)} ${powernum}powerRoot(${choose(text.value)} `);
      };
    };
    let first = choose(text.value);
