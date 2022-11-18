@@ -137,11 +137,11 @@ document.getElementById("button").onclick = function() {
      };
      //Mean.
      if (probability(chance)) {
-       equation.push(`${choose(op)} ${choose(text.value)}∈ `);
+       equation.push(`${choose(op)} mx̄=${choose(text.value)} `);
      };
      //Complex conjegulate.
      if (probability(chance)) {
-       equation.push(`${choose(op)} ${choose(text.value)}∉ `);
+       equation.push(`${choose(op)} cx̄=${choose(text.value)} `);
      };
    };
    let first = choose(text.value);
