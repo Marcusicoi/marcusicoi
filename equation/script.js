@@ -20,9 +20,8 @@ document.getElementById("button").onclick = function() {
      '||=', '!', '!=', '!==', '^', 
      '~', '??', ',', ':', '±',
      '∓', '≠', '≈', '≪', '≫',
-     '∝', '≡'≤
-inequality
-is less than or equal to	If x≤y, x is less than or equal to y.	5≥
+     '∝', '≡', '≤', '≥', '⇒',
+     '⇔', '⊥', '≅'
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    let chance = 2.5;
@@ -88,7 +87,7 @@ is less than or equal to	If x≤y, x is less than or equal to y.	5≥
      if (probability(chance)) {
        equation.push(`${choose(op)} π`);
      };
-     //!.
+     //Factorial.
      if (probability(chance)) {
        equation.push(`${choose(op)} (${choose(text.value)}!)`);
      };
@@ -128,9 +127,21 @@ is less than or equal to	If x≤y, x is less than or equal to y.	5≥
      if (probability(chance)) {
        equation.push(`${choose(op)} |${choose(text.value)}| `);
      };
-     //Not equal (symbol).
+     //Membership.
      if (probability(chance)) {
-       equation.push(`${choose(op)} ${choose(text.value)} `);
+       equation.push(`${choose(op)} ${choose(text.value)}∈ `);
+     };
+     //Membership (N).
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ${choose(text.value)}∉ `);
+     };
+     //Mean.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ${choose(text.value)}∈ `);
+     };
+     //Complex conjegulate.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ${choose(text.value)}∉ `);
      };
    };
    let first = choose(text.value);
