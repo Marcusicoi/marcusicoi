@@ -28,9 +28,10 @@ document.getElementById("button").onclick = function() {
    function pOpFunc(type) { return `${type}(${choose(text.value)})` };
    let pOp = [
      pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), 
-     pOpFunc("In"), pOpFunc("abs"), `${choose(;
+     pOpFunc("In"), pOpFunc("abs"), choose(['-1', '1', '2', '3', '4', '5']) + pOpFunc("powerRoot")
+   ];
    //
-   let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In('];
+   let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In(', choose(['-1', '1', '2', '3', '4', '5']) + 'powerRoot('];
    let pOpE = [];
    //
    let powernum = ['-1', '1', '2', '3', '4', '5'];
@@ -118,10 +119,6 @@ document.getElementById("button").onclick = function() {
      //Negative.
      if (probability(5)) {
        equation.push(`${choose(op)} -${choose(text.value)} `);
-     };
-     //Power root.
-     if (probability(5)) {
-       equation.push(`${choose(op)} ${powernum}powerRoot(${choose(text.value)} `);
      };
    };
    let first = choose(text.value);
