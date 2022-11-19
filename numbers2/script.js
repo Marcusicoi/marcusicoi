@@ -1,24 +1,29 @@
-function createTable(objectArray, fields, fieldTitles) {
-  let body = document.getElementsById('Level1Table')[0];
+let digit = 4;
+//Table 1
+let Numbers1Array = ["Numbers", "Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
+let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Octo-", "Novem-, Noven-"];
+let Abb1Array = ["K", "U, M", "D, B", "T", "q", "Q", "s", "S", "O", "N"];
+//The function
+function createTable(array, type, title) {
+  let body = document.getElementById('Level1Table');
   let tbl = document.createElement('table');
   tbl.border = 1;
   let thead = document.createElement('thead');
   let thr = document.createElement('tr');
-  fieldTitles.forEach((fieldTitle) => {
+  title.forEach((title) => {
     let th = document.createElement('th');
-    th.appendChild(document.createTextNode(fieldTitle));
+    th.appendChild(document.createTextNode(title));
     thr.appendChild(th);
   });
   thead.appendChild(thr);
   tbl.appendChild(thead);
-
   let tbdy = document.createElement('tbody');
   let tr = document.createElement('tr');
-  objectArray.forEach((object) => {
+  array.forEach((object) => {
     let tr = document.createElement('tr');
-    fields.forEach((field) => {
+    type.forEach((type) => {
       var td = document.createElement('td');
-      td.appendChild(document.createTextNode(object[field]));
+      td.appendChild(document.createTextNode(object[type]));
       tr.appendChild(td);
     });
     tbdy.appendChild(tr);    
@@ -26,11 +31,14 @@ function createTable(objectArray, fields, fieldTitles) {
   tbl.appendChild(tbdy);
   body.appendChild(tbl)
   return tbl;
-}
-
-createTable([
-  {name: 'Banana', price: '3.04'},
-  {name: 'Orange', price: '2.56'},
-  {name: 'Apple', price: '1.45'}
+};
+function createTable2(numbers, unit, digits, abbs) {
+for £
+return createTable([
+  {number: 'Banana', unit: '3.04'},
+  {number: 'Orange', unit: '2.56'},
+  {number: 'Apple', unit: '1.45'}
 ],
-['name', 'price'], ['Name', 'Price']);
+['name', 'price'], ['Name', 'Price'])
+};
+createTable2();
