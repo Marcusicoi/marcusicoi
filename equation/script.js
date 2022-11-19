@@ -22,7 +22,7 @@ document.getElementById("button").onclick = function() {
      '∓', '≠', '≈', '≪', '≫',
      '∝', '≡', '≤', '≥', '⇒',
      '⇔', '⊥', '≅', '⊗', ':=',
-     
+     '~'   
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    let chance = 2.5;
@@ -85,6 +85,14 @@ document.getElementById("button").onclick = function() {
      //Decimals.
      if (probability(chance)) {
        equation.push(`${choose(op)} ${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}`);
+       //Decimals Type.Type.
+       if (probability(chance / 2)) {
+         equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
+       };
+     };
+     //Floor Bracket.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ⌊${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}`);
        //Decimals Type.Type.
        if (probability(chance / 2)) {
          equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
