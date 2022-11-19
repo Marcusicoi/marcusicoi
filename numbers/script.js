@@ -122,7 +122,7 @@ for (let i = 0; i < 9; i++) {
 ID6.innerHTML = headcode() + Row6.join(" ");
 //Table 7
 let Numbers7Array = ["Nanillion", "Dunanillion", "Trunanillion", "Quadrinanilliion", "Quintinanillion", "Sesnanillion", "Septinanillion", "Octonanillion", "Nonananillion"];
-let Units7Array = ["Nanilli-", "Dunanilli-", "Trunanilli-", "Quadrinanilli-", "Quintinanilli-", "Sesnanilli-", "Septinanilli-", "Octananilli-", "Nonananilli-"];
+let Units7Array = ["Nanilli-", "Dunanilli-", "Trunanilli-", "Quadrinanilli-", "Quintinanilli-", "Sesnanilli-", "Septinanilli-", "Octonanilli-", "Nonananilli-"];
 let Digit7 = 3;
 let Abbs7Array = ["Nan", "Dan", "Tan", "qan", "Qan", "san", "San", "Oan", "Nal"];
 let CLnum7 = -1;
@@ -137,8 +137,8 @@ for (let i = 0; i < 9; i++) {
 };
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
-let Numbers8Array = ["Picillion", "Dupicillion", "Trupicillion", "Quadripicilliion", "Quintipicillion", "Sesnanillion", "Septinanillion", "Octonanillion", "Nonananillion"];
-let Units8Array = ["Nanilli-", "Dupicilli-", "Trupicilli-", "Quadripicilli-", "Quintipicilli-", "Sesnanilli-", "Septinanilli-", "Octananilli-", "Nonananilli-"];
+let Numbers8Array = ["Picillion", "Dupicillion", "Trupicillion", "Quadripicilliion", "Quintipicillion", "Sespicillion", "Septipicillion", "Octopicillion", "Nonapicillion"];
+let Units8Array = ["Nanilli-", "Dupicilli-", "Trupicilli-", "Quadripicilli-", "Quintipicilli-", "Sespicilli-", "Septipicilli-", "Octopicilli-", "Nonapicilli-"];
 let Digit8 = 3;
 let Abbs8Array = ["Nan", "Dan", "Tan", "qan", "Qan", "san", "San", "Oan", "Nal"];
 let CLnum8 = -1;
