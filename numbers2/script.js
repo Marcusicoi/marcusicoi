@@ -6,6 +6,9 @@ let Abbs1Array = ["", "K", "U, M", "D, B", "T", "q", "Q", "s", "S", "O", "N"];
 let Row1 = [];
 let ID1 = document.getElementById("Level1Table");
 for (let i = 0; i < 11; i++) {
+  let X = 0;
+  do { X+=1 ;digit += (3 * X)} while (X === 11)
+digit -= 3
   Row1.push(`
   <tr>
     <th>${Numbers1Array[i]}</th>
