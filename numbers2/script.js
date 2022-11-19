@@ -7,7 +7,7 @@ let Row1 = [];
 let ID1 = document.getElementById("Level1Table");
 for (let i = 0; i < 10; i++) {
   let op = 0;
-  do { op += 1; Digit1 += (3 * op) } while (op === 11);
+  do { op += 1; Digit1 += (3 * op) } while (op === 0);
   Row1.push(`
   <tr>
     <th>${Numbers1Array[i]}</th>
@@ -35,7 +35,7 @@ let Row2 = [];
 let ID2 = document.getElementById("Level2Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  do { op += 10; Digit2 + 3; Digit2 += (3 * op) } while (op === 21);
+  do { op += 10; Digit2 + 3; Digit2 += (3 * op) } while (op === 0);
   Row2.push(`
   <tr>
     <th>${Numbers2Array[i]}</th>
@@ -63,7 +63,7 @@ let Row3 = [];
 let ID3 = document.getElementById("Level3Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  do { op += 100; Digit3 + 3; Digit3 += (3 * op) } while (op === 31);
+  do { op += 100; Digit3 + 3; Digit3 += (3 * op) } while (op === 0);
   Row3.push(`
   <tr>
     <th>${Numbers3Array[i]}</th>
@@ -83,15 +83,15 @@ ID3.innerHTML = `
   </tr>
 ` + Row3.join(" ");
 //Table 4
-let Numbers4Array = ["Millillion", "Ducentillion", "Trecentillion", "Quadringentillion", "Quingentillion", "Sescentillion", "Septingentillion", "Octingentillion", "Nonagentillion"];
-let Units4Array = ["Centi-", "Ducenti-", "Trecenti-", "Quadringenti-", "Quingenti-", "Sescenti-", "Septingenti-", "Octingenti-", "Nonagenti-"];
+let Numbers4Array = ["Millillion", "Dumillillion", "Trimillillion", "Quadrimillilliion", "Quinmillillion", "Sexmillillion", "Septimillillion", "Octimillillion", "Nonimillillion"];
+let Units4Array = ["Milli-", "Dumilli-", "Trimilli-", "Quadrimilli-", "Quinmilli-", "Sexmilli-", "Septimilli-", "Octimilli-", "Nonimilli-"];
 let Digit4 = 3;
-let Abbs4Array = ["Ce", "Du", "Te", "Qd", "Qn", "Sc", "St", "Ot", "Ng"];
+let Abbs4Array = ["ML", "DL", "TL", "qL", "QL", "sL", "SL", "OL", "NL"];
 let Row4 = [];
 let ID4 = document.getElementById("Level4Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  do { op += 100; Digit4 + 3; Digit4 += (3 * op) } while (op === 31);
+  do { op += 1000; Digit4 + 3; Digit4 += (3 * op) } while (op === 0);
   Row4.push(`
   <tr>
     <th>${Numbers4Array[i]}</th>
