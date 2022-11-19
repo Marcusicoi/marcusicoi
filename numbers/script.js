@@ -141,12 +141,13 @@ document.getElementById("button").onclick = function() {
   function choose(argument) {
     return argument[Math.floor(Math.random() * argument.length)];
   };
+  let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
-      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs7Array) + 
-      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs6Array) +    
-      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs5Array) + 
-      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs4Array) + 
-      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array);
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs7Array) + 
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs6Array) +    
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs5Array) + 
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs4Array) + 
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array);
   document.getElementById("result").innerHTML = result;   
 };
