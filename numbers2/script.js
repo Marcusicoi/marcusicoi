@@ -29,7 +29,7 @@ ID1.innerHTML = `
 //Table 2
 let Numbers2Array = ["Decillion", "Vigintillion", "Trigintillion", "Quadragintillion", "Quinquagintillion", "Sexagintillion", "Septuagintillion", "Octagintillion", "Nonagintillion"];
 let Units2Array = ["Deci-", "Viginti-", "Triginta-", "Quadraginta-", "Quinquaginta-", "Sexaginta-", "Septuaginta-", "Octaginta-", "Nonaginta-"];
-let Digits2Array = [digit + 3, digit + (3 * 2)]
+let Digits2Array = [34, 61, 91, 121, 151, 191, 211, 241, 271]
 let Abbs2Array = ["D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"];
 let Row2 = [];
 let ID2 = document.getElementById("Level2Table");
