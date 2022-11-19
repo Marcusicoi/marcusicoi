@@ -2,7 +2,7 @@ let digit = 4;
 //Table 1
 let Numbers1Array = ["Numbers", "Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Octo-", "Novem-, Noven-"];
-let Abb1Array = ["K", "U, M", "D, B", "T", "q", "Q", "s", "S", "O", "N"];
+let Abbs1Array = ["K", "U, M", "D, B", "T", "q", "Q", "s", "S", "O", "N"];
 //The function
 function createTable(array, type, title) {
   let body = document.getElementById('Level1Table');
@@ -32,13 +32,10 @@ function createTable(array, type, title) {
   body.appendChild(tbl)
   return tbl;
 };
-function createTable2(numbers, unit, digits, abbs) {
-for £
-return createTable([
-  {number: 'Banana', unit: '3.04'},
-  {number: 'Orange', unit: '2.56'},
-  {number: 'Apple', unit: '1.45'}
-],
-['name', 'price'], ['Name', 'Price'])
+let row = [];
+for (let i = 0; i < 11; i++) {
+  let N = Numbers1Array[i], U = Units1Array[i], A = Abbs1Array[i];
+  digit += (3 * i)
+  row.push({number: N, unit: U, digits: digit, abbs: A})
 };
-createTable2();
+createTable([{number:], ['number', 'unit', 'digits', 'abbs'], ['Numbers', 'Units', 'Digits', 'Abbreviations'])
