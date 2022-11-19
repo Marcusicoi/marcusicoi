@@ -22,7 +22,9 @@ document.getElementById("button").onclick = function() {
      '∓', '≠', '≈', '≪', '≫',
      '∝', '≡', '≤', '≥', '⇒',
      '⇔', '⊥', '≅', '⊗', ':=',
-     '~'   
+     '~', '∩', '∪', '⊆', '⊂',
+     '⊄', '⊇', '⊃', '⊅', '∆',
+     '∈', '∉'
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    let chance = 2.5;
@@ -42,6 +44,7 @@ document.getElementById("button").onclick = function() {
    //
    let list = [];
    //
+   let startsymbols = ['-', 'mx̄ = ', 'cx̄ = ', '#']
    let endsymbols = ['°', 'deg', ' e', ' ϕ', ' i', '∈', '∉', '%', '‰', '!', ' π', ' γ', 'T', '†', '*'];
    //
    let equation = [];
@@ -70,13 +73,17 @@ document.getElementById("button").onclick = function() {
        //With equation
        if (probability(chance / 2)) { equation.push(pOpE.join(" ") + ')') };
      };
+     //Start symbols.
+     if (probability(chance)) { 
+       equation.push(`${choose(op)} ${choose(startsymbols)}${choose(text.value)}`);
+     };
      //End symbols.
      if (probability(chance)) { 
-       equation.push(`${choose(op)} ${choose(text.value)}${choose(endsymbols)}`) 
+       equation.push(`${choose(op)} ${choose(text.value)}${choose(endsymbols)}`);
      };
      //Power.
      if (probability(chance)) { 
-       equation.push(`${choose(op)} ${choose(text.value)}^(${choose(powernum)})`) 
+       equation.push(`${choose(op)} ${choose(text.value)}^(${choose(powernum)})`);
      };
      //Fraction.
      if (probability(chance)) {
@@ -130,21 +137,9 @@ document.getElementById("button").onclick = function() {
      if (probability(chance / 2)) {
        equation.push(`${choose(op)} [${list.join(" ")} {${choose(text.value)}}]`);
      };
-     //Negative.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} -${choose(text.value)} `);
-     };
      //Absolute value.
      if (probability(chance)) {
        equation.push(`${choose(op)} |${choose(text.value)}| `);
-     };
-     //Mean.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} mx̄=${choose(text.value)} `);
-     };
-     //Complex conjegulate.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} cx̄=${choose(text.value)} `);
      };
      //Function.
      if (probability(chance / 2)) {
