@@ -88,9 +88,9 @@ for (let i = 0; i < 9; i++) {
   Row4.push(code(CLnum4, Numbers4Array[i], Units4Array[i], Digit4, Abbs4Array[i]));
 };
 ID4.innerHTML = headcode() + Row4.join(" ");
-//Table 4
-let Numbers5Array = ["Myrillion", "Dumyrillion", "Trumyrillion", "Quadrimyrilliion", "Quinmyrilillion", "Sexamyrillion", "Septimyrillion", "Octimyrillion", "Nonimyrillion"];
-let Units5Array = ["Myrilli-", "Dumyrilli-", "Trumyrilli-", "Quadrimyrilli-", "Quinmyrilli-", "Sexamyrilli-", "Septimyrilli-", "Octimyrilli-", "Nonimyrilli-"];
+//Table 5
+let Numbers5Array = ["Myrillion", "Dumyrillion", "Trumyrillion", "Quadrimyrilliion", "Quintimyrilillion", "Sexamyrillion", "Septimyrillion", "Octimyrillion", "Nonimyrillion"];
+let Units5Array = ["Myrilli-", "Dumyrilli-", "Trumyrilli-", "Quadrimyrilli-", "Quintimyrilli-", "Sexamyrilli-", "Septimyrilli-", "Octimyrilli-", "Nonimyrilli-"];
 let Digit5 = 3;
 let Abbs5Array = ["My", "Dy", "Ty", "qy", "Qy", "sy", "Sy", "Oy", "Ny"];
 let CLnum5 = -1;
@@ -104,3 +104,19 @@ for (let i = 0; i < 9; i++) {
   Row5.push(code(CLnum5, Numbers5Array[i], Units5Array[i], Digit5, Abbs5Array[i]));
 };
 ID5.innerHTML = headcode() + Row5.join(" ");
+//Table 6
+let Numbers6Array = ["Micrillion", "Dumicrillion", "Trumicrillion", "Quadrimicrilliion", "Quintimicrlillion", "Sexamicrllion", "Septamicrllion", "Octamicrillion", "Nonamicrillion"];
+let Units6Array = ["Micrilli-", "Dumicrilli-", "Trumyrilli-", "Quadrimicrilli-", "Quintimicrilli-", "Sexamicrlli-", "Septamicrilli-", "Octamicrilli-", "Nonamicrilli-"];
+let Digit6 = 3;
+let Abbs6Array = ["Mcr", "Dcr", "Tcr", "qcr", "Qcr", "scr", "Scr", "Ocr", "Ncr"];
+let CLnum6 = -1;
+let Row6 = [];
+let ID6 = document.getElementById("Level6Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 100000; Digit6 + 3; Digit6 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum6 += op2 } while (op === 0);
+  Row6.push(code(CLnum6, Numbers6Array[i], Units6Array[i], Digit6, Abbs6Array[i]));
+};
+ID6.innerHTML = headcode() + Row6.join(" ");
