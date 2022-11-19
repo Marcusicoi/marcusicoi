@@ -42,7 +42,7 @@ document.getElementById("button").onclick = function() {
    //
    let list = [];
    //
-   let endsymbols = ['°', 'deg', ' e', ' ϕ', ' i', '∈', '∉', '%', '‰', '!', ' π'];
+   let endsymbols = ['°', 'deg', ' e', ' ϕ', ' i', '∈', '∉', '%', '‰', '!', ' π', ' γ', 'T', '†', '*'];
    //
    let equation = [];
    //Just Parenthysis
@@ -114,6 +114,10 @@ document.getElementById("button").onclick = function() {
      if (probability(chance / 4)) {
        equation.push(`${choose(op)} ∑∑(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)}, y, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
      };
+     //Capital Pi.
+     if (probability(chance / 2)) {
+       equation.push(`${choose(op)} ∏(i, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)}^2)`);
+     };
      //Integrral.
      if (probability(chance)) {
        equation.push(`${choose(op)} integral(${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)}, x)`);
@@ -145,6 +149,18 @@ document.getElementById("button").onclick = function() {
      //Function.
      if (probability(chance / 2)) {
        equation.push(`${choose(op)} f(${choose(text.value)})=${choose(text.value)}`);
+     };
+     //Delta.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} DL∆${choose(text.value)}=${choose(text.value)}, ${choose(text.value)}`);
+     };
+     //Discriminant.
+     if (probability(chance / 2)) {
+       equation.push(`${choose(op)} DC∆ = ${choose(text.value)}`);
+     };
+     //Discriminant.
+     if (probability(chance / 2)) {
+       equation.push(`${choose(op)} DC∆ = ${choose(text.value)}`);
      };
    };
    let first = choose(text.value);
