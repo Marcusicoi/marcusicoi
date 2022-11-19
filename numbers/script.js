@@ -1,4 +1,4 @@
-let BGcolor = ["#66C258", "#CFBA4A", "#4C3EB8", "#6D18B4"];
+let BGcolor = ["#80CC84", "#66C258", "#CFBA4A", "#4C3EB8", "#6D18B4", "#B41818", "#18B1B4", "#B41852", "#373737", "C];
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -16,7 +16,7 @@ for (let i = 0; i < 10; i++) {
   <tr>
     <th style="background-color:${BGcolor[BGnum1]}">${Numbers1Array[i]}</th>
     <th>${Units1Array[i]}</th>
-    <th>10^${BGnum1}</th>
+    <th>10^${Digit1}</th>
     <th>${Abbs1Array[i]}</th>
   </tr>
   `);
@@ -35,14 +35,17 @@ let Numbers2Array = ["Decillion", "Vigintillion", "Trigintillion", "Quadragintil
 let Units2Array = ["Deci-", "Viginti-", "Triginta-", "Quadraginta-", "Quinquaginta-", "Sexaginta-", "Septuaginta-", "Octaginta-", "Nonaginta-"];
 let Digit2 = 3;
 let Abbs2Array = ["D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"];
+let BGnum2 = -1;
 let Row2 = [];
 let ID2 = document.getElementById("Level2Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
+  let op2 = 0;
   do { op += 10; Digit2 + 3; Digit2 += (3 * op) } while (op === 0);
+  do { op2 += 1; BGnum2 += op2 } while (op === 0);
   Row2.push(`
   <tr>
-    <th style="background-color:${BGcolor}">${Numbers2Array[i]}</th>
+    <th style="background-color:${BGcolor[BGnum2]}">${Numbers2Array[i]}</th>
     <th>${Units2Array[i]}</th>
     <th>10^${Digit2}</th>
     <th>${Abbs2Array[i]}</th>
