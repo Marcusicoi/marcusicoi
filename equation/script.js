@@ -21,7 +21,7 @@ document.getElementById("button").onclick = function() {
      '~', '??', ',', ':', '±',
      '∓', '≠', '≈', '≪', '≫',
      '∝', '≡', '≤', '≥', '⇒',
-     '⇔', '⊥', '≅'
+     '⇔', '⊥', '≅', '⊗'
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    let chance = 2.5;
@@ -40,6 +40,8 @@ document.getElementById("button").onclick = function() {
    let powernum = ['-1', '1', '2', '3', '4', '5', choose(text.value)];
    //
    let list = [];
+   //
+   let endsymbols = ['°', 'deg', ' e', ' ϕ', ' i', '∈', '∉', '%', '‰', '!', ' π'];
    //
    let equation = [];
    //Just Parenthysis
@@ -67,6 +69,10 @@ document.getElementById("button").onclick = function() {
        //With equation
        if (probability(chance / 2)) { equation.push(pOpE.join(" ") + ')') };
      };
+     //End symbols.
+     if (probability(chance)) { 
+       equation.push(`${choose(op)} ${choose(text.value)}${choose(endsymbols)}`) 
+     };
      //Power.
      if (probability(chance)) { 
        equation.push(`${choose(op)} ${choose(text.value)}^(${choose(powernum)})`) 
@@ -83,15 +89,15 @@ document.getElementById("button").onclick = function() {
          equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
        };
      };
-     //Pi.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} π`);
-     };
      //Factorial.
      if (probability(chance)) {
        equation.push(`${choose(op)} (${choose(text.value)}!)`);
      };
      //Sum.
+     if (probability(chance / 2)) {
+       equation.push(`${choose(op)} ∑(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
+     };
+     //Double sum.
      if (probability(chance / 2)) {
        equation.push(`${choose(op)} ∑(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
      };
@@ -103,29 +109,9 @@ document.getElementById("button").onclick = function() {
      if (probability(chance)) {
        equation.push(`${choose(op)} ${choose(text.value)}°${choose(text.value)}`);
      };
-     //Degree.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} ${choose(text.value)}°`);
-     };
-     //Degree2.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} ${choose(text.value)}deg`);
-     };
      //List
      if (probability(chance / 2)) {
        equation.push(`${choose(op)} [${list.join(" ")} {${choose(text.value)}}]`);
-     };
-     //Euler's number.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} e `);
-     };
-     //Phi.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} ϕ `);
-     };
-     //Imaginary unit.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} i `);
      };
      //Negative.
      if (probability(chance)) {
@@ -135,14 +121,6 @@ document.getElementById("button").onclick = function() {
      if (probability(chance)) {
        equation.push(`${choose(op)} |${choose(text.value)}| `);
      };
-     //Membership.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} ${choose(text.value)}∈ `);
-     };
-     //Membership (N).
-     if (probability(chance)) {
-       equation.push(`${choose(op)} ${choose(text.value)}∉ `);
-     };
      //Mean.
      if (probability(chance)) {
        equation.push(`${choose(op)} mx̄=${choose(text.value)} `);
@@ -150,14 +128,6 @@ document.getElementById("button").onclick = function() {
      //Complex conjegulate.
      if (probability(chance)) {
        equation.push(`${choose(op)} cx̄=${choose(text.value)} `);
-     };
-     //Percentage.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} mx̄=${choose(text.value)}% `);
-     };
-     //% per mille.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} cx̄=${choose(text.value)}‰ `);
      };
    };
    let first = choose(text.value);
