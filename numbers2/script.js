@@ -1,23 +1,36 @@
-function Level1Table(length, width) {
-  let L1Table = document.getElementById("Level1Table");
-  let NumbersArray = [
-    "Numbers", 
-    "Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", 
-    "Sextillion", "Septillion", "Octillion", "Nonillion"
-  ];
-  let table = document.createElement('TABLE');
-  table.border = '1';
-  let tableBody = document.createElement('TBODY');
-  table.appendChild(tableBody);
-  for (let x = 0; x < length; x++) {
-    let tr = document.createElement('TR');
-    tableBody.appendChild(tr);
-    for (let y = 0; y < width; y++) {
-      let td = document.createElement('TD');
-      td.appendChild(document.createTextNode(NumbersArray[x] + "," + y));
+function createTable(objectArray, fields, fieldTitles) {
+  let body = document.getElementsById('Level1Table')[0];
+  let tbl = document.createElement('table');
+  tbl.border = 1;
+  let thead = document.createElement('thead');
+  let thr = document.createElement('tr');
+  fieldTitles.forEach((fieldTitle) => {
+    let th = document.createElement('th');
+    th.appendChild(document.createTextNode(fieldTitle));
+    thr.appendChild(th);
+  });
+  thead.appendChild(thr);
+  tbl.appendChild(thead);
+
+  let tbdy = document.createElement('tbody');
+  let tr = document.createElement('tr');
+  objectArray.forEach((object) => {
+    let tr = document.createElement('tr');
+    fields.forEach((field) => {
+      var td = document.createElement('td');
+      td.appendChild(document.createTextNode(object[field]));
       tr.appendChild(td);
-    }
-  }
-  L1Table.appendChild(table);
+    });
+    tbdy.appendChild(tr);    
+  });
+  tbl.appendChild(tbdy);
+  body.appendChild(tbl)
+  return tbl;
 }
-Level1Table(11, 4);
+
+createTable([
+  {name: 'Banana', price: '3.04'},
+  {name: 'Orange', price: '2.56'},
+  {name: 'Apple', price: '1.45'}
+],
+['name', 'price'], ['Name', 'Price']);
