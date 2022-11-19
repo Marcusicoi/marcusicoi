@@ -1,4 +1,3 @@
-let digit = 1;
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -12,7 +11,7 @@ for (let i = 0; i < 10; i++) {
   <tr>
     <th>${Numbers1Array[i]}</th>
     <th>${Units1Array[i]}</th>
-    <th>${digit}</th>
+    <th>10^${digit}</th>
     <th>${Abbs1Array[i]}</th>
   </tr>
   `);
@@ -29,7 +28,8 @@ ID1.innerHTML = `
 //Table 2
 let Numbers2Array = ["Decillion", "Vigintillion", "Trigintillion", "Quadragintillion", "Quinquagintillion", "Sexagintillion", "Septuagintillion", "Octagintillion", "Nonagintillion"];
 let Units2Array = ["Deci-", "Viginti-", "Triginta-", "Quadraginta-", "Quinquaginta-", "Sexaginta-", "Septuaginta-", "Octaginta-", "Nonaginta-"];
-let Digits2Array = [34, 61, 91, 121, 151, 191, 211, 241, 271]
+
+let Digits2Array = [33, 63, 93, 123, 151, 191, 211, 241, 271]
 let Abbs2Array = ["D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"];
 let Row2 = [];
 let ID2 = document.getElementById("Level2Table");
