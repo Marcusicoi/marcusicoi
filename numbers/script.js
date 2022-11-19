@@ -89,8 +89,8 @@ for (let i = 0; i < 9; i++) {
 };
 ID4.innerHTML = headcode() + Row4.join(" ");
 //Table 5
-let Numbers5Array = ["Myrillion", "Dumyrillion", "Trumyrillion", "Quadrimyrilliion", "Quintimyrilillion", "Sexamyrillion", "Septimyrillion", "Octimyrillion", "Nonimyrillion"];
-let Units5Array = ["Myrilli-", "Dumyrilli-", "Trumyrilli-", "Quadrimyrilli-", "Quintimyrilli-", "Sexamyrilli-", "Septimyrilli-", "Octimyrilli-", "Nonimyrilli-"];
+let Numbers5Array = ["Myrillion", "Dumyrillion", "Trumyrillion", "Quadrimyrilliion", "Quintimyrilillion", "Sesmyrillion", "Septimyrillion", "Octimyrillion", "Nonamyrillion"];
+let Units5Array = ["Myrilli-", "Dumyrilli-", "Trumyrilli-", "Quadrimyrilli-", "Quintimyrilli-", "Sesmyrilli-", "Septimyrilli-", "Octimyrilli-", "Nonamyrilli-"];
 let Digit5 = 3;
 let Abbs5Array = ["My", "Dy", "Ty", "qy", "Qy", "sy", "Sy", "Oy", "Ny"];
 let CLnum5 = -1;
@@ -105,8 +105,8 @@ for (let i = 0; i < 9; i++) {
 };
 ID5.innerHTML = headcode() + Row5.join(" ");
 //Table 6
-let Numbers6Array = ["Micrillion", "Dumicrillion", "Trumicrillion", "Quadrimicrilliion", "Quintimicrlillion", "Sexamicrllion", "Septamicrllion", "Octamicrillion", "Nonamicrillion"];
-let Units6Array = ["Micrilli-", "Dumicrilli-", "Trumicrilli-", "Quadrimicrilli-", "Quintimicrilli-", "Sexamicrlli-", "Septamicrilli-", "Octamicrilli-", "Nonamicrilli-"];
+let Numbers6Array = ["Micrillion", "Dumicrillion", "Trumicrillion", "Quadrimicrilliion", "Quintimicrlillion", "Sesmicrllion", "Septamicrllion", "Octamicrillion", "Nonamicrillion"];
+let Units6Array = ["Micrilli-", "Dumicrilli-", "Trumicrilli-", "Quadrimicrilli-", "Quintimicrilli-", "Sesmicrlli-", "Septamicrilli-", "Octamicrilli-", "Nonamicrilli-"];
 let Digit6 = 3;
 let Abbs6Array = ["Mcr", "Dcr", "Tcr", "qcr", "Qcr", "scr", "Scr", "Ocr", "Ncr"];
 let CLnum6 = -1;
@@ -121,8 +121,8 @@ for (let i = 0; i < 9; i++) {
 };
 ID6.innerHTML = headcode() + Row6.join(" ");
 //Table 7
-let Numbers7Array = ["Nanillion", "Duonanillion", "Trunanillion", "Quadrinanilliion", "Quintinanillion", "Sesnanillion", "Septinanillion", "Octonanillion", "Nonananillion"];
-let Units7Array = ["Nanilli-", "Duonanilli-", "Trunanilli-", "Quadrinanilli-", "Quintinanilli-", "Sesnanilli-", "Septinanilli-", "Octananilli-", "Nonananilli-"];
+let Numbers7Array = ["Nanillion", "Dunanillion", "Trunanillion", "Quadrinanilliion", "Quintinanillion", "Sesnanillion", "Septinanillion", "Octonanillion", "Nonananillion"];
+let Units7Array = ["Nanilli-", "Dunanilli-", "Trunanilli-", "Quadrinanilli-", "Quintinanilli-", "Sesnanilli-", "Septinanilli-", "Octananilli-", "Nonananilli-"];
 let Digit7 = 3;
 let Abbs7Array = ["Nan", "Dan", "Tan", "qan", "Qan", "san", "San", "Oan", "Nal"];
 let CLnum7 = -1;
@@ -136,6 +136,22 @@ for (let i = 0; i < 9; i++) {
   Row7.push(code(CLnum7, Numbers7Array[i], Units7Array[i], Digit7, Abbs7Array[i]));
 };
 ID7.innerHTML = headcode() + Row7.join(" ");
+//Table 8
+let Numbers8Array = ["Picillion", "Dupicillion", "Trupicillion", "Quadripicilliion", "Quintipicillion", "Sesnanillion", "Septinanillion", "Octonanillion", "Nonananillion"];
+let Units8Array = ["Nanilli-", "Dupicilli-", "Trupicilli-", "Quadripicilli-", "Quintipicilli-", "Sesnanilli-", "Septinanilli-", "Octananilli-", "Nonananilli-"];
+let Digit8 = 3;
+let Abbs8Array = ["Nan", "Dan", "Tan", "qan", "Qan", "san", "San", "Oan", "Nal"];
+let CLnum8 = -1;
+let Row8 = [];
+let ID8 = document.getElementById("Level8Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 1000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum8 += op2 } while (op === 0);
+  Row8.push(code(CLnum8, Numbers8Array[i], Units8Array[i], Digit8, Abbs8Array[i]));
+};
+ID8.innerHTML = headcode() + Row8.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
   function choose(argument) {
