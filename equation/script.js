@@ -21,7 +21,8 @@ document.getElementById("button").onclick = function() {
      '~', '??', ',', ':', '±',
      '∓', '≠', '≈', '≪', '≫',
      '∝', '≡', '≤', '≥', '⇒',
-     '⇔', '⊥', '≅', '⊗'
+     '⇔', '⊥', '≅', '⊗', ':=',
+     
    ];
    let thing = num.value / (Math.floor(Math.random() * (Math.floor(num.value / 2))) + 1);
    let chance = 2.5;
@@ -89,17 +90,13 @@ document.getElementById("button").onclick = function() {
          equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
        };
      };
-     //Factorial.
-     if (probability(chance)) {
-       equation.push(`${choose(op)} (${choose(text.value)}!)`);
-     };
      //Sum.
      if (probability(chance / 2)) {
        equation.push(`${choose(op)} ∑(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
      };
      //Double sum.
-     if (probability(chance / 2)) {
-       equation.push(`${choose(op)} ∑(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
+     if (probability(chance / 4)) {
+       equation.push(`${choose(op)} ∑∑(x, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)}, y, ${choose(text.value)}, ${choose(text.value)}, ${choose(text.value)})`);
      };
      //Integrral.
      if (probability(chance)) {
