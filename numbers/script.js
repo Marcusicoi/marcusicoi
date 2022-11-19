@@ -106,7 +106,7 @@ for (let i = 0; i < 9; i++) {
 ID5.innerHTML = headcode() + Row5.join(" ");
 //Table 6
 let Numbers6Array = ["Micrillion", "Dumicrillion", "Trumicrillion", "Quadrimicrilliion", "Quintimicrlillion", "Sexamicrllion", "Septamicrllion", "Octamicrillion", "Nonamicrillion"];
-let Units6Array = ["Micrilli-", "Dumicrilli-", "Trumyrilli-", "Quadrimicrilli-", "Quintimicrilli-", "Sexamicrlli-", "Septamicrilli-", "Octamicrilli-", "Nonamicrilli-"];
+let Units6Array = ["Micrilli-", "Dumicrilli-", "Trumicrilli-", "Quadrimicrilli-", "Quintimicrilli-", "Sexamicrlli-", "Septamicrilli-", "Octamicrilli-", "Nonamicrilli-"];
 let Digit6 = 3;
 let Abbs6Array = ["Mcr", "Dcr", "Tcr", "qcr", "Qcr", "scr", "Scr", "Ocr", "Ncr"];
 let CLnum6 = -1;
@@ -120,3 +120,19 @@ for (let i = 0; i < 9; i++) {
   Row6.push(code(CLnum6, Numbers6Array[i], Units6Array[i], Digit6, Abbs6Array[i]));
 };
 ID6.innerHTML = headcode() + Row6.join(" ");
+//Table 7
+let Numbers7Array = ["Nanillion", "Duonanillion", "Trunanillion", "Quadrinanilliion", "Quintinanillion", "Sesnanillion", "Septinanillion", "Octonanillion", "Nonananillion"];
+let Units7Array = ["Nanilli-", "Duonanilli-", "Trunanilli-", "Quadrinanilli-", "Quintinanilli-", "Sesnanilli-", "Septinanilli-", "Octananilli-", "Nonananilli-"];
+let Digit7 = 3;
+let Abbs7Array = ["Nan", "Dan", "Tan", "qan", "Qan", "san", "San", "Oan", "Nal"];
+let CLnum7 = -1;
+let Row7 = [];
+let ID7 = document.getElementById("Level7Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 1000000; Digit7 + 3; Digit7 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum7 += op2 } while (op === 0);
+  Row7.push(code(CLnum7, Numbers7Array[i], Units7Array[i], Digit7, Abbs7Array[i]));
+};
+ID7.innerHTML = headcode() + Row7.join(" ");
