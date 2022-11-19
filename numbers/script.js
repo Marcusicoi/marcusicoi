@@ -1,5 +1,6 @@
 let BGcolor = ["#80CC84", "#66C258", "#CFBA4A", "#4C3EB8", "#6D18B4", "#B41818", "#18B1B4", "#B41852", "#373737", "#CCCCCC"];
-let TTcolor = ["#8FE493", "#7EEF6C", "#FFE65D", "#534CE3", "#861EDE", "#DE1E1E", "#1EDBDE", "#DE1E65", "#444444", "#DDDDDD"];
+let TTcolor = ["#A0FFA5", "#27FF00", "#FFD800", "#0C00FF", "#8B00FF", "red", "#00FCFF", "#FF0060", "#777777", "#EEEEEE"];
+function headcolor() { return `style="background-color
 function colors(n) { return `style="background-color:${BGcolor[n]};color:${TTcolor[n]}"` };
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
