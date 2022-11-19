@@ -1,3 +1,4 @@
+let BGcolor = ["#66C258"];
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -38,7 +39,7 @@ for (let i = 0; i < 9; i++) {
   do { op += 10; Digit2 + 3; Digit2 += (3 * op) } while (op === 0);
   Row2.push(`
   <tr>
-    <th>${Numbers2Array[i]}</th>
+    <th style="background-color:${>${Numbers2Array[i]}</th>
     <th>${Units2Array[i]}</th>
     <th>10^${Digit2}</th>
     <th>${Abbs2Array[i]}</th>
