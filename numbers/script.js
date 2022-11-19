@@ -136,3 +136,17 @@ for (let i = 0; i < 9; i++) {
   Row7.push(code(CLnum7, Numbers7Array[i], Units7Array[i], Digit7, Abbs7Array[i]));
 };
 ID7.innerHTML = headcode() + Row7.join(" ");
+//Not a table, but a random generator
+document.getElementById("button").onclick = function() {
+  function choose(argument) {
+    return argument[Math.floor(Math.random() * argument.length)];
+  };
+  let result = 
+      (Math.floor(Math.random() * 998) + 1) +
+      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs7Array) + 
+      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs6Array) +    
+      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs5Array) + 
+      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs4Array) + 
+      choose(Abbs1Array) + choose(Abbs2Array) + choose(Abbs3Array);
+  document.getElementById("result").innerHTML = result;   
+};
