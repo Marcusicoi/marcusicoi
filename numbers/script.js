@@ -138,16 +138,16 @@ for (let i = 0; i < 9; i++) {
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
 let Numbers8Array = ["Picillion", "Dupicillion", "Trupicillion", "Quadripicilliion", "Quintipicillion", "Sespicillion", "Septipicillion", "Octopicillion", "Nonapicillion"];
-let Units8Array = ["Nanilli-", "Dupicilli-", "Trupicilli-", "Quadripicilli-", "Quintipicilli-", "Sespicilli-", "Septipicilli-", "Octopicilli-", "Nonapicilli-"];
+let Units8Array = ["Picilli", "Dupicilli-", "Trupicilli-", "Quadripicilli-", "Quintipicilli-", "Sespicilli-", "Septipicilli-", "Octopicilli-", "Nonapicilli-"];
 let Digit8 = 3;
-let Abbs8Array = ["Nan", "Dan", "Tan", "qan", "Qan", "san", "San", "Oan", "Nal"];
+let Abbs8Array = ["Pic", "Dic", "Tic", "qic", "Qic", "sic", "Sic", "Oic", "Nic"];
 let CLnum8 = -1;
 let Row8 = [];
 let ID8 = document.getElementById("Level8Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 1000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
+  do { op += 100000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum8 += op2 } while (op === 0);
   Row8.push(code(CLnum8, Numbers8Array[i], Units8Array[i], Digit8, Abbs8Array[i]));
 };
@@ -160,6 +160,7 @@ document.getElementById("button").onclick = function() {
   let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs8Array) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs7Array) + 
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs6Array) +    
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs5Array) + 
