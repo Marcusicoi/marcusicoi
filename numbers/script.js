@@ -88,3 +88,19 @@ for (let i = 0; i < 9; i++) {
   Row4.push(code(CLnum4, Numbers4Array[i], Units4Array[i], Digit4, Abbs4Array[i]));
 };
 ID4.innerHTML = headcode() + Row4.join(" ");
+//Table 4
+let Numbers5Array = ["Myrillion", "Dumyrillion", "Trumyrillion", "Quadrimyrilliion", "Quinmyrilillion", "Sexamyrillion", "Septimyrillion", "Octimyrillion", "Nonimyrillion"];
+let Units5Array = ["Myrilli-", "Dumyrilli-", "Trumyrilli-", "Quadrimyrilli-", "Quinmyrilli-", "Sexamyrilli-", "Septimyrilli-", "Octimyrilli-", "Nonimyrilli-"];
+let Digit5 = 3;
+let Abbs5Array = ["My", "Dy", "Ty", "qy", "Qy", "sy", "Sy", "Oy", "Ny"];
+let CLnum5 = -1;
+let Row5 = [];
+let ID5 = document.getElementById("Level5Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 10000; Digit5 + 3; Digit5 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum5 += op2 } while (op === 0);
+  Row5.push(code(CLnum5, Numbers5Array[i], Units5Array[i], Digit5, Abbs5Array[i]));
+};
+ID5.innerHTML = headcode() + Row5.join(" ");
