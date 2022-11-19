@@ -1,17 +1,17 @@
-let BGcolor = ["#66C258", "#CFBA4A"];
+let BGcolor = ["#66C258", "#CFBA4A", "#4C3EB8", "#6D18B4"];
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
 let Digit1 = 0;
 let Abbs1Array = ["K", "U, M", "D, B", "T", "q", "Q", "s", "S", "O", "N"];
-let BGnum1
+let BGnum1 = -1;
 let Row1 = [];
 let ID1 = document.getElementById("Level1Table");
 for (let i = 0; i < 10; i++) {
   let op = 0;
   let op2 = 0;
   do { op += 1; Digit1 += (3 * op) } while (op === 0);
-  do { op2 += 1; BGnum1 += (3 * op2)} while (op2 === 0);
+  do { op2 += 1; BGnum1 += op2 } while (op2 === 0);
   Row1.push(`
   <tr>
     <th style="background-color:${BGcolor[BGnum1]}">${Numbers1Array[i]}</th>
