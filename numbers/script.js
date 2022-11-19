@@ -1,7 +1,19 @@
 let BGcolor = ["#80CC84", "#66C258", "#CFBA4A", "#4C3EB8", "#6D18B4", "#B41818", "#18B1B4", "#B41852", "#373737", "#CCCCCC"];
 let TTcolor = ["#A0FFA5", "#27FF00", "#FFD800", "#0C00FF", "#8B00FF", "red", "#00FCFF", "#FF0060", "#777777", "#EEEEEE"];
-function headcolor() { return `style="background-color
+function headcolor() { return `style="background-color:#CCCCCC; color:#EEEEEE"` };
 function colors(n) { return `style="background-color:${BGcolor[n]};color:${TTcolor[n]}"` };
+//
+function headcode() {
+  return `
+  <table>
+  <tr>
+    <th ${headcolor()}>Numbers</th>
+    <th ${headcolor()}>Units</th>
+    <th ${headcolor()}>Digits</th>
+    <th ${headcolor()}>Abbreviated</th>
+  </tr>
+  `;           
+}
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -18,21 +30,13 @@ for (let i = 0; i < 10; i++) {
   Row1.push(`
   <tr>
     <th ${colors(CLnum1)}>${Numbers1Array[i]}</th>
-    <th>${Units1Array[i]}</th>
-    <th>10^${Digit1}</th>
-    <th>${Abbs1Array[i]}</th>
+    <th ${colors(CLnum1)}>${Units1Array[i]}</th>
+    <th ${colors(CLnum1)}>10^${Digit1}</th>
+    <th ${colors(CLnum1)}>${Abbs1Array[i]}</th>
   </tr>
   `);
 };
-ID1.innerHTML = `
-  <table>
-  <tr>
-    <th>Numbers</th>
-    <th>Units</th>
-    <th>Digits</th>
-    <th>Abbreviated</th>
-  </tr>
-` + Row1.join(" ");
+ID1.innerHTML = headcode() + Row1.join(" ");
 //Table 2
 let Numbers2Array = ["Decillion", "Vigintillion", "Trigintillion", "Quadragintillion", "Quinquagintillion", "Sexagintillion", "Septuagintillion", "Octagintillion", "Nonagintillion"];
 let Units2Array = ["Deci-", "Viginti-", "Triginta-", "Quadraginta-", "Quinquaginta-", "Sexaginta-", "Septuaginta-", "Octaginta-", "Nonaginta-"];
@@ -48,22 +52,14 @@ for (let i = 0; i < 9; i++) {
   do { op2 += 1; BGnum2 += op2 } while (op === 0);
   Row2.push(`
   <tr>
-    <th style="background-color:${BGcolor[BGnum2]}">${Numbers2Array[i]}</th>
+    <th>${Numbers2Array[i]}</th>
     <th>${Units2Array[i]}</th>
     <th>10^${Digit2}</th>
     <th>${Abbs2Array[i]}</th>
   </tr>
   `);
 };
-ID2.innerHTML = `
-  <table>
-  <tr>
-    <th>Numbers</th>
-    <th>Units</th>
-    <th>Digits</th>
-    <th>Abbreviated</th>
-  </tr>
-` + Row2.join(" ");
+ID2.innerHTML = headCode() + Row2.join(" ");
 //Table 3
 let Numbers3Array = ["Centillion", "Ducentillion", "Trecentillion", "Quadringentillion", "Quingentillion", "Sescentillion", "Septingentillion", "Octingentillion", "Nonagentillion"];
 let Units3Array = ["Centi-", "Ducenti-", "Trecenti-", "Quadringenti-", "Quingenti-", "Sescenti-", "Septingenti-", "Octingenti-", "Nonagenti-"];
@@ -86,10 +82,10 @@ for (let i = 0; i < 9; i++) {
 ID3.innerHTML = `
   <table>
   <tr>
-    <th>Numbers</th>
-    <th>Units</th>
-    <th>Digits</th>
-    <th>Abbreviated</th>
+    <th ${headcolor()}>Numbers</th>
+    <th ${headcolor()}>Units</th>
+    <th ${headcolor()}>Digits</th>
+    <th ${headcolor()}>Abbreviated</th>
   </tr>
 ` + Row3.join(" ");
 //Table 4
@@ -114,9 +110,9 @@ for (let i = 0; i < 9; i++) {
 ID4.innerHTML = `
   <table>
   <tr>
-    <th>Numbers</th>
-    <th>Units</th>
-    <th>Digits</th>
-    <th>Abbreviated</th>
+    <th ${headcolor()}>Numbers</th>
+    <th ${headcolor()}>Units</th>
+    <th ${headcolor()}>Digits</th>
+    <th ${headcolor()}>Abbreviated</th>
   </tr>
 ` + Row4.join(" ");
