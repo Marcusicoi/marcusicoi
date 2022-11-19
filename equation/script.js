@@ -92,10 +92,18 @@ document.getElementById("button").onclick = function() {
      };
      //Floor Bracket.
      if (probability(chance)) {
-       equation.push(`${choose(op)} ⌊${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}`);
-       //Decimals Type.Type.
+       equation.push(`${choose(op)} ⌊${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}⌋`);
+       //Florr bracket Type.Type.
        if (probability(chance / 2)) {
-         equation.push(`${choose(op)} ${choose(text.value)}.${choose(text.value)}`);
+         equation.push(`${choose(op)} ⌊${choose(text.value)}.${choose(text.value)}⌋`);
+       };
+     };
+     //Ceiling Bracket.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} ⌈${choose(text.value)}.${Math.floor(Math.random() * 9) + 1}⌉`);
+       //Ceiling bracket Type.Type.
+       if (probability(chance / 2)) {
+         equation.push(`${choose(op)} ⌈${choose(text.value)}.${choose(text.value)}⌉`);
        };
      };
      //Sum.
@@ -133,6 +141,10 @@ document.getElementById("button").onclick = function() {
      //Complex conjegulate.
      if (probability(chance)) {
        equation.push(`${choose(op)} cx̄=${choose(text.value)} `);
+     };
+     //Function.
+     if (probability(chance / 2)) {
+       equation.push(`${choose(op)} f(${choose(text.value)})=${choose(text.value)}`);
      };
    };
    let first = choose(text.value);
