@@ -148,19 +148,19 @@ document.getElementById("button").onclick = function() {
      };
      //Function.
      if (probability(chance / 2)) {
-       equation.push(`${choose(op)} f(${choose(text.value)})=${choose(text.value)}`);
+       equation.push(`${choose(op)} f(${choose(text.value)}) = ${choose(text.value)}`);
      };
      //Delta.
      if (probability(chance)) {
-       equation.push(`${choose(op)} DL∆${choose(text.value)}=${choose(text.value)}, ${choose(text.value)}`);
+       equation.push(`${choose(op)} DL∆${choose(text.value)} = ${choose(text.value)}, ${choose(text.value)}`);
      };
      //Discriminant.
-     if (probability(chance / 2)) {
+     if (probability(chance)) {
        equation.push(`${choose(op)} DC∆ = ${choose(text.value)}`);
      };
-     //Discriminant.
-     if (probability(chance / 2)) {
-       equation.push(`${choose(op)} DC∆ = ${choose(text.value)}`);
+     //Probability.
+     if (probability(chance)) {
+       equation.push(`${choose(op)} P(${choose(text.value)}) = ${Math.floor(Math.random() * 10)}.${choose(['1', '2', '3', '4', '5', '6', '7', '8', '9'])}${choose(['', '1', '2', '3', '4', '5', '6', '7', '8', '9'])}`);
      };
    };
    let first = choose(text.value);
