@@ -4,19 +4,19 @@ let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion"
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
 let Digit1 = 0;
 let Abbs1Array = ["K", "U, M", "D, B", "T", "q", "Q", "s", "S", "O", "N"];
+let BGnum1
 let Row1 = [];
 let ID1 = document.getElementById("Level1Table");
 for (let i = 0; i < 10; i++) {
   let op = 0;
-  let BGnum = -1;
   let op2 = 0;
   do { op += 1; Digit1 += (3 * op) } while (op === 0);
-  do { op2 += 1; BGnum += op2} while (op2 === -0);
+  do { op2 += 1; BGnum1 += (3 * op2)} while (op2 === 0);
   Row1.push(`
   <tr>
-    <th style="background-color:${BGcolor[BGnum]}">${Numbers1Array[i]}</th>
+    <th style="background-color:${BGcolor[BGnum1]}">${Numbers1Array[i]}</th>
     <th>${Units1Array[i]}</th>
-    <th>10^${BGnum}</th>
+    <th>10^${BGnum1}</th>
     <th>${Abbs1Array[i]}</th>
   </tr>
   `);
