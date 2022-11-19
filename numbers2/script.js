@@ -55,13 +55,13 @@ ID2.innerHTML = `
   </tr>
 ` + Row2.join(" ");
 //Table 3
-let Numbers3Array = ["Centillion", "Ducentillion", "Trecentillion", "Quadringentillion", "illion", "Quinquagintillion", "Sexagintillion", "Septuagintillion", "Octagintillion", "Nonagintillion"];
-let Units3Array = ["Centi-", "Deci-", "Viginti-", "Triginta-", "Quadraginta-", "Quinquaginta-", "Sexaginta-", "Septuaginta-", "Octaginta-", "Nonaginta-"];
-let Abbs3Array = ["Ce", "D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"];
-let Digit3 = 3
+let Numbers3Array = ["Centillion", "Ducentillion", "Trecentillion", "Quadringentillion", "Quingentillion", "Sescentillion", "Septingentillion", "Octingentillion", "Nonagentillion"];
+let Units3Array = ["Centi-", "Ducenti-", "Trecenti-", "Quadringenti-", "Quingenti-", "Sescenti-", "Septingenti-", "Octingenti-", "Nonagenti-"];
+let Digit3 = 3;
+let Abbs3Array = ["Ce", "Du", "Te", "Qd", "Qn", "Sc", "St", "Ot", "Ng"];
 let Row3 = [];
 let ID3 = document.getElementById("Level3Table");
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 9; i++) {
   let op = 0;
   do { op += 100; Digit3 + 3; Digit3 += (3 * op) } while (op === 31);
   Row3.push(`
@@ -82,3 +82,31 @@ ID3.innerHTML = `
     <th>Abbreviated</th>
   </tr>
 ` + Row3.join(" ");
+//Table 4
+let Numbers4Array = ["Millillion", "Ducentillion", "Trecentillion", "Quadringentillion", "Quingentillion", "Sescentillion", "Septingentillion", "Octingentillion", "Nonagentillion"];
+let Units4Array = ["Centi-", "Ducenti-", "Trecenti-", "Quadringenti-", "Quingenti-", "Sescenti-", "Septingenti-", "Octingenti-", "Nonagenti-"];
+let Digit4 = 3;
+let Abbs4Array = ["Ce", "Du", "Te", "Qd", "Qn", "Sc", "St", "Ot", "Ng"];
+let Row4 = [];
+let ID4 = document.getElementById("Level4Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 100; Digit4 + 3; Digit4 += (3 * op) } while (op === 31);
+  Row4.push(`
+  <tr>
+    <th>${Numbers4Array[i]}</th>
+    <th>${Units4Array[i]}</th>
+    <th>10^${Digit4}</th>
+    <th>${Abbs4Array[i]}</th>
+  </tr>
+  `);
+};
+ID4.innerHTML = `
+  <table>
+  <tr>
+    <th>Numbers</th>
+    <th>Units</th>
+    <th>Digits</th>
+    <th>Abbreviated</th>
+  </tr>
+` + Row4.join(" ");
