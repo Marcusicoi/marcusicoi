@@ -216,6 +216,32 @@ for (let i = 0; i < 9; i++) {
   Row13.push(code(CLnum13, numbercode("Xonillion")[i], numbercode("Xonilli-")[i], digitcomma(Digit13), abbcode("Xni")[i]));
 };
 ID13.innerHTML = headcode() + Row13.join(" ");
+//Table 14
+let Digit14 = 3;
+let CLnum14 = -1;
+let Row14 = [];
+let ID14 = document.getElementById("Level14Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 10000000000000; Digit14 + 3; Digit14 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum14 += op2 } while (op === 0);
+  Row14.push(code(CLnum14, numbercode("Vecillion")[i], numbercode("Vecilli-")[i], digitcomma(Digit14), abbcode("Vec")[i]));
+};
+ID14.innerHTML = headcode() + Row14.join(" ");
+//Table 15
+let Digit15 = 3;
+let CLnum15 = -1;
+let Row15 = [];
+let ID15 = document.getElementById("Level15Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 100000000000000; Digit15 + 3; Digit15 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum15 += op2 } while (op === 0);
+  Row15.push(code(CLnum15, numbercode("Mecillion")[i], numbercode("Mecilli-")[i], digitcomma(Digit15), abbcode("Mci")[i]));
+};
+ID15.innerHTML = headcode() + Row15.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
   function choose(argument) {
@@ -224,6 +250,8 @@ document.getElementById("button").onclick = function() {
   let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Mci")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Vec")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Xni")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Yct")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Zpt")) + 
