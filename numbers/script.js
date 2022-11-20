@@ -28,6 +28,11 @@ function numbercode(type) {
   let lctype = type.toLowerCase();
   return [type, `Du${lctype}`, `Tru${lctype}`, `Quadri${lctype}`, `Quinti${lctype}`, `Ses${lctype}`, `Septi${lctype}`, `Octi${lctype}`, `Nona${lctype}`];
 };
+function abbcode(type) {
+  let lctype = type.toLowerCase();
+  let lcrptype = lctype.replace(lctype.charAt(0), "");
+  return [type, `D${lcrptype}`, `T${lcrptype}`, `q${lcrptype}`, `Q${lcrptype}`, `s${lcrptype}`, `S${lcrptype}`, `O${lcrptype}`, `N${lcrptype}`];
+};
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -125,10 +130,7 @@ for (let i = 0; i < 9; i++) {
 };
 ID6.innerHTML = headcode() + Row6.join(" ");
 //Table 7
-let Numbers7Array = ["Nanillion", "Dunanillion", "Trunanillion", "Quadrinanilliion", "Quintinanillion", "Sesnanillion", "Septinanillion", "Octonanillion", "Nonananillion"];
-let Units7Array = ["Nanilli-", "Dunanilli-", "Trunanilli-", "Quadrinanilli-", "Quintinanilli-", "Sesnanilli-", "Septinanilli-", "Octonanilli-", "Nonananilli-"];
 let Digit7 = 3;
-let Abbs7Array = ["Nan", "Dan", "Tan", "qan", "Qan", "san", "San", "Oan", "Nal"];
 let CLnum7 = -1;
 let Row7 = [];
 let ID7 = document.getElementById("Level7Table");
@@ -137,12 +139,11 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 1000000; Digit7 + 3; Digit7 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum7 += op2 } while (op === 0);
-  Row7.push(code(CLnum7, Numbers7Array[i], Units7Array[i], Digit7, Abbs7Array[i]));
+  Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], Digit7, abbcode("[i]));
 };
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
 let Digit8 = 3;
-let Abbs8Array = ["Pic", "Dic", "Tic", "qic", "Qic", "sic", "Sic", "Oic", "Nic"];
 let CLnum8 = -1;
 let Row8 = [];
 let ID8 = document.getElementById("Level8Table");
@@ -151,7 +152,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum8 += op2 } while (op === 0);
-  Row8.push(code(CLnum8, numbercode(, Units8Array[i], Digit8, Abbs8Array[i]));
+  Row8.push(code(CLnum8, numbercode("Picillion")[i], numbercode("Picilli-")[i], Digit8, abbcode("Pic")[i]));
 };
 ID8.innerHTML = headcode() + Row8.join(" ");
 //Not a table, but a random generator
