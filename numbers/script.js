@@ -177,7 +177,7 @@ for (let i = 0; i < 9; i++) {
   Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], digitcomma(Digit10), abbcode("Att")[i]));
 };
 ID10.innerHTML = headcode() + Row10.join(" ");
-//Table 10
+//Table 11
 let Digit11 = 3;
 let CLnum11 = -1;
 let Row11 = [];
@@ -187,9 +187,35 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 10000000000; Digit11 + 3; Digit11 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum11 += op2 } while (op === 0);
-  Row11.push(code(CLnum10, numbercode("Zeptillion")[i], numbercode("Zeptilli-")[i], digitcomma(Digit11), abbcode("Zpt")[i]));
+  Row11.push(code(CLnum11, numbercode("Zeptillion")[i], numbercode("Zeptilli-")[i], digitcomma(Digit11), abbcode("Zpt")[i]));
 };
 ID11.innerHTML = headcode() + Row11.join(" ");
+//Table 12
+let Digit12 = 3;
+let CLnum12 = -1;
+let Row12 = [];
+let ID12 = document.getElementById("Level12Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 100000000000; Digit12 + 3; Digit12 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum12 += op2 } while (op === 0);
+  Row12.push(code(CLnum12, numbercode("Yoctillion")[i], numbercode("Yoctilli-")[i], digitcomma(Digit12), abbcode("Yct")[i]));
+};
+ID12.innerHTML = headcode() + Row12.join(" ");
+//Table 13
+let Digit13 = 3;
+let CLnum13 = -1;
+let Row13 = [];
+let ID13 = document.getElementById("Level13Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 1000000000000; Digit13 + 3; Digit13 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum13 += op2 } while (op === 0);
+  Row13.push(code(CLnum13, numbercode("Xonillion")[i], numbercode("Xonilli-")[i], digitcomma(Digit13), abbcode("Xni")[i]));
+};
+ID13.innerHTML = headcode() + Row13.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
   function choose(argument) {
@@ -198,8 +224,11 @@ document.getElementById("button").onclick = function() {
   let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Xni")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Yct")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Zpt")) + 
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Att")) +
-      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Pic")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Fmt")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Nai")) + 
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Mcr")) +    
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("My")) + 
