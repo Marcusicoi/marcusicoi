@@ -39,23 +39,15 @@ function abbcode2(type) {
 function digitcomma(n) {
   return n.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 };
-function digitfixed(x) {
-  if (Math.abs(x) < 1.0) {
-    var e = parseInt(x.toString().split('e-')[1]);
-    if (e) {
-        x *= Math.pow(10,e-1);
-        x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
-    }
-  } else {
-    var e = parseInt(x.toString().split('+')[1]);
-    if (e > 20) {
-        e -= 20;
-        x /= Math.pow(10,e);
-        x += (new Array(e+1)).join('0');
-    }
-  }
-  return x;
-}
+function digitzeros(n) {
+  let zeros = [];
+  for (let i = 0; i < n; i++) {
+    zeros.push("000,")
+  };
+  zeros.push(",003");
+  let x = zeros.join("");
+  return [`3,${x}`, `6,${x}`, `9,${x}`, `12,${x}`, `15,${x}`, `18,${x}`, `21,${x}`, `24,${x}`, `27,${x}`];
+};
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -172,15 +164,15 @@ for (let i = 0; i < 9; i++) {
 };
 ID8.innerHTML = headcode() + Row8.join(" ");
 //Table 9
-let Digi90Array = ["30,000,000,000,000,003", "60,000,000,000,000,003", "120,000,000,000,000,003", "150,000,000,000,000,003", "170,000,000,000,000,003",
-                    "210,000,000,000,000,003", "240,000,000,000,000,003", "270,000,000,000,000,000"]
+let Digit9Array = digitzeros/*["30,000,000,000,000,003", "60,000,000,000,000,003", "90,000,000,000,000,003", "120,000,000,000,000,003", "150,000,000,000,000,003", "180,000,000,000,000,003",
+                   "210,000,000,000,000,003", "240,000,000,000,000,003", "270,000,000,000,000,000"]*/
 let CLnum9 = -1;
 let Row9 = [];
 let ID9 = document.getElementById("Level9Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   do { op += 1; CLnum9 += op } while (op === 0);
-  Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], digitcomma(Digit9), abbcode("Fmt")[i]));
+  Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], Digit9Array[i], abbcode("Fmt")[i]));
 };
 ID9.innerHTML = headcode() + Row9.join(" ");
 //Table 10
@@ -190,7 +182,7 @@ let ID10 = document.getElementById("Level10Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   do { op += 1; CLnum10 += op } while (op === 0);
-  Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], Digit10Array[i], abbcode("Att")[i]));
+  Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], "", abbcode("Att")[i]));
 };
 ID10.innerHTML = headcode() + Row10.join(" ");
 //Table 11
