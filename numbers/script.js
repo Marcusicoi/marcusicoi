@@ -49,6 +49,9 @@ function digitzeros(n) {
   let x = zeros.join("");
   return [`3,${x}`, `6,${x}`, `9,${x}`, `12,${x}`, `15,${x}`, `18,${x}`, `21,${x}`, `24,${x}`, `27,${x}`];
 };
+function choose(argument) {
+  return argument[Math.floor(Math.random() * argument.length)];
+};
 //
 let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
 //Table 1
@@ -388,9 +391,6 @@ for (let i = 0; i < 9; i++) {
 ID30.innerHTML = headcode() + Row30.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
-  function choose(argument) {
-    return argument[Math.floor(Math.random() * argument.length)];
-  };
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Hec")) +
@@ -424,23 +424,30 @@ document.getElementById("button").onclick = function() {
   document.getElementById("result").innerHTML = result;   
 };
 //Not a table, but the digits counter
+let eye = 0;
 function outputcode(x, y) {
   let array = [];
-  for (let i = 0; i < x; i++) {
+  for (eye; eye < x; eye++) {
     array.push(`
-    <a style="background:#0077ff" id="digit${i + 1}">${y[i]}</a>
+    <a style="background:#0077ff" id="digit${eye + 1}">${y[eye]}</a>
     `);
   };
-  return array
+  eye = 0;
+  return array.join("");
 };
+function onclic(id) {
+  return `document.getElementById(${id}).onclick`;
+};
+let buttons = document.getElementById("buttons");
+let boutput = [];;
 let digits = document.getElementById("digits");
-let output = [];
-let ttype = 1;
 let counter = 0;
+let ttype = 1;
 if (ttype === 1) {
-output.push(`
-<a style="background:#0077ff" id="digit1">U</a>
-
-`)
+  boutput.push(outputcode(9, Abbs0Array));
+  onclic("digit1")// = function() {
+    
+  };
 };
-digits.innerHTML = output.join("");
+buttons.innerHTML = boutput.join("");
+digits.innerHTML = "10^" + counter;
