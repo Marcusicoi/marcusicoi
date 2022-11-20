@@ -33,6 +33,11 @@ function abbcode(type) {
   let lcrptype = lctype.replace(lctype.charAt(0), "");
   return [type, `D${lcrptype}`, `T${lcrptype}`, `q${lcrptype}`, `Q${lcrptype}`, `s${lcrptype}`, `S${lcrptype}`, `O${lcrptype}`, `N${lcrptype}`];
 };
+function abbcode2(type) {
+  let lctype = type.toLowerCase();
+  let lcrptype = lctype.replace(lctype.charAt(0), "");
+  return [type, `D${lcrptype}`, `T${lcrptype}`, `q${lcrptype}`, `Q${lcrptype}`, `s${lcrptype}`, `S${lcrptype}`, `O${lcrptype}`, `N${lcrptype}`];
+};
 function digitcomma(n) {
     return n.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
