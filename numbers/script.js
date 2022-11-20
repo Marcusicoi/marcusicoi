@@ -427,24 +427,25 @@ document.getElementById("button").onclick = function() {
 let eye = 0;
 let array = [];
 let idarray = [];
+let d = document.createElement("div");
 function outputcode(x, y) {
   for (eye; eye < x; eye++) {
     idarray.push(`id="digit${eye + 1}"`);
     array.push(`
-    <a style="background:#0077ff" >${y[eye]}</a>
+    <a style="background:#0077ff">${y[eye]}</a>
     `);
-  };
+  };9
   eye = 0;
   return array.join("");
 };
 let buttons = document.getElementById("buttons");
-let boutput = [];;
+let boutput = [];
 let digits = document.getElementById("digits");
 let counter = 0;
 let ttype = 1;
 if (ttype === 1) {
   boutput.push(outputcode(9, Abbs0Array));
-  document.getElementById("digit1").onclick = function() {  
+  .onclick = function() {  
     counter += 6
   };
 };
