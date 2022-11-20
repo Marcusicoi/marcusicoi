@@ -37,7 +37,24 @@ function abbcode2(type) {
   return [type, `D${type}`, `T${type}`, `q${type}`, `Q${type}`, `s${type}`, `S${type}`, `O${type}`, `N${type}`];
 };
 function digitcomma(n) {
-    return n.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  return n.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+};
+function digitfixed(x) {
+  if (Math.abs(x) < 1.0) {
+    var e = parseInt(x.toString().split('e-')[1]);
+    if (e) {
+        x *= Math.pow(10,e-1);
+        x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+    }
+  } else {
+    var e = parseInt(x.toString().split('+')[1]);
+    if (e > 20) {
+        e -= 20;
+        x /= Math.pow(10,e);
+        x += (new Array(e+1)).join('0');
+    }
+  }
+  return x;
 }
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
@@ -162,7 +179,7 @@ let ID9 = document.getElementById("Level9Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 1000000000000000; Digit9 + 3; Digit9 += (3 * op) } while (op === 0);
+  do { op += 10000000000000000; Digit9 + 3; Digit9 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum9 += op2 } while (op === 0);
   Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], digitcomma(Digit9), abbcode("Fmt")[i]));
 };
