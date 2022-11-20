@@ -26,13 +26,16 @@ function code(color, number, unit, digit, abb) {
 };
 function numbercode(type) {
   let lctype = type.toLowerCase();
-  return [type, `Du${lctype}`, `Tru${lctype}`, `Quadri${lctype}`, `Quinti${lctype}`, `Ses${lctype}`, `Septi${lctype}`, `Octi${lctype}`, `Nona${lctype}`];
+  return [type, `Du${lctype}`, `Tru${lctype}`, `Quadri${lctype}`, `Quinti${lctype}`, `Ses${lctype}`, `Septi${lctype}`, `Octin${lctype}`, `Nona${lctype}`];
 };
 function abbcode(type) {
   let lctype = type.toLowerCase();
   let lcrptype = lctype.replace(lctype.charAt(0), "");
   return [type, `D${lcrptype}`, `T${lcrptype}`, `q${lcrptype}`, `Q${lcrptype}`, `s${lcrptype}`, `S${lcrptype}`, `O${lcrptype}`, `N${lcrptype}`];
 };
+function digitcomma(n) {
+    return n.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -78,7 +81,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100; Digit3 + 3; Digit3 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum3 += op2 } while (op === 0);
-  Row3.push(code(CLnum3, Numbers3Array[i], Units3Array[i], Digit3, Abbs3Array[i]));
+  Row3.push(code(CLnum3, Numbers3Array[i], Units3Array[i], digitcomma(Digit3), Abbs3Array[i]));
 };
 ID3.innerHTML = headcode() + Row3.join(" ");
 //Table 4
@@ -93,7 +96,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 1000; Digit4 + 3; Digit4 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum4 += op2 } while (op === 0);
-  Row4.push(code(CLnum4, Numbers4Array[i], Units4Array[i], Digit4, abbcode("ML")[i]));
+  Row4.push(code(CLnum4, Numbers4Array[i], Units4Array[i], digitcomma(Digit4), abbcode("ML")[i]));
 };
 ID4.innerHTML = headcode() + Row4.join(" ");
 //Table 5
@@ -106,7 +109,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 10000; Digit5 + 3; Digit5 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum5 += op2 } while (op === 0);
-  Row5.push(code(CLnum5, numbercode("Myrilion")[i], numbercode("Myrilli-")[i], Digit5, abbcode("My")[i]));
+  Row5.push(code(CLnum5, numbercode("Myrilion")[i], numbercode("Myrilli-")[i], digitcomma(Digit5), abbcode("My")[i]));
 };
 ID5.innerHTML = headcode() + Row5.join(" ");
 //Table 6
@@ -119,7 +122,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000; Digit6 + 3; Digit6 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum6 += op2 } while (op === 0);
-  Row6.push(code(CLnum6, numbercode("Micrillion")[i], numbercode("Micrilli-")[i], Digit6, abbcode("Mcr")[i]));
+  Row6.push(code(CLnum6, numbercode("Micrillion")[i], numbercode("Micrilli-")[i], digitcomma(Digit6), abbcode("Mcr")[i]));
 };
 ID6.innerHTML = headcode() + Row6.join(" ");
 //Table 7
@@ -132,7 +135,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 1000000; Digit7 + 3; Digit7 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum7 += op2 } while (op === 0);
-  Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], Digit7, abbcode("Nai")[i]));
+  Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], digitcomma(Digit7), abbcode("Nai")[i]));
 };
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
@@ -143,9 +146,9 @@ let ID8 = document.getElementById("Level8Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 100000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
+  do { op += 10000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum8 += op2 } while (op === 0);
-  Row8.push(code(CLnum8, numbercode("Picillion")[i], numbercode("Picilli-")[i], Digit8, abbcode("Pic")[i]));
+  Row8.push(code(CLnum8, numbercode("Picillion")[i], numbercode("Picilli-")[i], digitcomma(Digit8), abbcode("Pic")[i]));
 };
 ID8.innerHTML = headcode() + Row8.join(" ");
 //Table 9
@@ -158,7 +161,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000000; Digit9 + 3; Digit9 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum9 += op2 } while (op === 0);
-  Row9.push(code(CLnum9, numbercode("Picillion")[i], numbercode("Picilli-")[i], Digit9, abbcode("Pic")[i]));
+  Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], digitcomma(Digit9), abbcode("Fmt")[i]));
 };
 ID9.innerHTML = headcode() + Row9.join(" ");
 //Not a table, but a random generator
