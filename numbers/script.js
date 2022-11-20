@@ -2,7 +2,7 @@ let BGcolor = ["#80CC84", "#66C258", "#CFBA4A", "#4C3EB8", "#6D18B4", "#B41818",
 let TTcolor = ["#A0FFA5", "#27FF00", "#FFD800", "#0C00FF", "#8B00FF", "red", "#00FCFF", "#FF0060", "#777777", "#EEEEEE"];
 function headcolor() { return `style="background-color:#CCCCCC; color:#EEEEEE"` };
 function colors(n) { return `style="background-color:${BGcolor[n]};color:${TTcolor[n]}"` };
-//
+//Code
 function headcode() {
   return `
   <table>
@@ -24,6 +24,7 @@ function code(color, number, unit, digit, abb) {
   </tr>
   `
 };
+//
 function numbercode(type) {
   let lctype = type.toLowerCase();
   return [type, `Du${lctype}`, `Tru${lctype}`, `Quadri${lctype}`, `Quinti${lctype}`, `Ses${lctype}`, `Septi${lctype}`, `Octin${lctype}`, `Nona${lctype}`];
@@ -48,6 +49,8 @@ function digitzeros(n) {
   let x = zeros.join("");
   return [`3,${x}`, `6,${x}`, `9,${x}`, `12,${x}`, `15,${x}`, `18,${x}`, `21,${x}`, `24,${x}`, `27,${x}`];
 };
+//
+let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -388,7 +391,6 @@ document.getElementById("button").onclick = function() {
   function choose(argument) {
     return argument[Math.floor(Math.random() * argument.length)];
   };
-  let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Hec")) +
@@ -421,3 +423,13 @@ document.getElementById("button").onclick = function() {
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array);
   document.getElementById("result").innerHTML = result;   
 };
+//Not a table, but the digits counter
+let digits = document.getElementById("digits");
+let output = [];
+let ttype = 1;
+let counter = 0;
+if (ttype === 1)
+output.push(`
+<a style="background:#0077ff" id="digit1">U</a>
+`)
+digits.innerHTML = output.join("");
