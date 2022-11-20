@@ -430,11 +430,9 @@ let idarray = [];
 let d = document.createElement("div");
 function outputcode(x, y) {
   for (eye; eye < x; eye++) {
-    idarray.push(`id="digit${eye + 1}"`);
-    array.push(`
-    <a style="background:#0077ff">${y[eye]}</a>
-    `);
-  };9
+    let a = document.createElement("a");
+    array.push(`${a} ${a.style.background("#0077ff")}`);
+  };
   eye = 0;
   return array.join("");
 };
@@ -445,9 +443,9 @@ let counter = 0;
 let ttype = 1;
 if (ttype === 1) {
   boutput.push(outputcode(9, Abbs0Array));
-  .onclick = function() {  
+  /*.onclick = function() {  
     counter += 6
-  };
+  };*/
 };
 buttons.innerHTML = boutput.join("");
 digits.innerHTML = "10^" + counter;
