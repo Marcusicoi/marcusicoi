@@ -283,6 +283,106 @@ for (let i = 0; i < 9; i++) {
   Row20.push(code(CLnum20, numbercode("Hexecillion")[i], numbercode("Hexecilli-")[i], digitzeros(15)[i], abbcode2("Hxc")[i]));
 };
 ID20.innerHTML = headcode() + Row20.join(" ");
+//Table 21
+let CLnum21 = -1;
+let Row21 = [];
+let ID21 = document.getElementById("Level21Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum21 += op } while (op === 0);
+  Row21.push(code(CLnum21, numbercode("Heptecillion")[i], numbercode("Heptecilli-")[i], digitzeros(16)[i], abbcode2("Hpc")[i]));
+};
+ID21.innerHTML = headcode() + Row21.join(" ");
+//Table 22
+let CLnum22 = -1;
+let Row22 = [];
+let ID22 = document.getElementById("Level22Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum22 += op } while (op === 0);
+  Row22.push(code(CLnum22, numbercode("Octecillion")[i], numbercode("Octecilli-")[i], digitzeros(17)[i], abbcode2("Otc")[i]));
+};
+ID22.innerHTML = headcode() + Row22.join(" ");
+//Table 23
+let CLnum23 = -1;
+let Row23 = [];
+let ID23 = document.getElementById("Level23Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum23 += op } while (op === 0);
+  Row23.push(code(CLnum23, numbercode("Ennecillion")[i], numbercode("Enneecilli-")[i], digitzeros(18)[i], abbcode2("Enc")[i]));
+};
+ID23.innerHTML = headcode() + Row23.join(" ");
+//Table 24
+let CLnum24 = -1;
+let Row24 = [];
+let ID24 = document.getElementById("Level24Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum24 += op } while (op === 0);
+  Row24.push(code(CLnum24, numbercode("Icosillion")[i], numbercode("Icosilli-")[i], digitzeros(19)[i], abbcode2("Ics")[i]));
+};
+ID24.innerHTML = headcode() + Row24.join(" ");
+//Table 25
+let CLnum25 = -1;
+let Row25 = [];
+let ID25 = document.getElementById("Level25Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum25 += op } while (op === 0);
+  Row25.push(code(CLnum25, numbercode("Meicosillion")[i], numbercode("Meicosilli-")[i], digitzeros(20)[i], abbcode2("Mcs")[i]));
+};
+ID25.innerHTML = headcode() + Row25.join(" "); 
+//Table 26
+let CLnum26 = -1;
+let Row26 = [];
+let ID26 = document.getElementById("Level26Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum26 += op } while (op === 0);
+  Row26.push(code(CLnum26, numbercode("Dueicosillion")[i], numbercode("Dueicosilli-")[i], digitzeros(21)[i], abbcode2("Dis")[i]));
+};
+ID26.innerHTML = headcode() + Row26.join(" ");
+//Table 27
+let CLnum27 = -1;
+let Row27 = [];
+let ID27 = document.getElementById("Level27Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum27 += op } while (op === 0);
+  Row27.push(code(CLnum27, numbercode("Trioicosillion")[i], numbercode("Trioicosilli-")[i], digitzeros(22)[i], abbcode2("Toc")[i]));
+};
+ID27.innerHTML = headcode() + Row27.join(" ");
+//Table 28
+let CLnum28 = -1;
+let Row28 = [];
+let ID28 = document.getElementById("Level28Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum28 += op } while (op === 0);
+  Row28.push(code(CLnum28, numbercode("Tetraicosillion")[i], numbercode("Tetraicosilli-")[i], digitzeros(23)[i], abbcode2("Ttc")[i]));
+};
+ID28.innerHTML = headcode() + Row28.join(" ");
+//Table 29
+let CLnum29 = -1;
+let Row29 = [];
+let ID29 = document.getElementById("Level29Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum29 += op } while (op === 0);
+  Row29.push(code(CLnum29, numbercode("Penteicosillion")[i], numbercode("Penteicosilli-")[i], digitzeros(24)[i], abbcode2("Ptc")[i]));
+};
+ID29.innerHTML = headcode() + Row29.join(" ");
+//Table 30
+let CLnum30 = -1;
+let Row30 = [];
+let ID30 = document.getElementById("Level30Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum30 += op } while (op === 0);
+  Row30.push(code(CLnum30, numbercode("Hexeicosillion")[i], numbercode("Hexeicosilli-")[i], digitzeros(25)[i], abbcode2("Hec")[i]));
+};
+ID30.innerHTML = headcode() + Row30.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
   function choose(argument) {
@@ -291,6 +391,16 @@ document.getElementById("button").onclick = function() {
   let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Hec")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Ptc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Ttc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Toc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Dis")) + 
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Mcs")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Ics")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Enc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Otc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Hpc")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Hxc")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Pec")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Tec")) +
