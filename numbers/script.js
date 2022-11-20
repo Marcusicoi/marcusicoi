@@ -426,17 +426,16 @@ document.getElementById("button").onclick = function() {
 //Not a table, but the digits counter
 let eye = 0;
 let array = [];
+let idarray = [];
 function outputcode(x, y) {
   for (eye; eye < x; eye++) {
+    idarray.push(`id="digit${eye + 1}"`);
     array.push(`
-    <a style="background:#0077ff" id="digit${eye + 1}">${y[eye]}</a>
+    <a style="background:#0077ff" >${y[eye]}</a>
     `);
   };
   eye = 0;
   return array.join("");
-};
-function id(id) {
-  return `document.getElementById(${id})`;
 };
 let buttons = document.getElementById("buttons");
 let boutput = [];;
@@ -445,7 +444,7 @@ let counter = 0;
 let ttype = 1;
 if (ttype === 1) {
   boutput.push(outputcode(9, Abbs0Array));
-  id("digit1").onclick = function() {  
+  document.getElementById("digit1").onclick = function() {  
     counter += 6
   };
 };
