@@ -184,70 +184,105 @@ for (let i = 0; i < 9; i++) {
 };
 ID10.innerHTML = headcode() + Row10.join(" ");
 //Table 11
-let Digit11 = 3;
 let CLnum11 = -1;
 let Row11 = [];
 let ID11 = document.getElementById("Level11Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  let op2 = 0;
-  do { op += 1000000000000000000000; Digit11 + 3; Digit11 += (3 * op) } while (op === 0);
-  do { op2 += 1; CLnum11 += op2 } while (op === 0);
+  do { op += 1; CLnum11 += op } while (op === 0);
   Row11.push(code(CLnum11, numbercode("Zeptillion")[i], numbercode("Zeptilli-")[i], digitzeros(6)[i], abbcode("Zpt")[i]));
 };
 ID11.innerHTML = headcode() + Row11.join(" ");
 //Table 12
-let Digit12 = 3;
 let CLnum12 = -1;
 let Row12 = [];
 let ID12 = document.getElementById("Level12Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  let op2 = 0;
-  do { op += 1000000000000000000000000; Digit12 + 3; Digit12 += (3 * op) } while (op === 0);
-  do { op2 += 1; CLnum12 += op2 } while (op === 0);
+  do { op += 1; CLnum12 += op } while (op === 0);
   Row12.push(code(CLnum12, numbercode("Yoctillion")[i], numbercode("Yoctilli-")[i], digitzeros(7)[i], abbcode("Yct")[i]));
 };
 ID12.innerHTML = headcode() + Row12.join(" ");
 //Table 13
-let Digit13 = 3;
 let CLnum13 = -1;
 let Row13 = [];
 let ID13 = document.getElementById("Level13Table");
 for (let i = 0; i < 9; i++) {
-  let op = 0;
-  let op2 = 0;
-  do { op += 100000000000000000000000000; Digit13 + 3; Digit13 += (3 * op) } while (op === 0);
-  do { op2 += 1; CLnum13 += op2 } while (op === 0);
+  let op = 0
+  do { op += 1; CLnum13 += op } while (op === 0);
   Row13.push(code(CLnum13, numbercode("Xonillion")[i], numbercode("Xonilli-")[i], digitzeros(8)[i], abbcode("Xni")[i]));
 };
 ID13.innerHTML = headcode() + Row13.join(" ");
 //Table 14
-let Digit14 = 3;
 let CLnum14 = -1;
 let Row14 = [];
 let ID14 = document.getElementById("Level14Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  let op2 = 0;
-  do { op += 100000000000000000000000000000; Digit14 + 3; Digit14 += (3 * op) } while (op === 0);
-  do { op2 += 1; CLnum14 += op2 } while (op === 0);
+  do { op += 1; CLnum14 += op } while (op === 0);
   Row14.push(code(CLnum14, numbercode("Vecillion")[i], numbercode("Vecilli-")[i], digitzeros(9)[i], abbcode("Vec")[i]));
 };
 ID14.innerHTML = headcode() + Row14.join(" ");
 //Table 15
-let Digit15 = 3;
 let CLnum15 = -1;
 let Row15 = [];
 let ID15 = document.getElementById("Level15Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  let op2 = 0;
-  do { op += 100000000000000000000000000000000; Digit15 + 3; Digit15 += (3 * op) } while (op === 0);
-  do { op2 += 1; CLnum15 += op2 } while (op === 0);
+  do { op += 1; CLnum15 += op } while (op === 0);
   Row15.push(code(CLnum15, numbercode("Mecillion")[i], numbercode("Mecilli-")[i], digitzeros(10)[i], abbcode("Mci")[i]));
 };
 ID15.innerHTML = headcode() + Row15.join(" ");
+//Table 16
+let CLnum16 = -1;
+let Row16 = [];
+let ID16 = document.getElementById("Level16Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum16 += op } while (op === 0);
+  Row16.push(code(CLnum16, numbercode("Duecillion")[i], numbercode("Duecilli-")[i], digitzeros(11)[i], abbcode2("Duc")[i]));
+};
+ID16.innerHTML = headcode() + Row16.join(" ");
+//Table 17
+let CLnum17 = -1;
+let Row17 = [];
+let ID17 = document.getElementById("Level17Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum17 += op } while (op === 0);
+  Row17.push(code(CLnum17, numbercode("Trecillion")[i], numbercode("Trecilli-")[i], digitzeros(12)[i], abbcode2("Tuc")[i]));
+};
+ID17.innerHTML = headcode() + Row17.join(" ");
+//Table 18
+let CLnum18 = -1;
+let Row18 = [];
+let ID18 = document.getElementById("Level18Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum18 += op } while (op === 0);
+  Row18.push(code(CLnum18, numbercode("Tetrecillion")[i], numbercode("Tetrecilli-")[i], digitzeros(13)[i], abbcode2("Tec")[i]));
+};
+ID18.innerHTML = headcode() + Row18.join(" ");
+//Table 19
+let CLnum19 = -1;
+let Row19 = [];
+let ID19 = document.getElementById("Level19Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum19 += op } while (op === 0);
+  Row19.push(code(CLnum19, numbercode("Pentecillion")[i], numbercode("Pentecilli-")[i], digitzeros(14)[i], abbcode2("Pec")[i]));
+};
+ID19.innerHTML = headcode() + Row19.join(" ");
+//Table 20
+let CLnum20 = -1;
+let Row20 = [];
+let ID20 = document.getElementById("Level20Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  do { op += 1; CLnum20 += op } while (op === 0);
+  Row20.push(code(CLnum20, numbercode("Hexecillion")[i], numbercode("Hexecilli-")[i], digitzeros(15)[i], abbcode2("Hxc")[i]));
+};
+ID20.innerHTML = headcode() + Row20.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
   function choose(argument) {
@@ -256,6 +291,11 @@ document.getElementById("button").onclick = function() {
   let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Hxc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Pec")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Tec")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Tuc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Duc")) + 
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Mci")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Vec")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Xni")) +
