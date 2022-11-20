@@ -425,8 +425,8 @@ document.getElementById("button").onclick = function() {
 };
 //Not a table, but the digits counter
 let eye = 0;
+let array = [];
 function outputcode(x, y) {
-  let array = [];
   for (eye; eye < x; eye++) {
     array.push(`
     <a style="background:#0077ff" id="digit${eye + 1}">${y[eye]}</a>
@@ -435,8 +435,8 @@ function outputcode(x, y) {
   eye = 0;
   return array.join("");
 };
-function onclic(id) {
-  return `document.getElementById(${id}).onclick`;
+function id(id) {
+  return `document.getElementById(${id})`;
 };
 let buttons = document.getElementById("buttons");
 let boutput = [];;
@@ -445,8 +445,8 @@ let counter = 0;
 let ttype = 1;
 if (ttype === 1) {
   boutput.push(outputcode(9, Abbs0Array));
-  onclic("digit1")// = function() {
-    
+  id("digit1").onclick = function() {  
+    counter += 6
   };
 };
 buttons.innerHTML = boutput.join("");
