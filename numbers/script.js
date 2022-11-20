@@ -424,12 +424,23 @@ document.getElementById("button").onclick = function() {
   document.getElementById("result").innerHTML = result;   
 };
 //Not a table, but the digits counter
+function outputcode(x, y) {
+  let array = [];
+  for (let i = 0; i < x; i++) {
+    array.push(`
+    <a style="background:#0077ff" id="digit${i + 1}">${y[i]}</a>
+    `);
+  };
+  return array
+};
 let digits = document.getElementById("digits");
 let output = [];
 let ttype = 1;
 let counter = 0;
-if (ttype === 1)
+if (ttype === 1) {
 output.push(`
 <a style="background:#0077ff" id="digit1">U</a>
+
 `)
+};
 digits.innerHTML = output.join("");
