@@ -34,9 +34,7 @@ function abbcode(type) {
   return [type, `D${lcrptype}`, `T${lcrptype}`, `q${lcrptype}`, `Q${lcrptype}`, `s${lcrptype}`, `S${lcrptype}`, `O${lcrptype}`, `N${lcrptype}`];
 };
 function abbcode2(type) {
-  let lctype = type.toLowerCase();
-  let lcrptype = lctype.replace(lctype.charAt(0), "");
-  return [type, `D${lcrptype}`, `T${lcrptype}`, `q${lcrptype}`, `Q${lcrptype}`, `s${lcrptype}`, `S${lcrptype}`, `O${lcrptype}`, `N${lcrptype}`];
+  return [type, `D${type}`, `T${type}`, `q${type}`, `Q${type}`, `s${type}`, `S${type}`, `O${type}`, `N${type}`];
 };
 function digitcomma(n) {
     return n.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -125,7 +123,7 @@ let ID6 = document.getElementById("Level6Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 100000; Digit6 + 3; Digit6 += (3 * op) } while (op === 0);
+  do { op += 1000000; Digit6 + 3; Digit6 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum6 += op2 } while (op === 0);
   Row6.push(code(CLnum6, numbercode("Micrillion")[i], numbercode("Micrilli-")[i], digitcomma(Digit6), abbcode("Mcr")[i]));
 };
@@ -138,7 +136,7 @@ let ID7 = document.getElementById("Level7Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 1000000; Digit7 + 3; Digit7 += (3 * op) } while (op === 0);
+  do { op += 1000000000; Digit7 + 3; Digit7 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum7 += op2 } while (op === 0);
   Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], digitcomma(Digit7), abbcode("Nai")[i]));
 };
@@ -151,7 +149,7 @@ let ID8 = document.getElementById("Level8Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 10000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
+  do { op += 1000000000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum8 += op2 } while (op === 0);
   Row8.push(code(CLnum8, numbercode("Picillion")[i], numbercode("Picilli-")[i], digitcomma(Digit8), abbcode("Pic")[i]));
 };
@@ -164,7 +162,7 @@ let ID9 = document.getElementById("Level9Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 100000000; Digit9 + 3; Digit9 += (3 * op) } while (op === 0);
+  do { op += 1000000000000000; Digit9 + 3; Digit9 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum9 += op2 } while (op === 0);
   Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], digitcomma(Digit9), abbcode("Fmt")[i]));
 };
@@ -177,7 +175,7 @@ let ID10 = document.getElementById("Level10Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 1000000000; Digit10 + 3; Digit10 += (3 * op) } while (op === 0);
+  do { op += 1000000000000000000; Digit10 + 3; Digit10 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum10 += op2 } while (op === 0);
   Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], digitcomma(Digit10), abbcode("Att")[i]));
 };
@@ -190,7 +188,7 @@ let ID11 = document.getElementById("Level11Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 10000000000; Digit11 + 3; Digit11 += (3 * op) } while (op === 0);
+  do { op += 1000000000000000000000; Digit11 + 3; Digit11 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum11 += op2 } while (op === 0);
   Row11.push(code(CLnum11, numbercode("Zeptillion")[i], numbercode("Zeptilli-")[i], digitcomma(Digit11), abbcode("Zpt")[i]));
 };
@@ -203,7 +201,7 @@ let ID12 = document.getElementById("Level12Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 100000000000; Digit12 + 3; Digit12 += (3 * op) } while (op === 0);
+  do { op += 1000000000000000000000000; Digit12 + 3; Digit12 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum12 += op2 } while (op === 0);
   Row12.push(code(CLnum12, numbercode("Yoctillion")[i], numbercode("Yoctilli-")[i], digitcomma(Digit12), abbcode("Yct")[i]));
 };
@@ -216,7 +214,7 @@ let ID13 = document.getElementById("Level13Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 1000000000000; Digit13 + 3; Digit13 += (3 * op) } while (op === 0);
+  do { op += 100000000000000000000000000; Digit13 + 3; Digit13 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum13 += op2 } while (op === 0);
   Row13.push(code(CLnum13, numbercode("Xonillion")[i], numbercode("Xonilli-")[i], digitcomma(Digit13), abbcode("Xni")[i]));
 };
@@ -229,7 +227,7 @@ let ID14 = document.getElementById("Level14Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 10000000000000; Digit14 + 3; Digit14 += (3 * op) } while (op === 0);
+  do { op += 100000000000000000000000000000; Digit14 + 3; Digit14 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum14 += op2 } while (op === 0);
   Row14.push(code(CLnum14, numbercode("Vecillion")[i], numbercode("Vecilli-")[i], digitcomma(Digit14), abbcode("Vec")[i]));
 };
@@ -242,7 +240,7 @@ let ID15 = document.getElementById("Level15Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 100000000000000; Digit15 + 3; Digit15 += (3 * op) } while (op === 0);
+  do { op += 100000000000000000000000000000000; Digit15 + 3; Digit15 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum15 += op2 } while (op === 0);
   Row15.push(code(CLnum15, numbercode("Mecillion")[i], numbercode("Mecilli-")[i], digitcomma(Digit15), abbcode("Mci")[i]));
 };
