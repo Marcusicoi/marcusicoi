@@ -85,7 +85,6 @@ ID3.innerHTML = headcode() + Row3.join(" ");
 let Numbers4Array = ["Millillion", "Dumillillion", "Trimillillion", "Quadrimillilliion", "Quinmillillion", "Sexmillillion", "Septimillillion", "Octimillillion", "Nonimillillion"];
 let Units4Array = ["Milli-", "Dumilli-", "Trimilli-", "Quadrimilli-", "Quinmilli-", "Sexmilli-", "Septimilli-", "Octimilli-", "Nonimilli-"];
 let Digit4 = 3;
-let Abbs4Array = ["ML", "DL", "TL", "qL", "QL", "sL", "SL", "OL", "NL"];
 let CLnum4 = -1;
 let Row4 = [];
 let ID4 = document.getElementById("Level4Table");
@@ -94,14 +93,11 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 1000; Digit4 + 3; Digit4 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum4 += op2 } while (op === 0);
-  Row4.push(code(CLnum4, Numbers4Array[i], Units4Array[i], Digit4, Abbs4Array[i]));
+  Row4.push(code(CLnum4, Numbers4Array[i], Units4Array[i], Digit4, abbcode("ML")[i]));
 };
 ID4.innerHTML = headcode() + Row4.join(" ");
 //Table 5
-let Numbers5Array = ["Myrillion", "Dumyrillion", "Trumyrillion", "Quadrimyrilliion", "Quintimyrilillion", "Sesmyrillion", "Septimyrillion", "Octimyrillion", "Nonamyrillion"];
-let Units5Array = ["Myrilli-", "Dumyrilli-", "Trumyrilli-", "Quadrimyrilli-", "Quintimyrilli-", "Sesmyrilli-", "Septimyrilli-", "Octimyrilli-", "Nonamyrilli-"];
 let Digit5 = 3;
-let Abbs5Array = ["My", "Dy", "Ty", "qy", "Qy", "sy", "Sy", "Oy", "Ny"];
 let CLnum5 = -1;
 let Row5 = [];
 let ID5 = document.getElementById("Level5Table");
@@ -110,14 +106,11 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 10000; Digit5 + 3; Digit5 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum5 += op2 } while (op === 0);
-  Row5.push(code(CLnum5, Numbers5Array[i], Units5Array[i], Digit5, Abbs5Array[i]));
+  Row5.push(code(CLnum5, numbercode("Myrilion")[i], numbercode("Myrilli-")[i], Digit5, abbcode("My")[i]));
 };
 ID5.innerHTML = headcode() + Row5.join(" ");
 //Table 6
-let Numbers6Array = ["Micrillion", "Dumicrillion", "Trumicrillion", "Quadrimicrilliion", "Quintimicrlillion", "Sesmicrllion", "Septamicrllion", "Octamicrillion", "Nonamicrillion"];
-let Units6Array = ["Micrilli-", "Dumicrilli-", "Trumicrilli-", "Quadrimicrilli-", "Quintimicrilli-", "Sesmicrlli-", "Septamicrilli-", "Octamicrilli-", "Nonamicrilli-"];
 let Digit6 = 3;
-let Abbs6Array = ["Mcr", "Dcr", "Tcr", "qcr", "Qcr", "scr", "Scr", "Ocr", "Ncr"];
 let CLnum6 = -1;
 let Row6 = [];
 let ID6 = document.getElementById("Level6Table");
@@ -126,7 +119,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000; Digit6 + 3; Digit6 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum6 += op2 } while (op === 0);
-  Row6.push(code(CLnum6, Numbers6Array[i], Units6Array[i], Digit6, Abbs6Array[i]));
+  Row6.push(code(CLnum6, numbercode("Micrillion")[i], numbercode("Micrilli-")[i], Digit6, abbcode("Mcr")[i]));
 };
 ID6.innerHTML = headcode() + Row6.join(" ");
 //Table 7
@@ -139,7 +132,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 1000000; Digit7 + 3; Digit7 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum7 += op2 } while (op === 0);
-  Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], Digit7, abbcode("[i]));
+  Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], Digit7, abbcode("Nai")[i]));
 };
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
@@ -155,6 +148,19 @@ for (let i = 0; i < 9; i++) {
   Row8.push(code(CLnum8, numbercode("Picillion")[i], numbercode("Picilli-")[i], Digit8, abbcode("Pic")[i]));
 };
 ID8.innerHTML = headcode() + Row8.join(" ");
+//Table 9
+let Digit9 = 3;
+let CLnum9 = -1;
+let Row9 = [];
+let ID9 = document.getElementById("Level9Table");
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 100000000; Digit9 + 3; Digit9 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum9 += op2 } while (op === 0);
+  Row9.push(code(CLnum9, numbercode("Picillion")[i], numbercode("Picilli-")[i], Digit9, abbcode("Pic")[i]));
+};
+ID9.innerHTML = headcode() + Row9.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
   function choose(argument) {
@@ -163,11 +169,11 @@ document.getElementById("button").onclick = function() {
   let Abbs0Array = ["U", "D", "T", "q", "Q", "s", "S", "O", "N"];
   let result = 
       (Math.floor(Math.random() * 998) + 1) +
-      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs8Array) +
-      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs7Array) + 
-      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs6Array) +    
-      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs5Array) + 
-      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(Abbs4Array) + 
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Pic")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Nai")) + 
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Mcr")) +    
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("My")) + 
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("ML")) + 
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array);
   document.getElementById("result").innerHTML = result;   
 };
