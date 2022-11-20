@@ -41,10 +41,10 @@ function digitcomma(n) {
 };
 function digitzeros(n) {
   let zeros = [];
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < (n - 1); i++) {
     zeros.push("000,")
   };
-  zeros.push(",003");
+  zeros.push("000,003");
   let x = zeros.join("");
   return [`3,${x}`, `6,${x}`, `9,${x}`, `12,${x}`, `15,${x}`, `18,${x}`, `21,${x}`, `24,${x}`, `27,${x}`];
 };
@@ -164,15 +164,13 @@ for (let i = 0; i < 9; i++) {
 };
 ID8.innerHTML = headcode() + Row8.join(" ");
 //Table 9
-let Digit9Array = digitzeros/*["30,000,000,000,000,003", "60,000,000,000,000,003", "90,000,000,000,000,003", "120,000,000,000,000,003", "150,000,000,000,000,003", "180,000,000,000,000,003",
-                   "210,000,000,000,000,003", "240,000,000,000,000,003", "270,000,000,000,000,000"]*/
 let CLnum9 = -1;
 let Row9 = [];
 let ID9 = document.getElementById("Level9Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   do { op += 1; CLnum9 += op } while (op === 0);
-  Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], Digit9Array[i], abbcode("Fmt")[i]));
+  Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], digitzeros(4)[i], abbcode("Fmt")[i]));
 };
 ID9.innerHTML = headcode() + Row9.join(" ");
 //Table 10
@@ -182,7 +180,7 @@ let ID10 = document.getElementById("Level10Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
   do { op += 1; CLnum10 += op } while (op === 0);
-  Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], "", abbcode("Att")[i]));
+  Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], digitzeros(5)[i], abbcode("Att")[i]));
 };
 ID10.innerHTML = headcode() + Row10.join(" ");
 //Table 11
@@ -195,7 +193,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 1000000000000000000000; Digit11 + 3; Digit11 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum11 += op2 } while (op === 0);
-  Row11.push(code(CLnum11, numbercode("Zeptillion")[i], numbercode("Zeptilli-")[i], digitcomma(Digit11), abbcode("Zpt")[i]));
+  Row11.push(code(CLnum11, numbercode("Zeptillion")[i], numbercode("Zeptilli-")[i], digitzeros(6)[i], abbcode("Zpt")[i]));
 };
 ID11.innerHTML = headcode() + Row11.join(" ");
 //Table 12
@@ -208,7 +206,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 1000000000000000000000000; Digit12 + 3; Digit12 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum12 += op2 } while (op === 0);
-  Row12.push(code(CLnum12, numbercode("Yoctillion")[i], numbercode("Yoctilli-")[i], digitcomma(Digit12), abbcode("Yct")[i]));
+  Row12.push(code(CLnum12, numbercode("Yoctillion")[i], numbercode("Yoctilli-")[i], digitzeros(7)[i], abbcode("Yct")[i]));
 };
 ID12.innerHTML = headcode() + Row12.join(" ");
 //Table 13
@@ -221,7 +219,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000000000000000000000000; Digit13 + 3; Digit13 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum13 += op2 } while (op === 0);
-  Row13.push(code(CLnum13, numbercode("Xonillion")[i], numbercode("Xonilli-")[i], digitcomma(Digit13), abbcode("Xni")[i]));
+  Row13.push(code(CLnum13, numbercode("Xonillion")[i], numbercode("Xonilli-")[i], digitzeros(8)[i], abbcode("Xni")[i]));
 };
 ID13.innerHTML = headcode() + Row13.join(" ");
 //Table 14
@@ -234,7 +232,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000000000000000000000000000; Digit14 + 3; Digit14 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum14 += op2 } while (op === 0);
-  Row14.push(code(CLnum14, numbercode("Vecillion")[i], numbercode("Vecilli-")[i], digitcomma(Digit14), abbcode("Vec")[i]));
+  Row14.push(code(CLnum14, numbercode("Vecillion")[i], numbercode("Vecilli-")[i], digitzeros(9)[i], abbcode("Vec")[i]));
 };
 ID14.innerHTML = headcode() + Row14.join(" ");
 //Table 15
@@ -247,7 +245,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000000000000000000000000000000; Digit15 + 3; Digit15 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum15 += op2 } while (op === 0);
-  Row15.push(code(CLnum15, numbercode("Mecillion")[i], numbercode("Mecilli-")[i], digitcomma(Digit15), abbcode("Mci")[i]));
+  Row15.push(code(CLnum15, numbercode("Mecillion")[i], numbercode("Mecilli-")[i], digitzeros(10)[i], abbcode("Mci")[i]));
 };
 ID15.innerHTML = headcode() + Row15.join(" ");
 //Not a table, but a random generator
