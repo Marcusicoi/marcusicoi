@@ -23,7 +23,11 @@ function code(color, number, unit, digit, abb) {
     <th ${colors(color)}>${abb}</th>
   </tr>
   `
-}
+};
+function numbercode(type) {
+  let lctype = type.toLowerCase();
+  return [type, `Du${lctype}`, `Tru${lctype}`, `Quadri${lctype}`, `Quinti${lctype}`, `Ses${lctype}`, `Septi${lctype}`, `Octi${lctype}`, `Nona${lctype}`];
+};
 //Table 1
 let Numbers1Array = ["Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion"];
 let Units1Array = ["", "Un-", "Duo", "Tre-, Tres-", "Quattor-", "Quin-", "Sex, Ses-", "Sept-", "Octo-", "Novem-, Noven-"];
@@ -137,8 +141,6 @@ for (let i = 0; i < 9; i++) {
 };
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
-let Numbers8Array = ["Picillion", "Dupicillion", "Trupicillion", "Quadripicilliion", "Quintipicillion", "Sespicillion", "Septipicillion", "Octopicillion", "Nonapicillion"];
-let Units8Array = ["Picilli", "Dupicilli-", "Trupicilli-", "Quadripicilli-", "Quintipicilli-", "Sespicilli-", "Septipicilli-", "Octopicilli-", "Nonapicilli-"];
 let Digit8 = 3;
 let Abbs8Array = ["Pic", "Dic", "Tic", "qic", "Qic", "sic", "Sic", "Oic", "Nic"];
 let CLnum8 = -1;
@@ -149,7 +151,7 @@ for (let i = 0; i < 9; i++) {
   let op2 = 0;
   do { op += 100000000; Digit8 + 3; Digit8 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum8 += op2 } while (op === 0);
-  Row8.push(code(CLnum8, Numbers8Array[i], Units8Array[i], Digit8, Abbs8Array[i]));
+  Row8.push(code(CLnum8, numbercode(, Units8Array[i], Digit8, Abbs8Array[i]));
 };
 ID8.innerHTML = headcode() + Row8.join(" ");
 //Not a table, but a random generator
