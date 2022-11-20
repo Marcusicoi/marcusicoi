@@ -172,29 +172,25 @@ for (let i = 0; i < 9; i++) {
 };
 ID8.innerHTML = headcode() + Row8.join(" ");
 //Table 9
-let Digit9 = 3;
+let Digi90Array = ["30,000,000,000,000,003", "60,000,000,000,000,003", "120,000,000,000,000,003", "150,000,000,000,000,003", "170,000,000,000,000,003",
+                    "210,000,000,000,000,003", "240,000,000,000,000,003", "270,000,000,000,000,000"]
 let CLnum9 = -1;
 let Row9 = [];
 let ID9 = document.getElementById("Level9Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  let op2 = 0;
-  do { op += 10000000000000000; Digit9 + 3; Digit9 += (3 * op) } while (op === 0);
-  do { op2 += 1; CLnum9 += op2 } while (op === 0);
+  do { op += 1; CLnum9 += op } while (op === 0);
   Row9.push(code(CLnum9, numbercode("Femtillion")[i], numbercode("Femtilli-")[i], digitcomma(Digit9), abbcode("Fmt")[i]));
 };
 ID9.innerHTML = headcode() + Row9.join(" ");
 //Table 10
-let Digit10 = 3;
 let CLnum10 = -1;
 let Row10 = [];
 let ID10 = document.getElementById("Level10Table");
 for (let i = 0; i < 9; i++) {
   let op = 0;
-  let op2 = 0;
-  do { op += 1000000000000000000; Digit10 + 3; Digit10 += (3 * op) } while (op === 0);
-  do { op2 += 1; CLnum10 += op2 } while (op === 0);
-  Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], digitcomma(Digit10), abbcode("Att")[i]));
+  do { op += 1; CLnum10 += op } while (op === 0);
+  Row10.push(code(CLnum10, numbercode("Attillion")[i], numbercode("Attilli-")[i], Digit10Array[i], abbcode("Att")[i]));
 };
 ID10.innerHTML = headcode() + Row10.join(" ");
 //Table 11
