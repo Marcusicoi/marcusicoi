@@ -389,106 +389,6 @@ for (let i = 0; i < 9; i++) {
   Row30.push(code(CLnum30, numbercode("Hexeicosillion")[i], numbercode("Hexeicosilli-")[i], digitzeros(25)[i], abbcode2("Hec")[i]));
 };
 ID30.innerHTML = headcode() + Row30.join(" ");
-//Table 31
-let CLnum31 = -1;
-let Row31 = [];
-let ID31 = document.getElementById("Level31Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum31 += op } while (op === 0);
-  Row31.push(code(CLnum31, numbercode("Hepteicosillion")[i], numbercode("Hepteicosilli-")[i], digitzeros(26)[i], abbcode2("Hpc")[i]));
-};
-ID31.innerHTML = headcode() + Row31.join(" ");
-//Table 32
-let CLnum32 = -1;
-let Row32 = [];
-let ID32 = document.getElementById("Level32Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum32 += op } while (op === 0);
-  Row32.push(code(CLnum32, numbercode("Enneicosillion")[i], numbercode("Enneicosilli-")[i], digitzeros(27)[i], abbcode2("Enc")[i]));
-};
-ID32.innerHTML = headcode() + Row32.join(" ");
-//Table 33
-let CLnum33 = -1;
-let Row33 = [];
-let ID33 = document.getElementById("Level33Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum33 += op } while (op === 0);
-  Row33.push(code(CLnum33, numbercode("Triacontillion")[i], numbercode("Triacontilli-")[i], digitzeros(28)[i], abbcode2("Tco")[i]));
-};
-ID33.innerHTML = headcode() + Row33.join(" ");
-//Table 34
-let CLnum34 = -1;
-let Row34 = [];
-let ID34 = document.getElementById("Level34Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum34 += op } while (op === 0);
-  Row34.push(code(CLnum34, numbercode("Tetracontillion")[i], numbercode("Tetracontilli-")[i], digitzeros(38)[i], abbcode2("Trc")[i]));
-};
-ID34.innerHTML = headcode() + Row34.join(" ");
-//Table 35
-let CLnum35 = -1;
-let Row35 = [];
-let ID35 = document.getElementById("Level35Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum35 += op } while (op === 0);
-  Row35.push(code(CLnum35, numbercode("Pentacontillion")[i], numbercode("Pentacontilli-")[i], digitzeros(48)[i], abbcode2("Pnc")[i]));
-};
-ID35.innerHTML = headcode() + Row35.join(" ");
-//Table 36
-let CLnum36 = -1;
-let Row36 = [];
-let ID36 = document.getElementById("Level36Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum36 += op } while (op === 0);
-  Row36.push(code(CLnum36, numbercode("Hexacontillion")[i], numbercode("Hexacontilli-")[i], digitzeros(58)[i], abbcode2("Hac")[i]));
-};
-ID36.innerHTML = headcode() + Row36.join(" ");
-//Table 37
-let CLnum37 = -1;
-let Row37 = [];
-let ID37 = document.getElementById("Level37Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum37 += op } while (op === 0);
-  Row37.push(code(CLnum37, numbercode("Heptacontillion")[i], numbercode("Heptacontilli-")[i], digitzeros(68)[i], abbcode2("Hpn")[i]));
-};
-ID37.innerHTML = headcode() + Row37.join(" ");
-//Table 38
-let CLnum38 = -1;
-let Row38 = [];
-let ID38 = document.getElementById("Level38Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum38 += op } while (op === 0);
-  Row38.push(code(CLnum38, numbercode("Octacontillion")[i], numbercode("Octacontilli-")[i], digitzeros(78)[i], abbcode2("Occ")[i]));
-};
-ID38.innerHTML = headcode() + Row38.join(" ");
-//Table 39
-let CLnum39 = -1;
-let Row39 = [];
-let ID39 = document.getElementById("Level39Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum39 += op } while (op === 0);
-  Row39.push(code(CLnum39, numbercode("Ennacontillion")[i], numbercode("Ennacontilli-")[i], digitzeros(88)[i], abbcode2("Eac")[i]));
-};
-ID39.innerHTML = headcode() + Row39.join(" ");
-//Table 40
-let CLnum40 = -1;
-let Row40 = [];
-let ID40 = document.getElementById("Level40Table");
-for (let i = 0; i < 9; i++) {
-  let op = 0;
-  do { op += 1; CLnum40 += op } while (op === 0);
-  Row40.push(code(CLnum40, numbercode("Hectillion")[i], numbercode("Hectilli-")[i], digitzeros(98)[i], abbcode2("Het")[i]));
-};
-ID40.innerHTML = headcode() + Row40.join(" ");
 //Not a table, but a random generator
 document.getElementById("button").onclick = function() {
   let result = 
@@ -501,7 +401,8 @@ document.getElementById("button").onclick = function() {
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Pnc")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Trc")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Tco")) +
-      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Otc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Enc")) +
+      choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Oec")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode("Hpc")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Hec")) +
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array) + choose(abbcode2("Ptc")) +
