@@ -423,29 +423,3 @@ document.getElementById("button").onclick = function() {
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array);
   document.getElementById("result").innerHTML = result;   
 };
-//Not a table, but the digits counter
-let eye = 0;
-let array = [];
-let idarray = [];
-let d = document.createElement("div");
-function outputcode(x, y) {
-  for (eye; eye < x; eye++) {
-    let a = document.createElement("a");
-    array.push(`${a} ${a.style.background("#0077ff")}`);
-  };
-  eye = 0;
-  return array.join("");
-};
-let buttons = document.getElementById("buttons");
-let boutput = [];
-let digits = document.getElementById("digits");
-let counter = 0;
-let ttype = 1;
-if (ttype === 1) {
-  boutput.push(outputcode(9, Abbs0Array));
-  /*.onclick = function() {  
-    counter += 6
-  };*/
-};
-buttons.innerHTML = boutput.join("");
-digits.innerHTML = "10^" + counter;
