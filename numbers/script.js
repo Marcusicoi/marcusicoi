@@ -232,6 +232,24 @@ for (let i = 0; i < 9; i++) {
   do { op2 += 1; CLnum8 += op2 } while (op === 0);
   Row8.push(code(CLnum8, numbercode("Picillion")[i], numbercode("Picilli-")[i], digitcomma(Digit8), abbcode("Pic")[i]));
 };
+let Digit8o3 = 3;
+let CLnum8o3 = -1;
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 10000000000000; Digit8o3 + 3; Digit8o3 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum8o3 += op2 } while (op === 0);
+  Row8.push(code(CLnum8o3, numbercodeplus("Picillion")[i], numbercodeplus("Picilli-")[i], digitcomma(Digit8o3), abbcodeplus("Pic")[i]));
+};
+let Digit8o7 = 3;
+let CLnum8o7 = -1;
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 100000000000000; Digit8o7 + 3; Digit8o7 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum8o7 += op2 } while (op === 0);
+  Row8.push(code(CLnum8o7, numbercodeplusplus("Picillion")[i], numbercodeplusplus("Picilli-")[i], digitcomma(Digit8o7), abbcodeplusplus("Pic")[i]));
+};
 ID8.innerHTML = headcode() + Row8.join(" ");
 //Table 9
 let CLnum9 = -1;
