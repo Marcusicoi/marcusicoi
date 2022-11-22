@@ -34,6 +34,11 @@ function abbcode(type) {
   let lcrptype = lctype.replace(lctype.charAt(0), "");
   return [type, `D${lcrptype}`, `T${lcrptype}`, `q${lcrptype}`, `Q${lcrptype}`, `s${lcrptype}`, `S${lcrptype}`, `O${lcrptype}`, `N${lcrptype}`];
 };
+function abbcodeplus(type) {
+  let lctype = type.toLowerCase();
+  let lcrptype = lctype.replace(lctype.charAt(0), "");
+  return [`Dc${type}`, `Vg${lcrptype}`, `Tg${lcrptype}`, `Qg${lcrptype}`, `Qq${lcrptype}`, `Sg${lcrptype}`, `Sa${lcrptype}`, `Og${lcrptype}`, `Nn${lcrptype}`];
+};
 function abbcode2(type) {
   return [type, `D${type}`, `T${type}`, `q${type}`, `Q${type}`, `s${type}`, `S${type}`, `O${type}`, `N${type}`];
 };
@@ -129,6 +134,15 @@ for (let i = 0; i < 9; i++) {
   do { op2 += 1; CLnum5 += op2 } while (op === 0);
   Row5.push(code(CLnum5, numbercode("Myrilion")[i], numbercode("Myrilli-")[i], digitcomma(Digit5), abbcode("My")[i]));
 };
+let CLnum5o5 = -1;
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 10000; Digit5 + 3; Digit5 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum5o5 += op2 } while (op === 0);
+  Row5.push(code(CLnum5o5, numbercode("Myrilion")[i], numbercode("Myrilli-")[i], digitcomma(Digit5), abbcode("My")[i]));
+};
+//Table 5.5
 ID5.innerHTML = headcode() + Row5.join(" ");
 //Table 6
 let Digit6 = 3;
