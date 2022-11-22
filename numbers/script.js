@@ -31,7 +31,7 @@ function numbercode(type) {
 };
 function numbercodeplus(type) {
   let lctype = type.toLowerCase();
-  return [`Deci${lctype}`, `Viginti${lctype}`, `Triginti${lctype}`, `Quadraginti${lctype}`, `Quinquaginti${lctype}`, `Sexaginti${lctype}`,  `Septuagint${type}`, `Octaginti${lctype}`, `Nonagint${lctype}`];
+  return [`Deci${lctype}`, `Viginti${lctype}`, `Triginti${lctype}`, `Quadraginti${lctype}`, `Quinquaginti${lctype}`, `Sexaginti${lctype}`,  `Septuagint${lctype}`, `Octaginti${lctype}`, `Nonagint${lctype}`];
 };
 function numbercodeplusplus(type) {
   let lctype = type.toLowerCase();
@@ -45,7 +45,7 @@ function abbcode(type) {
 function abbcodeplus(type) {
   let lctype = type.toLowerCase();
   let lcrptype = lctype.replace(lctype.charAt(0), "");
-  return [`Dc${type}`, `Vg${lcrptype}`, `Tg${lcrptype}`, `Qg${lcrptype}`, `Qq${lcrptype}`, `Sg${lcrptype}`, `Sa${lcrptype}`, `Og${lcrptype}`, `Nn${lcrptype}`];
+  return [`Dc${lcrptype}`, `Vg${lcrptype}`, `Tg${lcrptype}`, `Qg${lcrptype}`, `Qq${lcrptype}`, `Sg${lcrptype}`, `Sa${lcrptype}`, `Og${lcrptype}`, `Nn${lcrptype}`];
 };
 function abbcodeplusplus(type) {
   let lctype = type.toLowerCase();
@@ -183,6 +183,7 @@ for (let i = 0; i < 9; i++) {
   do { op2 += 1; CLnum7 += op2 } while (op === 0);
   Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], digitcomma(Digit7), abbcode("Nai")[i]));
 };
+let Digit7o3o5
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
 let Digit8 = 3;
