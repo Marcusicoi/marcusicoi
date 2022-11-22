@@ -31,11 +31,11 @@ function numbercode(type) {
 };
 function numbercodeplus(type) {
   let lctype = type.toLowerCase();
-  return [`Deci${lctype}`, `Viginti${lctype}`, `Triginti${lctype}`, `Quadraginti${lctype}`, `Quinquaginti${lctype}`, `Sexaginti${lctype}`,  `Septuagint${lctype}`, `Octaginti${lctype}`, `Nonagint${lctype}`];
+  return [`Deci${lctype}`, `Viginti${lctype}`, `Triginti${lctype}`, `Quadraginti${lctype}`, `Quinquaginti${lctype}`, `Sexaginti${lctype}`,  `Septuaginti${lctype}`, `Octaginti${lctype}`, `Nonaginti${lctype}`];
 };
 function numbercodeplusplus(type) {
   let lctype = type.toLowerCase();
-  return [`Centi${lctype}`, `Ducenti${lctype}`, `Trucenti${lctype}`, `Quadringenti${lctype}`, `Quingenti${lctype}`, `Sescenti${lctype}`, `Septingenti${lctype}`, `Octagenti${lctype}`, `Nonagent${lctype}`];
+  return [`Centi${lctype}`, `Ducenti${lctype}`, `Trucenti${lctype}`, `Quadringenti${lctype}`, `Quingenti${lctype}`, `Sescenti${lctype}`, `Septingenti${lctype}`, `Octagenti${lctype}`, `Nonagenti${lctype}`];
 };
 function abbcode(type) {
   let lctype = type.toLowerCase();
@@ -50,7 +50,7 @@ function abbcodeplus(type) {
 function abbcodeplusplus(type) {
   let lctype = type.toLowerCase();
   let lcrptype = lctype.replace(lctype.charAt(0), "");
-  return [`Cen${type}`, `Duc${lcrptype}`, `Trc${lcrptype}`, `Qrg${lcrptype}`, `Qng${lcrptype}`, `Ssc${lcrptype}`, `Otg${lcrptype}`, `Nng${lcrptype}`];
+  return [`Cen${lcrptype}`, `Duc${lcrptype}`, `Trc${lcrptype}`, `Qrg${lcrptype}`, `Qng${lcrptype}`, `Ssc${lcrptype}`, `Otg${lcrptype}`, `Nng${lcrptype}`];
 };
 function abbcode2(type) {
   return [type, `D${type}`, `T${type}`, `q${type}`, `Q${type}`, `s${type}`, `S${type}`, `O${type}`, `N${type}`];
@@ -170,6 +170,24 @@ for (let i = 0; i < 9; i++) {
   do { op2 += 1; CLnum6 += op2 } while (op === 0);
   Row6.push(code(CLnum6, numbercode("Micrillion")[i], numbercode("Micrilli-")[i], digitcomma(Digit6), abbcode("Mcr")[i]));
 };
+let Digit6o3 = 3;
+let CLnum6o3 = -1;
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 10000000; Digit6o3 + 3; Digit6o3 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum6o3 += op2 } while (op === 0);
+  Row6.push(code(CLnum6o3, numbercodeplus("Micrillion")[i], numbercodeplus("Micrilli-")[i], digitcomma(Digit6o3), abbcodeplus("Mcr")[i]));
+};
+let Digit6o7 = 3;
+let CLnum6o7 = -1;
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 100000000; Digit6o7 + 3; Digit6o7 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum6o7 += op2 } while (op === 0);
+  Row6.push(code(CLnum6o7, numbercodeplusplus("Micrillion")[i], numbercodeplusplus("Micrilli-")[i], digitcomma(Digit6o7), abbcodeplusplus("Mcr")[i]));
+};
 ID6.innerHTML = headcode() + Row6.join(" ");
 //Table 7
 let Digit7 = 3;
@@ -183,7 +201,24 @@ for (let i = 0; i < 9; i++) {
   do { op2 += 1; CLnum7 += op2 } while (op === 0);
   Row7.push(code(CLnum7, numbercode("Nanillion")[i], numbercode("Nanilli-")[i], digitcomma(Digit7), abbcode("Nai")[i]));
 };
-let Digit7o3o5
+let Digit7o3 = 3;
+let CLnum7o3 = -1;
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 10000000000; Digit7o3 + 3; Digit7o3 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum7o3 += op2 } while (op === 0);
+  Row7.push(code(CLnum7o3, numbercodeplus("Nanillion")[i], numbercodeplus("Nanilli-")[i], digitcomma(Digit7o3), abbcodeplus("Nai")[i]));
+};
+let Digit7o7 = 3;
+let CLnum7o7 = -1;
+for (let i = 0; i < 9; i++) {
+  let op = 0;
+  let op2 = 0;
+  do { op += 100000000000; Digit7o7 + 3; Digit7o7 += (3 * op) } while (op === 0);
+  do { op2 += 1; CLnum7o7 += op2 } while (op === 0);
+  Row7.push(code(CLnum7o7, numbercodeplusplus("Nanillion")[i], numbercodeplusplus("Nanilli-")[i], digitcomma(Digit7o7), abbcodeplusplus("Nai")[i]));
+};
 ID7.innerHTML = headcode() + Row7.join(" ");
 //Table 8
 let Digit8 = 3;
