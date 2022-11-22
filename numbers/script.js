@@ -29,6 +29,14 @@ function numbercode(type) {
   let lctype = type.toLowerCase();
   return [type, `Du${lctype}`, `Tru${lctype}`, `Quadri${lctype}`, `Quinti${lctype}`, `Ses${lctype}`, `Septi${lctype}`, `Octin${lctype}`, `Nona${lctype}`];
 };
+function numbercodeplus(type) {
+  let lctype = type.toLowerCase();
+  return [`Deci${lctype}`, `Viginti${lctype}`, `Triginti${lctype}`, `Quadraginti${lctype}`, `Quinquaginti${lctype}`, `Sexaginti${lctype}`,  `Septuagint${type}`, `Octaginti${lctype}`, `Nonagint${lctype}`];
+};
+function numbercodeplusplus(type) {
+  let lctype = type.toLowerCase();
+  return [`Centi${lctype}`, `Ducenti${lctype}`, `Trucenti${lctype}`, `Quadringenti${lctype}`, `Quingenti${lctype}`, `Sescenti${lctype}`, `Septingenti${lctype}`, `Octagenti${lctype}`, `Nonagent${lctype}`];
+};
 function abbcode(type) {
   let lctype = type.toLowerCase();
   let lcrptype = lctype.replace(lctype.charAt(0), "");
@@ -38,6 +46,11 @@ function abbcodeplus(type) {
   let lctype = type.toLowerCase();
   let lcrptype = lctype.replace(lctype.charAt(0), "");
   return [`Dc${type}`, `Vg${lcrptype}`, `Tg${lcrptype}`, `Qg${lcrptype}`, `Qq${lcrptype}`, `Sg${lcrptype}`, `Sa${lcrptype}`, `Og${lcrptype}`, `Nn${lcrptype}`];
+};
+function abbcodeplusplus(type) {
+  let lctype = type.toLowerCase();
+  let lcrptype = lctype.replace(lctype.charAt(0), "");
+  return [`Cen${type}`, `Duc${lcrptype}`, `Trc${lcrptype}`, `Qrg${lcrptype}`, `Qng${lcrptype}`, `Ssc${lcrptype}`, `Otg${lcrptype}`, `Nng${lcrptype}`];
 };
 function abbcode2(type) {
   return [type, `D${type}`, `T${type}`, `q${type}`, `Q${type}`, `s${type}`, `S${type}`, `O${type}`, `N${type}`];
@@ -134,13 +147,14 @@ for (let i = 0; i < 9; i++) {
   do { op2 += 1; CLnum5 += op2 } while (op === 0);
   Row5.push(code(CLnum5, numbercode("Myrilion")[i], numbercode("Myrilli-")[i], digitcomma(Digit5), abbcode("My")[i]));
 };
+let Digit5o5 = 3;
 let CLnum5o5 = -1;
 for (let i = 0; i < 9; i++) {
   let op = 0;
   let op2 = 0;
-  do { op += 10000; Digit5 + 3; Digit5 += (3 * op) } while (op === 0);
+  do { op += 100000; Digit5o5 + 3; Digit5o5 += (3 * op) } while (op === 0);
   do { op2 += 1; CLnum5o5 += op2 } while (op === 0);
-  Row5.push(code(CLnum5o5, numbercode("Myrilion")[i], numbercode("Myrilli-")[i], digitcomma(Digit5), abbcode("My")[i]));
+  Row5.push(code(CLnum5o5, numbercodeplus("Myrilion")[i], numbercodeplus("Myrilli-")[i], digitcomma(Digit5o5), abbcodeplus("My")[i]));
 };
 //Table 5.5
 ID5.innerHTML = headcode() + Row5.join(" ");
