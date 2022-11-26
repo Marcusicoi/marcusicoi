@@ -67,7 +67,7 @@ document.getElementById("M3BT1").onclick = function() {
       M3CH1.innerHTML = "3% " + "> " + (Math.floor(Math.random() * 97) + 3) + "%";
   }; 
 };
-//BUTTON PRNG
+/*BUTTON PRNG
 //U60??1
 let UPRNG = 42.265;
 document.getElementById("U60BT1P").onclick = function() {
@@ -84,7 +84,7 @@ document.getElementById("U60BT1P").onclick = function() {
       U60CH1.innerHTML = chance + "% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
       U60AT1 += 1;
   }; 
-};
+};*/
 //Many Petals TRNG
 //U60??2
 document.getElementById("U60BT2").onclick = function() {
