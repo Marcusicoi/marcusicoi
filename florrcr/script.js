@@ -73,13 +73,9 @@ document.getElementById("C?BT1").onclick = function() {
   let C0CH1 = document.getElementById("C?CH1");
   let C0IP1 = document.getElementById("C?IP1");
   if (C0IP1.value % 1 !== 0) {
-      let C0WC1 = C0IP1.value;
-      do {
-        
-      }
       let C0DC1 = 0;
       for (let i = 0; i < s.length; i++) {
-           if (C0IP1.value.charAt(C0IP1.) == c)
+           if (C0IP1.value.charAt(C0IP1.indexOf('.')) == )
            C0DC1++;
         }
         return C0DC1;
