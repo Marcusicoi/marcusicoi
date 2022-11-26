@@ -23,6 +23,20 @@ selectId("E20FL1").style.color = X0FL0;
 selectId("L5FL1").style.color = X0FL0;
 selectId("M3FL1").style.color = X0FL0;
 selectId("C?FL1").style.color = X0FL0;
+//
+selectId("U60SCC2").style.color = X0SC0;
+selectId("R40SCC2").style.color = X0SC0;
+selectId("E20SCC2").style.color = X0SC0;
+selectId("L5SCC2").style.color = X0SC0;
+selectId("M3SCC2").style.color = X0SC0;
+selectId("C?SCC2").style.color = X0SC0;
+//
+selectId("U60FLC2").style.color = X0FL0;
+selectId("R40FLC2").style.color = X0FL0;
+selectId("E20FLC2").style.color = X0FL0;
+selectId("L5FLC2").style.color = X0FL0;
+selectId("M3FLC2").style.color = X0FL0;
+selectId("C?FLC2").style.color = X0FL0;
 //BUTTON TRNG
 //U60??1
 selectId("U60BT1").onclick = function() {
