@@ -71,33 +71,53 @@ selectId("E20BT1").onclick = function() {
   if (probability(20)) {
       E20RS1.innerHTML = "Success!";
       E20CH1.innerHTML = "20% " + "> " + (Math.floor(Math.random() * 20)) + "%";
+      E20RS1.style.color = X0SC0;
+      E20CH1.style.color = X0SC0;
+      selectId("E20SC1").style.color = X0SC0;
+      selectId("E20FL1").style.color = "white";
   } else {
       E20RS1.innerHTML = "Failed.";
       E20CH1.innerHTML = "20% " + "> " + (Math.floor(Math.random() * 80) + 20) + "%";
+      E20RS1.style.color = X0FL0;
+      E20CH1.style.color = X0FL0;
+      selectId("E20SC1").style.color = "white";
+      selectId("E20FL1").style.color = X0FL0;
   }; 
 };
 //L5??1
-document.getElementById("L5BT1").onclick = function() {
-  let L5RS1 = document.getElementById("L5RS1");
-  let L5CH1 = document.getElementById("L5CH1");
+selectId("L5BT1").onclick = function() {
+  let L5RS1 = selectId("L5RS1");
+  let L5CH1 = selectId("L5CH1");
   if (probability(5)) {
       L5RS1.innerHTML = "Success!";
       L5CH1.innerHTML = "5% " + "> " + (Math.floor(Math.random() * 5)) + "%";
+      L5RS1.style.color = X0SC0;
+      L5CH1.style.color = X0SC0;
+      selectId("L5SC1").style.color = X0SC0;
+      selectId("L5FL1").style.color = "white";
   } else {
       L5RS1.innerHTML = "Failed.";
       L5CH1.innerHTML = "5% " + "> " + (Math.floor(Math.random() * 95) + 5) + "%";
+      L5RS1.style.color = X0FL0;
+      L5CH1.style.color = X0FL0;
+      selectId("L5SC1").style.color = "white";
+      selectId("L5FL1").style.color = X0FL0
   }; 
 };
 //M3??1
-document.getElementById("M3BT1").onclick = function() {
-  let M3RS1 = document.getElementById("M3RS1");
-  let M3CH1 = document.getElementById("M3CH1");
+selectId("M3BT1").onclick = function() {
+  let M3RS1 = selectId("M3RS1");
+  let M3CH1 = selectId("M3CH1");
   if (probability(3)) {
       M3RS1.innerHTML = "Success!";
       M3CH1.innerHTML = "3% " + "> " + (Math.floor(Math.random() * 3)) + "%";
   } else {
       M3RS1.innerHTML = "Failed.";
       M3CH1.innerHTML = "3% " + "> " + (Math.floor(Math.random() * 97) + 3) + "%";
+      M3RS1.style.color = X0FL0;
+      M3CH1.style.color = X0FL0;
+      selectId("M3SC1").style.color = "white";
+      selectId("M3FL1").style.color = X0FL0
   }; 
 };
 //C,??1
