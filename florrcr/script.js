@@ -72,12 +72,22 @@ document.getElementById("C?BT1").onclick = function() {
   let C0RS1 = document.getElementById("C?RS1");
   let C0CH1 = document.getElementById("C?CH1");
   let C0IP1 = document.getElementById("C?IP1");
+  let C0WC1 = 0;let res = 0;
+ 
+        for (let i = 0; i < s.length; i++)
+        {
+            // checking character in string
+            if (s.charAt(i) == c)
+            res++;
+        }
+        return res;
+    }
   if (probability(C0IP1.value)) {
       C0RS1.innerHTML = "Success!";
       C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.floor(Math.random() * C0IP1.value)) + "%";
   } else {
       C0RS1.innerHTML = "Failed.";
-      C0CH1.innerHTML = C0IP1.value + "% " + "> " + (Math.floor(Math.random() * (100 - C0IP1.value) + C0IP1.value)) + "%";
+      C0CH1.innerHTML = C0IP1.value + "% " + "> " + (Math.floor(Math.random() * (100 - C0IP1.value)) + +C0IP1.value) + "%";
   }; 
 };
 /*BUTTON PRNG
