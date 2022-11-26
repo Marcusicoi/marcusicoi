@@ -111,6 +111,10 @@ selectId("M3BT1").onclick = function() {
   if (probability(3)) {
       M3RS1.innerHTML = "Success!";
       M3CH1.innerHTML = "3% " + "> " + (Math.floor(Math.random() * 3)) + "%";
+      M3RS1.style.color = X0SC0;
+      M3CH1.style.color = X0SC0;
+      selectId("M3SC1").style.color = X0SC0;
+      selectId("M3FL1").style.color = "white";
   } else {
       M3RS1.innerHTML = "Failed.";
       M3CH1.innerHTML = "3% " + "> " + (Math.floor(Math.random() * 97) + 3) + "%";
@@ -121,10 +125,10 @@ selectId("M3BT1").onclick = function() {
   }; 
 };
 //C,??1
-document.getElementById("C?BT1").onclick = function() {
-  let C0RS1 = document.getElementById("C?RS1");
-  let C0CH1 = document.getElementById("C?CH1");
-  let C0IP1 = document.getElementById("C?IP1");
+selectId("C?BT1").onclick = function() {
+  let C0RS1 = selectId("C?RS1");
+  let C0CH1 = selectId("C?CH1");
+  let C0IP1 = selectId("C?IP1");
   if (C0IP1.value % 1 !== 0) {
       let C0DC1 = 0, C0OP1 = 0;
       do { C0DC1 += 1 }
@@ -132,17 +136,33 @@ document.getElementById("C?BT1").onclick = function() {
       if (probability(C0IP1.value)) {
           C0RS1.innerHTML = "Success!";
           C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.random() * C0IP1.value).toFixed(C0DC1) + "%";
+          C0RS1.style.color = X0SC0;
+          C0CH1.style.color = X0SC0;
+          selectId("C?SC1").style.color = X0SC0;
+          selectId("C?FL1").style.color = "white";
       } else {
           C0RS1.innerHTML = "Failed.";
           C0CH1.innerHTML = C0IP1.value + "% " + "> " + ((Math.random() * (100 - C0IP1.value)) + +C0IP1.value).toFixed(C0DC1) + "%";
+          C0RS1.style.color = X0FL0;
+          C0CH1.style.color = X0FL0;
+          selectId("C?SC1").style.color = "white";
+          selectId("C?FL1").style.color = X0FL0;
       };
   } else {
       if (probability(C0IP1.value)) {
           C0RS1.innerHTML = "Success!";
           C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.floor(Math.random() * C0IP1.value)) + "%";
+          C0RS1.style.color = X0SC0;
+          C0CH1.style.color = X0SC0;
+          selectId("C?SC1").style.color = X0SC0;
+          selectId("C?FL1").style.color = "white";
       } else {
           C0RS1.innerHTML = "Failed.";
           C0CH1.innerHTML = C0IP1.value + "% " + "> " + (Math.floor(Math.random() * (100 - C0IP1.value)) + +C0IP1.value) + "%";
+          C0RS1.style.color = X0FL0;
+          C0CH1.style.color = X0FL0;
+          selectId("C?SC1").style.color = "white";
+          selectId("C?FL1").style.color = X0FL0;
       };
    };
    document.getElementById("C?SC1").innerHTML = C0IP1.value + "% Success Chance";
