@@ -140,7 +140,6 @@ selectId("C?BT1").onclick = function() {
           C0CH1.style.color = X0SC0;
           selectId("C?SC1").style.color = X0SC0;
           selectId("C?FL1").style.color = "white";
-          selectId("C?BT1").style.visibility = "hidden";
       } else {
           C0RS1.innerHTML = "Failed.";
           C0CH1.innerHTML = C0IP1.value + "% " + "> " + ((Math.random() * (100 - C0IP1.value)) + +C0IP1.value).toFixed(C0DC1) + "%";
