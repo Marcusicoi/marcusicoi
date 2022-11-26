@@ -73,9 +73,9 @@ document.getElementById("C?BT1").onclick = function() {
   let C0CH1 = document.getElementById("C?CH1");
   let C0IP1 = document.getElementById("C?IP1");
   if (C0IP1.value % 1 !== 0) {
-      let C0DC1 = 1, C0OP1 = 0;
+      let C0DC1 = 0, C0OP1 = 0;
       do { C0DC1 += 1 }
-      while (C0IP1.value.charAt(C0IP1.value.indexOf('.') + C0DC1) !== undefined)
+      while (C0DC1 < Math.floor(C0IP1.value.length / 2))
       if (probability(C0IP1.value)) {
           C0RS1.innerHTML = "Success!";
           C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.random() * C0IP1.value).toFixed(C0DC1) + "%";
