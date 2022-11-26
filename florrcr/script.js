@@ -81,10 +81,10 @@ document.getElementById("C?BT1").onclick = function() {
       };
       if (probability(C0IP1.value)) {
           C0RS1.innerHTML = "Success!";
-          C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.random().toFixed(C0DC1) * C0IP1.value) + "%";
+          C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.random() * C0IP1.value).toFixed(C0DC1) + "%";
       } else {
           C0RS1.innerHTML = "Failed.";
-          C0CH1.innerHTML = C0IP1.value + "% " + "> " + ((Math.random().toFixed(C0DC1) * (100 - C0IP1.value)) + +C0IP1.value) + "%";
+          C0CH1.innerHTML = C0IP1.value + "% " + "> " + ((Math.random() * (100 - C0IP1.value)) + +C0IP1.value).toFixed(C0DC1) + "%";
       };
   } else {
       if (probability(C0IP1.value)) {
