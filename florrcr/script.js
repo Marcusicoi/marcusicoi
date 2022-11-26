@@ -8,19 +8,21 @@ function oProbability(n) {
 }
 function selectId(id) { return document.getElementById(id) };
 //Style color
-selectId("U60SC1").style.color = "#52f84d";
-selectId("R40SC1").style.color = "#52f84d";
-selectId("E20SC1").style.color = "#52f84d";
-selectId("L5SC1").style.color = "#52f84d";
-selectId("M3SC1").style.color = "#52f84d";
-selectId("C?SC1").style.color = "#52f84d";
+const X0SC0 = "#52F84D";
+selectId("U60SC1").style.color = X0SC0;
+selectId("R40SC1").style.color = X0SC0;
+selectId("E20SC1").style.color = X0SC0;
+selectId("L5SC1").style.color = X0SC0;
+selectId("M3SC1").style.color = X0SC0;
+selectId("C?SC1").style.color = X0SC0;
 //
-selectId("U60FL1").style.color = "#f46658";
-selectId("R40FL1").style.color = "#f46658";
-selectId("E20FL1").style.color = "#f46658";
-selectId("L5FL1").style.color = "#f46658";
-selectId("M3FL1").style.color = "#f46658";
-selectId("C?FL1").style.color = "#f46658";
+const X0FL0 = "#F46658";
+selectId("U60FL1").style.color = X0FL0;
+selectId("R40FL1").style.color = X0FL0;
+selectId("E20FL1").style.color = X0FL0;
+selectId("L5FL1").style.color = X0FL0;
+selectId("M3FL1").style.color = X0FL0;
+selectId("C?FL1").style.color = X0FL0;
 //BUTTON TRNG
 //U60??1
 selectId("U60BT1").onclick = function() {
@@ -29,9 +31,17 @@ selectId("U60BT1").onclick = function() {
   if (probability(60)) {
       U60RS1.innerHTML = "Success!";
       U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
+      U60RS1.style.color = X0SC0;
+      U60CH1.style.color = X0SC0;
+      selectId("U60SC1").style.color = X0SC0;
+      selectId("U60FL1").style.color = "white";
   } else {
       U60RS1.innerHTML = "Failed.";
       U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
+      U60RS1.style.color = X0FL0;
+      U60CH1.style.color = X0FL0;
+      selectId("U60SC1").style.color = "white";
+      selectId("U60FL1").style.color = X0FL0;
   }; 
 };
 //R40??1
@@ -41,15 +51,23 @@ selectId("R40BT1").onclick = function() {
   if (probability(40)) {
       R40RS1.innerHTML = "Success!";
       R40CH1.innerHTML = "40% " + "> " + (Math.floor(Math.random() * 40)) + "%";
+      R40RS1.style.color = X0SC0;
+      R40CH1.style.color = X0SC0;
+      selectId("R40SC1").style.color = X0SC0;
+      selectId("R40FL1").style.color = "white";
   } else {
       R40RS1.innerHTML = "Failed.";
       R40CH1.innerHTML = "40% " + "> " + (Math.floor(Math.random() * 60) + 40) + "%";
+      R40RS1.style.color = X0FL0;
+      R40CH1.style.color = X0FL0;
+      selectId("R40SC1").style.color = "white";
+      selectId("R40FL1").style.color = X0FL0;
   }; 
 };
 //E20??1
-document.getElementById("E20BT1").onclick = function() {
-  let E20RS1 = document.getElementById("E20RS1");
-  let E20CH1 = document.getElementById("E20CH1");
+selectId("E20BT1").onclick = function() {
+  let E20RS1 = selectId("E20RS1");
+  let E20CH1 = selectId("E20CH1");
   if (probability(20)) {
       E20RS1.innerHTML = "Success!";
       E20CH1.innerHTML = "20% " + "> " + (Math.floor(Math.random() * 20)) + "%";
