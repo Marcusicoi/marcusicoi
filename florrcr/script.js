@@ -92,6 +92,8 @@ document.getElementById("C?BT1").onclick = function() {
           C0CH1.innerHTML = C0IP1.value + "% " + "> " + (Math.floor(Math.random() * (100 - C0IP1.value)) + +C0IP1.value) + "%";
       };
    };
+   document.getElementById("C?SC1").innerHTML = C0IP1.value + "% Success Chance";
+   document.getElementById("C?FL1").innerHTML = (100 - +C0IP1.value) + "% Fail Chance";
 };
 /*BUTTON PRNG
 //U60??1
