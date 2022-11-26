@@ -224,10 +224,16 @@ document.getElementById("U60BT2").onclick = function() {
       if (U60FLL2 === 4) { U60LST42 += 1 };
       U60IP2.value -= U60FLL2;
       U60FAL2 += 1;
-  } 
+  };
   } while (U60IP2.value > 4)
+      if (U60SCS2 === 0) {
+        U60SC2.style.color = "white";
+        U60FL2.style.color = X0FL0;
+      };
       U60SC2.innerHTML = "Successes: " + U60SCS2;
       U60FL2.innerHTML = "Fails: " + U60FAL2 + `, [1=${U60LST12}],[2=${U60LST22}],[3=${U60LST32}],[4=${U60LST42}]`;
+      U60SC2.style.color = X0SC0;
+      U60FL2.style.color = X0FL0;
 };
 //R40??2
 document.getElementById("R40BT2").onclick = function() {
@@ -256,6 +262,8 @@ document.getElementById("R40BT2").onclick = function() {
   } while (R40IP2.value > 4)
       R40SC2.innerHTML = "Successes: " + R40SCS2;
       R40FL2.innerHTML = "Fails: " + R40FAL2 + `, [1=${R40LST12}],[2=${R40LST22}],[3=${R40LST32}],[4=${R40LST42}]`;
+      R40SC2.style.color = X0SC0;
+      R40FL2.style.color = X0FL0;
 };
 //E20??2
 document.getElementById("E20BT2").onclick = function() {
@@ -284,6 +292,8 @@ document.getElementById("E20BT2").onclick = function() {
   } while (E20IP2.value > 4)
       E20SC2.innerHTML = "Successes: " + E20SCS2;
       E20FL2.innerHTML = "Fails: " + E20FAL2 + `, [1=${E20LST12}],[2=${E20LST22}],[3=${E20LST32}],[4=${E20LST42}]`;
+      E20SC2.style.color = X0SC0;
+      E20FL2.style.color = X0FL0;
 };
 //L5??2
 document.getElementById("L5BT2").onclick = function() {
@@ -312,6 +322,8 @@ document.getElementById("L5BT2").onclick = function() {
   } while (L5IP2.value > 4)
       L5SC2.innerHTML = "Successes: " + L5SCS2;
       L5FL2.innerHTML = "Fails: " + L5FAL2 + `, [1=${L5LST12}],[2=${L5LST22}],[3=${L5LST32}],[4=${L5LST42}]`;
+      L5SC2.style.color = X0SC0;
+      L5FL2.style.color = X0FL0;
 };
 //M3??2
 document.getElementById("M3BT2").onclick = function() {
@@ -340,4 +352,6 @@ document.getElementById("M3BT2").onclick = function() {
   } while (M3IP2.value > 4)
       M3SC2.innerHTML = "Successes: " + M3SCS2;
       M3FL2.innerHTML = "Fails: " + M3FAL2 + `, [1=${M3LST12}],[2=${M3LST22}],[3=${M3LST32}],[4=${M3LST42}]`;
+      M3SC2.style.color = X0SC0;
+      M3FL2.style.color = X0FL0;
 };
