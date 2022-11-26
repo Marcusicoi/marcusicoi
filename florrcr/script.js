@@ -75,17 +75,17 @@ document.getElementById("C?BT1").onclick = function() {
   if (C0IP1.value % 1 !== 0) {
       let C0DC1 = 0;
       for (let i = 0; i < C0IP1.length; i++) {
-           if (C0IP1.value.charAt(C0IP1.indexOf('.')).length)
-           C0DC1++;
-        }
-        return C0DC1;
-  if (probability(C0IP1.value)) {
-      C0RS1.innerHTML = "Success!";
-      C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.floor(Math.random() * C0IP1.value)) + "%";
-  } else {
-      C0RS1.innerHTML = "Failed.";
-      C0CH1.innerHTML = C0IP1.value + "% " + "> " + (Math.floor(Math.random() * (100 - C0IP1.value)) + +C0IP1.value) + "%";
-  };
+           if (C0IP1.value.charAt(C0IP1.indexOf('.') + i) !== undefined) {
+               C0DC1++;
+           } else C0DC1;
+      };
+      if (probability(C0IP1.value)) {
+          C0RS1.innerHTML = "Success!";
+          C0CH1.innerHTML = C0IP1.value + "%  " + "> " + (Math.random().toFixed(C0DC1) * C0IP1.value) + "%";
+      } else {
+          C0RS1.innerHTML = "Failed.";
+          C0CH1.innerHTML = C0IP1.value + "% " + "> " + ((Math.random().toFixed(C0DC1) * (100 - C0IP1.value)) + +C0IP1.value) + "%";
+      };
   } else {
       if (probability(C0IP1.value)) {
           C0RS1.innerHTML = "Success!";
