@@ -6,11 +6,14 @@ function probability(n) {
 function oProbability(n) {
   return Math.random() > (n / 100);
 }
+function selectId(id) { return document.getElementById(id) };
+//Style color
+selectId("U60SC1") && selectId("R40SC1") 
 //BUTTON TRNG
 //U60??1
-document.getElementById("U60BT1").onclick = function() {
-  let U60RS1 = document.getElementById("U60RS1");
-  let U60CH1 = document.getElementById("U60CH1");
+selectId("U60BT1").onclick = function() {
+  let U60RS1 = selectId("U60RS1");
+  let U60CH1 = selectId("U60CH1");
   if (probability(60)) {
       U60RS1.innerHTML = "Success!";
       U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
@@ -20,9 +23,9 @@ document.getElementById("U60BT1").onclick = function() {
   }; 
 };
 //R40??1
-document.getElementById("R40BT1").onclick = function() {
-  let R40RS1 = document.getElementById("R40RS1");
-  let R40CH1 = document.getElementById("R40CH1");
+selectId("R40BT1").onclick = function() {
+  let R40RS1 = selectId("R40RS1");
+  let R40CH1 = selectId("R40CH1");
   if (probability(40)) {
       R40RS1.innerHTML = "Success!";
       R40CH1.innerHTML = "40% " + "> " + (Math.floor(Math.random() * 40)) + "%";
