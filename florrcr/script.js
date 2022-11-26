@@ -73,13 +73,16 @@ let UPRNG = 42.265;
 document.getElementById("U60BT1P").onclick = function() {
   let U60RS1 = document.getElementById("U60RS1P");
   let U60CH1 = document.getElementById("U60CH1P");
-  let
-  if (probability(60)) {
+  let U60AT1 = 1;
+  let chance = UPRNG * U60AT1;
+  if (probability(chance)) {
       U60RS1.innerHTML = "Success!";
-      U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
+      U60CH1.innerHTML = chance + "% " + "> " + (Math.floor(Math.random() * chance)) + "%";
+      U60AT1 = 1;
   } else {
       U60RS1.innerHTML = "Failed.";
-      U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
+      U60CH1.innerHTML = chance + "% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
+      U60AT1 += 1;
   }; 
 };
 //Many Petals TRNG
