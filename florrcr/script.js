@@ -8,7 +8,19 @@ function oProbability(n) {
 }
 function selectId(id) { return document.getElementById(id) };
 //Style color
-selectId("U60SC1") && selectId("R40SC1") 
+selectId("U60SC1").style.color = "#52f84d";
+selectId("R40SC1").style.color = "#52f84d";
+selectId("E20SC1").style.color = "#52f84d";
+selectId("L5SC1").style.color = "#52f84d";
+selectId("M3SC1").style.color = "#52f84d";
+selectId("C?SC1").style.color = "#52f84d";
+//
+selectId("U60FL1").style.color = "#f46658";
+selectId("R40FL1").style.color = "#f46658";
+selectId("E20FL1").style.color = "#f46658";
+selectId("L5FL1").style.color = "#f46658";
+selectId("M3FL1").style.color = "#f46658";
+selectId("C?FL1").style.color = "#f46658";
 //BUTTON TRNG
 //U60??1
 selectId("U60BT1").onclick = function() {
