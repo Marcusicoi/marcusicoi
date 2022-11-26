@@ -77,7 +77,7 @@ document.getElementById("C?BT1").onclick = function() {
       for (let i = 0; i < C0IP1.length; i++) {
            if (C0IP1.value.charAt(C0IP1.indexOf('.') + i) !== undefined) {
                C0DC1++;
-           } else C0DC1;
+           } else C0D
       };
       if (probability(C0IP1.value)) {
           C0RS1.innerHTML = "Success!";
