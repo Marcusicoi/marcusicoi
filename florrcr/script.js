@@ -138,7 +138,7 @@ selectId("M3BT1").onclick = function() {
       selectId("M3FL1").style.color = X0FL0
   }; 
 };
-//C,??1
+//C???1
 selectId("C?BT1").onclick = function() {
   let C0RS1 = selectId("C?RS1");
   let C0CH1 = selectId("C?CH1");
@@ -422,10 +422,11 @@ selectId("M3BT2").onclick = function() {
       };
 };
 //C0??2
-selectId("C0BT2").onclick = function() {
-  let C0IP2 = selectId("C0IP2");
-  let C0SC2 = selectId("C0SC2");
-  let C0FL2 = selectId("C0FL2");
+selectId("C?BT2").onclick = function() {
+  let C0IP2 = selectId("C?IP2");
+  let C0SC2 = selectId("C?SC2");
+  let C0FL2 = selectId("C?FL2");
+  let C0PB2 = selectId("C?PB2");
   let C0SCS2 = 0;
   let C0FAL2 = 0;
   let C0LST12 = 0;
@@ -433,7 +434,7 @@ selectId("C0BT2").onclick = function() {
   let C0LST32 = 0;
   let C0LST42 = 0;
   do {
-  if (probability(3)) {
+  if (probability(C0PB2.value)) {
       C0IP2.value -= 5;
       C0SCS2 += 1;
   } else {
@@ -450,18 +451,20 @@ selectId("C0BT2").onclick = function() {
       C0FL2.innerHTML = "Fails: " + C0FAL2 + `, [1=${C0LST12}],[2=${C0LST22}],[3=${C0LST32}],[4=${C0LST42}]`;
       if (C0SCS2 === 0) {
         C0SC2.style.color = "white";
-        selectId("C0SCC2").style.color = "white";
+        selectId("C?SCC2").style.color = "white";
       };
       if (C0FAL2 === 0) {
         C0FL2.style.color = "white";
-        selectId("C0FLC2").style.color = "white";
+        selectId("C?FLC2").style.color = "white";
       };
       if (C0SCS2 > 0) {  
         C0SC2.style.color = X0SC0;
-        selectId("C0SCC2").style.color = X0SC0;
+        selectId("C?SCC2").style.color = X0SC0;
       };
       if (C0FAL2 > 0) {  
         C0FL2.style.color = X0FL0;
-        selectId("C0FLC2").style.color = X0FL0;
+        selectId("C?FLC2").style.color = X0FL0;
       };
+   selectId("C?SCC2").innerHTML = C0PB2.value + "% Success Chance";
+   selectId("C?FLC2").innerHTML = (100 - +C0PB2.value) + "% Fail Chance";
 };
