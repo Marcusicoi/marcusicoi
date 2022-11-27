@@ -202,7 +202,7 @@ document.getElementById("U60BT1P").onclick = function() {
 };*/
 //Many Petals TRNG
 //U60??2
-document.getElementById("U60BT2").onclick = function() {
+selectId("U60BT2").onclick = function() {
   let U60IP2 = selectId("U60IP2");
   let U60SC2 = selectId("U60SC2");
   let U60FL2 = selectId("U60FL2");
@@ -236,19 +236,20 @@ document.getElementById("U60BT2").onclick = function() {
         U60FL2.style.color = "white";
         selectId("U60FLC2").style.color = "white";
       };
-      if (U60SCS2 > 1) {  
+      if (U60SCS2 > 0) {  
         U60SC2.style.color = X0SC0;
         selectId("U60SCC2").style.color = X0SC0;
       };
-      if (U60FAL2 > 1) {  
+      if (U60FAL2 > 0) {  
         U60FL2.style.color = X0FL0;
         selectId("U60FLC2").style.color = X0FL0;
+      };
 };
 //R40??2
-document.getElementById("R40BT2").onclick = function() {
-  let R40IP2 = document.getElementById("R40IP2");
-  let R40SC2 = document.getElementById("R40SC2");
-  let R40FL2 = document.getElementById("R40FL2");
+selectId("R40BT2").onclick = function() {
+  let R40IP2 = selectId("R40IP2");
+  let R40SC2 = selectId("R40SC2");
+  let R40FL2 = selectId("R40FL2");
   let R40SCS2 = 0;
   let R40FAL2 = 0;
   let R40LST12 = 0;
@@ -271,14 +272,28 @@ document.getElementById("R40BT2").onclick = function() {
   } while (R40IP2.value > 4)
       R40SC2.innerHTML = "Successes: " + R40SCS2;
       R40FL2.innerHTML = "Fails: " + R40FAL2 + `, [1=${R40LST12}],[2=${R40LST22}],[3=${R40LST32}],[4=${R40LST42}]`;
-      R40SC2.style.color = X0SC0;
-      R40FL2.style.color = X0FL0;
+      if (R40SCS2 === 0) {
+        R40SC2.style.color = "white";
+        selectId("R40SCC2").style.color = "white";
+      };
+      if (R40FAL2 === 0) {
+        R40FL2.style.color = "white";
+        selectId("R40FLC2").style.color = "white";
+      };
+      if (R40SCS2 > 0) {  
+        R40SC2.style.color = X0SC0;
+        selectId("R40SCC2").style.color = X0SC0;
+      };
+      if (R40FAL2 > 0) {  
+        R40FL2.style.color = X0FL0;
+        selectId("R40FLC2").style.color = X0FL0;
+      };
 };
 //E20??2
-document.getElementById("E20BT2").onclick = function() {
-  let E20IP2 = document.getElementById("E20IP2");
-  let E20SC2 = document.getElementById("E20SC2");
-  let E20FL2 = document.getElementById("E20FL2");
+selectId("E20BT2").onclick = function() {
+  let E20IP2 = selectId("E20IP2");
+  let E20SC2 = selectId("E20SC2");
+  let E20FL2 = selectId("E20FL2");
   let E20SCS2 = 0;
   let E20FAL2 = 0;
   let E20LST12 = 0;
@@ -301,14 +316,28 @@ document.getElementById("E20BT2").onclick = function() {
   } while (E20IP2.value > 4)
       E20SC2.innerHTML = "Successes: " + E20SCS2;
       E20FL2.innerHTML = "Fails: " + E20FAL2 + `, [1=${E20LST12}],[2=${E20LST22}],[3=${E20LST32}],[4=${E20LST42}]`;
-      E20SC2.style.color = X0SC0;
-      E20FL2.style.color = X0FL0;
+      if (E20SCS2 === 0) {
+        E20SC2.style.color = "white";
+        selectId("E20SCC2").style.color = "white";
+      };
+      if (E20FAL2 === 0) {
+        E20FL2.style.color = "white";
+        selectId("E20FLC2").style.color = "white";
+      };
+      if (E20SCS2 > 0) {  
+        E20SC2.style.color = X0SC0;
+        selectId("E20SCC2").style.color = X0SC0;
+      };
+      if (E20FAL2 > 0) {  
+        E20FL2.style.color = X0FL0;
+        selectId("E20FLC2").style.color = X0FL0;
+      };
 };
 //L5??2
-document.getElementById("L5BT2").onclick = function() {
-  let L5IP2 = document.getElementById("L5IP2");
-  let L5SC2 = document.getElementById("L5SC2");
-  let L5FL2 = document.getElementById("L5FL2");
+selectId("L5BT2").onclick = function() {
+  let L5IP2 = selectId("L5IP2");
+  let L5SC2 = selectId("L5SC2");
+  let L5FL2 = selectId("L5FL2");
   let L5SCS2 = 0;
   let L5FAL2 = 0;
   let L5LST12 = 0;
@@ -331,14 +360,28 @@ document.getElementById("L5BT2").onclick = function() {
   } while (L5IP2.value > 4)
       L5SC2.innerHTML = "Successes: " + L5SCS2;
       L5FL2.innerHTML = "Fails: " + L5FAL2 + `, [1=${L5LST12}],[2=${L5LST22}],[3=${L5LST32}],[4=${L5LST42}]`;
-      L5SC2.style.color = X0SC0;
-      L5FL2.style.color = X0FL0;
+      if (L5SCS2 === 0) {
+        L5SC2.style.color = "white";
+        selectId("L5SCC2").style.color = "white";
+      };
+      if (L5FAL2 === 0) {
+        L5FL2.style.color = "white";
+        selectId("L5FLC2").style.color = "white";
+      };
+      if (L5SCS2 > 0) {  
+        L5SC2.style.color = X0SC0;
+        selectId("L5SCC2").style.color = X0SC0;
+      };
+      if (L5FAL2 > 0) {  
+        L5FL2.style.color = X0FL0;
+        selectId("L5FLC2").style.color = X0FL0;
+      };
 };
 //M3??2
-document.getElementById("M3BT2").onclick = function() {
-  let M3IP2 = document.getElementById("M3IP2");
-  let M3SC2 = document.getElementById("M3SC2");
-  let M3FL2 = document.getElementById("M3FL2");
+selectId("M3BT2").onclick = function() {
+  let M3IP2 = selectId("M3IP2");
+  let M3SC2 = selectId("M3SC2");
+  let M3FL2 = selectId("M3FL2");
   let M3SCS2 = 0;
   let M3FAL2 = 0;
   let M3LST12 = 0;
@@ -361,6 +404,64 @@ document.getElementById("M3BT2").onclick = function() {
   } while (M3IP2.value > 4)
       M3SC2.innerHTML = "Successes: " + M3SCS2;
       M3FL2.innerHTML = "Fails: " + M3FAL2 + `, [1=${M3LST12}],[2=${M3LST22}],[3=${M3LST32}],[4=${M3LST42}]`;
-      M3SC2.style.color = X0SC0;
-      M3FL2.style.color = X0FL0;
+      if (M3SCS2 === 0) {
+        M3SC2.style.color = "white";
+        selectId("M3SCC2").style.color = "white";
+      };
+      if (M3FAL2 === 0) {
+        M3FL2.style.color = "white";
+        selectId("M3FLC2").style.color = "white";
+      };
+      if (M3SCS2 > 0) {  
+        M3SC2.style.color = X0SC0;
+        selectId("M3SCC2").style.color = X0SC0;
+      };
+      if (M3FAL2 > 0) {  
+        M3FL2.style.color = X0FL0;
+        selectId("M3FLC2").style.color = X0FL0;
+      };
+};
+//C0??2
+selectId("C0BT2").onclick = function() {
+  let C0IP2 = selectId("C0IP2");
+  let C0SC2 = selectId("C0SC2");
+  let C0FL2 = selectId("C0FL2");
+  let C0SCS2 = 0;
+  let C0FAL2 = 0;
+  let C0LST12 = 0;
+  let C0LST22 = 0;
+  let C0LST32 = 0;
+  let C0LST42 = 0;
+  do {
+  if (probability(3)) {
+      C0IP2.value -= 5;
+      C0SCS2 += 1;
+  } else {
+      var C0FLL2 = (Math.floor(Math.random() * 4) + 1);
+      if (C0FLL2 === 1) { C0LST12 += 1 };
+      if (C0FLL2 === 2) { C0LST22 += 1 };
+      if (C0FLL2 === 3) { C0LST32 += 1 };
+      if (C0FLL2 === 4) { C0LST42 += 1 };
+      C0IP2.value -= C0FLL2;
+      C0FAL2 += 1;
+  };
+  } while (C0IP2.value > 4)
+      C0SC2.innerHTML = "Successes: " + C0SCS2;
+      C0FL2.innerHTML = "Fails: " + C0FAL2 + `, [1=${C0LST12}],[2=${C0LST22}],[3=${C0LST32}],[4=${C0LST42}]`;
+      if (C0SCS2 === 0) {
+        C0SC2.style.color = "white";
+        selectId("C0SCC2").style.color = "white";
+      };
+      if (C0FAL2 === 0) {
+        C0FL2.style.color = "white";
+        selectId("C0FLC2").style.color = "white";
+      };
+      if (C0SCS2 > 0) {  
+        C0SC2.style.color = X0SC0;
+        selectId("C0SCC2").style.color = X0SC0;
+      };
+      if (C0FAL2 > 0) {  
+        C0FL2.style.color = X0FL0;
+        selectId("C0FLC2").style.color = X0FL0;
+      };
 };
