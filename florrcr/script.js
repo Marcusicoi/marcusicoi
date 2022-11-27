@@ -179,8 +179,8 @@ selectId("C?BT1").onclick = function() {
           selectId("C?FL1").style.color = X0FL0
       };
    };
-   document.getElementById("C?SC1").innerHTML = C0IP1.value + "% Success Chance";
-   document.getElementById("C?FL1").innerHTML = (100 - +C0IP1.value) + "% Fail Chance";
+   selectId("C?SC1").innerHTML = C0IP1.value + "% Success Chance";
+   selectId("C?FL1").innerHTML = (100 - +C0IP1.value) + "% Fail Chance";
 };
 /*BUTTON PRNG
 //U60??1
@@ -203,9 +203,9 @@ document.getElementById("U60BT1P").onclick = function() {
 //Many Petals TRNG
 //U60??2
 document.getElementById("U60BT2").onclick = function() {
-  let U60IP2 = document.getElementById("U60IP2");
-  let U60SC2 = document.getElementById("U60SC2");
-  let U60FL2 = document.getElementById("U60FL2");
+  let U60IP2 = selectId("U60IP2");
+  let U60SC2 = selectId("U60SC2");
+  let U60FL2 = selectId("U60FL2");
   let U60SCS2 = 0;
   let U60FAL2 = 0;
   let U60LST12 = 0;
@@ -226,14 +226,23 @@ document.getElementById("U60BT2").onclick = function() {
       U60FAL2 += 1;
   };
   } while (U60IP2.value > 4)
-      if (U60SCS2 === 0) {
-        U60SC2.style.color = "white";
-        U60FL2.style.color = X0FL0;
-      };
       U60SC2.innerHTML = "Successes: " + U60SCS2;
       U60FL2.innerHTML = "Fails: " + U60FAL2 + `, [1=${U60LST12}],[2=${U60LST22}],[3=${U60LST32}],[4=${U60LST42}]`;
-      U60SC2.style.color = X0SC0;
-      U60FL2.style.color = X0FL0;
+      if (U60SCS2 === 0) {
+        U60SC2.style.color = "white";
+        selectId("U60SCC2").style.color = "white";
+      };
+      if (U60FAL2 === 0) {
+        U60FL2.style.color = "white";
+        selectId("U60FLC2").style.color = "white";
+      };
+      if (U60SCS2 > 1) {  
+        U60SC2.style.color = X0SC0;
+        selectId("U60SCC2").style.color = X0SC0;
+      };
+      if (U60FAL2 > 1) {  
+        U60FL2.style.color = X0FL0;
+        selectId("U60FLC2").style.color = X0FL0;
 };
 //R40??2
 document.getElementById("R40BT2").onclick = function() {
