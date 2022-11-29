@@ -25,15 +25,16 @@ selectId("C?BT2").style.background = C0CL0;
 selectId("C?SCC2").style.color = C0CL0;
 selectId("C?FLC2").style.color = C0CL0;
 //
-let H6ST = null;
-function H6SC() {
-clearInterval(H6ST)
-H6ST = setInterval(H6FC, 1000)
-function Titlechange() { 
-  document.getElementByClass("TITLE").style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
+let TitleVar = null;
+function TitleFunc() {
+clearInterval(TitleVar);
+TitleVar = setInterval(TitleChange, 1000);
+function TitleChange() { 
+  document.getElementsByClassName("TITLE")[0].style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
+  document.getElementsByClassName("TITLE")[1].style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
 };
 }; 
-Titlefunc();
+TitleFunc();
 //
 const X0SC0 = "#52F84D";
 selectId("U60SC1").style.color = X0SC0;
