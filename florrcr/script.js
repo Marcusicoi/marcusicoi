@@ -6,15 +6,27 @@ function probability(n) {
 function oProbability(n) {
   return Math.random() > (n / 100);
 }
+function choose(arg) {
+  return arg[Math.floor(Math.random() * arg.length)]
+};
 function selectId(id) { return document.getElementById(id) };
 //Style color
+const C0CLA0 = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+const C0CL0 = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
+selectId("C?TL1").style.color = C0CL0;
+selectId("C?IP1").style.color = C0CL0;
+selectId("C?BT1").style.color = C0CL0;
+selectId("C?SC1").style.color = C0CL0;
+selectId("C?FL1").style.color = C0CL0;
+selectId("C?SCC2").style.color = C0CL0;
+selectId("C?FLC2").style.color = C0CL0;
+//
 const X0SC0 = "#52F84D";
 selectId("U60SC1").style.color = X0SC0;
 selectId("R40SC1").style.color = X0SC0;
 selectId("E20SC1").style.color = X0SC0;
 selectId("L5SC1").style.color = X0SC0;
 selectId("M3SC1").style.color = X0SC0;
-selectId("C?SC1").style.color = X0SC0;
 //
 const X0FL0 = "#F46658";
 selectId("U60FL1").style.color = X0FL0;
@@ -22,21 +34,18 @@ selectId("R40FL1").style.color = X0FL0;
 selectId("E20FL1").style.color = X0FL0;
 selectId("L5FL1").style.color = X0FL0;
 selectId("M3FL1").style.color = X0FL0;
-selectId("C?FL1").style.color = X0FL0;
 //
 selectId("U60SCC2").style.color = X0SC0;
 selectId("R40SCC2").style.color = X0SC0;
 selectId("E20SCC2").style.color = X0SC0;
 selectId("L5SCC2").style.color = X0SC0;
 selectId("M3SCC2").style.color = X0SC0;
-selectId("C?SCC2").style.color = X0SC0;
 //
 selectId("U60FLC2").style.color = X0FL0;
 selectId("R40FLC2").style.color = X0FL0;
 selectId("E20FLC2").style.color = X0FL0;
 selectId("L5FLC2").style.color = X0FL0;
 selectId("M3FLC2").style.color = X0FL0;
-selectId("C?FLC2").style.color = X0FL0;
 //BUTTON TRNG
 //U60??1
 selectId("U60BT1").onclick = function() {
