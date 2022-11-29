@@ -25,10 +25,15 @@ selectId("C?BT2").style.background = C0CL0;
 selectId("C?SCC2").style.color = C0CL0;
 selectId("C?FLC2").style.color = C0CL0;
 //
-setInterval(H6FC(), 1)
+let H6ST = null;
+function H6SC() {
+clearInterval(H6ST)
+H6ST = setInterval(H6FC, 1000)
 function H6FC() { 
   selectId("H6AT0").style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
 };
+}; 
+H6SC();
 //
 const X0SC0 = "#52F84D";
 selectId("U60SC1").style.color = X0SC0;
