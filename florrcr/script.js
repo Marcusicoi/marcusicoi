@@ -11,15 +11,20 @@ function choose(arg) {
 };
 function selectId(id) { return document.getElementById(id) };
 //Style color
-const C0CLA0 = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
-const C0CL0 = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
+const C0CLA0 = ["5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+const C0CLL0 = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
 selectId("C?TL1").style.color = C0CL0;
-selectId("C?IP1").style.color = C0CL0;
-selectId("C?BT1").style.color = C0CL0;
+selectId("C?IP1").style.background = C0CL0;
+selectId("C?BT1").style.background = C0CL0;
 selectId("C?SC1").style.color = C0CL0;
 selectId("C?FL1").style.color = C0CL0;
+selectId("C?TL2").style.color = C0CL0;
+selectId("C?PB2").style.background = C0CL0;
+selectId("C?IP2").style.background = C0CL0;
+selectId("C?BT2").style.background = C0CL0;
 selectId("C?SCC2").style.color = C0CL0;
 selectId("C?FLC2").style.color = C0CL0;
+//
 //
 const X0SC0 = "#52F84D";
 selectId("U60SC1").style.color = X0SC0;
