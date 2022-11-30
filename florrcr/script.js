@@ -70,14 +70,27 @@ let uMany = selectId("uTypeMany");
 let uPRNG = selectId("uTypePRNG");
 let uCurrent = selectId("uTypeCurrent");
 let uOld = selectId("uTypeOld");
+//Checkers
+let uIsCurrent = true;
+let uIsOld = false;
+//Stuff
+uCurrent.style.visibility = "hidden";
 //One disappears, one appears. 
-u.onclick = function() {
-  
+uOld.onclick = function() {
+  uIsCurrent = false;
+  uIsOld = true;
+  uOld.style.visibility = "hidden";
+  uCurrent.style.visibility = "visible";
+}
+if (uIsOld === true) {
+  selectId("u
 }
 selectId("uButton").onclick = function() {
   let result = selectId("uResult");
   let chance = selectId("uChance");
-    //If it successes
+  if (uIsOld === true) {
+    
+  //If it successes
   if (probability(60)) {
       result.innerHTML = "Success!";
       chance.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
