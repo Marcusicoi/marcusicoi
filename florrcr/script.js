@@ -1,16 +1,19 @@
-//Add variables.
-const random = Math.floor(Math.random() * 100);
+//Functions
+//Probability
 function probability(n) {
   return Math.random() < (n / 100);
-}
+};
+//(Opposite) Of Probability
 function oProbability(n) {
   return Math.random() > (n / 100);
-}
+};
+//Select random from array
 function choose(arg) {
   return arg[Math.floor(Math.random() * arg.length)]
 };
+//Select ID of course 
 function selectId(id) { return document.getElementById(id) };
-//Style color
+//Random color from customize 
 const C0CLA0 = ["5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
 const C0CL0 = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
 selectId("C?TL1").style.color = C0CL0;
@@ -24,7 +27,7 @@ selectId("C?IP2").style.background = C0CL0;
 selectId("C?BT2").style.background = C0CL0;
 selectId("C?SCC2").style.color = C0CL0;
 selectId("C?FLC2").style.color = C0CL0;
-//
+//Title color changing every second
 let TitleVar = null;
 function TitleFunc() {
 clearInterval(TitleVar);
@@ -35,16 +38,16 @@ function TitleChange() {
 };
 }; 
 TitleFunc();
-//
+//Success Color
 const X0SC0 = "#52F84D";
-selectId("U60SC1").style.color = X0SC0;
+selectId("uSuccessN").style.color = X0SC0;
 selectId("R40SC1").style.color = X0SC0;
 selectId("E20SC1").style.color = X0SC0;
 selectId("L5SC1").style.color = X0SC0;
 selectId("M3SC1").style.color = X0SC0;
-//
+//Fail Color
 const X0FL0 = "#F46658";
-selectId("U60FL1").style.color = X0FL0;
+selectId("uFailN").style.color = X0FL0;
 selectId("R40FL1").style.color = X0FL0;
 selectId("E20FL1").style.color = X0FL0;
 selectId("L5FL1").style.color = X0FL0;
@@ -61,11 +64,12 @@ selectId("R40FLC2").style.color = X0FL0;
 selectId("E20FLC2").style.color = X0FL0;
 selectId("L5FLC2").style.color = X0FL0;
 selectId("M3FLC2").style.color = X0FL0;
-//BUTTON TRNG
-//U60??1
-selectId("U60BT1").onclick = function() {
-  let U60RS1 = selectId("U60RS1");
-  let U60CH1 = selectId("U60CH1");
+//Normal
+//Unusual
+selectId("uButtonN").onclick = function() {
+  let result = selectId("uResultN");
+  let chance = selectId("uChanceN");
+  
   if (probability(60)) {
       U60RS1.innerHTML = "Success!";
       U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
