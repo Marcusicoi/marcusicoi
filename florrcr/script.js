@@ -73,13 +73,14 @@ let uOld = selectId("uTypeOld");
 //Stuff;
 let uProb = 60;
 uCurrent.style.visibility = "hidden";
+uOld.style.right = "135px";
 //One disappears, one appears. 
 uOld.onclick = function() {
-  uProb = 40;
+  uProb = 75;
   uOld.style.visibility = "hidden";
   uCurrent.style.visibility = "visible";
-  selectId("uSuccess").innerHTML = "40% Success Chance";
-  selectId("uFail").innerHTML = (100 - 40) + " Fail Chance";
+  selectId("uSuccess").innerHTML = "75% Success Chance";
+  selectId("uFail").innerHTML = (100 - 75) + "% Fail Chance";
 };
 uCurrent.onclick = function() {
   uProb = 60;
@@ -94,14 +95,14 @@ selectId("uButton").onclick = function() {
   //If it successes
   if (probability(uProb)) {
       result.innerHTML = "Success!";
-      chance.innerHTML = uProb + "% > " + (Math.floor(Math.random() * 60)) + "%";
+      chance.innerHTML = uProb + "% > " + (Math.floor(Math.random() * uProb)) + "%";
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
       selectId("uSuccess").style.color = X0SC0;
       selectId("uFail").style.color = "white";
   } else { //If it fails
       result.innerHTML = "Failed.";
-      chance.innerHTML = uProb + "% > " + (Math.floor(Math.random() * 40) + 60) + "%";
+      chance.innerHTML = uProb + "% > " + (Math.floor(Math.random() * ((100 - uProb) + 1)) + uProb) + "%";
       result.style.color = X0FL0;
       chance.style.color = X0FL0;
       selectId("uSuccess").style.color = "white";
