@@ -105,18 +105,27 @@ selectId("uButton").onclick = function() {
   //If it successes
   if (probability(uProb)) {
       result.innerHTML = "Success!";
-      chance.innerHTML = uIsPRNG = true) ? `${uProb}% > ${((Math.random() * uProb).toFixed(2))}%` : `${uProb}% > ${(Math.floor(Math.random() * uProb))}%`;
+      chance.innerHTML = uIsPRNG === true ? `${uProb}% > ${((Math.random() * uProb).toFixed(2))}%` : `${uProb}% > ${(Math.floor(Math.random() * uProb))}%`;
       uAtt = 0;
-      uProb = uProbArray[uAtt]
+      if (uIsPRNG === true) { 
+        uProb = uProbArray[uAtt];
+        selectId("uSuccess").innerHTML = uProb + "% Success Chance";
+        selectId("uFail").innerHTML = (100 - uProb).toFixed(2) + "% Fail Chance";
+      };
+      sele
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
       selectId("uSuccess").style.color = X0SC0;
       selectId("uFail").style.color = "white";
   } else { //If it fails
       result.innerHTML = "Failed.";
-      chance.innerHTML = (uIsPRNG = true) ? `${uProb}% > ${(((Math.random() * ((100 - uProb) + 1)) + uProb).toFixed(2))}%` : `${uProb}% > ${(Math.floor(Math.random() * ((100 - uProb) + 1)) + uProb)}%`;
+      chance.innerHTML = uIsPRNG === true ? `${uProb}% > ${(((Math.random() * ((100 - uProb) + 1)) + uProb).toFixed(2))}%` : `${uProb}% > ${(Math.floor(Math.random() * ((100 - uProb) + 1)) + uProb)}%`;
       uAtt = uAtt + 1;
-      uProb = uProbArray[uAtt];
+      if (uIsPRNG === true) { 
+        uProb = uProbArray[uAtt];
+        selectId("uSuccess").innerHTML = uProb + "% Success Chance";
+        selectId("uFail").innerHTML = (100 - uProb).toFixed(2) + "% Fail Chance";
+      };
       result.style.color = X0FL0;
       chance.style.color = X0FL0;
       selectId("uSuccess").style.color = "white";
