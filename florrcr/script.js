@@ -70,37 +70,38 @@ let uMany = selectId("uTypeMany");
 let uPRNG = selectId("uTypePRNG");
 let uCurrent = selectId("uTypeCurrent");
 let uOld = selectId("uTypeOld");
-//Checkers
-let uIsCurrent = true;
-let uIsOld = false;
-//Stuff
+//Stuff;
+let uProb = 60;
 uCurrent.style.visibility = "hidden";
 //One disappears, one appears. 
 uOld.onclick = function() {
-  uIsCurrent = false;
-  uIsOld = true;
+  uProb = 40;
   uOld.style.visibility = "hidden";
   uCurrent.style.visibility = "visible";
-}
-if (uIsOld === true) {
-  selectId("u
-}
+  selectId("uSuccess").innerHTML = "40% Success Chance";
+  selectId("uFail").innerHTML = (100 - 40) + " Fail Chance";
+};
+uCurrent.onclick = function() {
+  uProb = 60;
+  uCurrent.style.visibility = "hidden";
+  uOld.style.visibility = "visible";
+  selectId("uSuccess").innerHTML = "60% Success Chance";
+  selectId("uFail").innerHTML = (100 - 60) + "% Fail Chance";
+};
 selectId("uButton").onclick = function() {
   let result = selectId("uResult");
   let chance = selectId("uChance");
-  if (uIsOld === true) {
-    
   //If it successes
-  if (probability(60)) {
+  if (probability(uProb)) {
       result.innerHTML = "Success!";
-      chance.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
+      chance.innerHTML = uProb + "% > " + (Math.floor(Math.random() * 60)) + "%";
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
       selectId("uSuccess").style.color = X0SC0;
       selectId("uFail").style.color = "white";
   } else { //If it fails
       result.innerHTML = "Failed.";
-      chance.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
+      chance.innerHTML = uProb + "% > " + (Math.floor(Math.random() * 40) + 60) + "%";
       result.style.color = X0FL0;
       chance.style.color = X0FL0;
       selectId("uSuccess").style.color = "white";
