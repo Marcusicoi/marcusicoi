@@ -66,14 +66,12 @@ selectId("L5FLC2").style.color = X0FL0;
 selectId("M3FLC2").style.color = X0FL0;
 //Normal
 //Unusual
-let uMany = selectId("uTypeMany");
 let uPRNG = selectId("uTypePRNG");
 let uCurrent = selectId("uTypeCurrent");
 let uOld = selectId("uTypeOld");
 //Stuff;
 let uProb = 60;
 let uIsPRNG = false;
-let uIsMany = false;
 let uAtt = 0;
 let uProbArray = [42.26, 84.53, 100];
 uCurrent.style.visibility = "hidden";
@@ -102,7 +100,6 @@ uPRNG.onclick = function() {
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
   selectId("uFail").innerHTML = (100 - uProbArray[uAtt]) + "% Fail Chance";
 };
-uMany.onclick = function() { uIsMany = true };
 selectId("uButton").onclick = function() {
   let result = selectId("uResult");
   let chance = selectId("uChance");
