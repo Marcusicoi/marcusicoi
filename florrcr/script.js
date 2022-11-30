@@ -73,6 +73,7 @@ let uOld = selectId("uTypeOld");
 //Stuff;
 let uProb = 60;
 let uIsPRNG = false;
+let uIsMany = false;
 let uAtt = 0;
 let uProbArray = [42.26, 84.53, 100];
 uCurrent.style.visibility = "hidden";
@@ -101,6 +102,7 @@ uPRNG.onclick = function() {
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
   selectId("uFail").innerHTML = (100 - uProbArray[uAtt]) + "% Fail Chance";
 };
+uMany.onclick = function() { uIsMany = true };
 selectId("uButton").onclick = function() {
   let result = selectId("uResult");
   let chance = selectId("uChance");
