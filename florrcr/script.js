@@ -66,15 +66,18 @@ selectId("L5FLC2").style.color = X0FL0;
 selectId("M3FLC2").style.color = X0FL0;
 //Normal
 //Unusual
+let uMany = selectId("uTypeMany");
+let uPRNG = selectId("uTypePRNG");
+let uCurrent = selectId("uTypeCurrent");
+let uOld = selectId("uTypeOld");
+//One disappears, one appears. 
+u.onclick = function() {
+  
+}
 selectId("uButton").onclick = function() {
   let result = selectId("uResult");
   let chance = selectId("uChance");
-  //Options
-  let many = selectId("uMany");
-  let prng = selectId("uPRNG");
-  let current = selectId("uCurrent");
-  let old = selectId("uOld");
-  //If it successes
+    //If it successes
   if (probability(60)) {
       result.innerHTML = "Success!";
       chance.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
