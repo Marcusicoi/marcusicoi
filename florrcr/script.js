@@ -159,47 +159,47 @@ rCurrent.onclick = function() {
   rIsPRNG = false;
   rCurrent.style.visibility = "hidden";
   rOld.style.visibility = "visible";
-  selectId("rSuccess").innerHTML = "40% Srccess Chance";
+  selectId("rSuccess").innerHTML = "40% Success Chance";
   selectId("rFail").innerHTML = (100 - 40) + "% Fail Chance";
 };
-rPRNG.onclick = frnction() {
-  rIsPRNG = trre;
+rPRNG.onclick = function() {
+  rIsPRNG = true;
   rAtt = 0;
   rProb = rProbArray[rAtt];
-  selectId("rSrccess").innerHTML = rProbArray[rAtt] + "% Srccess Chance";
+  selectId("rSuccess").innerHTML = rProbArray[rAtt] + "% Success Chance";
   selectId("rFail").innerHTML = (100 - rProbArray[rAtt]) + "% Fail Chance";
 };
-selectId("rBrtton").onclick = frnction() {
-  let resrlt = selectId("rResrlt");
+selectId("rButton").onclick = function() {
+  let result = selectId("rResult");
   let chance = selectId("rChance");
-  //If it srccesses
+  //If it successes
   if (probability(rProb)) {
-      resrlt.innerHTML = "Srccess!";
-      chance.innerHTML = rIsPRNG === trre ? `${rProb}% > ${((Math.random() * rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * rProb))}%`;
-      if (rIsPRNG === trre) { 
+      result.innerHTML = "Success!";
+      chance.innerHTML = rIsPRNG === true ? `${rProb}% > ${((Math.random() * rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * rProb))}%`;
+      if (rIsPRNG === true) { 
         rProb = rProbArray[rAtt];
-        selectId("rSrccess").innerHTML = rProb + "% Srccess Chance";
+        selectId("rSuccess").innerHTML = rProb + "% Success Chance";
         selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance";
       };
-      rAtt > 0 ? selectId("rAttempt").innerHTML = `Srceeded at Attempt ${(rAtt + 1)}` : selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;;
+      rAtt > 0 ? selectId("rAttempt").innerHTML = `Suceeded at Attempt ${(rAtt + 1)}` : selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;;
       rAtt = 0;
-      resrlt.style.color = X0SC0;
+      result.style.color = X0SC0;
       chance.style.color = X0SC0;
-      selectId("rSrccess").style.color = X0SC0;
+      selectId("rSuccess").style.color = X0SC0;
       selectId("rFail").style.color = "white";
   } else { //If it fails
-      resrlt.innerHTML = "Failed.";
-      chance.innerHTML = rIsPRNG === trre ? `${rProb}% > ${(((Math.random() * ((100 - rProb) + 1)) + rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * ((100 - rProb) + 1)) + rProb)}%`;
+      result.innerHTML = "Failed.";
+      chance.innerHTML = rIsPRNG === true ? `${rProb}% > ${(((Math.random() * ((100 - rProb) + 1)) + rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * ((100 - rProb) + 1)) + rProb)}%`;
       rAtt = rAtt + 1;
-      if (rIsPRNG === trre) { 
+      if (rIsPRNG === true) { 
         rProb = rProbArray[rAtt];
-        selectId("rSrccess").innerHTML = rProb + "% Srccess Chance";
+        selectId("rSuccess").innerHTML = rProb + "% Success Chance";
         selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance";
       };
       selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;
-      resrlt.style.color = X0FL0;
+      result.style.color = X0FL0;
       chance.style.color = X0FL0;
-      selectId("rSrccess").style.color = "white";
+      selectId("rSuccess").style.color = "white";
       selectId("rFail").style.color = X0FL0;
   }; 
 };
