@@ -134,26 +134,6 @@ selectId("uButton").onclick = function() {
       selectId("uFail").style.color = X0FL0;
   }; 
 };
-//R40??1
-selectId("R40BT1").onclick = function() {
-  let R40RS1 = selectId("R40RS1");
-  let R40CH1 = selectId("R40CH1");
-  if (probability(40)) {
-      R40RS1.innerHTML = "Success!";
-      R40CH1.innerHTML = "40% " + "> " + (Math.floor(Math.random() * 40)) + "%";
-      R40RS1.style.color = X0SC0;
-      R40CH1.style.color = X0SC0;
-      selectId("R40SC1").style.color = X0SC0;
-      selectId("R40FL1").style.color = "white";
-  } else {
-      R40RS1.innerHTML = "Failed.";
-      R40CH1.innerHTML = "40% " + "> " + (Math.floor(Math.random() * 60) + 40) + "%";
-      R40RS1.style.color = X0FL0;
-      R40CH1.style.color = X0FL0;
-      selectId("R40SC1").style.color = "white";
-      selectId("R40FL1").style.color = X0FL0;
-  }; 
-};
 //E20??1
 selectId("E20BT1").onclick = function() {
   let E20RS1 = selectId("E20RS1");
