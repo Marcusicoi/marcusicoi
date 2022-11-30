@@ -32,7 +32,7 @@ a {
  display: inline-block;
   position: relative;
   margin: 2px;
-  border: 100px;
+  border-width: 100px;
   padding: 5px;
   /*width: 130px;*/
   height: 90px;
@@ -44,7 +44,6 @@ a {
   cursor: pointer;
   background: #DDDDDD;
   border-radius: 10px;
-  /*box-shadow: inset 0 rgba(0, 0, 0, 0.15);*/
   
 }
 @keyframes rainbow {
