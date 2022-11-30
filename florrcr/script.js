@@ -41,14 +41,14 @@ TitleFunc();
 //Success Color
 const X0SC0 = "#52F84D";
 selectId("uSuccess").style.color = X0SC0;
-selectId("R40SC1").style.color = X0SC0;
+selectId("rSuccess").style.color = X0SC0;
 selectId("E20SC1").style.color = X0SC0;
 selectId("L5SC1").style.color = X0SC0;
 selectId("M3SC1").style.color = X0SC0;
 //Fail Color
 const X0FL0 = "#F46658";
 selectId("uFail").style.color = X0FL0;
-selectId("R40FL1").style.color = X0FL0;
+selectId("rFail").style.color = X0FL0;
 selectId("E20FL1").style.color = X0FL0;
 selectId("L5FL1").style.color = X0FL0;
 selectId("M3FL1").style.color = X0FL0;
@@ -132,6 +132,75 @@ selectId("uButton").onclick = function() {
       chance.style.color = X0FL0;
       selectId("uSuccess").style.color = "white";
       selectId("uFail").style.color = X0FL0;
+  }; 
+};
+//Rare
+let rPRNG = selectId("rTypePRNG");
+let rCurrent = selectId("rTypeCurrent");
+let rOld = selectId("rTypeOld");
+//Stuff;
+let rProb = 40;
+let rIsPRNG = false;
+let rAtt = 0;
+let rProbArray = [20.15, 40.31, 60.46, 80.62, 100];
+rCurrent.style.visibility = "hidden";
+rOld.style.right = "135px";
+//One disappears, one appears. 
+rOld.onclick = function() {
+  rProb = 50;
+  rIsPRNG = false;
+  rOld.style.visibility = "hidden";
+  rCurrent.style.visibility = "visible";
+  selectId("rSuccess").innerHTML = "50% Success Chance";
+  selectId("rFail").innerHTML = (100 - 50) + "% Fail Chance";
+};
+rCurrent.onclick = function() {
+  rProb = 40;
+  rIsPRNG = false;
+  rCurrent.style.visibility = "hidden";
+  rOld.style.visibility = "visible";
+  selectId("rSuccess").innerHTML = "40% Srccess Chance";
+  selectId("rFail").innerHTML = (100 - 40) + "% Fail Chance";
+};
+rPRNG.onclick = frnction() {
+  rIsPRNG = trre;
+  rAtt = 0;
+  rProb = rProbArray[rAtt];
+  selectId("rSrccess").innerHTML = rProbArray[rAtt] + "% Srccess Chance";
+  selectId("rFail").innerHTML = (100 - rProbArray[rAtt]) + "% Fail Chance";
+};
+selectId("rBrtton").onclick = frnction() {
+  let resrlt = selectId("rResrlt");
+  let chance = selectId("rChance");
+  //If it srccesses
+  if (probability(rProb)) {
+      resrlt.innerHTML = "Srccess!";
+      chance.innerHTML = rIsPRNG === trre ? `${rProb}% > ${((Math.random() * rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * rProb))}%`;
+      if (rIsPRNG === trre) { 
+        rProb = rProbArray[rAtt];
+        selectId("rSrccess").innerHTML = rProb + "% Srccess Chance";
+        selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance";
+      };
+      rAtt > 0 ? selectId("rAttempt").innerHTML = `Srceeded at Attempt ${(rAtt + 1)}` : selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;;
+      rAtt = 0;
+      resrlt.style.color = X0SC0;
+      chance.style.color = X0SC0;
+      selectId("rSrccess").style.color = X0SC0;
+      selectId("rFail").style.color = "white";
+  } else { //If it fails
+      resrlt.innerHTML = "Failed.";
+      chance.innerHTML = rIsPRNG === trre ? `${rProb}% > ${(((Math.random() * ((100 - rProb) + 1)) + rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * ((100 - rProb) + 1)) + rProb)}%`;
+      rAtt = rAtt + 1;
+      if (rIsPRNG === trre) { 
+        rProb = rProbArray[rAtt];
+        selectId("rSrccess").innerHTML = rProb + "% Srccess Chance";
+        selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance";
+      };
+      selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;
+      resrlt.style.color = X0FL0;
+      chance.style.color = X0FL0;
+      selectId("rSrccess").style.color = "white";
+      selectId("rFail").style.color = X0FL0;
   }; 
 };
 //E20??1
