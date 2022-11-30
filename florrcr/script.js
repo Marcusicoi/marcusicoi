@@ -40,14 +40,14 @@ function TitleChange() {
 TitleFunc();
 //Success Color
 const X0SC0 = "#52F84D";
-selectId("uSuccessN").style.color = X0SC0;
+selectId("uSuccess").style.color = X0SC0;
 selectId("R40SC1").style.color = X0SC0;
 selectId("E20SC1").style.color = X0SC0;
 selectId("L5SC1").style.color = X0SC0;
 selectId("M3SC1").style.color = X0SC0;
 //Fail Color
 const X0FL0 = "#F46658";
-selectId("uFailN").style.color = X0FL0;
+selectId("uFail").style.color = X0FL0;
 selectId("R40FL1").style.color = X0FL0;
 selectId("E20FL1").style.color = X0FL0;
 selectId("L5FL1").style.color = X0FL0;
@@ -66,24 +66,29 @@ selectId("L5FLC2").style.color = X0FL0;
 selectId("M3FLC2").style.color = X0FL0;
 //Normal
 //Unusual
-selectId("uButtonN").onclick = function() {
-  let result = selectId("uResultN");
-  let chance = selectId("uChanceN");
-  
+selectId("uButton").onclick = function() {
+  let result = selectId("uResult");
+  let chance = selectId("uChance");
+  //Options
+  let many = selectId("uMany");
+  let prng = selectId("uPRNG");
+  let current = selectId("uCurrent");
+  let old = selectId("uOld");
+  //If it successes
   if (probability(60)) {
-      U60RS1.innerHTML = "Success!";
-      U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
-      U60RS1.style.color = X0SC0;
-      U60CH1.style.color = X0SC0;
-      selectId("U60SC1").style.color = X0SC0;
-      selectId("U60FL1").style.color = "white";
-  } else {
-      U60RS1.innerHTML = "Failed.";
-      U60CH1.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
-      U60RS1.style.color = X0FL0;
-      U60CH1.style.color = X0FL0;
-      selectId("U60SC1").style.color = "white";
-      selectId("U60FL1").style.color = X0FL0;
+      result.innerHTML = "Success!";
+      chance.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 60)) + "%";
+      result.style.color = X0SC0;
+      chance.style.color = X0SC0;
+      selectId("uSuccess").style.color = X0SC0;
+      selectId("uFail").style.color = "white";
+  } else { //If it fails
+      result.innerHTML = "Failed.";
+      chance.innerHTML = "60% " + "> " + (Math.floor(Math.random() * 40) + 60) + "%";
+      result.style.color = X0FL0;
+      chance.style.color = X0FL0;
+      selectId("uSuccess").style.color = "white";
+      selectId("uFail").style.color = X0FL0;
   }; 
 };
 //R40??1
