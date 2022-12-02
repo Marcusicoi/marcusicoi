@@ -74,6 +74,7 @@ let uSP = selectId("uTypeSP");
 let uProb = 60;
 let uIsPRNG = false;
 let uAtt = 0;
+let uCombo = 0;
 let uProbArray = [42.26, 84.53, 100];
 let uIsSP = false;
 uCurrent.style.visibility = "hidden";
@@ -94,10 +95,11 @@ uOld.onclick = function() {
 uCurrent.onclick = function() {
   uProb = 60;
   uIsPRNG = false;
-  uIsSP === true ? uOld.style.right = "135px" : "";
+  uIsSP === true ? uOld.style.right = "135px" : undefined;
   uIsSP = false;
   uCurrent.style.visibility = "hidden";
   uOld.style.visibility = "visible";
+  if (uOld.style.right === "0px") { uOld.style.right = "135px" };
   uSP.style.visibility = "visible";
   uSP.style.right = "135px";
   selectId("uSuccess").innerHTML = "60% Success Chance";
@@ -140,6 +142,8 @@ selectId("uButton").onclick = function() {
       };
       uAtt > 0 ? selectId("uAttempt").innerHTML = `Suceeded at Attempt ${(uAtt + 1)}` : selectId("uAttempt").innerHTML = `Attempt ${(uAtt + 1)}`;;
       uAtt = 0;
+      uCombo = uCombo + 1;
+      if (uCombo > 1) { selectId("uAttempt").innerHTML = `Attempt ${(uAtt + 1)
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
       selectId("uSuccess").style.color = X0SC0;
@@ -590,7 +594,7 @@ selectId("C?BT2").onclick = function() {
       C0SCS2 += 1;
   } else {
       var C0FLL2 = (Math.floor(Math.random() * 4) + 1);
-      if (C0FLL2 === 1) { C0LST12 += 1 
+      if (C0FLL2 === 1) { C0LST12 += 1 };
       if (C0FLL2 === 2) { C0LST22 += 1 };
       if (C0FLL2 === 3) { C0LST32 += 1 };
       if (C0FLL2 === 4) { C0LST42 += 1 };
