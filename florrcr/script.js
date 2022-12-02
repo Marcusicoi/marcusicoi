@@ -69,11 +69,13 @@ selectId("M3FLC2").style.color = X0FL0;
 let uPRNG = selectId("uTypePRNG");
 let uCurrent = selectId("uTypeCurrent");
 let uOld = selectId("uTypeOld");
+let uSP = selectId("uTypeSP");
 //Stuff;
 let uProb = 60;
 let uIsPRNG = false;
 let uAtt = 0;
 let uProbArray = [42.26, 84.53, 100];
+let uIsSP = false;
 uCurrent.style.visibility = "hidden";
 uOld.style.right = "135px";
 //One disappears, one appears. 
@@ -92,6 +94,16 @@ uCurrent.onclick = function() {
   uOld.style.visibility = "visible";
   selectId("uSuccess").innerHTML = "60% Success Chance";
   selectId("uFail").innerHTML = (100 - 60) + "% Fail Chance";
+};
+uSP.onclick = function() {
+  uProb = 90;
+  uIsPRNG = false;
+  uIsSP = true;
+  uSP.style.visibility = "hidden";
+  uCurrent.style.visibility = "visible";
+  uOld.style.right = "0px";
+  selectId("uSuccess").innerHTML = "90% Success Chance";
+  selectId("uFail").innerHTML = (100 - 90) + "% Fail Chance";
 };
 uPRNG.onclick = function() {
   uIsPRNG = true;
