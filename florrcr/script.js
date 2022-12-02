@@ -77,21 +77,27 @@ let uAtt = 0;
 let uProbArray = [42.26, 84.53, 100];
 let uIsSP = false;
 uCurrent.style.visibility = "hidden";
-uOld.style.right = "135px";
+uSP.style.right = "135px";
+uIsSP === true ? uOld.style.right = "0px" : uOld.style.right = "135px";
 //One disappears, one appears. 
 uOld.onclick = function() {
   uProb = 75;
   uIsPRNG = false;
+  uIsSP = false;
   uOld.style.visibility = "hidden";
   uCurrent.style.visibility = "visible";
+  uSP.style.right = "100px";
   selectId("uSuccess").innerHTML = "75% Success Chance";
   selectId("uFail").innerHTML = (100 - 75) + "% Fail Chance";
 };
 uCurrent.onclick = function() {
   uProb = 60;
   uIsPRNG = false;
+  uIsSP === true ? uOld.style.right = "135px" : "";
+  uIsSP = false;
   uCurrent.style.visibility = "hidden";
   uOld.style.visibility = "visible";
+  uSP.style.right = "135px";
   selectId("uSuccess").innerHTML = "60% Success Chance";
   selectId("uFail").innerHTML = (100 - 60) + "% Fail Chance";
 };
@@ -107,6 +113,7 @@ uSP.onclick = function() {
 };
 uPRNG.onclick = function() {
   uIsPRNG = true;
+  uIsSP = false;
   uAtt = 0;
   uProb = uProbArray[uAtt];
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
