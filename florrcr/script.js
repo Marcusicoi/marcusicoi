@@ -168,41 +168,72 @@ selectId("uButton").onclick = function() {
       selectId("uFail").style.color = X0FL0;
   }; 
 };
-//Rare
+//r
 let rPRNG = selectId("rTypePRNG");
 let rCurrent = selectId("rTypeCurrent");
 let rOld = selectId("rTypeOld");
+let rSP = selectId("rTypeSP");
 //Stuff;
 let rProb = 40;
 let rIsPRNG = false;
 let rAtt = 0;
-let rProbArray = [20.15, 40.31, 60.46, 80.62, 100];
+let rCombo = 0;
+let rProbArray = [???];
+let rIsSP = false;
 rCurrent.style.visibility = "hidden";
-rOld.style.right = "135px";
-//One disappears, one appears. 
+rSP.style.right = "135px";
+rIsSP === true ? rOld.style.right = "0px" : rOld.style.right = "135px";
+//One disappears, one appears.
 rOld.onclick = function() {
-  rProb = 50;
+  rProb = ???;
   rIsPRNG = false;
+  rIsSP = false;
   rOld.style.visibility = "hidden";
   rCurrent.style.visibility = "visible";
-  selectId("rSuccess").innerHTML = "50% Success Chance";
-  selectId("rFail").innerHTML = (100 - 50) + "% Fail Chance";
+  rSP.style.right = "100px";
+  rSP.style.visibility = "visible";
+  selectId("rSuccess").innerHTML = "75% Success Chance";
+  selectId("rFail").innerHTML = (100 - 75) + "% Fail Chance";
 };
 rCurrent.onclick = function() {
-  rProb = 40;
+  rProb = ???;
   rIsPRNG = false;
+  rIsSP === true ? rOld.style.right = "135px" : undefined;
+  rIsSP = false;
   rCurrent.style.visibility = "hidden";
   rOld.style.visibility = "visible";
-  selectId("rSuccess").innerHTML = "40% Success Chance";
-  selectId("rFail").innerHTML = (100 - 40) + "% Fail Chance";
+  if (rOld.style.right === "0px") { rOld.style.right = "135px" };
+  rSP.style.visibility = "visible";
+  rSP.style.right = "135px";
+  selectId("rSuccess").innerHTML = "60% Success Chance";
+  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance";
+};
+rSP.onclick = function() {
+  rProb = ???;
+  rIsPRNG = false;
+  rIsSP = true;
+  rSP.style.visibility = "hidden";
+  rCurrent.style.visibility = "visible";
+  rOld.style.right = "0px";
+  selectId("rSuccess").innerHTML = "90% Success Chance";
+  selectId("rFail").innerHTML = (100 - 90) + "% Fail Chance";
 };
 rPRNG.onclick = function() {
   rIsPRNG = true;
+  if (rIsSP === true){
+      rOld.style.visibility = "hidden"
+      rOld.style.right = "135px";
+      rOld.style.visibility = "visible";
+      rCurrent.style.visibility = "hidden";
+  };
+  rIsSP = false;
   rAtt = 0;
   rProb = rProbArray[rAtt];
+  rSP.style.visibility = "visible";
   selectId("rSuccess").innerHTML = rProbArray[rAtt] + "% Success Chance";
   selectId("rFail").innerHTML = (100 - rProbArray[rAtt]) + "% Fail Chance";
 };
+//Now we hit the craft button.
 selectId("rButton").onclick = function() {
   let result = selectId("rResult");
   let chance = selectId("rChance");
@@ -217,6 +248,8 @@ selectId("rButton").onclick = function() {
       };
       rAtt > 0 ? selectId("rAttempt").innerHTML = `Suceeded at Attempt ${(rAtt + 1)}` : selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;;
       rAtt = 0;
+      rCombo = rCombo + 1;
+      if (rCombo > 1) { selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}, Combo x${rCombo}` };
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
       selectId("rSuccess").style.color = X0SC0;
@@ -231,6 +264,7 @@ selectId("rButton").onclick = function() {
         selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance";
       };
       selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;
+      rCombo = 0;
       result.style.color = X0FL0;
       chance.style.color = X0FL0;
       selectId("rSuccess").style.color = "white";
