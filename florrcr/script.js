@@ -128,6 +128,7 @@ uPRNG.onclick = function() {
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
   selectId("uFail").innerHTML = (100 - uProbArray[uAtt]) + "% Fail Chance";
 };
+//Now we hit the craft button.
 selectId("uButton").onclick = function() {
   let result = selectId("uResult");
   let chance = selectId("uChance");
@@ -143,7 +144,7 @@ selectId("uButton").onclick = function() {
       uAtt > 0 ? selectId("uAttempt").innerHTML = `Suceeded at Attempt ${(uAtt + 1)}` : selectId("uAttempt").innerHTML = `Attempt ${(uAtt + 1)}`;;
       uAtt = 0;
       uCombo = uCombo + 1;
-      if (uCombo > 1) { selectId("uAttempt").innerHTML = `Attempt ${(uAtt + 1)
+      if (uCombo > 1) { selectId("uAttempt").innerHTML = `Attempt ${(uAtt + 1)}, Combo x${uCombo}` };
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
       selectId("uSuccess").style.color = X0SC0;
@@ -158,6 +159,7 @@ selectId("uButton").onclick = function() {
         selectId("uFail").innerHTML = (100 - uProb).toFixed(2) + "% Fail Chance";
       };
       selectId("uAttempt").innerHTML = `Attempt ${(uAtt + 1)}`;
+      uCombo = 0;
       result.style.color = X0FL0;
       chance.style.color = X0FL0;
       selectId("uSuccess").style.color = "white";
