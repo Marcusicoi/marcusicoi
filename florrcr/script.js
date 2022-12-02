@@ -87,6 +87,7 @@ uOld.onclick = function() {
   uOld.style.visibility = "hidden";
   uCurrent.style.visibility = "visible";
   uSP.style.right = "100px";
+  uSP.style.visibility = "visible";
   selectId("uSuccess").innerHTML = "75% Success Chance";
   selectId("uFail").innerHTML = (100 - 75) + "% Fail Chance";
 };
@@ -97,6 +98,7 @@ uCurrent.onclick = function() {
   uIsSP = false;
   uCurrent.style.visibility = "hidden";
   uOld.style.visibility = "visible";
+  uSP.style.visibility = "visible";
   uSP.style.right = "135px";
   selectId("uSuccess").innerHTML = "60% Success Chance";
   selectId("uFail").innerHTML = (100 - 60) + "% Fail Chance";
@@ -113,9 +115,14 @@ uSP.onclick = function() {
 };
 uPRNG.onclick = function() {
   uIsPRNG = true;
+  if (uIsSP === true){
+      uOld.style.visibility = "hidden"
+      uOld.style.right = "135px"
+  };
   uIsSP = false;
   uAtt = 0;
   uProb = uProbArray[uAtt];
+  uSP.style.visibility = "visible";
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
   selectId("uFail").innerHTML = (100 - uProbArray[uAtt]) + "% Fail Chance";
 };
@@ -583,7 +590,7 @@ selectId("C?BT2").onclick = function() {
       C0SCS2 += 1;
   } else {
       var C0FLL2 = (Math.floor(Math.random() * 4) + 1);
-      if (C0FLL2 === 1) { C0LST12 += 1 };
+      if (C0FLL2 === 1) { C0LST12 += 1 
       if (C0FLL2 === 2) { C0LST22 += 1 };
       if (C0FLL2 === 3) { C0LST32 += 1 };
       if (C0FLL2 === 4) { C0LST42 += 1 };
