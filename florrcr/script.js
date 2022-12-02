@@ -119,7 +119,9 @@ uPRNG.onclick = function() {
   uIsPRNG = true;
   if (uIsSP === true){
       uOld.style.visibility = "hidden"
-      uOld.style.right = "135px"
+      uOld.style.right = "135px";
+      uOld.style.visibility = "visible";
+      uCurrent.style.visibility = "hidden";
   };
   uIsSP = false;
   uAtt = 0;
