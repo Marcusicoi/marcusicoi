@@ -318,7 +318,7 @@ eOld.onclick = function() {
   eOlder.style.right = (135 / 1.3425) + "px"
   eOlder.style.visibility = "visible";
   eCurrent.style.visibility = "visible";
-  eSP.style.right = "100px";
+  eSP.style.right === "117.5px" ? eSP.style.right = (135 * 2) + "px" : eSP.style.right = "100px";
   eSP.style.visibility = "visible";
   selectId("eSuccess").innerHTML = "15% Success Chance";
   selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance";
@@ -331,7 +331,7 @@ eOlder.onclick = function() {
   eOld.style.right = "0px";
   eOld.style.visibility = "visible";
   eCurrent.style.visibility = "visible";
-  eSP.style.right = "100px";
+  eSP.style.right = "117.5px";
   eSP.style.visibility = "visible";
   selectId("eSuccess").innerHTML = "25% Success Chance";
   selectId("eFail").innerHTML = (100 - 25) + "% Fail Chance";
@@ -346,7 +346,7 @@ eCurrent.onclick = function() {
   if (eOld.style.right === "0px") { eOld.style.right = "135px" };
   eOlder.style.right = "135px";
   eSP.style.visibility = "visible";
-  eSP.style.right = "135px";
+  eOlder.style.visibility === "visible" ? eSP.style.right = "135px" : eSP.style.right = (135 * 1.) + "px";
   selectId("eSuccess").innerHTML = "20% Success Chance";
   selectId("eFail").innerHTML = (100 - 20) + "% Fail Chance";
 };
