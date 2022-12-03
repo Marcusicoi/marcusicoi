@@ -44,14 +44,14 @@ selectId("uSuccess").style.color = X0SC0;
 selectId("rSuccess").style.color = X0SC0;
 selectId("eSuccess").style.color = X0SC0;
 selectId("lSuccess").style.color = X0SC0;
-selectId("M3SC1").style.color = X0SC0;
+selectId("mSuccess").style.color = X0SC0;
 //Fail Color
 const X0FL0 = "#F46658";
 selectId("uFail").style.color = X0FL0;
 selectId("rFail").style.color = X0FL0;
 selectId("eFail").style.color = X0FL0;
 selectId("lFail").style.color = X0FL0;
-selectId("M3FL1").style.color = X0FL0;
+selectId("mFail").style.color = X0FL0;
 //
 selectId("U60SCC2").style.color = X0SC0;
 selectId("R40SCC2").style.color = X0SC0;
@@ -514,12 +514,13 @@ let mProbArray = [undefined];
 mCurrent.style.visibility = "hidden";
 mOlder.style.visibility = "hidden";
 mOlder.style.right = "135px";
+mOld.style.right = "125px";
 //One disappears, one appears.
 mOld.onclick = function() {
   mProb = 2;
   mIsPRNG = false;
   mOld.style.visibility = "hidden";
-  mOlder.style.right = (135 / 1.3425) + "px";
+  mOlder.style.right = (135 / 1.35) + "px";
   mOlder.style.visibility = "visible";
   mCurrent.style.visibility = "visible";
   selectId("mSuccess").innerHTML = "2% Success Chance";
@@ -532,36 +533,22 @@ mOlder.onclick = function() {
   mOld.style.right = "0px";
   mOld.style.visibility = "visible";
   mCurrent.style.visibility = "visible";
-  mSP.style.right = "117.5px";
-  mSP.style.visibility = "visible";
-  selectId("mSuccess").innerHTML = ???% Success Chance";
-  selectId("mFail").innerHTML = (100 - ???) + "% Fail Chance";
+  selectId("mSuccess").innerHTML = "1% Success Chance";
+  selectId("mFail").innerHTML = (100 - 1) + "% Fail Chance";
 };
-mSP.onclick = function() {
-  mProb = ???;
+mCurrent.onclick = function() {
+  mProb = 10;
   mIsPRNG = false;
-  mIsSP = true;
-  mSP.style.visibility = "hidden";
-  mCurrent.style.visibility = "visible";
+  mCurrent.style.visibility = "hidden";
   mOld.style.visibility = "visible";
-  mOlder.style.visibility = "visible";
-  mOld.style.right = "0px";
-  mOlder.style.right = "0px";
-  selectId("mSuccess").innerHTML = ???% Success Chance";
-  selectId("mFail").innerHTML = (100 - ???) + "% Fail Chance";
+  if (mOld.style.right === "0px") { mOld.style.right = "135px" };
+  selectId("mSuccess").innerHTML = "3% Success Chance";
+  selectId("mFail").innerHTML = (100 - 3) + "% Fail Chance";
 };
 mPRNG.onclick = function() {
   mIsPRNG = true;
-  if (mIsSP === true){
-      mOld.style.visibility = "hidden"
-      mOld.style.right = "135px";
-      mOld.style.visibility = "visible";
-      mCurrent.style.visibility = "hidden";
-  };
-  mIsSP = false;
   mAtt = 0;
   mProb = mProbArray[mAtt];
-  mSP.style.visibility = "visible";
   selectId("mSuccess").innerHTML = mProbArray[mAtt] + "% Success Chance";
   selectId("mFail").innerHTML = (100 - mProbArray[mAtt]) + "% Fail Chance";
 };
@@ -598,6 +585,8 @@ selectId("mButton").onclick = function() {
       selectId("mAttempt").innerHTML = `Attempt ${(mAtt + 1)}`;
       mCombo = 0;
       result.style.color = X0FL0;
+  };
+};
 //C???1
 selectId("C?BT1").onclick = function() {
   let C0RS1 = selectId("C?RS1");
