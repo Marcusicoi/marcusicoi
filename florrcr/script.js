@@ -418,7 +418,7 @@ lOld.onclick = function() {
   lIsSP = false;
   lOld.style.visibility = "hidden";
   lCurrent.style.visibility = "visible";
-  lSP.style.right = "1px";
+  lSP.style.right = (135 / 1.475) + "px";
   lSP.style.visibility = "visible";
   selectId("lSuccess").innerHTML = "5% Success Chance";
   selectId("lFail").innerHTML = (100 - 5) + "% Fail Chance";
@@ -500,26 +500,104 @@ selectId("lButton").onclick = function() {
       selectId("lFail").style.color = X0FL0;
   }; 
 };
-//M3??1
-selectId("M3BT1").onclick = function() {
-  let M3RS1 = selectId("M3RS1");
-  let M3CH1 = selectId("M3CH1");
-  if (probability(3)) {
-      M3RS1.innerHTML = "Success!";
-      M3CH1.innerHTML = "3% " + "> " + (Math.floor(Math.random() * 3)) + "%";
-      M3RS1.style.color = X0SC0;
-      M3CH1.style.color = X0SC0;
-      selectId("M3SC1").style.color = X0SC0;
-      selectId("M3FL1").style.color = "white";
-  } else {
-      M3RS1.innerHTML = "Failed.";
-      M3CH1.innerHTML = "3% " + "> " + (Math.floor(Math.random() * 97) + 3) + "%";
-      M3RS1.style.color = X0FL0;
-      M3CH1.style.color = X0FL0;
-      selectId("M3SC1").style.color = "white";
-      selectId("M3FL1").style.color = X0FL0
-  }; 
+//m
+let mPRNG = "selectId(undefined)";
+let mCurrent = selectId("mTypeCurrent");
+let mOld = selectId("mTypeOld");
+let mOlder = selectId("mTypeOlder");
+//Stuff
+let mProb = 3;
+let mIsPRNG = false;
+let mAtt = 0;
+let mCombo = 0;
+let mProbArray = [undefined];
+mCurrent.style.visibility = "hidden";
+mOlder.style.visibility = "hidden";
+mOlder.style.right = "135px";
+//One disappears, one appears.
+mOld.onclick = function() {
+  mProb = 2;
+  mIsPRNG = false;
+  mOld.style.visibility = "hidden";
+  mOlder.style.right = (135 / 1.3425) + "px";
+  mOlder.style.visibility = "visible";
+  mCurrent.style.visibility = "visible";
+  selectId("mSuccess").innerHTML = "2% Success Chance";
+  selectId("mFail").innerHTML = (100 - 2) + "% Fail Chance";
 };
+mOlder.onclick = function() {
+  mProb = 1;
+  mIsPRNG = false;
+  mOlder.style.visibility = "hidden";
+  mOld.style.right = "0px";
+  mOld.style.visibility = "visible";
+  mCurrent.style.visibility = "visible";
+  mSP.style.right = "117.5px";
+  mSP.style.visibility = "visible";
+  selectId("mSuccess").innerHTML = ???% Success Chance";
+  selectId("mFail").innerHTML = (100 - ???) + "% Fail Chance";
+};
+mSP.onclick = function() {
+  mProb = ???;
+  mIsPRNG = false;
+  mIsSP = true;
+  mSP.style.visibility = "hidden";
+  mCurrent.style.visibility = "visible";
+  mOld.style.visibility = "visible";
+  mOlder.style.visibility = "visible";
+  mOld.style.right = "0px";
+  mOlder.style.right = "0px";
+  selectId("mSuccess").innerHTML = ???% Success Chance";
+  selectId("mFail").innerHTML = (100 - ???) + "% Fail Chance";
+};
+mPRNG.onclick = function() {
+  mIsPRNG = true;
+  if (mIsSP === true){
+      mOld.style.visibility = "hidden"
+      mOld.style.right = "135px";
+      mOld.style.visibility = "visible";
+      mCurrent.style.visibility = "hidden";
+  };
+  mIsSP = false;
+  mAtt = 0;
+  mProb = mProbArray[mAtt];
+  mSP.style.visibility = "visible";
+  selectId("mSuccess").innerHTML = mProbArray[mAtt] + "% Success Chance";
+  selectId("mFail").innerHTML = (100 - mProbArray[mAtt]) + "% Fail Chance";
+};
+//Now we hit the craft button.
+selectId("mButton").onclick = function() {
+  let result = selectId("mResult");
+  let chance = selectId("mChance");
+  //If it successes
+  if (probability(mProb)) {
+      result.innerHTML = "Success!";
+      chance.innerHTML = mIsPRNG === true ? `${mProb}% > ${((Math.random() * mProb).toFixed(2))}%` : `${mProb}% > ${(Math.floor(Math.random() * mProb))}%`;
+      if (mIsPRNG === true) { 
+        mProb = mProbArray[mAtt];
+        selectId("mSuccess").innerHTML = mProb + "% Success Chance";
+        selectId("mFail").innerHTML = (100 - mProb).toFixed(2) + "% Fail Chance";
+      };
+      mAtt > 0 ? selectId("mAttempt").innerHTML = `Suceeded at Attempt ${(mAtt + 1)}` : selectId("mAttempt").innerHTML = `Attempt ${(mAtt + 1)}`;;
+      mAtt = 0;
+      mCombo = mCombo + 1;
+      if (mCombo > 1) { selectId("mAttempt").innerHTML = `Attempt ${(mAtt + 1)}, Combo x${mCombo}` };
+      result.style.color = X0SC0;
+      chance.style.color = X0SC0;
+      selectId("mSuccess").style.color = X0SC0;
+      selectId("mFail").style.color = "white";
+  } else { //If it fails
+      result.innerHTML = "Failed.";
+      chance.innerHTML = mIsPRNG === true ? `${mProb}% > ${(((Math.random() * ((100 - mProb) + 1)) + mProb).toFixed(2))}%` : `${mProb}% > ${(Math.floor(Math.random() * ((100 - mProb) + 1)) + mProb)}%`;
+      mAtt = mAtt + 1;
+      if (mIsPRNG === true) { 
+        mProb = mProbArray[mAtt];
+        selectId("mSuccess").innerHTML = mProb + "% Success Chance";
+        selectId("mFail").innerHTML = (100 - mProb).toFixed(2) + "% Fail Chance";
+      };
+      selectId("mAttempt").innerHTML = `Attempt ${(mAtt + 1)}`;
+      mCombo = 0;
+      result.style.color = X0FL0;
 //C???1
 selectId("C?BT1").onclick = function() {
   let C0RS1 = selectId("C?RS1");
