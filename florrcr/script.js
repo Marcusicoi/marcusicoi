@@ -292,9 +292,10 @@ selectId("L5BT1").onclick = function() {
   }; 
 };
 //e
-let ePRNG = selectId("eTypePRNG");
+let ePRNG = selectId(undefined);
 let eCurrent = selectId("eTypeCurrent");
 let eOld = selectId("eTypeOld");
+let eOlder = selectId("eTypeOlder");
 let eSP = selectId("eTypeSP");
 //Stuff;
 let eProb = 20;
@@ -304,22 +305,24 @@ let eCombo = 0;
 let eProbArray = [undefined];
 let eIsSP = false;
 eCurrent.style.visibility = "hidden";
+eOlder.style.visibility = "hidden";
+
 eSP.style.right = "135px";
 eIsSP === true ? eOld.style.right = "0px" : eOld.style.right = "135px";
 //One disappears, one appears.
 eOld.onclick = function() {
-  eProb = ???;
+  eProb = 15;
   eIsPRNG = false;
   eIsSP = false;
   eOld.style.visibility = "hidden";
   eCurrent.style.visibility = "visible";
   eSP.style.right = "100px";
   eSP.style.visibility = "visible";
-  selectId("eSuccess").innerHTML = "75% Success Chance";
-  selectId("eFail").innerHTML = (100 - 75) + "% Fail Chance";
+  selectId("eSuccess").innerHTML = "15% Success Chance";
+  selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance";
 };
 eCurrent.onclick = function() {
-  eProb = ???;
+  eProb = 20;
   eIsPRNG = false;
   eIsSP === true ? eOld.style.right = "135px" : undefined;
   eIsSP = false;
@@ -328,18 +331,18 @@ eCurrent.onclick = function() {
   if (eOld.style.right === "0px") { eOld.style.right = "135px" };
   eSP.style.visibility = "visible";
   eSP.style.right = "135px";
-  selectId("eSuccess").innerHTML = "60% Success Chance";
-  selectId("eFail").innerHTML = (100 - 60) + "% Fail Chance";
+  selectId("eSuccess").innerHTML = "20% Success Chance";
+  selectId("eFail").innerHTML = (100 - 20) + "% Fail Chance";
 };
 eSP.onclick = function() {
-  eProb = ???;
+  eProb = 30;
   eIsPRNG = false;
   eIsSP = true;
   eSP.style.visibility = "hidden";
   eCurrent.style.visibility = "visible";
   eOld.style.right = "0px";
-  selectId("eSuccess").innerHTML = "90% Success Chance";
-  selectId("eFail").innerHTML = (100 - 90) + "% Fail Chance";
+  selectId("eSuccess").innerHTML = "30% Success Chance";
+  selectId("eFail").innerHTML = (100 - 30) + "% Fail Chance";
 };
 ePRNG.onclick = function() {
   eIsPRNG = true;
