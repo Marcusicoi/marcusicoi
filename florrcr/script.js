@@ -178,25 +178,25 @@ let rProb = 40;
 let rIsPRNG = false;
 let rAtt = 0;
 let rCombo = 0;
-et rProbArray = [20.15, 40.31, 60.46, ;
+let rProbArray = [20.15, 40.31, 60.46, 80.62, 100];
 let rIsSP = false;
 rCurrent.style.visibility = "hidden";
 rSP.style.right = "135px";
 rIsSP === true ? rOld.style.right = "0px" : rOld.style.right = "135px";
 //One disappears, one appears.
 rOld.onclick = function() {
-  rProb = ???;
+  rProb = 50;
   rIsPRNG = false;
   rIsSP = false;
   rOld.style.visibility = "hidden";
   rCurrent.style.visibility = "visible";
   rSP.style.right = "100px";
   rSP.style.visibility = "visible";
-  selectId("rSuccess").innerHTML = "75% Success Chance";
-  selectId("rFail").innerHTML = (100 - 75) + "% Fail Chance";
+  selectId("rSuccess").innerHTML = "50% Success Chance";
+  selectId("rFail").innerHTML = (100 - 50) + "% Fail Chance";
 };
 rCurrent.onclick = function() {
-  rProb = ???;
+  rProb = 40;
   rIsPRNG = false;
   rIsSP === true ? rOld.style.right = "135px" : undefined;
   rIsSP = false;
@@ -205,18 +205,18 @@ rCurrent.onclick = function() {
   if (rOld.style.right === "0px") { rOld.style.right = "135px" };
   rSP.style.visibility = "visible";
   rSP.style.right = "135px";
-  selectId("rSuccess").innerHTML = "60% Success Chance";
-  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance";
+  selectId("rSuccess").innerHTML = "40% Success Chance";
+  selectId("rFail").innerHTML = (100 - 40) + "% Fail Chance";
 };
 rSP.onclick = function() {
-  rProb = ???;
+  rProb = 60;
   rIsPRNG = false;
   rIsSP = true;
   rSP.style.visibility = "hidden";
   rCurrent.style.visibility = "visible";
   rOld.style.right = "0px";
-  selectId("rSuccess").innerHTML = "90% Success Chance";
-  selectId("rFail").innerHTML = (100 - 90) + "% Fail Chance";
+  selectId("rSuccess").innerHTML = "60% Success Chance";
+  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance";
 };
 rPRNG.onclick = function() {
   rIsPRNG = true;
