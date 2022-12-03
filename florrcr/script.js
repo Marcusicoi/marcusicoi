@@ -306,8 +306,8 @@ let eProbArray = [undefined];
 let eIsSP = false;
 eCurrent.style.visibility = "hidden";
 eOlder.style.visibility = "hidden";
-
-eSP.style.right = "135px";
+eOlder.style.right = "135px";
+eSP.style.right = (135 * 1.875) + "px";
 eIsSP === true ? eOld.style.right = "0px" : eOld.style.right = "135px";
 //One disappears, one appears.
 eOld.onclick = function() {
@@ -315,11 +315,26 @@ eOld.onclick = function() {
   eIsPRNG = false;
   eIsSP = false;
   eOld.style.visibility = "hidden";
+  eOlder.style.right = (135 / 1.3425) + "px"
+  eOlder.style.visibility = "visible";
   eCurrent.style.visibility = "visible";
   eSP.style.right = "100px";
   eSP.style.visibility = "visible";
   selectId("eSuccess").innerHTML = "15% Success Chance";
   selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance";
+};
+eOlder.onclick = function() {
+  eProb = 25;
+  eIsPRNG = false;
+  eIsSP = false;
+  eOld.style.visibility = "hidden";
+  eOlder.style.right = (135 / 1.3425) + "px"
+  eOlder.style.visibility = "visible";
+  eCurrent.style.visibility = "visible";
+  eSP.style.right = "100px";
+  eSP.style.visibility = "visible";
+  selectId("eSuccess").innerHTML = "25% Success Chance";
+  selectId("eFail").innerHTML = (100 - 25) + "% Fail Chance";
 };
 eCurrent.onclick = function() {
   eProb = 20;
@@ -366,7 +381,7 @@ selectId("eButton").onclick = function() {
   //If it successes
   if (probability(eProb)) {
       result.innerHTML = "Success!";
-      chance.innerHTML = eIsPRNG === true ? `${eProb}% > ${((Math.random() * eProb).toFixed(2))}%` : `${eProb}% > ${(Math.floor(Math.random() * eProb))}%`;
+      chance.innerHTML = IsPRNG === true ? `${eProb}% > ${((Math.random() * eProb).toFixed(2))}%` : `${eProb}% > ${(Math.floor(Math.random() * eProb))}%`;
       if (eIsPRNG === true) { 
         eProb = eProbArray[eAtt];
         selectId("eSuccess").innerHTML = eProb + "% Success Chance";
