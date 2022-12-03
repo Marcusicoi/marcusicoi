@@ -271,27 +271,7 @@ selectId("rButton").onclick = function() {
       selectId("rFail").style.color = X0FL0;
   }; 
 };
-//L5??1
-selectId("L5BT1").onclick = function() {
-  let L5RS1 = selectId("L5RS1");
-  let L5CH1 = selectId("L5CH1");
-  if (probability(5)) {
-      L5RS1.innerHTML = "Success!";
-      L5CH1.innerHTML = "5% " + "> " + (Math.floor(Math.random() * 5)) + "%";
-      L5RS1.style.color = X0SC0;
-      L5CH1.style.color = X0SC0;
-      selectId("L5SC1").style.color = X0SC0;
-      selectId("L5FL1").style.color = "white";
-  } else {
-      L5RS1.innerHTML = "Failed.";
-      L5CH1.innerHTML = "5% " + "> " + (Math.floor(Math.random() * 95) + 5) + "%";
-      L5RS1.style.color = X0FL0;
-      L5CH1.style.color = X0FL0;
-      selectId("L5SC1").style.color = "white";
-      selectId("L5FL1").style.color = X0FL0
-  }; 
-};
-//e
+//Epic
 let ePRNG = "selectId(undefined)";
 let eCurrent = selectId("eTypeCurrent");
 let eOld = selectId("eTypeOld");
