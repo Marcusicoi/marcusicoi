@@ -271,26 +271,6 @@ selectId("rButton").onclick = function() {
       selectId("rFail").style.color = X0FL0;
   }; 
 };
-//E20??1
-selectId("E20BT1").onclick = function() {
-  let E20RS1 = selectId("E20RS1");
-  let E20CH1 = selectId("E20CH1");
-  if (probability(20)) {
-      E20RS1.innerHTML = "Success!";
-      E20CH1.innerHTML = "20% " + "> " + (Math.floor(Math.random() * 20)) + "%";
-      E20RS1.style.color = X0SC0;
-      E20CH1.style.color = X0SC0;
-      selectId("E20SC1").style.color = X0SC0;
-      selectId("E20FL1").style.color = "white";
-  } else {
-      E20RS1.innerHTML = "Failed.";
-      E20CH1.innerHTML = "20% " + "> " + (Math.floor(Math.random() * 80) + 20) + "%";
-      E20RS1.style.color = X0FL0;
-      E20CH1.style.color = X0FL0;
-      selectId("E20SC1").style.color = "white";
-      selectId("E20FL1").style.color = X0FL0;
-  }; 
-};
 //L5??1
 selectId("L5BT1").onclick = function() {
   let L5RS1 = selectId("L5RS1");
@@ -309,6 +289,109 @@ selectId("L5BT1").onclick = function() {
       L5CH1.style.color = X0FL0;
       selectId("L5SC1").style.color = "white";
       selectId("L5FL1").style.color = X0FL0
+  }; 
+};
+//e
+let ePRNG = selectId("eTypePRNG");
+let eCurrent = selectId("eTypeCurrent");
+let eOld = selectId("eTypeOld");
+let eSP = selectId("eTypeSP");
+//Stuff;
+let eProb =20;
+let eIsPRNG = false;
+let eAtt = 0;
+let eCombo = 0;
+let eProbArray = [???];
+let eIsSP = false;
+eCurrent.style.visibility = "hidden";
+eSP.style.right = "135px";
+eIsSP === true ? eOld.style.right = "0px" : eOld.style.right = "135px";
+//One disappears, one appears.
+eOld.onclick = function() {
+  eProb = ???;
+  eIsPRNG = false;
+  eIsSP = false;
+  eOld.style.visibility = "hidden";
+  eCurrent.style.visibility = "visible";
+  eSP.style.right = "100px";
+  eSP.style.visibility = "visible";
+  selectId("eSuccess").innerHTML = "75% Success Chance";
+  selectId("eFail").innerHTML = (100 - 75) + "% Fail Chance";
+};
+eCurrent.onclick = function() {
+  eProb = ???;
+  eIsPRNG = false;
+  eIsSP === true ? eOld.style.right = "135px" : undefined;
+  eIsSP = false;
+  eCurrent.style.visibility = "hidden";
+  eOld.style.visibility = "visible";
+  if (eOld.style.right === "0px") { eOld.style.right = "135px" };
+  eSP.style.visibility = "visible";
+  eSP.style.right = "135px";
+  selectId("eSuccess").innerHTML = "60% Success Chance";
+  selectId("eFail").innerHTML = (100 - 60) + "% Fail Chance";
+};
+eSP.onclick = function() {
+  eProb = ???;
+  eIsPRNG = false;
+  eIsSP = true;
+  eSP.style.visibility = "hidden";
+  eCurrent.style.visibility = "visible";
+  eOld.style.right = "0px";
+  selectId("eSuccess").innerHTML = "90% Success Chance";
+  selectId("eFail").innerHTML = (100 - 90) + "% Fail Chance";
+};
+ePRNG.onclick = function() {
+  eIsPRNG = true;
+  if (eIsSP === true){
+      eOld.style.visibility = "hidden"
+      eOld.style.right = "135px";
+      eOld.style.visibility = "visible";
+      eCurrent.style.visibility = "hidden";
+  };
+  eIsSP = false;
+  eAtt = 0;
+  eProb = eProbArray[eAtt];
+  eSP.style.visibility = "visible";
+  selectId("eSuccess").innerHTML = eProbArray[eAtt] + "% Success Chance";
+  selectId("eFail").innerHTML = (100 - eProbArray[eAtt]) + "% Fail Chance";
+};
+//Now we hit the craft button.
+selectId("eButton").onclick = function() {
+  let result = selectId("eResult");
+  let chance = selectId("eChance");
+  //If it successes
+  if (probability(eProb)) {
+      result.innerHTML = "Success!";
+      chance.innerHTML = eIsPRNG === true ? `${eProb}% > ${((Math.random() * eProb).toFixed(2))}%` : `${eProb}% > ${(Math.floor(Math.random() * eProb))}%`;
+      if (eIsPRNG === true) { 
+        eProb = eProbArray[eAtt];
+        selectId("eSuccess").innerHTML = eProb + "% Success Chance";
+        selectId("eFail").innerHTML = (100 - eProb).toFixed(2) + "% Fail Chance";
+      };
+      eAtt > 0 ? selectId("eAttempt").innerHTML = `Suceeded at Attempt ${(eAtt + 1)}` : selectId("eAttempt").innerHTML = `Attempt ${(eAtt + 1)}`;;
+      eAtt = 0;
+      eCombo = eCombo + 1;
+      if (eCombo > 1) { selectId("eAttempt").innerHTML = `Attempt ${(eAtt + 1)}, Combo x${eCombo}` };
+      result.style.color = X0SC0;
+      chance.style.color = X0SC0;
+      selectId("eSuccess").style.color = X0SC0;
+      selectId("eFail").style.color = "white";
+  } else { //If it fails
+      result.innerHTML = "Failed.";
+      chance.innerHTML = eIsPRNG === true ? `${eProb}% > ${(((Math.random() * ((100 - eProb) + 1)) + eProb).toFixed(2))}%` : `${eProb}% > ${(Math.floor(Math.random() * ((100 - eProb) + 1)) + eProb)}%`;
+      eAtt = eAtt + 1;
+      if (eIsPRNG === true) { 
+        eProb = eProbArray[eAtt];
+        selectId("eSuccess").innerHTML = eProb + "% Success Chance";
+        selectId("eFail").innerHTML = (100 - eProb).toFixed(2) + "% Fail Chance";
+      };
+      selectId("eAttempt").innerHTML = `Attempt ${(eAtt + 1)}`;
+      eCombo = 0;
+      result.style.color = X0FL0;
+      chance.style.color = X0FL0;
+      selectId("eSuccess").style.color = "white";
+      selectId("eFail").style.color = X0FL0;
   }; 
 };
 //M3??1
