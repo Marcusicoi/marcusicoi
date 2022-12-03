@@ -35,10 +35,9 @@ document.getElementById("button").onclick = function() {
    let pOp = [
      pOpFunc("sin"), pOpFunc("cos"), pOpFunc("log"), pOpFunc("tan"), pOpFunc("root"), 
      pOpFunc("In"), pOpFunc("abs"), choose(['-1', '1', '2', '3', '4', '5']) + pOpFunc("powerRoot"),
-     pOpFunc("F")
    ];
    //
-   let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In(', choose(['-1', '1', '2', '3', '4', '5']) + 'powerRoot(', 'F('];
+   let pOp2 = ['sin(', 'cos(', 'log(', 'tan(', 'root(', 'In(', choose(['-1', '1', '2', '3', '4', '5']) + 'powerRoot(', `F(${choose(text.value)}) =`];
    let pOpE = [];
    //
    let powernum = ['-1', '1', '2', '3', '4', '5', choose(text.value)];
