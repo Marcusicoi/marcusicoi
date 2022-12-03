@@ -42,14 +42,14 @@ TitleFunc();
 const X0SC0 = "#52F84D";
 selectId("uSuccess").style.color = X0SC0;
 selectId("rSuccess").style.color = X0SC0;
-selectId("E20SC1").style.color = X0SC0;
+selectId("eSuccess").style.color = X0SC0;
 selectId("L5SC1").style.color = X0SC0;
 selectId("M3SC1").style.color = X0SC0;
 //Fail Color
 const X0FL0 = "#F46658";
 selectId("uFail").style.color = X0FL0;
 selectId("rFail").style.color = X0FL0;
-selectId("E20FL1").style.color = X0FL0;
+selectId("eFail").style.color = X0FL0;
 selectId("L5FL1").style.color = X0FL0;
 selectId("M3FL1").style.color = X0FL0;
 //
@@ -168,12 +168,12 @@ selectId("uButton").onclick = function() {
       selectId("uFail").style.color = X0FL0;
   }; 
 };
-//r
+//Rare
 let rPRNG = selectId("rTypePRNG");
 let rCurrent = selectId("rTypeCurrent");
 let rOld = selectId("rTypeOld");
 let rSP = selectId("rTypeSP");
-//Stuff;
+//Stuff
 let rProb = 40;
 let rIsPRNG = false;
 let rAtt = 0;
@@ -292,7 +292,7 @@ selectId("L5BT1").onclick = function() {
   }; 
 };
 //e
-let ePRNG = selectId(undefined);
+let ePRNG = "selectId(undefined)";
 let eCurrent = selectId("eTypeCurrent");
 let eOld = selectId("eTypeOld");
 let eOlder = selectId("eTypeOlder");
@@ -327,9 +327,9 @@ eOlder.onclick = function() {
   eProb = 25;
   eIsPRNG = false;
   eIsSP = false;
-  eOld.style.visibility = "hidden";
-  eOlder.style.right = (135 / 1.3425) + "px"
-  eOlder.style.visibility = "visible";
+  eOlder.style.visibility = "hidden";
+  eOld.style.right = "0px";
+  eOld.style.visibility = "visible";
   eCurrent.style.visibility = "visible";
   eSP.style.right = "100px";
   eSP.style.visibility = "visible";
@@ -344,6 +344,7 @@ eCurrent.onclick = function() {
   eCurrent.style.visibility = "hidden";
   eOld.style.visibility = "visible";
   if (eOld.style.right === "0px") { eOld.style.right = "135px" };
+  eOlder.style.right = "135px";
   eSP.style.visibility = "visible";
   eSP.style.right = "135px";
   selectId("eSuccess").innerHTML = "20% Success Chance";
@@ -381,7 +382,7 @@ selectId("eButton").onclick = function() {
   //If it successes
   if (probability(eProb)) {
       result.innerHTML = "Success!";
-      chance.innerHTML = IsPRNG === true ? `${eProb}% > ${((Math.random() * eProb).toFixed(2))}%` : `${eProb}% > ${(Math.floor(Math.random() * eProb))}%`;
+      chance.innerHTML = eIsPRNG === true ? `${eProb}% > ${((Math.random() * eProb).toFixed(2))}%` : `${eProb}% > ${(Math.floor(Math.random() * eProb))}%`;
       if (eIsPRNG === true) { 
         eProb = eProbArray[eAtt];
         selectId("eSuccess").innerHTML = eProb + "% Success Chance";
