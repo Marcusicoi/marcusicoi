@@ -546,7 +546,7 @@ mCurrent.onclick = function() {
   if (mOlder.style.visibility === "visible") { mOlder.style.visibility = "hidden" };
   selectId("mSuccess").innerHTML = "3% Success Chance";
   selectId("mFail").innerHTML = (100 - 3) + "% Fail Chance";
-}€
+};
 mPRNG.onclick = function() {
   mIsPRNG = true;
   mAtt = 0;
