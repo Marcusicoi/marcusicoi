@@ -520,7 +520,7 @@ mOld.onclick = function() {
   mProb = 2;
   mIsPRNG = false;
   mOld.style.visibility = "hidden";
-  mOlder.style.right = (135 / 1.35) + "px";
+  mOlder.style.right = (135 / 1.49) + "px";
   mOlder.style.visibility = "visible";
   mCurrent.style.visibility = "visible";
   selectId("mSuccess").innerHTML = "2% Success Chance";
@@ -537,14 +537,16 @@ mOlder.onclick = function() {
   selectId("mFail").innerHTML = (100 - 1) + "% Fail Chance";
 };
 mCurrent.onclick = function() {
-  mProb = 10;
+  mProb = 3;
   mIsPRNG = false;
   mCurrent.style.visibility = "hidden";
   mOld.style.visibility = "visible";
-  if (mOld.style.right === "0px") { mOld.style.right = "135px" };
+  mOld.style.right = "125px";
+  mOlder.style.right = "125px";
+  if (mOlder.style.visibility === "visible") { mOlder.style.visibility = "hidden" };
   selectId("mSuccess").innerHTML = "3% Success Chance";
   selectId("mFail").innerHTML = (100 - 3) + "% Fail Chance";
-};
+}€
 mPRNG.onclick = function() {
   mIsPRNG = true;
   mAtt = 0;
@@ -585,6 +587,9 @@ selectId("mButton").onclick = function() {
       selectId("mAttempt").innerHTML = `Attempt ${(mAtt + 1)}`;
       mCombo = 0;
       result.style.color = X0FL0;
+      chance.style.color = X0FL0;
+      selectId("mFail").style.color = "white";
+      selectId("mSuccess").style.color = X0FL0;
   };
 };
 //C???1
