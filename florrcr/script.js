@@ -400,7 +400,6 @@ selectId("eButton").onclick = function() {
 let lPRNG = "selectId(undefined)";
 let lCurrent = selectId("lTypeCurrent");
 let lOld = selectId("lTypeOld");
-let lOlder = selectId("lTypeOlder");
 let lSP = selectId("lTypeSP");
 //Stuff
 let lProb = 10;
@@ -410,8 +409,6 @@ let lCombo = 0;
 let lProbArray = [undefined];
 let lIsSP = false;
 lCurrent.style.visibility = "hidden";
-lOlder.style.visibility = "hidden";
-lOlder.style.right = "135px";
 lSP.style.right = (135 * 1.875) + "px";
 lIsSP === true ? lOld.style.right = "0px" : lOld.style.right = "135px";
 //One disappears, one appears.
@@ -420,7 +417,6 @@ lOld.onclick = function() {
   lIsPRNG = false;
   lIsSP = false;
   lOld.style.visibility = "hidden";
-  lOlder.style.right = (135 / 1.3425) + "px"
   lSP.style.right === "117.5px" && lOlder.style.visibility === "hidden" ? lSP.style.right = (135 / 1.3425) + "px" : lSP.style.right = "100px";
   lOlder.style.visibility = "visible";
   lCurrent.style.visibility = "visible";
