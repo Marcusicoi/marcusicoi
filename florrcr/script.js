@@ -499,6 +499,10 @@ document.getElementById("U60BT1P").onclick = function() {
   }; 
 };*/
 //Many Petals TRNG
+//This because why not?
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
 //U60??2
 selectId("U60BT2").onclick = function() {
   let U60IP2 = selectId("U60IP2");
