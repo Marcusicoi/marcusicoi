@@ -594,38 +594,34 @@ selectId("mButton").onclick = function() {
       selectId("mSuccess").style.color = X0FL0;
   };
 };
+let qProb = 99;
+let qFailed = false;
 selectId("qHelpB").onclick = function() {};
 selectId("qButton").onclick = function() {
   let result = selectId("qResult");
   let chance = selectId("qChance");
-  let qProb = 99;
   //If it successes
   if (probability(qProb)) {
       result.innerHTML = "Success!";
       chance.innerHTML = `${qProb}% > ${(Math.floor(Math.random() * qProb))}%`;
-        selectId("#Success").innerHTML = #Prob + "% Success Chance";
-        selectId("#Fail").innerHTML = (100 - #Prob).toFixed(2) + "% Fail Chance";      qProb = 99;
-      #Combo = #Combo + 1;
-      if (#Combo > 1) { selectId("#Attempt").innerHTML = `Attempt ${(#Att + 1)}, Combo x${#Combo}` };
+      qProb = qProb - 1;
+      selectId("qSuccess").innerHTML = qProb + "% Success Chance";
+      selectId("qFail").innerHTML = (100 - qProb) + "% Fail Chance";
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
-      selectId("#Success").style.color = X0SC0;
-      selectId("#Fail").style.color = "white";
+      selectId("qSuccess").style.color = X0SC0;
+      selectId("qFail").style.color = "white";
   } else { //If it fails
       result.innerHTML = "Failed.";
-      chance.innerHTML = #IsPRNG === true ? `${#Prob}% > ${(((Math.random() * ((100 - #Prob) + 1)) + #Prob).toFixed(2))}%` : `${#Prob}% > ${(Math.floor(Math.random() * ((100 - #Prob) + 1)) + #Prob)}%`;
-      #Att = #Att + 1;
-      if (#IsPRNG === true) { 
-        #Prob = #ProbArray[#Att];
-        selectId("#Success").innerHTML = #Prob + "% Success Chance";
-        selectId("#Fail").innerHTML = (100 - #Prob).toFixed(2) + "% Fail Chance";
-      };
-      selectId("#Attempt").innerHTML = `Attempt ${(#Att + 1)}`;
-      #Combo = 0;
+      chance.innerHTML = `${qProb}% > ${(Math.floor(Math.random() * ((100 - qProb) + 1)) + qProb)}%`
+      if (qProb < 99) { selectId("qAttempt").innerHTML = `Suceeded to ${qProb}%` };
+      qProb = 99;
+      selectId("qSuccess").innerHTML = qProb + "% Success Chance";
+      selectId("qFail").innerHTML = (100 - qProb) + "% Fail Chance";
       result.style.color = X0FL0;
       chance.style.color = X0FL0;
-      selectId("#Success").style.color = "white";
-      selectId("#Fail").style.color = X0FL0;
+      selectId("qSuccess").style.color = "white";
+      selectId("qFail").style.color = X0FL0;
   }; 
 };
 //C???1
