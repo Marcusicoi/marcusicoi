@@ -607,6 +607,10 @@ selectId("qButton").onclick = function() {
       qProb = qProb - 1;
       selectId("qSuccess").innerHTML = qProb + "% Success Chance";
       selectId("qFail").innerHTML = (100 - qProb) + "% Fail Chance";
+      if (qFailed === true) {
+        selectId("qAttempt").innerHTML = "Suceeded to ??%";
+      };
+      qFailed = false;
       result.style.color = X0SC0;
       chance.style.color = X0SC0;
       selectId("qSuccess").style.color = X0SC0;
@@ -616,6 +620,7 @@ selectId("qButton").onclick = function() {
       chance.innerHTML = `${qProb}% > ${(Math.floor(Math.random() * ((100 - qProb) + 1)) + qProb)}%`
       if (qProb < 99) { selectId("qAttempt").innerHTML = `Suceeded to ${qProb}%` };
       qProb = 99;
+      qFailed = true;
       selectId("qSuccess").innerHTML = qProb + "% Success Chance";
       selectId("qFail").innerHTML = (100 - qProb) + "% Fail Chance";
       result.style.color = X0FL0;
