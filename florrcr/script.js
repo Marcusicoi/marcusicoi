@@ -45,6 +45,7 @@ selectId("rSuccess").style.color = X0SC0;
 selectId("eSuccess").style.color = X0SC0;
 selectId("lSuccess").style.color = X0SC0;
 selectId("mSuccess").style.color = X0SC0;
+selectId("qSuccess").style.color = X0SC0;
 //Fail Color
 const X0FL0 = "#F46658";
 selectId("uFail").style.color = X0FL0;
@@ -52,6 +53,7 @@ selectId("rFail").style.color = X0FL0;
 selectId("eFail").style.color = X0FL0;
 selectId("lFail").style.color = X0FL0;
 selectId("mFail").style.color = X0FL0;
+selectId("qFail").style.color = X0FL0;
 //
 selectId("U60SCC2").style.color = X0SC0;
 selectId("R40SCC2").style.color = X0SC0;
@@ -591,6 +593,40 @@ selectId("mButton").onclick = function() {
       selectId("mFail").style.color = "white";
       selectId("mSuccess").style.color = X0FL0;
   };
+};
+selectId("qHelpB").onclick = function() {};
+selectId("qButton").onclick = function() {
+  let result = selectId("qResult");
+  let chance = selectId("qChance");
+  let qProb = 99;
+  //If it successes
+  if (probability(qProb)) {
+      result.innerHTML = "Success!";
+      chance.innerHTML = `${qProb}% > ${(Math.floor(Math.random() * qProb))}%`;
+        selectId("#Success").innerHTML = #Prob + "% Success Chance";
+        selectId("#Fail").innerHTML = (100 - #Prob).toFixed(2) + "% Fail Chance";      qProb = 99;
+      #Combo = #Combo + 1;
+      if (#Combo > 1) { selectId("#Attempt").innerHTML = `Attempt ${(#Att + 1)}, Combo x${#Combo}` };
+      result.style.color = X0SC0;
+      chance.style.color = X0SC0;
+      selectId("#Success").style.color = X0SC0;
+      selectId("#Fail").style.color = "white";
+  } else { //If it fails
+      result.innerHTML = "Failed.";
+      chance.innerHTML = #IsPRNG === true ? `${#Prob}% > ${(((Math.random() * ((100 - #Prob) + 1)) + #Prob).toFixed(2))}%` : `${#Prob}% > ${(Math.floor(Math.random() * ((100 - #Prob) + 1)) + #Prob)}%`;
+      #Att = #Att + 1;
+      if (#IsPRNG === true) { 
+        #Prob = #ProbArray[#Att];
+        selectId("#Success").innerHTML = #Prob + "% Success Chance";
+        selectId("#Fail").innerHTML = (100 - #Prob).toFixed(2) + "% Fail Chance";
+      };
+      selectId("#Attempt").innerHTML = `Attempt ${(#Att + 1)}`;
+      #Combo = 0;
+      result.style.color = X0FL0;
+      chance.style.color = X0FL0;
+      selectId("#Success").style.color = "white";
+      selectId("#Fail").style.color = X0FL0;
+  }; 
 };
 //C???1
 selectId("C?BT1").onclick = function() {
