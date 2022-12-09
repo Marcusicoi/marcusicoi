@@ -603,6 +603,7 @@ selectId("qHelpB").onclick = function() {
   If it suceeded again then to 97%, then again to 96%
   and so on until you fail
   then it goes to the original chance (99%)
+  Succeeding from 99% to 1% is ${0.99 * 0.98
   `
 };
 selectId("qButton").onclick = function() {
