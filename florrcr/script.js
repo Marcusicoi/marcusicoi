@@ -596,7 +596,15 @@ selectId("mButton").onclick = function() {
 };
 let qProb = 99;
 let qFailed = false;
-selectId("qHelpB").onclick = function() {};
+selectId("qHelpB").onclick = function() {
+  selectId("qHelpT").innerHTML = `
+  First chance is 99% but everytime you suceeded
+  The chance decreased to 98%,
+  If it suceeded again then to 97%, then again to 96%
+  and so on until you fail
+  then it goes to the original chance (99%)
+  `
+};
 selectId("qButton").onclick = function() {
   let result = selectId("qResult");
   let chance = selectId("qChance");
