@@ -558,3 +558,8 @@ document.getElementById("button").onclick = function() {
       choose(Abbs0Array) + choose(Abbs2Array) + choose(Abbs3Array);
   document.getElementById("result").innerHTML = result;   
 };
+//
+exports.abbreivations = {
+  1: Abbs0Array,
+  2: Abbs2Array
+};
