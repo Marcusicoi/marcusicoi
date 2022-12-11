@@ -11,7 +11,11 @@ var array = [
   'UV', 'DV', 'TV', 'qV', 'QV', 'sV', 'SV', 'OV', 'NV', 'TR', 
   'UTR', 'DTR', 'TTR', 'qTR', 'QTR', 'sTR', 'STR', 'OTR', 'NTR', 'QU', 
   'UQU', 'DQU', 'TQU', 'qQU', 'QQU', 'sQU', 'SQU', 'OQU', 'NQU', 'QI', 
-  'UQI', 'DQI', 'TQI', 'qQI', 'QQI', 'sQI', 'SQI', 'OQI', 'NQI', '
+  'UQI', 'DQI', 'TQI', 'qQI', 'QQI', 'sQI', 'SQI', 'OQI', 'NQI', 'Sx', 
+  'USx', 'DSx', 'TSx', 'qSx', 'QSx', 'sSx', 'SSx', 'OSx', 'NSx', 'Sp', 
+  'USp', 'DSp', 'TSp', 'qSp', 'QSp', 'sSp', 'SSp', 'OSp', 'NSp', 'Oc',  
+  'UOc', 'DOc', 'TOc', 'qOc', 'QOc', 'sOc', 'SOc', 'OOc', 'NOc', 'No', 
+  'UNo', 'DNo', 'TNo', 'qNo', 'QNo', 'sNo', 'SNo', 'ONo', 'NNo', 'Ce'
 ];
 function abbreviateNumber(count, withAbbr = false, decimals = 2) {
     const i = 0 === count ? count : Math.floor(Math.log(count) / Math.log(1000));
@@ -24,7 +28,7 @@ function abbreviateNumber(count, withAbbr = false, decimals = 2) {
 }
 //If you click the button
 inc.onclick = function() {
-  num *= num;
+  num *= num * num / (num / (num * (num + (num / 2) * 2) / 2) + (num + (num * 2)));
   levelc += 1;
   number.innerHTML = abbreviateNumber(num, true, 1)
   level.innerHTML = "Level " + levelc;
