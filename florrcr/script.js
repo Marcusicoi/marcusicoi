@@ -1,6 +1,6 @@
 //Functions
 //Probability
-function probability(n) {
+function probability(n) 
   return Math.random() < (n / 100);
 };
 //(Opposite) Of Probability
