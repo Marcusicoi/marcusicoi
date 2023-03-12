@@ -82,23 +82,11 @@ let uAtt = 0;
 let uCombo = 0;
 let uIsPRNG = false;
 let uProbArray = [42.26, 84.53, 100];
-uOld.onclick = function() {
-  uProb = 60;
+uOriginal.onclick = function() {
+  uProb = 75;
   uIsPRNG = false;
-  selectId("uSuccess").innerHTML = "60% Success Chance";
-  selectId("uFail").innerHTML = (100 - 60) + "% Fail Chance";
-};
-uCurrent.onclick = function() {
-  uProb = 40;
-  uIsPRNG = false;
-  selectId("uSuccess").innerHTML = "40% Success Chance";
-  selectId("uFail").innerHTML = (100 - 40) + "% Fail Chance";
-};
-uOlderLSP.onclick = function() {
-  uProb = 90;
-  uIsPRNG = false;
-  selectId("uSuccess").innerHTML = "90% Success Chance";
-  selectId("uFail").innerHTML = (100 - 90) + "% Fail Chance";
+  selectId("uSuccess").innerHTML = "75% Success Chance";
+  selectId("uFail").innerHTML = (100 - 75) + "% Fail Chance";
 };
 uPRNG.onclick = function() {
   uIsPRNG = true;
@@ -106,6 +94,42 @@ uPRNG.onclick = function() {
   uProb = uProbArray[uAtt];
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
   selectId("uFail").innerHTML = (100 - uProbArray[uAtt]) + "% Fail Chance";
+};
+uOld.onclick = function() {
+  uProb = 60;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = uProb + " Success Chance";
+  selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
+};
+uOlderLSP.onclick = function() {
+  uProb = 90;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = uProb + " Success Chance";
+  selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
+};
+uOldLSP.onclick = function() {
+  uProb = 80;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = uProb + " Success Chance";
+  selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
+};
+uCurrent.onclick = function() {
+  uProb = 40;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = uProb + " Success Chance";
+  selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
+};
+uLSP.onclick = function() {
+  uProb = 44;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = uProb + " Success Chance";
+  selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
+};
+uMSP.onclick = function() {
+  uProb = 48;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = uProb + " Success Chance";
+  selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
 };
 //Now we hit the craft button.
 selectId("uButton").onclick = function() {
