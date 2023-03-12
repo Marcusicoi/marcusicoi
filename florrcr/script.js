@@ -1,6 +1,6 @@
 //Functions
 //Probability
-function probability(n) 
+function probability(n) {
   return Math.random() < (n / 100);
 };
 //(Opposite) Of Probability
@@ -79,31 +79,16 @@ let uAtt = 0;
 let uCombo = 0;
 let uProbArray = [42.26, 84.53, 100];
 let uIsSP = false;
-uCurrent.style.visibility = "hidden";
-uSP.style.right = "135px";
-uIsSP === true ? uOld.style.right = "0px" : uOld.style.right = "135px";
-//One disappears, one appears. 
 uOld.onclick = function() {
   uProb = 75;
   uIsPRNG = false;
   uIsSP = false;
-  uOld.style.visibility = "hidden";
-  uCurrent.style.visibility = "visible";
-  uSP.style.right = "100px";
-  uSP.style.visibility = "visible";
   selectId("uSuccess").innerHTML = "75% Success Chance";
   selectId("uFail").innerHTML = (100 - 75) + "% Fail Chance";
 };
 uCurrent.onclick = function() {
   uProb = 60;
   uIsPRNG = false;
-  uIsSP === true ? uOld.style.right = "135px" : undefined;
-  uIsSP = false;
-  uCurrent.style.visibility = "hidden";
-  uOld.style.visibility = "visible";
-  if (uOld.style.right === "0px") { uOld.style.right = "135px" };
-  uSP.style.visibility = "visible";
-  uSP.style.right = "135px";
   selectId("uSuccess").innerHTML = "60% Success Chance";
   selectId("uFail").innerHTML = (100 - 60) + "% Fail Chance";
 };
@@ -111,24 +96,14 @@ uSP.onclick = function() {
   uProb = 90;
   uIsPRNG = false;
   uIsSP = true;
-  uSP.style.visibility = "hidden";
-  uCurrent.style.visibility = "visible";
-  uOld.style.right = "0px";
   selectId("uSuccess").innerHTML = "90% Success Chance";
   selectId("uFail").innerHTML = (100 - 90) + "% Fail Chance";
 };
 uPRNG.onclick = function() {
   uIsPRNG = true;
-  if (uIsSP === true){
-      uOld.style.visibility = "hidden"
-      uOld.style.right = "135px";
-      uOld.style.visibility = "visible";
-      uCurrent.style.visibility = "hidden";
-  };
   uIsSP = false;
   uAtt = 0;
   uProb = uProbArray[uAtt];
-  uSP.style.visibility = "visible";
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
   selectId("uFail").innerHTML = (100 - uProbArray[uAtt]) + "% Fail Chance";
 };
