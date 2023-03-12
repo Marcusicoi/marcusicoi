@@ -68,40 +68,40 @@ selectId("L5FLC2").style.color = X0FL0;
 selectId("M3FLC2").style.color = X0FL0;
 //Normal
 //Unusual
+let uOriginal = selectId("uTypeOriginal");
 let uPRNG = selectId("uTypePRNG");
-let uCurrent = selectId("uTypeCurrent");
 let uOld = selectId("uTypeOld");
-let uSP = selectId("uTypeSP");
+let uOlderLSP = selectId("uTypeOlderLSkill");
+let uOldLSP = selectId("uTypeOldLSkill");
+let uCurrent = selectId("uTypeCurrent");
+let uLSP = selectId("uTypeLSkill");
+let uMSP = selectId("uTypeMSkill");
 //Stuff;
-let uProb = 60;
-let uIsPRNG = false;
+let uProb = 40;
 let uAtt = 0;
 let uCombo = 0;
+let uIsPRNG = false;
 let uProbArray = [42.26, 84.53, 100];
-let uIsSP = false;
 uOld.onclick = function() {
-  uProb = 75;
-  uIsPRNG = false;
-  uIsSP = false;
-  selectId("uSuccess").innerHTML = "75% Success Chance";
-  selectId("uFail").innerHTML = (100 - 75) + "% Fail Chance";
-};
-uCurrent.onclick = function() {
   uProb = 60;
   uIsPRNG = false;
   selectId("uSuccess").innerHTML = "60% Success Chance";
   selectId("uFail").innerHTML = (100 - 60) + "% Fail Chance";
 };
-uSP.onclick = function() {
+uCurrent.onclick = function() {
+  uProb = 40;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = "40% Success Chance";
+  selectId("uFail").innerHTML = (100 - 40) + "% Fail Chance";
+};
+uOlderLSP.onclick = function() {
   uProb = 90;
   uIsPRNG = false;
-  uIsSP = true;
   selectId("uSuccess").innerHTML = "90% Success Chance";
   selectId("uFail").innerHTML = (100 - 90) + "% Fail Chance";
 };
 uPRNG.onclick = function() {
   uIsPRNG = true;
-  uIsSP = false;
   uAtt = 0;
   uProb = uProbArray[uAtt];
   selectId("uSuccess").innerHTML = uProbArray[uAtt] + "% Success Chance";
