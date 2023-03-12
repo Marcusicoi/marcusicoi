@@ -79,7 +79,10 @@ let uAtt = 0;
 let uCombo = 0;
 let uProbArray = [42.26, 84.53, 100];
 let uIsSP = false;
-
+uCurrent.style.visibility = "hidden";
+uSP.style.right = "135px";
+uIsSP === true ? uOld.style.right = "0px" : uOld.style.right = "135px";
+//One disappears, one appears. 
 uOld.onclick = function() {
   uProb = 75;
   uIsPRNG = false;
