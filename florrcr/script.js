@@ -71,8 +71,9 @@ selectId("M3FLC2").style.color = X0FL0;
 let uOriginal = selectId("uTypeOriginal");
 let uPRNG = selectId("uTypePRNG");
 let uOld = selectId("uTypeOld");
-let uOlderLSP = selectId("uTypeOlderLSkill");
+let uOlderMSP = selectId("uTypeOlderMSkill");
 let uOldLSP = selectId("uTypeOldLSkill");
+let uOldMSP = selectId("uTypeOldMSkill");
 let uCurrent = selectId("uTypeCurrent");
 let uLSP = selectId("uTypeLSkill");
 let uMSP = selectId("uTypeMSkill");
@@ -101,20 +102,20 @@ uOld.onclick = function() {
   selectId("uSuccess").innerHTML = uProb + " Success Chance";
   selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
 };
-uOlderLSP.onclick = function() {
+uOlderMSP.onclick = function() {
   uProb = 90;
   uIsPRNG = false;
   selectId("uSuccess").innerHTML = uProb + " Success Chance";
   selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
 };
 uOldLSP.onclick = function() {
-  uProb = 80;
+  uProb = 60;
   uIsPRNG = false;
   selectId("uSuccess").innerHTML = uProb + " Success Chance";
   selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
 };
-uCurrent.onclick = function() {
-  uProb = 40;
+uOldMSP.onclick = function() {
+  uProb = 80;
   uIsPRNG = false;
   selectId("uSuccess").innerHTML = uProb + " Success Chance";
   selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
@@ -127,6 +128,12 @@ uLSP.onclick = function() {
 };
 uMSP.onclick = function() {
   uProb = 48;
+  uIsPRNG = false;
+  selectId("uSuccess").innerHTML = uProb + " Success Chance";
+  selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
+};
+uCurrent.onclick = function() {
+  uProb = 40;
   uIsPRNG = false;
   selectId("uSuccess").innerHTML = uProb + " Success Chance";
   selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
