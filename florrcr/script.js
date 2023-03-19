@@ -167,10 +167,10 @@ selectId("uButton").onclick = function() {
       result.innerHTML = "Failed.";
       chance.innerHTML = uIsPRNG === true ? `${uProb}% > ${(((Math.random() * ((100 - uProb) + 1)) + uProb).toFixed(2))}%` : `${uProb}% > ${(Math.floor(Math.random() * ((100 - uProb) + 1)) + uProb)}%`;
       uAtt = uAtt + 1;
-      if (uAtt > uHSattC) {
-          uHSattC = uAtt;
-          localStorage.setItem("uHSattCnt", uHSattC);
-          uHSatt.innerHTML = "Highest Attempt: " + (localStorage.getItem("uHSattCnt") + 1);
+      uHSattC = uAtt;
+      localStorage.setItem("uHSattCnt", uHSattC);
+      if (uHSattC > localStorage.getItem("uHSattCnt")) {
+          uHSatt.innerHTML = "Highest Attempt: " + (localStorage.getItem("uHSattCnt"));
       };
       if (uIsPRNG === true) { 
         uProb = uProbArray[uAtt];
