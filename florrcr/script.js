@@ -167,10 +167,9 @@ selectId("uButton").onclick = function() {
       chance.innerHTML = uIsPRNG === true ? `${uProb}% > ${(((Math.random() * ((100 - uProb) + 1)) + uProb).toFixed(2))}%` : `${uProb}% > ${(Math.floor(Math.random() * ((100 - uProb) + 1)) + uProb)}%`;
       uAtt = uAtt + 1;
       if (uAtt > uHSattC) {
-          us
-          if (localStorage.uHSattCnt) {
-              localStorage
-          }
+          uHSattC = uAtt;
+          localStorage.setItem("uHSattCnt", uHSattC);
+          uHSatt.innerHTML = localStorage.getItem("uHSattCnt")
       }
       if (uIsPRNG === true) { 
         uProb = uProbArray[uAtt];
