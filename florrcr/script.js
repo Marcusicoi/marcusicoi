@@ -86,6 +86,7 @@ let uCombo = 0;
 let uIsPRNG = false;
 let uProbArray = [42.26, 84.53, 100];
 let uHSattC = 1;
+uHSatt.innerHTML = "Highest Attempt: " + localStorage.getItem("uHSattCnt");
 uOriginal.onclick = function() {
   uProb = 75;
   uIsPRNG = false;
@@ -169,8 +170,8 @@ selectId("uButton").onclick = function() {
       if (uAtt > uHSattC) {
           uHSattC = uAtt;
           localStorage.setItem("uHSattCnt", uHSattC);
-          uHSatt.innerHTML = localStorage.getItem("uHSattCnt")
-      }
+          uHSatt.innerHTML = "Highest Attempt: " + (localStorage.getItem("uHSattCnt") + 1);
+      };
       if (uIsPRNG === true) { 
         uProb = uProbArray[uAtt];
         selectId("uSuccess").innerHTML = uProb + "% Success Chance";
