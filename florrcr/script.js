@@ -77,18 +77,12 @@ let uOldMSP = selectId("uTypeOldMSkill");
 let uCurrent = selectId("uTypeCurrent");
 let uLSP = selectId("uTypeLSkill");
 let uMSP = selectId("uTypeMSkill");
-
-let uHSatt = selectId("uHSAttempt");
 //Stuff;
 let uProb = 40;
 let uAtt = 0;
 let uCombo = 0;
 let uIsPRNG = false;
 let uProbArray = [42.26, 84.53, 100];
-let uHSattC = 1;
-localStorage.setItem("uHSattCnt", uHSattC);
-let uHSattC2 = localStorage.getItem("u
-uHSatt.innerHTML = "Highest Attempt: " + localStorage.getItem("uHSattCnt");
 uOriginal.onclick = function() {
   uProb = 75;
   uIsPRNG = false;
@@ -169,10 +163,6 @@ selectId("uButton").onclick = function() {
       result.innerHTML = "Failed.";
       chance.innerHTML = uIsPRNG === true ? `${uProb}% > ${(((Math.random() * ((100 - uProb) + 1)) + uProb).toFixed(2))}%` : `${uProb}% > ${(Math.floor(Math.random() * ((100 - uProb) + 1)) + uProb)}%`;
       uAtt = uAtt + 1;
-      if (uAtt > uHSattC) { uHSattC = uAtt };
-      if (uHSAttC > localStorage.getItem("uHSattCnt")) {
-          uHSatt.innerHTML = "Highest Attempt: " + (localStorage.getItem("uHSattCnt"));
-      };
       if (uIsPRNG === true) { 
         uProb = uProbArray[uAtt];
         selectId("uSuccess").innerHTML = uProb + "% Success Chance";
