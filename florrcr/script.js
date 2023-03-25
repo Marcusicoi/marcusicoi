@@ -180,7 +180,7 @@ selectId("uButton").onclick = function() {
 let rPRNG = selectId("rTypePRNG");
 let rCurrent = selectId("rTypeCurrent");
 let rOld = selectId("rTypeOld");
-let rSP = selectId("rTypeSP");
+let rSP = selectId("rTypeOld");
 //Stuff
 let rProb = 40;
 let rIsPRNG = false;
