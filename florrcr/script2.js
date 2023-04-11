@@ -29,9 +29,10 @@ function untilSucceed(chance, mob, petal) {
     }
   } while (succeeded === 0)
   console.log(`
-  The chance of ${drop} from ${mo
+  The chance of ${petal} from ${mob} is ${chance}%
   You need ${average} attempts for it to drop ${petal} from ${mob}!
   But you got ${attempts} attempts! ${ouageL}
   `)
 }
-function untilSucceed(0.03,
+
+untilSucceed(0.03, "Mythic Spider", "Mythic Third Eye")
