@@ -31,16 +31,17 @@ a {
   margin: 2px;
   border: 0px;
   padding: 5px;
-  width: 70px;
-  height: 30px;
-  font-size: smaller;
+  width: 85px;
+  height: 40px;
+  font-size: 17.55px;
   color: white;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   text-decoration: none;
   cursor: pointer;
-  background: #B58EFD;
-  border-radius: 5px;                                                                                                                   cpx rgba(0, 0, 0, 0.15);
+  background: #484848;
+  border-radius: 7.5px;
+  border: 5px solid #212121;
 }
 
 button {
