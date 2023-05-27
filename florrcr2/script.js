@@ -1,3 +1,4 @@
 let random = (n) => {
-  Math.floor(Math.random()) > n;
+  Math.random() > (n / 100);
 };
+
