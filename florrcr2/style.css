@@ -33,6 +33,7 @@ a {
   padding: 5px;
   width: 85px;
   height: 35px;
+  left: 550px;
   font-size: 17.5px;
   color: white;
   text-align: center;
@@ -43,6 +44,11 @@ a {
   background: #484848;
   border-radius: 7.5px;
   border: 5px solid #212121;
+}
+
+h4 {
+  right: 250px;
+  top: 25px;
 }
 
 button {
