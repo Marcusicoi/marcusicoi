@@ -1,7 +1,8 @@
 let inpPetal = document.getElementById("inpPetal")
 let inpRarity = document.getElementById("inpRarity")
 
-let button = document.getElementById("button")
+let bBasic = document.getElementById("bBasic")
+
 let result = document.getElementById("result")
 
 let cdBase = {
@@ -20,13 +21,5 @@ let description = {
   basic: "A nice petal, not too strong, but not too weak."
 }
 
-let stats = `
-
-`
-button.onclick = function(){
-  if (inpPetal.value === "Basic") {
-    if (inpRarity.value === "Everywhere") {
-      
-    }
-  }
+bBasic.onclick = function(){
 }
