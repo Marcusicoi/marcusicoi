@@ -9,8 +9,10 @@
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>
-    <!-- import the webpage's javascript file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap">
+      <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
   <body>
@@ -20,14 +22,14 @@
     <input id="inpPetal" type="text" placeholder="Petal, first letter capitalized.">
     <input id="inpRarity" type="text" placeholder="Rarity, first letter capitalized.">
     <a id="button" style="background-color:#00aaff">Go!</a>
-    <div id="canvres" style="
+    <canvas id="canvres" style="
                              border-radius:15px; 
                              background-color:#000000; 
                              opacity: 0.75;
                              height: 250px;
                              width: 300px;
                              ">
-    <h3 id="result" >Basic</h3>
-    </div>
+    <h3 id="result">Basic</h3>
+    </canvas>
   </body>
 </html>

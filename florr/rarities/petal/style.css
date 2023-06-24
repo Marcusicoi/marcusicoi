@@ -30,6 +30,9 @@ h3 {
   z-index: 2;
   right: 55px
 }
+div {
+  z-index: -1;
+}
 a {
  display: inline-block;
   position: relative;
