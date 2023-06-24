@@ -3,8 +3,4 @@ let inpRarity = document.getElementById("inpRarity")
 
 let button = document.getElementById("button")
 let result = document.getElementById("result")
-let canvas = document.getElementById("canvres")
 
-var ctx = canvas.getContext("2d");
-ctx.font = "30px Arial"
-ctx.strokeText("Basic",10,50)
