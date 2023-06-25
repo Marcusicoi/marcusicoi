@@ -22,4 +22,5 @@ let description = {
 }
 
 bBasic.onclick = function(){
+  result.innerHTML = "omg"
 }
