@@ -59,7 +59,7 @@ let petals = [
   "Shell",
   "Soil",
   "Sponge",
-  "Square",
+  //"Square",
   "Starfish",
   "Stick",
   "Stinger",
