@@ -18,11 +18,19 @@
     <h1>Build DPS Calculator</h1>
     <h2>Calculates the damage per second to your build.</h2>
     <h3>Thanks to christina for the formula.</h3>
+      
+    <h2>Skill</h2>
     <input type="text" id="faster" placeholder="Petal Rotation Skill">
     <input type="text" id="reload" placeholder="Reload Skill">
     
-    <h2>10 Slots</h2>
-    <input type="text" id="101" placeholder="Rarity & Petal (First Slot)">
+    <h2>Petal</h2>
+    <input type="text" id="rarity" placeholder="Rarity">
+    <input type="text" id="petal" placeholder="Petal">
     <a id="button" style="background:blue">Run!</a>
+    
+    <h1>Results</h1>
+    <h2>FASTER SKILL: <span id="fastresult"></span></h2>
+    <h2>RELOAD SKILL: <span id="rotateresult"></span></h2>
+    <h2>TOTAL DPS OF <span id="petalresulttext"></span> IS <span style="color:red" id="result">0, rip</span></h2>
   </body>
 </html>
