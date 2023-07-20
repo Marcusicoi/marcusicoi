@@ -3,6 +3,8 @@ const button = document.getElementById("butran")
 const first = document.getElementById("first")
 const second = document.getElementById("second")
 
+button.onclick = function() {
+  
 let petals = [
   "Air",
   "Ankh",
@@ -73,12 +75,36 @@ let petals = [
 ]
 
 function petal() {
-  return petals[Math.floor[Math.random() * petals.length]]
+  return petals[Math.floor(Math.random() * petals.length)]
+}
+  
+if (slots.value === "5") {
+  first.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+  second.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+}
+  
+if (slots.value === "6") {
+  first.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+  second.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
 }
 
-button.onclick = function() {
-if (slots.value === 10) {
-  first.indexHTML = "petal(), petal(), petal()"
-  second.indexHTML = "petal(), petal(), petal()"
+if (slots.value === "7") {
+  first.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+  second.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+}
+
+if (slots.value === "8") {
+  first.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+  second.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+}
+
+if (slots.value === "9") {
+  first.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+  second.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+}
+
+if (slots.value === "10") {
+  first.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
+  second.innerHTML = `${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}, ${petal()}`
 }
 }
