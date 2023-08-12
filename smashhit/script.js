@@ -21,14 +21,18 @@ let seconds = 0
 
 function incSeconds() { 
   seconds += 1 
-  ID("secdisp").innerHTML = seconds + " Seconds"
+  ID("secdisp").innerText = seconds + " Seconds"
 }
-setTimeout(incSeconds(), 1000)
   
-if (seconds >= 35) {
-ID(randomSong()).play()
-seconds === 0
-clearTimeout()
+let secInterval = setInterval(incSeconds, 1000)
+
+if (seconds === 0) {
+  secInterval
+} 
+  
+if (seconds === 5) {
+  seconds = 0
+  clearInterval(secInterval)
 }
 
 }
