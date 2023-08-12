@@ -17,8 +17,11 @@ ID("button").onclick = function (){
 ID("button").style.visibility = "hidden"
 ID(randomSong()).play()
 
-for (let i = 3000; i < 8172; i) {
-let seconds = 32000 
-setInterval(function() {ID(randomSong()).play()}, 32000)
-}
+//Next song loop
+for (let i = 0; i < 8172; i++) {
+setInterval(
+  function() {ID(randomSong()).play()}, 
+  (32000 + (35000 * i))
+)}
+
 }
