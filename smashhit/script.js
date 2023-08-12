@@ -11,9 +11,24 @@ function randomSong() {
   return Songs[Math.floor(Math.random() * Songs.length)]
 }
 
-
 //PLAY!!
 ID("button").onclick = function (){
 ID("button").style.visibility = "hidden"
 ID(randomSong()).play()
+  
+//Seconds to play
+let seconds = 0
+
+function incSeconds() { 
+  seconds += 1 
+  ID("secdisp").innerHTML = seconds + " Seconds"
+}
+setTimeout(incSeconds(), 1000)
+  
+if (seconds >= 35) {
+ID(randomSong()).play()
+seconds === 0
+clearTimeout()
+}
+
 }
