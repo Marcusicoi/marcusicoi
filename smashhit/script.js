@@ -11,28 +11,28 @@ function randomSong() {
   return Songs[Math.floor(Math.random() * Songs.length)]
 }
 
+
 //PLAY!!
 ID("button").onclick = function (){
 ID("button").style.visibility = "hidden"
 ID(randomSong()).play()
-  
-//Seconds to play
-let seconds = 0
+//SECONDS
+var seconds = 0
 
 function incSeconds() { 
-  seconds += 1 
+  seconds += 1
   ID("secdisp").innerText = seconds + " Seconds"
 }
-  
-let secInterval = setInterval(incSeconds, 1000)
 
+let secInterval = setInterval(incSeconds, 1000)
+  
+if (seconds === 5) {
+  seconds - 500
+  //clearInterval(secInterval)
+}
+  
 if (seconds === 0) {
   secInterval
 } 
-  
-if (seconds === 5) {
-  seconds = 0
-  clearInterval(secInterval)
-}
 
 }
