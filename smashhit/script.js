@@ -3,6 +3,7 @@ function ID(id) {
   return document.getElementById(id)
 }
 
+//Randomize Songs
 let Songs = [
 "Versus1", "Versus2"
 ]
