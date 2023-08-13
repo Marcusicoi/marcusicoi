@@ -5,7 +5,9 @@ function ID(id) {
 
 //Randomize Songs
 let Songs = [
-"C0S1", "C0S2"
+"C0S1", "C0S2", "C0S3",
+"C1S1", "C1S2", "C1S3",
+"C2S1", "C2S2", "C3S2", "C2S4"
 ]
 
 function randomSong() {
