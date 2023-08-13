@@ -11,6 +11,7 @@ let Songs = [
 "C3S1", "C3S2", "C3S3", "C3S4",
 "C4S1", "C4S2",
 "C5S1",         "C5S3", "C5S4",
+"C6S1", 
 ]
 
 function randomSong() {
