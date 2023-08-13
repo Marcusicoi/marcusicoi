@@ -11,13 +11,12 @@ let Songs = [
 "C3S1", "C3S2", "C3S3", "C3S4",
 "C4S1", "C4S2",
 "C5S1",         "C5S3", "C5S4",
-"C6S1", 
+"C6S1", "C6S2", "C6S3", "C6S4"
 ]
 
 function randomSong() {
   return Songs[Math.floor(Math.random() * Songs.length)]
 }
-
 
 //PLAY!!
 ID("button").onclick = function (){
