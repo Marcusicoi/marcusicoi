@@ -34,6 +34,11 @@ ID("linkcbaby").onclick = function() {
   ID("mobdmg").value = 10
   ID("mobname").value = "Common Baby Ant"
 }
+ID("linksover").onclick = function() {
+  ID("mobhlt").value = 440000000
+  ID("mobdmg").value = 21870
+  ID("mobname").value = "Super Termite Overmind"
+}
 
 //Calculate
 ID("runbutton").onclick = function() {
@@ -42,9 +47,9 @@ ID("runbutton").onclick = function() {
   //Mob Stats
   let mobstats = Math.ceil(ID("mobhlt").value / ID("mobdmg").value)
   //Full rotations to reach mob
-  let petrot = Math.ceil((ID("rotate").value * (petrld + 0.04 * (mobstats - 1))) / (2 * Math.PI))
+  let petrot = Math.ceil( (ID("rotate").value * (petrld + 0.04 * (mobstats - 1) ) ) / (2 * Math.PI))
   //Final
-  let total = (mobstats * ID("petdmg").value) / ((2 * petrot * Math.PI) / ID("rotate").value)
+  let total = (mobstats * ID("petdmg").value) / ( (2 * petrot * Math.PI) / ID("rotate").value)
   
   //Submit info to the website
   ID("rotateresult").innerHTML = `ROTATION RADIUS: ${ID("rotate").value}`
