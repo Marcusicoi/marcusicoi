@@ -18,21 +18,21 @@ ID("debugbutton").onclick = function() {
 var rotationSkill, reloadSkill
 
 //Rotation
-if (ID("rotation").value === "Common") {
+if (ID("rotate").value === "Common") {
   rotationSkill = 2.8
-} else if (ID("rotation").value === "Unusual") {
+} else if (ID("rotate").value === "Unusual") {
   rotationSkill = 3.1
-} else if (ID("rotation").value === "Rare") {
+} else if (ID("rotate").value === "Rare") {
   rotationSkill = 3.4
-} else if (ID("rotation").value === "Epic") {
+} else if (ID("rotate").value === "Epic") {
   rotationSkill = 3.7
-} else if (ID("rotation").value === "Legendary") {
+} else if (ID("rotate").value === "Legendary") {
   rotationSkill = 4
-} else if (ID("rotation").value === "Mythic") {
+} else if (ID("rotate").value === "Mythic") {
   rotationSkill = 4.3
-} else if (ID("rotation").value === "Ultra") {
+} else if (ID("rotate").value === "Ultra") {
   rotationSkill = 4.6
-} else if (ID("rotation").value === "Super") {
+} else if (ID("rotate").value === "Super") {
   rotationSkill = 4.9
 } else { rotationSkill = 2.5 }
 //Reload
