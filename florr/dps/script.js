@@ -3,15 +3,16 @@ function ID(id) {
 }
 
 //Link
-function valuePetals(health, damage, cooldown, name) {
-  return (
-  ID("pethlt").value = health
-  ID("petdmg").value = damage
-  ID("petcld").value = cooldown 
-  ID("petname").value = name)
-}
-ID("linkcbasic").onclick = valuePetals(10, 10, 2.5, "Common Basic")
-  
+let linkbg = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
+document.getElementsByClassName("link").style.background = 
+//Link Petals
+ID("linkcbasic").onclick = function() {
+  ID("pethlt").value = 10
+  ID("petdmg").value = 10
+  ID("petcld").value = 2.5
+  ID("petname").value = "Common Basic"
+}  
+
 //Calculate
 ID("runbutton").onclick = function() {
   //Reload Reduction 
