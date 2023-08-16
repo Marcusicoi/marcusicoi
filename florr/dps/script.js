@@ -5,19 +5,17 @@ function ID(id) {
 let link = document.querySelectorAll(".link")
 for (let i = 0; i < link.length; i++) {
 //Background
-const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1)),
- r = randomBetween(0, 255),
- g = randomBetween(0, 255),
- b = randomBetween(0, 255),
- rgb = `rgb(${r},${g},${b})`;
-
-link[i].style.background = rgb
-//Text Color
- if (r * 0.229 + g * 0.587 + b * 0.114 > 186) {
-   link[i].style.color = "white"
- } else { 
-   link[i].style.color = "black"
- }
+  let random = (n) => {
+    return Math.floor(Math.random() * n)
+  }
+  let linkColor = () => {
+  let h = random(360),
+      randomColor = `hsl(${h}deg, ${random(100)}%, ${random(75)}%)`;
+    
+  link[i].style.backgroundColor = randomColor;
+  link[i].style.color = "white";
+  }
+  linkColor()
 }
 //Link Petals
 ID("linkcbasic").onclick = function() {
