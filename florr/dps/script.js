@@ -1,12 +1,22 @@
 function ID(id) {
   return document.getElementById(id)
 }
-const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-const r = randomBetween(0, 255);
-const g = randomBetween(0, 255);
-const b = randomBetween(0, 255);
-const rgb = `rgb(${r},${g},${b})`; // Collect all to a css color string
-document.getElementsByClassName("link")[0].style.background = 
+//LINKS
+let link = document.querySelectorAll(".link")
+let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1)),
+ r = randomBetween(0, 255),
+ g = randomBetween(0, 255),
+ b = randomBetween(0, 255),
+ rgb = `rgb(${r},${g},${b})`;
+//Link Background
+function linkBackground() {
+ return rgb
+}
+for (let i = 0; i < link.length; i++) {
+  link[i].style.background = linkBackground()
+}
+//Link Text color
+
 //Link Petals
 ID("linkcbasic").onclick = function() {
   ID("pethlt").value = 10
