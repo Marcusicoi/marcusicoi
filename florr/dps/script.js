@@ -29,7 +29,30 @@ let petalCooldown = ID("petcld").value
 let mobHealth = ID("mobhlt").value
 let mobDamage = ID("mobdmg").value
 
-//Rotation IF
+if (ID("faster").value === "Common") {
+  fasterSkill = fasters[0]
+}
+if (ID("faster").value === "Unusual") {
+  fasterSkill = fasters[1]
+}
+if (ID("faster").value === "Rare") {
+  fasterSkill = fasters[2]
+}
+if (ID("faster").value === "Epic") {
+  fasterSkill = fasters[3]
+}
+if (ID("faster").value === "Legendary") {
+  fasterSkill = fasters[4]
+}
+if (ID("faster").value === "Mythic") {
+  fasterSkill = fasters[5]
+}
+if (ID("faster").value === "Ultra") {
+  fasterSkill = fasters[6]
+}
+if (ID("faster").value === "Super") {
+  fasterSkill = fasters[7]
+}
 switch(ID("faster").value) {
     case "Common":
     fasterSkill = fasters[0]
@@ -56,6 +79,32 @@ switch(ID("faster").value) {
     fasterSkill = fasters[7]
     break;
 }
+switch(ID("reload").value) {
+    case "Common":
+    reloadSkill = reloads[0]
+    break;
+    case "Unusual":
+    reloadSkill = reloads[1]
+    break;
+    case "Rare":
+    reloadSkill = reloads[2]
+    break;
+    case "Epic":
+    reloadSkill = reloads[3]
+    break;
+    case "Legendary":
+    reloadSkill = reloads[4]
+    break;
+    case "Mythic":
+    reloadSkill = reloads[5]
+    break;
+    case "Ultra":
+    reloadSkill = reloads[6]
+    break;                      
+    case "Super":
+    reloadSkill = reloads[7]
+    break;
+}
 //Calculate
 ID("runbutton").onclick = function() {/*
   //Reload Reduction 
@@ -68,6 +117,6 @@ ID("runbutton").onclick = function() {/*
   let total = (mobstats * petalDamage) / (2(petrot)(Math.PI) / fasterSkill)
   */
   //Submit info to the website
-  ID("fastresult").innerHTML = "FASTER SKILL: j" //+ ID("faster").value
-  ID("rotateresult").innerHTML = "RELOAD SKILL: j" //+ ID("reload").value
+  ID("fastresult").innerHTML = `FASTER SKILL: ${ID("faster").value}, ${fasterSkill} RAD`
+  ID("rotateresult").innerHTML = "RELOAD SKILL: " + ID("reload").value
 }
