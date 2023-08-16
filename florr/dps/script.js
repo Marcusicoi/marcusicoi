@@ -18,37 +18,37 @@ ID("debugbutton").onclick = function() {
 var rotationSkill, reloadSkill
 
 //Rotation
-if (ID("rotate").value === "Common") {
+if (ID("rotate").value == "Common") {
   rotationSkill = 2.8
-} else if (ID("rotate").value === "Unusual") {
+} else if (ID("rotate").value == "Unusual") {
   rotationSkill = 3.1
-} else if (ID("rotate").value === "Rare") {
+} else if (ID("rotate").value == "Rare") {
   rotationSkill = 3.4
-} else if (ID("rotate").value === "Epic") {
+} else if (ID("rotate").value == "Epic") {
   rotationSkill = 3.7
-} else if (ID("rotate").value === "Legendary") {
+} else if (ID("rotate").value == "Legendary") {
   rotationSkill = 4
-} else if (ID("rotate").value === "Mythic") {
+} else if (ID("rotate").value == "Mythic") {
   rotationSkill = 4.3
-} else if (ID("rotate").value === "Ultra") {
+} else if (ID("rotate").value == "Ultra") {
   rotationSkill = 4.6
-} else if (ID("rotate").value === "Super") {
+} else if (ID("rotate").value == "Super") {
   rotationSkill = 4.9
 } else { rotationSkill = 2.5 }
 //Reload
-if (ID("reload").value === "Common") {
+if (ID("reload").value == "Common") {
   reloadSkill = 0.93
-} else if (ID("reload").value === "Unusual") {
+} else if (ID("reload").value == "Unusual") {
   reloadSkill = 0.86
-} else if (ID("reload").value === "Rare") {
+} else if (ID("reload").value == "Rare") {
   reloadSkill = 0.8
-} else if (ID("reload").value === "Epic") {
+} else if (ID("reload").value == "Epic") {
   reloadSkill = 0.75
-} else if (ID("reload").value === "Legendary") {
+} else if (ID("reload").value == "Legendary") {
   reloadSkill = 0.69
-} else if (ID("reload").value === "Mythic") {
+} else if (ID("reload").value == "Mythic") {
   reloadSkill = 0.65
-} else if (ID("reload").value === "Ultra") {
+} else if (ID("reload").value == "Ultra") {
   reloadSkill = 0.6
 } else if (ID("reload").value === "Super") {
   reloadSkill = 0.54
