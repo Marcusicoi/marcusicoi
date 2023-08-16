@@ -2,18 +2,16 @@ function ID(id) {
   return document.getElementById(id)
 }
 
-//Debug??
-let isDebugMode = false
-ID("debugbutton").onclick = function() {
-  if (isDebugMode === false) {
-    isDebugMode = true
-    ID("debugbutton").innerHTML = "Disable Debug"
-  } else {
-    isDebugMode = false
-    ID("debugbutton").innerHTML = "Enable Debug"
-  }
+//Link
+function valuePetals(health, damage, cooldown, name) {
+  return (
+  ID("pethlt").value = health
+  ID("petdmg").value = damage
+  ID("petcld").value = cooldown 
+  ID("petname").value = name)
 }
-
+ID("linkcbasic").onclick = valuePetals(10, 10, 2.5, "Common Basic")
+  
 //Calculate
 ID("runbutton").onclick = function() {
   //Reload Reduction 
@@ -32,6 +30,3 @@ ID("runbutton").onclick = function() {
   ID("mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
   ID("totaldps").innerHTML = `TOTAL DPS OF ${ID("petname").value} IS ${total}`
 }
-
-//Link
-ID("
