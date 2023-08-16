@@ -84,7 +84,13 @@ ID("button").onclick = function() {
   //Reload Reduction 
   let petrld = petalCooldown * reloadSkill
   //Mob N/D
-  let mobstats = Math.ceiling(mobHealth / mobDamage)
+  let mobstats = Math.ceil(mobHealth / mobDamage)
   //Full rotations to reach mob
-  let petrot = 
+  let petrot = Math.ceil((fasterSkill(petrld + 0.04(mobstats - 1)))/2(Math.PI))
+  //Final
+  let total = (mobstats * petalDamage) / (2(petrot)(Math.PI) / fasterSkill)
+  
+  //Submit info to the website
+  ID("fastresult").innerHTML = "FASTER SKILL: " + ID("faster").value
+  ID("
 }
