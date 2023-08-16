@@ -40,6 +40,20 @@ ID("linksover").onclick = function() {
   ID("mobname").value = "Super Termite Overmind"
 }
 
+//Rotation Buttons.
+ID("nrotate").onclick = function() { ID("rotate").value = 2.5 }
+ID("crotate").onclick = function() { ID("rotate").value = 2.8 }
+ID("urotate").onclick = function() { ID("rotate").value = 3.1 }
+ID("rrotate").onclick = function() { ID("rotate").value = 3.4 }
+ID("erotate").onclick = function() { ID("rotate").value = 3.7 }
+ID("lrotate").onclick = function() { ID("rotate").value = 4 }
+ID("mrotate").onclick = function() { ID("rotate").value = 4.3 }
+ID("ulrotate").onclick = function() { ID("rotate").value = 4.6 }
+ID("srotate").onclick = function() { ID("rotate").value = 4.9 }
+ID("cerotate").onclick = function() { ID("rotate").value = 5.2 }
+ID("chrotate").onclick = function() { ID("rotate").value = 5.5 }
+ID("efrotate").onclick = function() { ID("rotate").value = 5.8 }
+
 //Calculate
 ID("runbutton").onclick = function() {
   //Reload Reduction 
