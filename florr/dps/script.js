@@ -32,3 +32,6 @@ ID("runbutton").onclick = function() {
   ID("mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
   ID("totaldps").innerHTML = `TOTAL DPS OF ${ID("petname").value} IS ${total}`
 }
+
+//Link
+ID("
