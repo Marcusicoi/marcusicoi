@@ -80,7 +80,7 @@ if (ID("reload").value === "Super") {
   let reloadSkill = reloads[7]
 }
 //Calculate
-ID("button").onclick = function() {
+ID("runbutton").onclick = function() {/*
   //Reload Reduction 
   let petrld = petalCooldown * reloadSkill
   //Mob N/D
@@ -89,8 +89,8 @@ ID("button").onclick = function() {
   let petrot = Math.ceil((fasterSkill(petrld + 0.04(mobstats - 1)))/2(Math.PI))
   //Final
   let total = (mobstats * petalDamage) / (2(petrot)(Math.PI) / fasterSkill)
-  
+  */
   //Submit info to the website
-  ID("fastresult").innerHTML = "FASTER SKILL: " + ID("faster").value
-  ID("
+  ID("fastresult").innerHTML = "FASTER SKILL: g" + ID("faster").value
+  ID("rotateresult").innerHTML = "RELOAD SKILL: h" + ID("reload").value
 }
