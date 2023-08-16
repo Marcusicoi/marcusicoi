@@ -4,6 +4,15 @@ function ID(id) {
 
 //Debug??
 let isDebugMode = false
+ID("debugbutton").onclick = function() {
+  if (isDebugMode === false) {
+    isDebugMode = true
+    ID("debugbutton").innerHTML = "Disable Debug"
+  } else {
+    isDebugMode = false
+    ID("debugbutton").innerHTML = "Enable Debug"
+  }
+}
 
 //Rotation Stats
 let deffaster = 2.5
@@ -21,4 +30,11 @@ let petalCooldown = ID("petcld").value
 let mobHealth = ID("mobhlt").value
 let mobDamage = ID("mobdmg").value
 
-
+//Rotation & Reload
+if (ID("faster").value === "Common") {
+  y
+}
+//Calculate
+ID("button").onclick = function() {
+  
+}
