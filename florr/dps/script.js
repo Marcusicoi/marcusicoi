@@ -31,82 +31,41 @@ let mobDamage = ID("mobdmg").value
 
 if (ID("faster").value === "Common") {
   fasterSkill = fasters[0]
-}
-if (ID("faster").value === "Unusual") {
+} else if (ID("faster").value === "Unusual") {
   fasterSkill = fasters[1]
-}
-if (ID("faster").value === "Rare") {
+} else if (ID("faster").value === "Rare") {
   fasterSkill = fasters[2]
-}
-if (ID("faster").value === "Epic") {
+} else if (ID("faster").value === "Epic") {
   fasterSkill = fasters[3]
-}
-if (ID("faster").value === "Legendary") {
+} else if (ID("faster").value === "Legendary") {
   fasterSkill = fasters[4]
-}
-if (ID("faster").value === "Mythic") {
+} else if (ID("faster").value === "Mythic") {
   fasterSkill = fasters[5]
-}
-if (ID("faster").value === "Ultra") {
+} else if (ID("faster").value === "Ultra") {
   fasterSkill = fasters[6]
-}
-if (ID("faster").value === "Super") {
+} else if (ID("faster").value === "Super") {
   fasterSkill = fasters[7]
 }
-switch(ID("faster").value) {
-    case "Common":
-    fasterSkill = fasters[0]
-    break;
-    case "Unusual":
-    fasterSkill = fasters[1]
-    break;
-    case "Rare":
-    fasterSkill = fasters[2]
-    break;
-    case "Epic":
-    fasterSkill = fasters[3]
-    break;
-    case "Legendary":
-    fasterSkill = fasters[4]
-    break;
-    case "Mythic":
-    fasterSkill = fasters[5]
-    break;
-    case "Ultra":
-    fasterSkill = fasters[6]
-    break;                      
-    case "Super":
-    fasterSkill = fasters[7]
-    break;
-}
-switch(ID("reload").value) {
-    case "Common":
-    reloadSkill = reloads[0]
-    break;
-    case "Unusual":
-    reloadSkill = reloads[1]
-    break;
-    case "Rare":
-    reloadSkill = reloads[2]
-    break;
-    case "Epic":
-    reloadSkill = reloads[3]
-    break;
-    case "Legendary":
-    reloadSkill = reloads[4]
-    break;
-    case "Mythic":
-    reloadSkill = reloads[5]
-    break;
-    case "Ultra":
-    reloadSkill = reloads[6]
-    break;                      
-    case "Super":
-    reloadSkill = reloads[7]
-    break;
+
+if (ID("reload").value === "Common") {
+  reloadSkill = reloads[0]
+} else if (ID("reload").value === "Unusual") {
+  reloadSkill = reloads[1]
+} else if (ID("reload").value === "Rare") {
+  reloadSkill = reloads[2]
+} else if (ID("reload").value === "Epic") {
+  reloadSkill = reloads[3]
+} else if (ID("reload").value === "Legendary") {
+  reloadSkill = reloads[4]
+} else if (ID("reload").value === "Mythic") {
+  reloadSkill = reloads[5]
+} else if (ID("reload").value === "Ultra") {
+  reloadSkill = reloads[6]
+} else if (ID("reload").value === "Super") {
+  reloadSkill = reloads[7]
 }
 //Calculate
-ID("runbutton").onclick = function() {/*
+ID("runbutton").onclick = function() {
   //Reload Reduction 
   let petrld = petalCooldown * reloadSkill
   //Mob N/D
@@ -115,8 +74,11 @@ ID("runbutton").onclick = function() {/*
   let petrot = Math.ceil((fasterSkill(petrld + 0.04(mobstats - 1)))/2(Math.PI))
   //Final
   let total = (mobstats * petalDamage) / (2(petrot)(Math.PI) / fasterSkill)
-  */
+  
   //Submit info to the website
-  ID("fastresult").innerHTML = `FASTER SKILL: ${ID("faster").value}, ${fasterSkill} RAD`
-  ID("rotateresult").innerHTML = "RELOAD SKILL: " + ID("reload").value
+  ID("fastresult").innerHTML = `FASTER SKILL: ${ID("faster").value}`
+  ID("rotateresult").innerHTML = `RELOAD SKILL: ${ID("reload").value}`
+  ID("petalused").innerHTML = `PETAL USED: ${ID("petname").value}`
+  ID("mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
+  ID("totaldps").innerHTML = `TOTAL DPS OF ${ID("petname").value} IS ${total}`
 }
