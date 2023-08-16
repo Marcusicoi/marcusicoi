@@ -59,6 +59,6 @@ ID("runbutton").onclick = function() {
   
   ID("reloadreduct").innerHTML = `PETAL COOLDOWN: ${petrld} (${ID("petcld").value} * ${ID("reload").value})`
   ID("mobstats").innerHTML = `MOB STATS: ${mobstats} (ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value}))`
-  ID("petalrotate").innerHTML = `HITS EACH ROTATION: ${petrot} (ceiling(${ID("rotate").value} * ( 
-  ID("totaldps").innerHTML = `TOTAL DPS OF ${ID("petname").value} IS ${total}`
+  ID("petalrotate").innerHTML = `HITS EACH ROTATION: ${petrot} (ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π)))`
+  ID("totaldps").innerHTML = `TOTAL DPS OF ${ID("petname").value} FROM ${ID("mobname").value} IS ${total} (${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))`
 }
