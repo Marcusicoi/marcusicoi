@@ -30,6 +30,9 @@ let mobHealth = ID("mobhlt").value
 let mobDamage = ID("mobdmg").value
 
 //Rotation IF
+switch(ID("faster").value) {
+    case: "
+}
 //Reload IF
 if (ID("reload").value === "Common") {
   reloadSkill = reloads[0]
