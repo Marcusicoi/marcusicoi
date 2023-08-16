@@ -31,53 +31,53 @@ let mobDamage = ID("mobdmg").value
 
 //Rotation IF
 if (ID("faster").value === "Common") {
-  let fasterSkill = fasters[0]
+  fasterSkill = fasters[0]
 }
 if (ID("faster").value === "Unusual") {
-  let fasterSkill = fasters[1]
+  fasterSkill = fasters[1]
 }
 if (ID("faster").value === "Rare") {
-  let fasterSkill = fasters[2]
+  fasterSkill = fasters[2]
 }
 if (ID("faster").value === "Epic") {
-  let fasterSkill = fasters[3]
+  fasterSkill = fasters[3]
 }
 if (ID("faster").value === "Legendary") {
-  let fasterSkill = fasters[4]
+  fasterSkill = fasters[4]
 }
 if (ID("faster").value === "Mythic") {
-  let fasterSkill = fasters[5]
+  fasterSkill = fasters[5]
 }
 if (ID("faster").value === "Ultra") {
-  let fasterSkill = fasters[6]
+  fasterSkill = fasters[6]
 }
 if (ID("faster").value === "Super") {
-  let fasterSkill = fasters[7]
+  fasterSkill = fasters[7]
 }
 //Reload IF
 if (ID("reload").value === "Common") {
-  let reloadSkill = reloads[0]
+  reloadSkill = reloads[0]
 }
 if (ID("reload").value === "Unusual") {
-  let reloadSkill = reloads[1]
+  reloadSkill = reloads[1]
 }
 if (ID("reload").value === "Rare") {
-  let reloadSkill = reloads[2]
+  reloadSkill = reloads[2]
 }
 if (ID("reload").value === "Epic") {
-  let reloadSkill = reloads[3]
+  reloadSkill = reloads[3]
 }
 if (ID("reload").value === "Legendary") {
-  let reloadSkill = reloads[4]
+  reloadSkill = reloads[4]
 }
 if (ID("reload").value === "Mythic") {
-  let reloadSkill = reloads[5]
+  reloadSkill = reloads[5]
 }
 if (ID("reload").value === "Ultra") {
-  let reloadSkill = reloads[6]
+  reloadSkill = reloads[6]
 }
 if (ID("reload").value === "Super") {
-  let reloadSkill = reloads[7]
+  reloadSkill = reloads[7]
 }
 //Calculate
 ID("runbutton").onclick = function() {/*
@@ -91,6 +91,6 @@ ID("runbutton").onclick = function() {/*
   let total = (mobstats * petalDamage) / (2(petrot)(Math.PI) / fasterSkill)
   */
   //Submit info to the website
-  ID("fastresult").innerHTML = "FASTER SKILL: g" + ID("faster").value
-  ID("rotateresult").innerHTML = "RELOAD SKILL: h" + ID("reload").value
+  ID("fastresult").innerHTML = "FASTER SKILL: j" //+ ID("faster").value
+  ID("rotateresult").innerHTML = "RELOAD SKILL: j" //+ ID("reload").value
 }
