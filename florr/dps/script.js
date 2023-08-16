@@ -14,12 +14,6 @@ ID("debugbutton").onclick = function() {
   }
 }
 
-//Rotation Stats
-let fasters = [2.8, 3.1, 3.4, 3.7, 4, 4.3, 4.6, 4.9]
-
-//Reload Stats
-let reloads = [0.93, 0.86, 0.8, 0.75, 0.69, 0.65, 0.60, 0.54]
-
 //DPS Stats 
 let fasterSkill = 2.5
 let reloadSkill = 1
@@ -30,50 +24,50 @@ let mobHealth = ID("mobhlt").value
 let mobDamage = ID("mobdmg").value
 
 if (ID("faster").value === "Common") {
-  fasterSkill = fasters[0]
+  fasterSkill = 2.8
 } else if (ID("faster").value === "Unusual") {
-  fasterSkill = fasters[1]
+  fasterSkill = 3.1
 } else if (ID("faster").value === "Rare") {
-  fasterSkill = fasters[2]
+  fasterSkill = 3.4
 } else if (ID("faster").value === "Epic") {
-  fasterSkill = fasters[3]
+  fasterSkill = 3.7
 } else if (ID("faster").value === "Legendary") {
-  fasterSkill = fasters[4]
+  fasterSkill = 4
 } else if (ID("faster").value === "Mythic") {
-  fasterSkill = fasters[5]
+  fasterSkill = 4.3
 } else if (ID("faster").value === "Ultra") {
-  fasterSkill = fasters[6]
+  fasterSkill = 4.6
 } else if (ID("faster").value === "Super") {
-  fasterSkill = fasters[7]
+  fasterSkill = 4.9
 }
 
 if (ID("reload").value === "Common") {
-  reloadSkill = reloads[0]
+  reloadSkill = 0.93
 } else if (ID("reload").value === "Unusual") {
-  reloadSkill = reloads[1]
+  reloadSkill = 0.86
 } else if (ID("reload").value === "Rare") {
-  reloadSkill = reloads[2]
+  reloadSkill = 0.8
 } else if (ID("reload").value === "Epic") {
-  reloadSkill = reloads[3]
+  reloadSkill = 0.75
 } else if (ID("reload").value === "Legendary") {
-  reloadSkill = reloads[4]
+  reloadSkill = 0.69
 } else if (ID("reload").value === "Mythic") {
-  reloadSkill = reloads[5]
+  reloadSkill = 0.65
 } else if (ID("reload").value === "Ultra") {
-  reloadSkill = reloads[6]
+  reloadSkill = 0.6
 } else if (ID("reload").value === "Super") {
-  reloadSkill = reloads[7]
+  reloadSkill = 0.54
 }
 //Calculate
 ID("runbutton").onclick = function() {
   //Reload Reduction 
-  let petrld = petalCooldown * reloadSkill
+  let petrld = ID("petcld").value * reloadSkill
   //Mob Stats
-  let mobstats = Math.ceil(mobHealth / mobDamage)
+  let mobstats = Math.ceil(ID("mobhlt").value / ID("mobdmg").value)
   //Full rotations to reach mob
   let petrot = Math.ceil((fasterSkill * (petrld + 0.04 * (mobstats - 1))) / (2 * Math.PI))
   //Final
-  let total = (mobstats * petalDamage) / ((2 * petrot * Math.PI) / fasterSkill)
+  let total = (mobstats * ID("petdmg").value) / ((2 * petrot * Math.PI) / fasterSkill)
   
   //Submit info to the website
   ID("fastresult").innerHTML = `FASTER SKILL: ${ID("faster").value}`
