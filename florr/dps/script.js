@@ -1,16 +1,20 @@
 function ID(id) {
   return document.getElementById(id)
 }
-//LINKS
+//Link Style
 let link = document.querySelectorAll(".link")
 for (let i = 0; i < link.length; i++) {
-//Background
   let random = (n) => {
     return Math.floor(Math.random() * n)
-  }
-  let linkColor = () => {
+  },
+  random2 = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min) + min)
+  },
+  linkColor = () => {
   let h = random(360),
-      randomColor = `hsl(${h}deg, ${random(100)}%, ${random(75)}%)`;
+      randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random(75,50)}%)`;
     
   link[i].style.backgroundColor = randomColor;
   link[i].style.color = "white";
