@@ -1,10 +1,12 @@
 function ID(id) {
   return document.getElementById(id)
 }
-
-//Link
-let linkbg = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
-document.getElementsByClassName("link").style.background = 
+const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+const r = randomBetween(0, 255);
+const g = randomBetween(0, 255);
+const b = randomBetween(0, 255);
+const rgb = `rgb(${r},${g},${b})`; // Collect all to a css color string
+document.getElementsByClassName("link")[0].style.background = 
 //Link Petals
 ID("linkcbasic").onclick = function() {
   ID("pethlt").value = 10
