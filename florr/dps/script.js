@@ -3,20 +3,22 @@ function ID(id) {
 }
 //LINKS
 let link = document.querySelectorAll(".link")
-let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1)),
+for (let i = 0; i < link.length; i++) {
+//Background
+const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1)),
  r = randomBetween(0, 255),
  g = randomBetween(0, 255),
  b = randomBetween(0, 255),
  rgb = `rgb(${r},${g},${b})`;
-//Link Background
-function linkBackground() {
- return rgb
-}
-for (let i = 0; i < link.length; i++) {
-  link[i].style.background = linkBackground()
-}
-//Link Text color
 
+link[i].style.background = rgb
+//Text Color
+ if (r * 0.229 + g * 0.587 + b * 0.114 > 186) {
+   link[i].style.color = "white"
+ } else { 
+   link[i].style.color = "black"
+ }
+}
 //Link Petals
 ID("linkcbasic").onclick = function() {
   ID("pethlt").value = 10
