@@ -31,32 +31,30 @@ let mobDamage = ID("mobdmg").value
 
 //Rotation IF
 switch(ID("faster").value) {
-    case: "
-}
-//Reload IF
-if (ID("reload").value === "Common") {
-  reloadSkill = reloads[0]
-}
-if (ID("reload").value === "Unusual") {
-  reloadSkill = reloads[1]
-}
-if (ID("reload").value === "Rare") {
-  reloadSkill = reloads[2]
-}
-if (ID("reload").value === "Epic") {
-  reloadSkill = reloads[3]
-}
-if (ID("reload").value === "Legendary") {
-  reloadSkill = reloads[4]
-}
-if (ID("reload").value === "Mythic") {
-  reloadSkill = reloads[5]
-}
-if (ID("reload").value === "Ultra") {
-  reloadSkill = reloads[6]
-}
-if (ID("reload").value === "Super") {
-  reloadSkill = reloads[7]
+    case "Common":
+    fasterSkill = fasters[0]
+    break;
+    case "Unusual":
+    fasterSkill = fasters[1]
+    break;
+    case "Rare":
+    fasterSkill = fasters[2]
+    break;
+    case "Epic":
+    fasterSkill = fasters[3]
+    break;
+    case "Legendary":
+    fasterSkill = fasters[4]
+    break;
+    case "Mythic":
+    fasterSkill = fasters[5]
+    break;
+    case "Ultra":
+    fasterSkill = fasters[6]
+    break;                      
+    case "Super":
+    fasterSkill = fasters[7]
+    break;
 }
 //Calculate
 ID("runbutton").onclick = function() {/*
