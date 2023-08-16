@@ -27,7 +27,13 @@ ID("linkcbasic").onclick = function() {
   ID("petdmg").value = 10
   ID("petcld").value = 2.5
   ID("petname").value = "Common Basic"
-}  
+}
+//Link Mobs
+ID("linkcbaby").onclick = function() {
+  ID("mobhlt").value = 25
+  ID("mobdmg").value = 10
+  ID("mobname").value = "Common Baby Ant"
+}
 
 //Calculate
 ID("runbutton").onclick = function() {
