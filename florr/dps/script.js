@@ -5,10 +5,14 @@ function ID(id) {
 let colorRarities = [
   "72d964", "ffe65d", "484eda", "861fde",
   "dc201f", "1fdbdd", "ff2b75", "27fea1",
-  "ffc10f", "010eb1", "f4bdf2"]
-
+  "ffc10f", "010eb1", "f4bdf2"
+], colorRarityNames = [
+  "Common", "Unusual", "Rare", "Epic", 
+  "Legendary", "Mythic", "Ultra", "Super",
+  "Celestial", "Chaos", "Effulgent"
+],
 //Link Style
-let link = document.querySelectorAll(".link")
+link = document.querySelectorAll(".link")
 for (let i = 0; i < link.length; i++) {
   let random = (n) => {
     return Math.floor(Math.random() * n)
@@ -145,7 +149,11 @@ ID("runbutton").onclick = function() {
   ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[10]}">x${ID("reload").value}</span>`
   }
   
-  ID("petalused").innerHTML = `PETAL USED: ${ID("petname").value}`
+  //PETAL USED
+  for (let i = 0; i < colorRarityNames.length; i++) {
+    if (~colorRarityNames
+  ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[0]}">${ID("petname").value}</span>`
+  }
   ID("mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
   
   //PETAL COOLDOWN
