@@ -3,8 +3,7 @@ function ID(id) {
 }
 
 window.onload = function() {
-  ID("results").style.visibility = "hidden", 
-  ID("calcdisplay").style.visibility = "hidden"
+  ID("results").style.visibility = "hidden"
 }
 
 //Color rarities
@@ -90,16 +89,6 @@ ID("sreload").onclick = function() { ID("reload").value = 0.54 }
 ID("cereload").onclick = function() { ID("reload").value = 0.49 }
 ID("chreload").onclick = function() { ID("reload").value = 0.45 }
 ID("efreload").onclick = function() { ID("reload").value = 0.39 }
-
-//Fill Everything first.
-let filledInputs = 0
-if (ID("petdmg").value.length >= 0) {filledInputs += 1}
-if (ID("petcld").value.length >= 0) {filledInputs += 1}
-if (ID("petname").value.length >= 0) {filledInputs += 1}
-if (ID("mobhlt").value.length > 0) {filledInputs += 1}
-if (ID("mobdmg").value.length > 0) {filledInputs += 1}
-if (ID("mobname").value.length > 0) {filledInputs += 1}
-if (filledInputs === 6) { ID("calcdisplay").style.visibility = "visible" }
 
 //Calculate
 ID("runbutton").onclick = function() {
