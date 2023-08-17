@@ -1,6 +1,10 @@
 function ID(id) {
   return document.getElementById(id)
 }
+let colorRarities = [
+  "f2d964", "ffe65d", "484eda", "861fde",
+  "dc201f", "1fdbdd", "ff2b75", "27fea1",
+  "ffc10f", "010eb1", 
 //Link Style
 let link = document.querySelectorAll(".link")
 for (let i = 0; i < link.length; i++) {
@@ -84,11 +88,19 @@ ID("runbutton").onclick = function() {
   let total = (mobstats * (ID("petdmg").value * ID("petnum").value) ) / ( (2 * petrot * Math.PI) / ID("rotate").value)
   
   //Submit info to the website
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: ${ID("rotate").value}`
+  
+  //ROTATION RADIUS.
+  if (ID("rotate").value == 2.5) {
+  ID("rotateresult").innerHTML = `ROTATION RADIUS: ${ID("rotate").value} rad/s`
+  } else if (ID("rotate").value == 2.8) {
+  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#72d964">${ID("rotate").value} rad/s</span>`
+  }
+  
   ID("reloadresult").innerHTML = `RELOAD REDUCTION: ${ID("reload").value}`
   ID("petalused").innerHTML = `PETAL USED: ${ID("petname").value}`
   ID("mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
   
+  //PETAL COOLDOWN
   ID("reloadreduct").innerHTML = `
   PETAL COOLDOWN: ${petrld} 
   <h6>(${ID("petcld").value} * ${ID("reload").value})</h6>
