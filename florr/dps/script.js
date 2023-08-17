@@ -87,15 +87,21 @@ ID("runbutton").onclick = function() {
   
   ID("reloadreduct").innerHTML = `
   PETAL COOLDOWN: ${petrld} 
-  <h6></h6>
   <h6>(${ID("petcld").value} * ${ID("reload").value})</h6>
   <h6>(PetalCooldown * ReloadReduct)</h6>`
   
   ID("mobstats").innerHTML = `
   MOB STATS: ${mobstats} 
-  </h6></h6>
   <h6>ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value})</h6>
-  </h6>ceiling(MobHealth / MobDamage)</h6>`
-  ID("petalrotate").innerHTML = `HITS EACH ROTATION: ${petrot} (ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π)))`
-  ID("totaldps").innerHTML = `TOTAL DPS OF ${ID("petname").value} FROM ${ID("mobname").value} IS ${total} (${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))`
+  <h6>ceiling(MobHealth / MobDamage)</h6>`
+  
+  ID("petalrotate").innerHTML = `
+  HITS EACH ROTATION: ${petrot} 
+  <h6>ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π))</h6>
+  <h6>ceiling((RotationSkill * ((PetalCooldown * ReloadReduct) + 0.04 * ((MobHealth / MobDamage) - 1))) / (2 * π))</h6>`
+  
+  ID("totaldps").innerHTML = `
+  TOTAL DPS OF ${ID("petname").value} FROM ${ID("mobname").value} IS ${total} 
+  <h6>(${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))</h6>
+  <h6>((MobHealth / MobDamage) * PetalDamage) / ((2 * HitsEachRotation * π) / RotationSkill</h6>`
 }
