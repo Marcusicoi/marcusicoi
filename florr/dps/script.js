@@ -29,8 +29,8 @@ ID("linkcbasic").onclick = function() {
   ID("petname").value = "Common Basic"
 }
 ID("linkspinger").onclick = function() {
-  ID("pethlt").value = 43740 * 5
-  ID("petdmg").value = 874.8 * 5
+  ID("pethlt").value = (43740 * 5)
+  ID("petdmg").value = (874.8 * 5)
   ID("petcld").value = 10
   ID("petname").value = "Super Stinger"
 }
