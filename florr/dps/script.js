@@ -151,28 +151,10 @@ ID("runbutton").onclick = function() {
   
   //PETAL USED
   for (let i = 0; i < colorRarityNames.length; i++) {
-    if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
-      if (colorRarityNames[i] == "Common") {
-        ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[0]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }/* if (colorRarityNames[i] == "Unusual") {
-        ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[1]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      } if (colorRarityNames[i] == "Rare") {
- ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[2]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-       orRarityNames[i] == "Epic") {
-        ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[3]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-    }
- if (colorRarityNames[i] == "Legendary") {
-        ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[4]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      } if (colorRarityNames[i] == "Mythic") {
-        ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[5]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      } if (colorRarityNames[i] == "Ultra") {
-        ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[6]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      } if (colorRarityNames[i] == "Super") {
-        ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[7]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }*/  }
-  ID("}mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
+    if (~colorRarityNames
+  ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[0]}">${ID("petname").value}</span>`
+  }
+  ID("mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
   
   //PETAL COOLDOWN
   ID("reloadreduct").innerHTML = `
