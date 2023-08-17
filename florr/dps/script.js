@@ -28,6 +28,12 @@ ID("linkcbasic").onclick = function() {
   ID("petcld").value = 2.5
   ID("petname").value = "Common Basic"
 }
+ID("linkspinger").onclick = function() {
+  ID("pethlt").value = 43740 * 5
+  ID("petdmg").value = 874.8 * 5
+  ID("petcld").value = 10
+  ID("petname").value = "Super Stinger"
+}
 //Link Mobs
 ID("linkcbaby").onclick = function() {
   ID("mobhlt").value = 25
