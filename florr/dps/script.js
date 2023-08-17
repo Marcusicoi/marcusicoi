@@ -2,7 +2,10 @@ function ID(id) {
   return document.getElementById(id)
 }
 
-window.onload = function() {ID("results").style.visibility = "hidden"}
+window.onload = function() {
+  ID("results").style.visibility = "hidden", 
+  ID("calcdisplay").style.visibility = "hidden"
+}
 
 //Color rarities
 let colorRarities = [
@@ -14,6 +17,7 @@ let colorRarities = [
   "Legendary", "Mythic", "Ultra", "Super",
   "Celestial", "Chaos", "Effulgent"
 ],
+    
 //Link Style
 link = document.querySelectorAll(".link")
 for (let i = 0; i < link.length; i++) {
@@ -34,6 +38,7 @@ for (let i = 0; i < link.length; i++) {
   }
   linkColor()
 }
+
 //Link Petals
 ID("linkcbasic").onclick = function() {
   ID("petdmg").value = 10
@@ -45,6 +50,7 @@ ID("linkspinger").onclick = function() {
   ID("petcld").value = 10
   ID("petname").value = "Super Stinger"
 }
+
 //Link Mobs
 ID("linkcbaby").onclick = function() {
   ID("mobhlt").value = 25
@@ -84,6 +90,16 @@ ID("sreload").onclick = function() { ID("reload").value = 0.54 }
 ID("cereload").onclick = function() { ID("reload").value = 0.49 }
 ID("chreload").onclick = function() { ID("reload").value = 0.45 }
 ID("efreload").onclick = function() { ID("reload").value = 0.39 }
+
+//Fill Everything first.
+let filledInputs = 0
+if (ID("petdmg").value.length >= 0) {filledInputs += 1}
+if (ID("petcld").value.length >= 0) {filledInputs += 1}
+if (ID("petname").value.length >= 0) {filledInputs += 1}
+if (ID("mobhlt").value.length > 0) {filledInputs += 1}
+if (ID("mobdmg").value.length > 0) {filledInputs += 1}
+if (ID("mobname").value.length > 0) {filledInputs += 1}
+if (filledInputs === 6) { ID("calcdisplay").style.visibility = "visible" }
 
 //Calculate
 ID("runbutton").onclick = function() {
