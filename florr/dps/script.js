@@ -282,8 +282,17 @@ ID("runbutton").onclick = function() {
   PETAL COOLDOWN: <span style="color:#${colorRarities[8]}">${petrld}s</span>
   <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
   <h6>(PetalCooldown * ReloadReduct)</h6>`
+  } else if (petrld >= 0.25) {
+  ID("reloadreduct").innerHTML = `
+  PETAL COOLDOWN: <span style="color:#${colorRarities[9]}">${petrld}s</span>
+  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
+  <h6>(PetalCooldown * ReloadReduct)</h6>`
+  } else if (petrld < 0.25) {
+  ID("reloadreduct").innerHTML = `
+  PETAL COOLDOWN: <span style="color:#${colorRarities[10]}">${petrld}s</span>
+  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
+  <h6>(PetalCooldown * ReloadReduct)</h6>`
   }
-  
   
   ID("mobstats").innerHTML = `
   MOB STATS: ${mobstats} 
