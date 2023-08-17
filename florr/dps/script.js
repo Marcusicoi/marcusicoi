@@ -105,7 +105,7 @@ ID("runbutton").onclick = function() {
   <h6>ceiling((RotationSkill * ((PetalCooldown * ReloadReduct) + 0.04 * ((MobHealth / MobDamage) - 1))) / (2 * π))</h6>`
   
   ID("totaldps").innerHTML = `
-  TOTAL DPS OF ${ID("petnum").value} ${ID("petname").value}(s) FROM ${ID("mobname").value} IS ${total} 
+  TOTAL DPS OF ${ID("petnum").value} ${ID("petname").value}(s) FROM ${ID("mobname").value} WITH ${ID("rotate").value} rad/s AND x${ID("reload").value} RELOAD REDUCTION IS ${total} 
   <h6>(${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))</h6>
   <h6>((MobHealth / MobDamage) * PetalDamage) / ((2 * HitsEachRotation * π) / RotationSkill</h6>`
 }
