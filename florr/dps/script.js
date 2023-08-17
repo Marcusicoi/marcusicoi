@@ -294,6 +294,7 @@ ID("runbutton").onclick = function() {
   <h6>(PetalCooldown * ReloadReduct)</h6>`
   }
   
+  //MOB STATS
   ID("mobstats").innerHTML = `
   MOB STATS: ${mobstats} 
   <h6>ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value})</h6>
