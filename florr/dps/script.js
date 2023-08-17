@@ -149,12 +149,12 @@ ID("runbutton").onclick = function() {
   ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[10]}">x${ID("reload").value}</span>`
   }
   
-  //PETAL USED
+  /*PETAL USED
   for (let i = 0; i < colorRarityNames.length; i++) {
-    if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
+    if (~ID("petname").value.indexOf(colorRarityNames[i])) {
       if (colorRarityNames[i] == "Common") {
         ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[0]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }/* if (colorRarityNames[i] == "Unusual") {
+      } if (colorRarityNames[i] == "Unusual") {
         ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[1]}">${ID("petnum").value} ${ID("petname").value}</span>`
       } if (colorRarityNames[i] == "Rare") {
  ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[2]}">${ID("petnum").value} ${ID("petname").value}</span>`
@@ -171,8 +171,8 @@ ID("runbutton").onclick = function() {
         ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[6]}">${ID("petnum").value} ${ID("petname").value}</span>`
       } if (colorRarityNames[i] == "Super") {
         ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[7]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }*/  }
-  ID("}mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
+      }  }
+  ID("*/mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
   
   //PETAL COOLDOWN
   ID("reloadreduct").innerHTML = `
