@@ -54,6 +54,20 @@ ID("cerotate").onclick = function() { ID("rotate").value = 5.2 }
 ID("chrotate").onclick = function() { ID("rotate").value = 5.5 }
 ID("efrotate").onclick = function() { ID("rotate").value = 5.8 }
 
+//Reload Buttons.
+ID("nreload").onclick = function() { ID("reload").value = 1 }
+ID("creload").onclick = function() { ID("reload").value = 0.93 }
+ID("ureload").onclick = function() { ID("reload").value = 0.86 }
+ID("rreload").onclick = function() { ID("reload").value = 0.8 }
+ID("ereload").onclick = function() { ID("reload").value = 0.75 }
+ID("lreload").onclick = function() { ID("reload").value = 0.69 }
+ID("mreload").onclick = function() { ID("reload").value = 0.64 }
+ID("ulreload").onclick = function() { ID("reload").value = 0.6 }
+ID("sreload").onclick = function() { ID("reload").value = 0.54 }
+ID("cereload").onclick = function() { ID("reload").value = 0.49 }
+ID("chreload").onclick = function() { ID("reload").value = 0.45 }
+ID("efreload").onclick = function() { ID("reload").value = 0.39 }
+
 //Calculate
 ID("runbutton").onclick = function() {
   //Reload Reduction 
@@ -71,8 +85,17 @@ ID("runbutton").onclick = function() {
   ID("petalused").innerHTML = `PETAL USED: ${ID("petname").value}`
   ID("mobused").innerHTML = `MOB ATTACK: ${ID("mobname").value}`
   
-  ID("reloadreduct").innerHTML = `PETAL COOLDOWN: ${petrld} (${ID("petcld").value} * ${ID("reload").value})`
-  ID("mobstats").innerHTML = `MOB STATS: ${mobstats} (ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value}))`
+  ID("reloadreduct").innerHTML = `
+  PETAL COOLDOWN: ${petrld} 
+  <h6></h6>
+  <h6>(${ID("petcld").value} * ${ID("reload").value})</h6>
+  <h6>(PetalCooldown * ReloadReduct)</h6>`
+  
+  ID("mobstats").innerHTML = `
+  MOB STATS: ${mobstats} 
+  </h6></h6>
+  <h6>ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value})</h6>
+  </h6>ceiling(MobHealth / MobDamage)</h6>`
   ID("petalrotate").innerHTML = `HITS EACH ROTATION: ${petrot} (ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π)))`
   ID("totaldps").innerHTML = `TOTAL DPS OF ${ID("petname").value} FROM ${ID("mobname").value} IS ${total} (${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))`
 }
