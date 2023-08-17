@@ -61,21 +61,25 @@
     <input type="number" id="mobhlt" placeholder="Health">
     <input type="number" id="mobdmg" placeholder="Damage">
     <input type="text" id="mobname" placeholder="Rarity & Name">
-    
-    <a id="runbutton" style="background:blue">Run!</a>
+    <p></p>
+    <a id="runbutton" style="background:blue">CALCULATE!</a>
     
     <h1>RESULTS</h1>
     <h2>STATS</h2>
-    <h4 id="rotateresult">ROTATION RADIUS: <span class="spannum">0</span></h4>
-    <h4 id="reloadresult">RELOAD REDUCTION: <span class="spannum">0</span></h4>
-    <h4 id="petalused">PETAL USED: <span class="spannum">0</span></h4>
-    <h4 id="mobused">MOB ATTACK: <span class="spannum">0</h4>
+    <h4 id="rotateresult">ROTATION RADIUS: <span id="spanrotate"></span></h4>
+    <h4 id="reloadresult">RELOAD REDUCTION: <span id="spanreload"></span></h4>
+    <h4 id="petalused">PETAL USED: <span id="spanpetused"></span></h4>
+    <h4 id="mobused">MOB ATTACK: <span id="spanmobused"></span></h4>
     <h1></h1>
     <h2>RESULTS</h2>
-    <h4 id="reloadreduct">PETAL COOLDOWN:</h4>
-    <h4 id="mobstats">MOB STATS:</h4>
-    <h4 id="petalrotate">HITS EACH ROTATION:</h4>
-    <h4 id="totaldps">TOTAL DPS OF 8172 undefined(s) FROM undefined is 8172</h4>
+    <h4 id="reloadreduct">PETAL COOLDOWN: <span id="spancooldown"></span></h4>
+    <h4 id="mobstats">MOB STATS: <span id="spanmobstat"></span></h4>
+    <h4 id="petalrotate">HITS EACH ROTATION: <span id="spaneachrotate"></span></h4>
+    <h4 id="totaldps">
+      TOTAL DPS OF <span id="spantotal1"></span> <span id="spantotal2"></span>(s) 
+      FROM <span id="spantotal3"></span> 
+      WITH <span id="spantotal4"></span> AND <span id="spantotal5"></span>
+      is <span id="spantotal6">8172</span></h4>
     
     <h1>Link</h1>
     <h2>Petals</h2>
