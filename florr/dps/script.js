@@ -23,13 +23,11 @@ for (let i = 0; i < link.length; i++) {
 }
 //Link Petals
 ID("linkcbasic").onclick = function() {
-  ID("pethlt").value = 10
   ID("petdmg").value = 10
   ID("petcld").value = 2.5
   ID("petname").value = "Common Basic"
 }
 ID("linkspinger").onclick = function() {
-  ID("pethlt").value = (43740 * 5)
   ID("petdmg").value = (874.8 * 5)
   ID("petcld").value = 10
   ID("petname").value = "Super Stinger"
@@ -83,7 +81,7 @@ ID("runbutton").onclick = function() {
   //Full rotations to reach mob
   let petrot = Math.ceil( (ID("rotate").value * (petrld + 0.04 * (mobstats - 1) ) ) / (2 * Math.PI))
   //Final
-  let total = (mobstats * ID("petdmg").value) / ( (2 * petrot * Math.PI) / ID("rotate").value)
+  let total = (mobstats * (ID("petdmg").value * ID("petnum").value) ) / ( (2 * petrot * Math.PI) / ID("rotate").value)
   
   //Submit info to the website
   ID("rotateresult").innerHTML = `ROTATION RADIUS: ${ID("rotate").value}`
@@ -107,7 +105,7 @@ ID("runbutton").onclick = function() {
   <h6>ceiling((RotationSkill * ((PetalCooldown * ReloadReduct) + 0.04 * ((MobHealth / MobDamage) - 1))) / (2 * π))</h6>`
   
   ID("totaldps").innerHTML = `
-  TOTAL DPS OF ${ID("petname").value} FROM ${ID("mobname").value} IS ${total} 
+  TOTAL DPS OF ${ID("petnum").value} ${ID("petname").value}(s) FROM ${ID("mobname").value} IS ${total} 
   <h6>(${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))</h6>
   <h6>((MobHealth / MobDamage) * PetalDamage) / ((2 * HitsEachRotation * π) / RotationSkill</h6>`
 }
