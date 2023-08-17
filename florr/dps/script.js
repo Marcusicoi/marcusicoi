@@ -3,6 +3,7 @@ function ID(id) {
 }
 
 window.onload = function() {ID("results").style.visibility = "hidden"}
+
 //Color rarities
 let colorRarities = [
   "72d964", "ffe65d", "484eda", "861fde",
@@ -86,6 +87,8 @@ ID("efreload").onclick = function() { ID("reload").value = 0.39 }
 
 //Calculate
 ID("runbutton").onclick = function() {
+  //Show Results!
+  ID("results").style.visibility = "visible"
   //Reload Reduction 
   let petrld = ID("petcld").value * ID("reload").value
   //Mob Stats
