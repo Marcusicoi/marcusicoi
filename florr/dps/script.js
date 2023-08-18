@@ -108,56 +108,36 @@ ID("runbutton").onclick = function() {
   function rotateResultID(num) {
     return ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[num]}">${ID("rotate").value} rad/s</span>`
   }
-  if (ID("rotate").value == 2.5) { ID("rotateresult").innerHTML = `ROTATION RADIUS: ${ID("rotate").value} rad/s`} 
-  else if (ID("rotate").value == 2.8) { rotateResultID(0)} 
-  else if (ID("rotate").value == 3.1) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[1]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 3.4) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[2]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 3.7) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[3]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 4) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[4]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 4.3) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[5]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 4.6) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[6]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 4.9) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[7]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 5.2) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[8]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 5.5) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[9]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 5.8) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[10]}">${ID("rotate").value} rad/s</span>`
-  }
+  if (ID("rotate").value == 2.5) { rotateResultID(11) } 
+  else if (ID("rotate").value == 2.8) { rotateResultID(0) } 
+  else if (ID("rotate").value == 3.1) { rotateResultID(1) }
+  else if (ID("rotate").value == 3.4) { rotateResultID(2) }
+  else if (ID("rotate").value == 3.7) { rotateResultID(3) } 
+  else if (ID("rotate").value == 4) { rotateResultID(4) }
+  else if (ID("rotate").value == 4.3) { rotateResultID(5) }
+  else if (ID("rotate").value == 4.6) { rotateResultID(6) } 
+  else if (ID("rotate").value == 4.9) { rotateResultID(7) }
+  else if (ID("rotate").value == 5.2) { rotateResultID(8) }
+  else if (ID("rotate").value == 5.5) { rotateResultID(9) }
+  else if (ID("rotate").value == 5.8) { rotateResultID(10) }
   
   //RELOAD REDUCTION.
-  if (ID("reload").value == 1) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: x${ID("reload").value}`
-  } else if (ID("reload").value == 0.93) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[0]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.86) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[1]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.8) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[2]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.75) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[3]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.69) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[4]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.64) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[5]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.6) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[6]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.54) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[7]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.49) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[8]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.45) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[9]}">x${ID("reload").value}</span>`
-  } else if (ID("reload").value == 0.39) {
-  ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[10]}">x${ID("reload").value}</span>`
+  function reloadResultID(num) {
+    return ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[num]}">x${ID("reload").value}</span>`
   }
+  if (ID("reload").value == 1) { reloadResultID(11) } 
+  else if (ID("reload").value == 0.93) { reloadResultID(0) }
+  else if (ID("reload").value == 0.86) { reloadResultID(1) }
+  else if (ID("reload").value == 0.8) { reloadResultID(2) }
+  else if (ID("reload").value == 0.75) { reloadResultID(3) }
+  else if (ID("reload").value == 0.69) { reloadResultID(4) }
+  else if (ID("reload").value == 0.64) { reloadResultID(5) }
+  else if (ID("reload").value == 0.6) { reloadResultID(6) }
+  else if (ID("reload").value == 0.56) { reloadResultID(7) }
+  else if (ID("reload").value == 0.49) { reloadResultID(8) }
+  else if (ID("reload").value == 0.45) { reloadResultID(9) }
+  else if (ID("reload").value == 0.39) { reloadResultID(10) }
+ 
   
   //PETAL USED
   for (let i = 0; i < colorRarityNames.length; i++) {
