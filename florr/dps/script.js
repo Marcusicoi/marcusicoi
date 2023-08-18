@@ -39,38 +39,27 @@ for (let i = 0; i < link.length; i++) {
 }
 
 //Link Petals
-ID("linkcbasic").onclick = function() {
-  ID("petdmg").value = 10
-  ID("petcld").value = 2.5
-  ID("petname").value = "Common Basic"
+function linkPetals(id, damage, cooldown, name) {
+  return ID(id).onclick = function() {
+  ID("petdmg").value = damage
+  ID("petcld").value = cooldown
+  ID("petname").value = name
+  }
 }
-ID("linkspinger").onclick = function() {
-  ID("petdmg").value = (874.8 * 5)
-  ID("petcld").value = 10
-  ID("petname").value = "Super Stinger"
-}
-ID("linkmlight").onclick = function() {
-  ID("petdmg").value = (243 * 5)
-  ID("petcld").value = 0.8
-  ID("petname").value = "Mythic Light"
-}
-ID("linkullight").onclick = function() {
-  ID("petdmg").value = (729 * 5)
-  ID("petcld").value = 0.8
-  ID("petname").value = "Ultra Light"
-}
-ID("linkslight").onclick = function() {
-  ID("petdmg").value = (2187 * 5)
-  ID("petcld").value = 0.8
-  ID("petname").value = "Super Light"
-}
-
+linkPetals("linkcbasic", 10, 2.5, "Common Basic")
+linkPetals("linkspinger", (874.8 * 5), 10, "Super Stinger")
+linkPetals("linkmligtht", (631.8 * 5), 0.8, "Mythic Light")
+linkPetals("linkullight", (1895.4 * 5), 0.8, "Ultra Light")
+linkPetals("linkslight", (5686.2 * 5), 0.8, "Super Light")
 //Link Mobs
-ID("linkcbaby").onclick = function() {
-  ID("mobhlt").value = 25
-  ID("mobdmg").value = 10
-  ID("mobname").value = "Common Baby Ant"
+function linkMobs(id, health, damage, name) {
+  return ID(id).onclick = function() {
+  ID("mobhlt").value = health
+  ID("mobdmg").value = damage
+  ID("mobname").value = name
+  }
 }
+linkMobs("linkcbaby", 25, 10, "
 ID("linksover").onclick = function() {
   ID("mobhlt").value = 440000000
   ID("mobdmg").value = 21870
