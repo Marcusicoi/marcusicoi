@@ -275,12 +275,12 @@ ID("runbutton").onclick = function() {
   }
   
   //MOB STATS
-  if (mobstats < 250) {
+  //if (mobstats < 250) {
   ID("mobstats").innerHTML = `
   MOB STATS: <span style="color:#${colorRarities[0]}${mobstats} 
   <h6>ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value})</h6>
   <h6>ceiling(MobHealth / MobDamage)</h6>`
-  }
+ // }
   ID("petalrotate").innerHTML = `
   HITS EACH ROTATION: ${petrot} 
   <h6>ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π))</h6>

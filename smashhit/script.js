@@ -38,5 +38,5 @@ setInterval(
     ID(randomSong()).play()
     i += 1
   }, 
-  ((35000 * i) - 2750))
+  ((35000 * i) - 2500))
 }
