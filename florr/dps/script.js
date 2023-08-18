@@ -30,7 +30,7 @@ for (let i = 0; i < link.length; i++) {
   },
   linkColor = () => {
   let h = random(360),
-      randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random(75,50)}%)`;
+      randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random2(90,50)}%)`;
     
   link[i].style.backgroundColor = randomColor;
   link[i].style.color = "white";
@@ -47,8 +47,8 @@ function linkPetals(id, damage, cooldown, name) {
   }
 }
 linkPetals("linkcbasic", 10, 2.5, "Common Basic")
-linkPetals("linkspinger", (874.8 * 5), 10, "Super Stinger")
-linkPetals("linkmligtht", (631.8 * 5), 0.8, "Mythic Light")
+linkPetals("linkspinger", (43740 * 5), 10, "Super Stinger")
+linkPetals("linkmlight", (631.8 * 5), 0.8, "Mythic Light")
 linkPetals("linkullight", (1895.4 * 5), 0.8, "Ultra Light")
 linkPetals("linkslight", (5686.2 * 5), 0.8, "Super Light")
 //Link Mobs
@@ -59,13 +59,8 @@ function linkMobs(id, health, damage, name) {
   ID("mobname").value = name
   }
 }
-linkMobs("linkcbaby", 25, 10, "
-ID("linksover").onclick = function() {
-  ID("mobhlt").value = 440000000
-  ID("mobdmg").value = 21870
-  ID("mobname").value = "Super Termite Overmind"
-}
-
+linkMobs("linkcbaby", 25, 10, "Common Baby Ant")
+linkMobs("linksover", 440000000, 21870, "Super Overmind")
 //Rotation Buttons.
 ID("nrotate").onclick = function() { ID("rotate").value = 2.5 }
 ID("crotate").onclick = function() { ID("rotate").value = 2.8 }
