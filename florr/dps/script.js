@@ -49,6 +49,21 @@ ID("linkspinger").onclick = function() {
   ID("petcld").value = 10
   ID("petname").value = "Super Stinger"
 }
+ID("linkmlight").onclick = function() {
+  ID("petdmg").value = (243 * 5)
+  ID("petcld").value = 0.8
+  ID("petname").value = "Mythic Light"
+}
+ID("linkullight").onclick = function() {
+  ID("petdmg").value = (729 * 5)
+  ID("petcld").value = 0.8
+  ID("petname").value = "Ultra Light"
+}
+ID("linkslight").onclick = function() {
+  ID("petdmg").value = (2187 * 5)
+  ID("petcld").value = 0.8
+  ID("petname").value = "Super Light"
+}
 
 //Link Mobs
 ID("linkcbaby").onclick = function() {
