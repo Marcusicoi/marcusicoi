@@ -105,11 +105,12 @@ ID("runbutton").onclick = function() {
   //Submit info to the website
   
   //ROTATION RADIUS.
-  if (ID("rotate").value == 2.5) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: ${ID("rotate").value} rad/s`
-  } else if (ID("rotate").value == 2.8) {
-  ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[0]}">${ID("rotate").value} rad/s</span>`
-  } else if (ID("rotate").value == 3.1) {
+  function rotateResultID(num) {
+    return ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[num]}">${ID("rotate").value} rad/s</span>`
+  }
+  if (ID("rotate").value == 2.5) { ID("rotateresult").innerHTML = `ROTATION RADIUS: ${ID("rotate").value} rad/s`} 
+  else if (ID("rotate").value == 2.8) { rotateResultID(0)} 
+  else if (ID("rotate").value == 3.1) {
   ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[1]}">${ID("rotate").value} rad/s</span>`
   } else if (ID("rotate").value == 3.4) {
   ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[2]}">${ID("rotate").value} rad/s</span>`
@@ -294,11 +295,12 @@ ID("runbutton").onclick = function() {
   }
   
   //MOB STATS
+  if (mobstats < 250) {
   ID("mobstats").innerHTML = `
-  MOB STATS: ${mobstats} 
+  MOB STATS: <span style="color:#${colorRarities[0]}${mobstats} 
   <h6>ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value})</h6>
   <h6>ceiling(MobHealth / MobDamage)</h6>`
-  
+  }
   ID("petalrotate").innerHTML = `
   HITS EACH ROTATION: ${petrot} 
   <h6>ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π))</h6>
