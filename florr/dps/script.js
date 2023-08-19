@@ -140,80 +140,22 @@ ID("runbutton").onclick = function() {
  
   
   //PETAL USED
+  function petalUsedID(num) {
+    return ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[num]}">${ID("petnum").value} ${ID("petname").value}</span>`
+  }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
-      if (colorRarityNames[i] == "Common") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[0]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Unusual") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[1]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Rare") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[2]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Epic") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[3]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Legendary") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[4]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Mythic") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[5]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Ultra") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[6]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Super") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[7]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Celestial") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[8]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Chaos") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[9]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Effulgent") {
-      ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[10]}">${ID("petnum").value} ${ID("petname").value}</span>`
-      }
+      if (colorRarityNames[i] == colorRarityNames[i]) { petalUsedID(i) }
     }
   } 
   
   //MOB USED
+  function mobUsedID(num) {
+    return ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[num]}">${ID("mobname").value}</span>`
+  }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("mobname").value).indexOf(colorRarityNames[i])) {
-      if (colorRarityNames[i] == "Common") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[0]}">${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Unusual") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[1]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Rare") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[2]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Epic") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[3]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Legendary") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[4]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Mythic") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[5]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Ultra") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[6]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Super") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[7]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Celestial") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[8]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Chaos") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[9]}"> ${ID("mobname").value}</span>`
-      }
-      if (colorRarityNames[i] == "Effulgent") {
-      ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[10]}"> ${ID("mobname").value}</span>`
-      }
+      if (colorRarityNames[i] == colorRarityNames[i]) { mobUsedID(i) }
     }
   }
   //PETAL COOLDOWN
