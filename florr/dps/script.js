@@ -36,11 +36,20 @@ for (let i = 0; i < link.length; i++) {
   }
   linkColor()
 }
+
 //Link Petals
-import { allPetals } from "./florr/dps/links.js"
-for (let i = 0; i < allPetals.length; i++) {
-  allPetals[i]
+function linkPetals(id, damage, cooldown, name) {
+  return ID(id).onclick = function() {
+  ID("petdmg").value = damage
+  ID("petcld").value = cooldown
+  ID("petname").value = name
+  }
 }
+linkPetals("linkcbasic", 10, 2.5, "Common Basic")
+linkPetals("linkspinger", (43740 * 5), 10, "Super Stinger")
+linkPetals("linkmlight", (631.8 * 5), 0.8, "Mythic Light")
+linkPetals("linkullight", (1895.4 * 5), 0.8, "Ultra Light")
+linkPetals("linkslight", (5686.2 * 5), 0.8, "Super Light")
 //Link Mobs
 function linkMobs(id, health, damage, name) {
   return ID(id).onclick = function() {
@@ -48,7 +57,7 @@ function linkMobs(id, health, damage, name) {
   ID("mobdmg").value = damage
   ID("mobname").value = name
   }
-} 
+}
 linkMobs("linkcbaby", 25, 10, "Common Baby Ant")
 linkMobs("linksover", 440000000, 21870, "Super Overmind")
 //Rotation Buttons.
