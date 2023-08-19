@@ -167,19 +167,19 @@ ID("runbutton").onclick = function() {
   function hitsRotationID(num) {
     ID("petalrotate").innerHTML = `HITS EACH ROTATION: <span style="color:#${colorRarities[num]}">${petrot}</span>`
     ID("petrot1").innerHTML = ID("rotate").value + " rad/s"
-    ID("petrot2").innerHTML = petrld + " s"
+    ID("petrot2").innerHTML = petrld + "s"
     ID("petrot3").innerHTML = mobstats
   }
   if (petrot < 25) { hitsRotationID(0) }
-  else if (petrot <= 50) { hitsRotationID(1) }
-  else if (petrot <= 75) { hitsRotationID(2) }
-  else if (petrot <= 100) { hitsRotationID(3) }
-  else if (petrot <= 135) { hitsRotationID(4) }
-  else if (petrot <= 175) { hitsRotationID(5) }
-  else if (petrot <= 225) { hitsRotationID(6) }
-  else if (petrot <= 275) { hitsRotationID(7) }
-  else if (petrot <= 150) { hitsRotationID(8) }
-  else if (petrot <= 175) { hitsRotationID(9) }
+  else if (petrot <= 75) { hitsRotationID(1) }
+  else if (petrot <= 150) { hitsRotationID(2) }
+  else if (petrot <= 225) { hitsRotationID(3) }
+  else if (petrot <= 350) { hitsRotationID(4) }
+  else if (petrot <= 425) { hitsRotationID(5) }
+  else if (petrot <= 500) { hitsRotationID(6) }
+  else if (petrot <= 575) { hitsRotationID(7) }
+  else if (petrot <= 625) { hitsRotationID(8) }
+  else if (petrot <= 750) { hitsRotationID(9) }
   else if (petrot > 175) { hitsRotationID(10) }
   
   //TOTAL DPS
