@@ -164,6 +164,8 @@ ID("runbutton").onclick = function() {
     //FROM MOB STATS
     ID("mobstat1").style.color = `#${colorRarities[num]}`
     ID("mobstat2").style.color = `#${colorRarities[num]}`
+    ID("mobstat3").style.color = `#${colorRarities[num]}`
+    ID("mobstat4").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("mobname").value).indexOf(colorRarityNames[i])) {
@@ -194,16 +196,16 @@ ID("runbutton").onclick = function() {
     ID("mobstat2").innerHTML = ID("mobdmg").value
   }
   if (mobstats < 250) { mobStatsID(0) }
-  else if (mobstats >= 250) { mobStatsID(1) }
-  else if (mobstats >= 500) { mobStatsID(2) }
-  else if (mobstats >= 750) { mobStatsID(3) }
-  else if (mobstats >= 1000) { mobStatsID(4) }
-  else if (mobstats >= 5000) { mobStatsID(5) }
-  else if (mobstats >= 10000) { mobStatsID(6) }
-  else if (mobstats >= 15000) { mobStatsID(7) }
-  else if (mobstats >= 20000) { mobStatsID(8) }
-  else if (mobstats >= 27500) { mobStatsID(9) }
-  else if (mobstats >= 35000) { mobStatsID(10) }
+  else if (mobstats <= 500) { mobStatsID(1) }
+  else if (mobstats <= 750) { mobStatsID(2) }
+  else if (mobstats <= 1000) { mobStatsID(3) }
+  else if (mobstats <= 5000) { mobStatsID(4) }
+  else if (mobstats <= 10000) { mobStatsID(5) }
+  else if (mobstats <= 15000) { mobStatsID(6) }
+  else if (mobstats <= 20000) { mobStatsID(7) }
+  else if (mobstats <= 27500) { mobStatsID(8) }
+  else if (mobstats <= 35000) { mobStatsID(9) }
+  else if (mobstats > 35000) { mobStatsID(10) }
   
   //HITS EACH ROTATION
   ID("petalrotate").innerHTML = `
