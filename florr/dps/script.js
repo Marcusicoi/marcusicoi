@@ -164,11 +164,11 @@ ID("runbutton").onclick = function() {
   else if (mobstats > 35000) { mobStatsID(10) }
   
   //HITS EACH ROTATION
+  function HitsRot
   ID("petalrotate").innerHTML = `
-  HITS EACH ROTATION: ${petrot} 
-  <h6>ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π))</h6>
-  <h6>ceiling((RotationSkill * ((PetalCooldown * ReloadReduct) + 0.04 * ((MobHealth / MobDamage) - 1))) / (2 * π))</h6>`
+  HITS EACH ROTATION: ${petrot}`
   
+  //TOTAL DPS
   ID("totaldps").innerHTML = `
   TOTAL DPS OF ${ID("petnum").value} ${ID("petname").value}(s) FROM ${ID("mobname").value} WITH ${ID("rotate").value} rad/s AND x${ID("reload").value} RELOAD REDUCTION IS ${total} 
   <h6>(${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))</h6>
