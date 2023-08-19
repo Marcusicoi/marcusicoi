@@ -226,9 +226,13 @@ ID("runbutton").onclick = function() {
     ID("total3").innerHTML = ID("rotate").value + " rad/s"
     ID("total4").innerHTML = "x" + ID("reload").value + " -%cd"
     ID("total5").innerHTML = total
-    ID("total5").style.color = `#${colorRarities[num]}`
+    ID("total5").style.color = "red"
+    
+    ID("tdps1").innerHTML = mobstats
+    ID("tdps2").innerHTML = ID("petdmg").value
+    ID("tdps3").innerHTML = petrot
+    ID("tdps4").innerHTML = ID("rotate")
   }
-  totalDPSID(0)
 }
 
 //Link Style
