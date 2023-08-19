@@ -14,28 +14,7 @@ let colorRarities = [
   "Common", "Unusual", "Rare", "Epic", 
   "Legendary", "Mythic", "Ultra", "Super",
   "Celestial", "Chaos", "Effulgent"
-],
-    
-//Link Style
-link = document.querySelectorAll(".link")
-for (let i = 0; i < link.length; i++) {
-  let random = (n) => {
-    return Math.floor(Math.random() * n)
-  },
-  random2 = (min, max) => {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min) + min)
-  },
-  linkColor = () => {
-  let h = random(360),
-      randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random2(90,25)}%)`;
-    
-  link[i].style.backgroundColor = randomColor;
-  link[i].style.color = "white";
-  }
-  linkColor()
-}
+]
 
 //Rotation Buttons.
 ID("nrotate").onclick = function() { ID("rotate").value = 2.5 }
@@ -196,7 +175,27 @@ ID("runbutton").onclick = function() {
   <h6>((MobHealth / MobDamage) * PetalDamage) / ((2 * HitsEachRotation * π) / RotationSkill</h6>`
 }
 
-//Links
+//Link Style
+let link = document.querySelectorAll(".link")
+for (let i = 0; i < link.length; i++) {
+  let random = (n) => {
+    return Math.floor(Math.random() * n)
+  },
+  random2 = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min) + min)
+  },
+  linkColor = () => {
+  let h = random(360),
+      randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random2(90,25)}%)`;
+    
+  link[i].style.backgroundColor = randomColor;
+  link[i].style.color = "white";
+  }
+  linkColor()
+}
+
 //Link Petals
 function linkPetals(id, damage, cooldown, name) {
   return ID(id).onclick = function() {
@@ -206,10 +205,18 @@ function linkPetals(id, damage, cooldown, name) {
   }
 }
 linkPetals("linkcbasic", 10, 2.5, "Common Basic")
+
 linkPetals("linkspinger", (43740 * 5), 10, "Super Stinger")
+
 linkPetals("linkmlight", (631.8 * 5), 0.8, "Mythic Light")
 linkPetals("linkullight", (1895.4 * 5), 0.8, "Ultra Light")
 linkPetals("linkslight", (5686.2 * 5), 0.8, "Super Light")
+
+linkPetals("linklwing", 1620, 2.5, "Legendary Wings")
+linkPetals("linkmwing", 4860, 2.5, "Mythic Wings")
+linkPetals("linkulwing", 14580, 2.5, "Ultra Wings")
+linkPetals("linkswing", 43740, 2.5, "Super Wings")
+
 //Link Mobs
 function linkMobs(id, health, damage, name) {
   return ID(id).onclick = function() {
@@ -219,4 +226,5 @@ function linkMobs(id, health, damage, name) {
   }
 }
 linkMobs("linkcbaby", 25, 10, "Common Baby Ant")
+
 linkMobs("linksover", 440000000, 21870, "Super Overmind")
