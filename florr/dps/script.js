@@ -81,7 +81,6 @@ ID("runbutton").onclick = function() {
     ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[num]}">x${ID("reload").value}</span>`
     
     //From PETAL COOLDOWN
-    ID("relred2").innerHTML = ID("reload").value
     ID("relred2").style.color = `#${colorRarities[num]}`
     ID("relred4").style.color = `#${colorRarities[num]}`
   }
@@ -131,7 +130,8 @@ ID("runbutton").onclick = function() {
   //PETAL COOLDOWN
   function reloadReductID(num) {
     ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`
-    ID("relred1").innerHTML = ID("petcld").value
+    ID("relred1").innerHTML = ID("petcld").value + " s"
+    ID("relred2").innerHTML = "x" + ID("reload").value
   }
   if (petrld >= 10) { reloadReductID(0) } 
   else if (petrld >= 7.5) { reloadReductID(1) } 
@@ -164,9 +164,23 @@ ID("runbutton").onclick = function() {
   else if (mobstats > 35000) { mobStatsID(10) }
   
   //HITS EACH ROTATION
-  function HitsRot
-  ID("petalrotate").innerHTML = `
-  HITS EACH ROTATION: ${petrot}`
+  function hitsRotationID(num) {
+    ID("petalrotate").innerHTML = `HITS EACH ROTATION: <span style="color:#${colorRarities[num]}">${petrot}</span>`
+    ID("petrot1").innerHTML = ID("rotate").value + " rad/s"
+    ID("petrot2").innerHTML = petrld + " s"
+    ID("petrot3").innerHTML = mobstats
+  }
+  if (petrot < 25) { hitsRotationID(0) }
+  else if (petrot <= 50) { hitsRotationID(1) }
+  else if (petrot <= 75) { hitsRotationID(2) }
+  else if (petrot <= 100) { hitsRotationID(3) }
+  else if (petrot <= 135) { hitsRotationID(4) }
+  else if (petrot <= 175) { hitsRotationID(5) }
+  else if (petrot <= 225) { hitsRotationID(6) }
+  else if (petrot <= 275) { hitsRotationID(7) }
+  else if (petrot <= 150) { hitsRotationID(8) }
+  else if (petrot <= 175) { hitsRotationID(9) }
+  else if (petrot > 175) { hitsRotationID(10) }
   
   //TOTAL DPS
   ID("totaldps").innerHTML = `
