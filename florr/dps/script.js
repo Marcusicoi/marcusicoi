@@ -145,16 +145,13 @@ ID("runbutton").onclick = function() {
   
   //PETAL USED
   function petalUsedID(num) {
-    return ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[num]}">${ID("petnum").value} ${ID("petname").value}</span>`
+    ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[num]}">${ID("petnum").value} ${ID("petname").value}</span>`
+    ID("mobstat1").style.color = `#${colorRarities[num]}`
+    ID("mobstat2").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
-      if (colorRarityNames[i] == colorRarityNames[i]) { 
-        petalUsedID(i)
-        
-        //From MOB STATS.
-        ID("mobstat1").style.color = `#${colorRarities[i]}`
-      }
+      if (colorRarityNames[i] == colorRarityNames[i]) { petalUsedID(i) } 
     }
   } 
   
@@ -187,11 +184,24 @@ ID("runbutton").onclick = function() {
  
   //MOB STATS
   function mobStatsID(num) {
-    ID("mobstats").innerHTML = `MOB STATS: <span style="color:#${colorRarities[0]}">${mobstats}</span>`
+    ID("mobstats").innerHTML = `MOB STATS: <span style="color:#${colorRarities[num]}">${mobstats}</span>`
     ID("mobstat1").innerHTML = ID("mobhlt").value
     ID("mobstat2").innerHTML = ID("mobdmg").value
   }
  
+  if (mobstats < 250) { mobStatsID(0) }
+  else if (mobstats >= 250) { mobStatsID(1) }
+  else if (mobstats >= 500) { mobStatsID(2) }
+  else if (mobstats >= 750) { mobStatsID(3) }
+  else if (mobstats >= 1000) { mobStatsID(4) }
+  else if (mobstats >= 5000) { mobStatsID(5) }
+  else if (mobstats >= 10000) { mobStatsID(6) }
+  else if (mobstats >= 15000) { mobStatsID(7) }
+  else if (mobstats >= 20000) { mobStatsID(8) }
+  else if (mobstats >= 27500) { mobStatsID(9) }
+  else if (mobstats >= 35000) { mobStatsID(10) }
+  
+  //HITS EACH ROTATION
   ID("petalrotate").innerHTML = `
   HITS EACH ROTATION: ${petrot} 
   <h6>ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π))</h6>
