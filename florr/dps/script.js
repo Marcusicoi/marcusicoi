@@ -2,36 +2,16 @@ function ID(id) {
   return document.getElementById(id)
 }
 
+function numComma(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
+
 window.onload = function() {
   ID("results").style.visibility = "hidden"
 }
 
-//Show / Hide Formulas
-let isFormula = false, classFormula = document.getElementsByClassName("formula")
-if (isFormula === false) {
-  ID("formbutton").innerHTML = "Show Formula"
-  for (let i = 0; i < classFormula.length; i++) {
-    classFormula[i].style.visibility = "hidden"
-  }
-} else if (isFormula === true) {
-  ID("formbutton").innerHTML = "Hide Formula"
-  for (let i = 0; i < classFormula.length; i++) {
-    classFormula[i].style.visibility = "visible"
-  }
-}
-ID("formbutton").onclick = function() {
-  if (isFormula === false) {
-  ID("formbutton").innerHTML = "Show Formula"
-  for (let i = 0; i < classFormula.length; i++) {
-    classFormula[i].style.visibility = "hidden"
-  }
-} else if (isFormula === true) {
-  ID("formbutton").innerHTML = "Hide Formula"
-  for (let i = 0; i < classFormula.length; i++) {
-    classFormula[i].style.visibility = "visible"
-  }
-}
-}
 //Color rarities
 let colorRarities = [
   "72d964", "ffe65d", "484eda", "861fde",
@@ -246,21 +226,36 @@ ID("runbutton").onclick = function() {
   else if (petrot > 175) { hitsRotationID(10) }
   
   //TOTAL DPS
-  function totalDPSID(num) {
-    ID("total1").innerHTML = ID("petnum").value + " " + ID("petname").value
-    ID("total2").innerHTML = ID("mobname").value
-    ID("total3").innerHTML = ID("rotate").value + " rad/s"
-    ID("total4").innerHTML = "x" + ID("reload").value + " -%cd"
-    ID("total5").innerHTML = total
-    ID("total5").style.color = "red"
+  ID("total1").innerHTML = ID("petnum").value + " " + ID("petname").value
+  ID("total2").innerHTML = ID("mobname").value
+  ID("total3").innerHTML = ID("rotate").value + " rad/s"
+  ID("total4").innerHTML = "x" + ID("reload").value + " -%cd"
+  ID("total5").innerHTML = numComma(total)
+  ID("total5").style.color = "red"
     
-    ID("tdps1").innerHTML = mobstats
-    ID("tdps2").innerHTML = ID("petdmg").value
-    ID("tdps3").innerHTML = petrot
-    ID("tdps4").innerHTML = ID("rotate").value
+  ID("tdps1").innerHTML = numComma(mobstats)
+  ID("tdps2").innerHTML = numComma(ID("petdmg").value)
+  ID("tdps3").innerHTML = numComma(petrot)
+  ID("tdps4").innerHTML = numComma(ID("rotate").value)
+  
+  //Show / Hide Formulas
+  let isFormula = false, classFormula = document.getElementsByClassName("formula")
+  ID("formbutton").onclick = function() {
+    if (isFormula === false) {
+      isFormula = true
+      ID("formbutton").innerHTML = "Show Formula"
+      for (let i = 0; i < classFormula.length; i++) {
+        classFormula[i].style.visibility = "hidden"
+      }
+    } else if (isFormula === true) {
+      isFormula = false
+      ID("formbutton").innerHTML = "Hide Formula"
+      for (let i = 0; i < classFormula.length; i++) {
+        classFormula[i].style.visibility = "visible"
+      }
+    }
   }
 }
-
 //Link Style
 let link = document.querySelectorAll(".link")
 for (let i = 0; i < link.length; i++) {
