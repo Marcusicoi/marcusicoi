@@ -70,6 +70,8 @@ ID("runbutton").onclick = function() {
     
     //FROM TOTAL DPS
     ID("total3").style.color = `#${colorRarities[num]}`
+    ID("tdps4").style.color = `#${colorRarities[num]}`
+    ID("tdps8").style.color = `#${colorRarities[num]}`
   }
   if (ID("rotate").value == 2.5) { rotateResultID(11) } 
   else if (ID("rotate").value == 2.8) { rotateResultID(0) } 
@@ -119,6 +121,8 @@ ID("runbutton").onclick = function() {
     
     //FROM TOTAL DPS
     ID("total1").style.color = `#${colorRarities[num]}`
+    ID("tdps2").style.color = `#${colorRarities[num]}`
+    ID("tdps6").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
@@ -175,6 +179,10 @@ ID("runbutton").onclick = function() {
     //FROM HITS EACH ROTATION
     ID("petrot3").style.color = `#${colorRarities[num]}`
     ID("petrot6").style.color = `#${colorRarities[num]}`
+    
+    //FROM TORAL DPS
+    ID("tdps1").style.color = `#${colorRarities[num]}`
+    ID("tdps5").style.color = `#${colorRarities[num]}`
   }
   if (mobstats < 250) { mobStatsID(0) }
   else if (mobstats <= 500) { mobStatsID(1) }
@@ -194,6 +202,10 @@ ID("runbutton").onclick = function() {
     ID("petrot1").innerHTML = ID("rotate").value + " rad/s"
     ID("petrot2").innerHTML = petrld + "s"
     ID("petrot3").innerHTML = mobstats
+    
+    //FROM TOTAL DPS
+    ID("tdps3").style.color = `#${colorRarities[num]}`
+    ID("tdps7").style.color = `#${colorRarities[num]}`
   }
   if (petrot < 25) { hitsRotationID(0) }
   else if (petrot <= 75) { hitsRotationID(1) }
