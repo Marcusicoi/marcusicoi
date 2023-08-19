@@ -123,7 +123,11 @@ ID("runbutton").onclick = function() {
   
   //RELOAD REDUCTION.
   function reloadResultID(num) {
-    return ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[num]}">x${ID("reload").value}</span>`
+    ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[num]}">x${ID("reload").value}</span>`
+    
+    //From PETAL COOLDOWN
+    ID("relred2").innerHTML = ID("reload").value
+    ID("relred2").style.color = `#${colorRarities[num]}`
   }
   if (ID("reload").value == 1) { reloadResultID(11) } 
   else if (ID("reload").value == 0.93) { reloadResultID(0) }
