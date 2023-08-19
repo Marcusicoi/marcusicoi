@@ -7,22 +7,31 @@ window.onload = function() {
 }
 
 //Show / Hide Formulas
-let isFormula = false
-const classFormula = document.getElementsByClassName("formula")
+let isFormula = false, classFormula = document.getElementsByClassName("formula")
 if (isFormula === false) {
-  isFormula = true
   ID("formbutton").innerHTML = "Show Formula"
   for (let i = 0; i < classFormula.length; i++) {
     classFormula[i].style.visibility = "hidden"
   }
 } else if (isFormula === true) {
-  isFormula = false
   ID("formbutton").innerHTML = "Hide Formula"
   for (let i = 0; i < classFormula.length; i++) {
     classFormula[i].style.visibility = "visible"
   }
 }
-
+ID("formbutton").onclick = function() {
+  if (isFormula === false) {
+  ID("formbutton").innerHTML = "Show Formula"
+  for (let i = 0; i < classFormula.length; i++) {
+    classFormula[i].style.visibility = "hidden"
+  }
+} else if (isFormula === true) {
+  ID("formbutton").innerHTML = "Hide Formula"
+  for (let i = 0; i < classFormula.length; i++) {
+    classFormula[i].style.visibility = "visible"
+  }
+}
+}
 //Color rarities
 let colorRarities = [
   "72d964", "ffe65d", "484eda", "861fde",
