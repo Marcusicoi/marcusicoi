@@ -4,12 +4,6 @@ function ID(id) {
 
 window.onload = function() {
   ID("results").style.visibility = "hidden"
-  document.body.style.background = "navy"
-  
-  //Header Borders
-  for (let i = 0; i < document.getElementsByTagName("h2").length; i++) {
-    document.getElementsByTagName("h2").style["-webkit-text-stroke"] = "2.5px white"
-  }
 }
 
 //Color rarities
