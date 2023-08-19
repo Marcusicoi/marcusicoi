@@ -149,7 +149,12 @@ ID("runbutton").onclick = function() {
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
-      if (colorRarityNames[i] == colorRarityNames[i]) { petalUsedID(i) }
+      if (colorRarityNames[i] == colorRarityNames[i]) { 
+        petalUsedID(i)
+        
+        //From MOB STATS.
+        ID("mobstat1").style.color = `#${colorRarities[i]}`
+      }
     }
   } 
   
@@ -181,12 +186,12 @@ ID("runbutton").onclick = function() {
   else if (petrld < 0.25) { reloadReductID(10) }
  
   //MOB STATS
-  //if (mobstats < 250) {
-  ID("mobstats").innerHTML = `
-  MOB STATS: <span style="color:#${colorRarities[0]}${mobstats} 
-  <h6>ceiling(${ID("mobhlt").value} / ${ID("mobdmg").value})</h6>
-  <h6>ceiling(MobHealth / MobDamage)</h6>`
- // }
+  function mobStatsID(num) {
+    ID("mobstats").innerHTML = `MOB STATS: <span style="color:#${colorRarities[0]}">${mobstats}</span>`
+    ID("mobstat1").innerHTML = ID("mobhlt").value
+    ID("mobstat2").innerHTML = ID("mobdmg").value
+  }
+ 
   ID("petalrotate").innerHTML = `
   HITS EACH ROTATION: ${petrot} 
   <h6>ceiling((${ID("rotate").value} * (${petrld} + 0.04 * (${mobstats} - 1))) / (2 * π))</h6>
