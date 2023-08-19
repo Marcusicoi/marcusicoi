@@ -178,9 +178,9 @@ ID("runbutton").onclick = function() {
  
   //MOB STATS
   function mobStatsID(num) {
-    ID("mobstats").innerHTML = `MOB STATS: <span style="color:#${colorRarities[num]}">${mobstats}</span>`
-    ID("mobstat1").innerHTML = ID("mobhlt").value
-    ID("mobstat2").innerHTML = ID("mobdmg").value
+    ID("mobstats").innerHTML = `MOB STATS: <span style="color:#${colorRarities[num]}">${numComma(mobstats)}</span>`
+    ID("mobstat1").innerHTML = numComma(ID("mobhlt").value)
+    ID("mobstat2").innerHTML = numComma(ID("mobdmg").value)
     
     //FROM HITS EACH ROTATION
     ID("petrot3").style.color = `#${colorRarities[num]}`
@@ -204,10 +204,10 @@ ID("runbutton").onclick = function() {
   
   //HITS EACH ROTATION
   function hitsRotationID(num) {
-    ID("petalrotate").innerHTML = `HITS EACH ROTATION: <span style="color:#${colorRarities[num]}">${petrot}</span>`
+    ID("petalrotate").innerHTML = `HITS EACH ROTATION: <span style="color:#${colorRarities[num]}">${numComma(petrot)}</span>`
     ID("petrot1").innerHTML = ID("rotate").value + " rad/s"
     ID("petrot2").innerHTML = petrld + "s"
-    ID("petrot3").innerHTML = mobstats
+    ID("petrot3").innerHTML = numComma(mobstats)
     
     //FROM TOTAL DPS
     ID("tdps3").style.color = `#${colorRarities[num]}`
@@ -226,6 +226,7 @@ ID("runbutton").onclick = function() {
   else if (petrot > 175) { hitsRotationID(10) }
   
   //TOTAL DPS
+  //
   ID("total1").innerHTML = ID("petnum").value + " " + ID("petname").value
   ID("total2").innerHTML = ID("mobname").value
   ID("total3").innerHTML = ID("rotate").value + " rad/s"
