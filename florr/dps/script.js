@@ -158,6 +158,10 @@ ID("runbutton").onclick = function() {
     ID("mobstats").innerHTML = `MOB STATS: <span style="color:#${colorRarities[num]}">${mobstats}</span>`
     ID("mobstat1").innerHTML = ID("mobhlt").value
     ID("mobstat2").innerHTML = ID("mobdmg").value
+    
+    //FROM HITS EACH ROTATION
+    ID("petrot3").style.color = `#${colorRarities[num]}`
+    ID("petrot6").style.color = `#${colorRarities[num]}`
   }
   if (mobstats < 250) { mobStatsID(0) }
   else if (mobstats <= 500) { mobStatsID(1) }
