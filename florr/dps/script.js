@@ -226,13 +226,19 @@ ID("runbutton").onclick = function() {
   else if (petrot > 175) { hitsRotationID(10) }
   
   //TOTAL DPS
-  //
   ID("total1").innerHTML = ID("petnum").value + " " + ID("petname").value
   ID("total2").innerHTML = ID("mobname").value
   ID("total3").innerHTML = ID("rotate").value + " rad/s"
   ID("total4").innerHTML = "x" + ID("reload").value + " -%cd"
   ID("total5").innerHTML = numComma(total)
-  ID("total5").style.color = "red"
+  
+  setInterval(function() {
+    let random = (n) => { return Math.floor(Math.random() * n) }, 
+        random2 = (min, max) => { min = Math.ceil(min), max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min) + min) }
+    let h = random(360), randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random2(90,25)}%)`;
+    
+    ID("total5").style.color = randomColor }, 1000)
     
   ID("tdps1").innerHTML = numComma(mobstats)
   ID("tdps2").innerHTML = numComma(ID("petdmg").value)
