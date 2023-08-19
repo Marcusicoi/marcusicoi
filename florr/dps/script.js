@@ -2,6 +2,12 @@ function ID(id) {
   return document.getElementById(id)
 }
 
+function CLASS(id) {
+  for (let i = 0; i < document.getElementsByClassName(id).length; i++) {
+  return document.getElementsByClassName(id)[i]
+  }
+}
+
 window.onload = function() {
   ID("results").style.visibility = "hidden"
 }
@@ -30,7 +36,7 @@ for (let i = 0; i < link.length; i++) {
   },
   linkColor = () => {
   let h = random(360),
-      randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random2(90,50)}%)`;
+      randomColor = `hsl(${h}deg, ${random2(100,50)}%, ${random2(90,25)}%)`;
     
   link[i].style.backgroundColor = randomColor;
   link[i].style.color = "white";
@@ -146,8 +152,6 @@ ID("runbutton").onclick = function() {
   //PETAL USED
   function petalUsedID(num) {
     ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[num]}">${ID("petnum").value} ${ID("petname").value}</span>`
-    ID("mobstat1").style.color = `#${colorRarities[num]}`
-    ID("mobstat2").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
@@ -157,7 +161,9 @@ ID("runbutton").onclick = function() {
   
   //MOB USED
   function mobUsedID(num) {
-    return ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[num]}">${ID("mobname").value}</span>`
+    ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[num]}">${ID("mobname").value}</span>`
+    ID("mobstat1").style.color = `#${colorRarities[num]}`
+    ID("mobstat2").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("mobname").value).indexOf(colorRarityNames[i])) {
@@ -167,8 +173,8 @@ ID("runbutton").onclick = function() {
   //PETAL COOLDOWN
   function reloadReductID(num) {
     ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`, 
-    ID("relred1").innerHTML = petrld,
-    ID("relred1").style.color = `#${colorRarities[num]}`
+    CLASS("relred1").innerHTML = petrld,
+    CLASS("relred1").style.color = `#${colorRarities[num]}`
   }
   if (petrld >= 10) { reloadReductID(0) } 
   else if (petrld >= 7.5) { reloadReductID(1) } 
@@ -188,7 +194,6 @@ ID("runbutton").onclick = function() {
     ID("mobstat1").innerHTML = ID("mobhlt").value
     ID("mobstat2").innerHTML = ID("mobdmg").value
   }
- 
   if (mobstats < 250) { mobStatsID(0) }
   else if (mobstats >= 250) { mobStatsID(1) }
   else if (mobstats >= 500) { mobStatsID(2) }
