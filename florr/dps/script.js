@@ -67,6 +67,9 @@ ID("runbutton").onclick = function() {
     //FROM HITS EACH ROTATION
     ID("petrot1").style.color = `#${colorRarities[num]}`
     ID("petrot4").style.color = `#${colorRarities[num]}`
+    
+    //FROM TOTAL DPS
+    ID("total3").style.color = `#${colorRarities[num]}`
   }
   if (ID("rotate").value == 2.5) { rotateResultID(11) } 
   else if (ID("rotate").value == 2.8) { rotateResultID(0) } 
@@ -85,9 +88,12 @@ ID("runbutton").onclick = function() {
   function reloadResultID(num) {
     ID("reloadresult").innerHTML = `RELOAD REDUCTION: <span style="color:#${colorRarities[num]}">x${ID("reload").value}</span>`
     
-    //From PETAL COOLDOWN
+    //FROM PETAL COOLDOWN
     ID("relred2").style.color = `#${colorRarities[num]}`
     ID("relred4").style.color = `#${colorRarities[num]}`
+    
+    //FROM TOTAL DPS
+    ID("total4").style.color = `#${colorRarities[num]}`
   }
   if (ID("reload").value == 1) { reloadResultID(11) } 
   else if (ID("reload").value == 0.93) { reloadResultID(0) }
@@ -110,6 +116,9 @@ ID("runbutton").onclick = function() {
     //FROM PETAL COOLDOWN
     ID("relred1").style.color = `#${colorRarities[num]}`
     ID("relred3").style.color = `#${colorRarities[num]}`
+    
+    //FROM TOTAL DPS
+    ID("total1").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
@@ -126,6 +135,9 @@ ID("runbutton").onclick = function() {
     ID("mobstat2").style.color = `#${colorRarities[num]}`
     ID("mobstat3").style.color = `#${colorRarities[num]}`
     ID("mobstat4").style.color = `#${colorRarities[num]}`
+    
+    //FROM TOTAL DPS
+    ID("total2").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("mobname").value).indexOf(colorRarityNames[i])) {
@@ -202,7 +214,9 @@ ID("runbutton").onclick = function() {
     ID("total3").innerHTML = ID("rotate").value + " rad/s"
     ID("total4").innerHTML = "x" + ID("reload").value + " -%cd"
     ID("total5").innerHTML = total
+    ID("total5").style.color = `#${colorRarities[num]}`
   }
+  totalDPSID(0)
 }
 
 //Link Style
