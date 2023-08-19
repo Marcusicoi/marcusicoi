@@ -1,13 +1,6 @@
 function ID(id) {
   return document.getElementById(id)
 }
-
-function CLASS(id) {
-  for (let i = 0; i < document.getElementsByClassName(id).length; i++) {
-  return document.getElementsByClassName(id)[i]
-  }
-}
-
 window.onload = function() {
   ID("results").style.visibility = "hidden"
 }
@@ -134,6 +127,7 @@ ID("runbutton").onclick = function() {
     //From PETAL COOLDOWN
     ID("relred2").innerHTML = ID("reload").value
     ID("relred2").style.color = `#${colorRarities[num]}`
+    ID("relred4").style.color = `#${colorRarities[num]}`
   }
   if (ID("reload").value == 1) { reloadResultID(11) } 
   else if (ID("reload").value == 0.93) { reloadResultID(0) }
@@ -152,6 +146,10 @@ ID("runbutton").onclick = function() {
   //PETAL USED
   function petalUsedID(num) {
     ID("petalused").innerHTML = `PETAL USED: <span style="color:#${colorRarities[num]}">${ID("petnum").value} ${ID("petname").value}</span>`
+    
+    //FROM PETAL COOLDOWN
+    ID("relred1").style.color = `#${colorRarities[num]}`
+    ID("relred3").style.color = `#${colorRarities[num]}`
   }
   for (let i = 0; i < colorRarityNames.length; i++) {
     if (~(ID("petname").value).indexOf(colorRarityNames[i])) {
@@ -162,6 +160,8 @@ ID("runbutton").onclick = function() {
   //MOB USED
   function mobUsedID(num) {
     ID("mobused").innerHTML = `MOB ATTACK: <span style="color:#${colorRarities[num]}">${ID("mobname").value}</span>`
+    
+    //FROM MOB STATS
     ID("mobstat1").style.color = `#${colorRarities[num]}`
     ID("mobstat2").style.color = `#${colorRarities[num]}`
   }
@@ -172,9 +172,8 @@ ID("runbutton").onclick = function() {
   }
   //PETAL COOLDOWN
   function reloadReductID(num) {
-    ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`, 
-    CLASS("relred1").innerHTML = petrld,
-    CLASS("relred1").style.color = `#${colorRarities[num]}`
+    ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`
+    ID("relred1").innerHTML = ID("petcld").value
   }
   if (petrld >= 10) { reloadReductID(0) } 
   else if (petrld >= 7.5) { reloadReductID(1) } 
