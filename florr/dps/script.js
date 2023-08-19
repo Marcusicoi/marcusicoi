@@ -36,7 +36,11 @@ for (let i = 0; i < link.length; i++) {
   }
   linkColor()
 }
-
+//Link Petals
+import { allPetals } from "./florr/dps/links.js"
+for (let i = 0; i < allPetals.length; i++) {
+  allPetals[i]
+}
 //Link Mobs
 function linkMobs(id, health, damage, name) {
   return ID(id).onclick = function() {
