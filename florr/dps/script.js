@@ -159,61 +159,23 @@ ID("runbutton").onclick = function() {
     }
   }
   //PETAL COOLDOWN
+  function reloadReductID(num) {
+    return ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`
+  }
+  function reloadReduct2ID(num) {
+    return ID("rel
+  }
   if (petrld >= 10) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[0]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 7.5) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[1]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 5) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[2]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 3.75) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[3]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 2.5) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[4]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 2) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[5]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 1.5) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[6]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 1) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[7]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 0.5) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[8]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld >= 0.25) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[9]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   } else if (petrld < 0.25) {
-  ID("reloadreduct").innerHTML = `
-  PETAL COOLDOWN: <span style="color:#${colorRarities[10]}">${petrld}s</span>
-  <h6>(${ID("petcld").value}s * x${ID("reload").value})</h6>
-  <h6>(PetalCooldown * ReloadReduct)</h6>`
   }
   
   //MOB STATS
