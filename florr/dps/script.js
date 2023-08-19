@@ -133,7 +133,7 @@ ID("runbutton").onclick = function() {
   else if (ID("reload").value == 0.69) { reloadResultID(4) }
   else if (ID("reload").value == 0.64) { reloadResultID(5) }
   else if (ID("reload").value == 0.6) { reloadResultID(6) }
-  else if (ID("reload").value == 0.56) { reloadResultID(7) }
+  else if (ID("reload").value == 0.54) { reloadResultID(7) }
   else if (ID("reload").value == 0.49) { reloadResultID(8) }
   else if (ID("reload").value == 0.45) { reloadResultID(9) }
   else if (ID("reload").value == 0.39) { reloadResultID(10) }
@@ -160,24 +160,22 @@ ID("runbutton").onclick = function() {
   }
   //PETAL COOLDOWN
   function reloadReductID(num) {
-    return ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`
+    ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`, 
+    ID("relred1").innerHTML = petrld,
+    ID("relred1").style.color = `#${colorRarities[num]}`
   }
-  function reloadReduct2ID(num) {
-    return ID("rel
-  }
-  if (petrld >= 10) {
-  } else if (petrld >= 7.5) {
-  } else if (petrld >= 5) {
-  } else if (petrld >= 3.75) {
-  } else if (petrld >= 2.5) {
-  } else if (petrld >= 2) {
-  } else if (petrld >= 1.5) {
-  } else if (petrld >= 1) {
-  } else if (petrld >= 0.5) {
-  } else if (petrld >= 0.25) {
-  } else if (petrld < 0.25) {
-  }
-  
+  if (petrld >= 10) { reloadReductID(0) } 
+  else if (petrld >= 7.5) { reloadReductID(1) } 
+  else if (petrld >= 5) { reloadReductID(2) } 
+  else if (petrld >= 3.75) { reloadReductID(3) }
+  else if (petrld >= 2.5) { reloadReductID(4) }
+  else if (petrld >= 2) { reloadReductID(5 ) }
+  else if (petrld >= 1.5) { reloadReductID(6) }
+  else if (petrld >= 1) { reloadReductID(7) }
+  else if (petrld >= 0.5) { reloadReductID(8) }
+  else if (petrld >= 0.25) { reloadReductID(9) }
+  else if (petrld < 0.25) { reloadReductID(10) }
+ 
   //MOB STATS
   //if (mobstats < 250) {
   ID("mobstats").innerHTML = `
