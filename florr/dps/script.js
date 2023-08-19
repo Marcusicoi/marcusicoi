@@ -197,12 +197,11 @@ ID("runbutton").onclick = function() {
   
   //TOTAL DPS
   function totalDPSID(num) {
-  ID("totaldps").innerHTML = `
-  TOTAL DPS OF ${ID("petnum").value} ${ID("petname").value}(s) 
-  FROM ${ID("mobname").value} 
-  WITH ${ID("rotate").value} rad/s 
-  AND x${ID("reload").value} RELOAD REDUCTION 
-  IS ${total}`
+    ID("total1").innerHTML = ID("petnum").value + " " + ID("petname").value
+    ID("total2").innerHTML = ID("mobname").value
+    ID("total3").innerHTML = ID("rotate").value + " rad/s"
+    ID("total4").innerHTML = "x" + ID("reload").value + " -%cd"
+    ID("total5").innerHTML = total
   }
 }
 
