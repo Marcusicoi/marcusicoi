@@ -6,6 +6,23 @@ window.onload = function() {
   ID("results").style.visibility = "hidden"
 }
 
+//Show / Hide Formulas
+let isFormula = false
+const classFormula = document.getElementsByClassName("formula")
+if (isFormula === false) {
+  isFormula = true
+  ID("formbutton").innerHTML = "Show Formula"
+  for (let i = 0; i < classFormula.length; i++) {
+    classFormula[i].style.visibility = "hidden"
+  }
+} else if (isFormula === true) {
+  isFormula = false
+  ID("formbutton").innerHTML = "Hide Formula"
+  for (let i = 0; i < classFormula.length; i++) {
+    classFormula[i].style.visibility = "visible"
+  }
+}
+
 //Color rarities
 let colorRarities = [
   "72d964", "ffe65d", "484eda", "861fde",
@@ -231,7 +248,7 @@ ID("runbutton").onclick = function() {
     ID("tdps1").innerHTML = mobstats
     ID("tdps2").innerHTML = ID("petdmg").value
     ID("tdps3").innerHTML = petrot
-    ID("tdps4").innerHTML = ID("rotate")
+    ID("tdps4").innerHTML = ID("rotate").value
   }
 }
 
