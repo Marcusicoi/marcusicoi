@@ -195,10 +195,14 @@ ID("runbutton").onclick = function() {
   else if (petrot > 175) { hitsRotationID(10) }
   
   //TOTAL DPS
+  function totalDPSID(num) {
   ID("totaldps").innerHTML = `
-  TOTAL DPS OF ${ID("petnum").value} ${ID("petname").value}(s) FROM ${ID("mobname").value} WITH ${ID("rotate").value} rad/s AND x${ID("reload").value} RELOAD REDUCTION IS ${total} 
-  <h6>(${mobstats} * ${ID("petdmg").value} / ((2 * ${petrot} * π) / ${ID("rotate").value}))</h6>
-  <h6>((MobHealth / MobDamage) * PetalDamage) / ((2 * HitsEachRotation * π) / RotationSkill</h6>`
+  TOTAL DPS OF ${ID("petnum").value} ${ID("petname").value}(s) 
+  FROM ${ID("mobname").value} 
+  WITH ${ID("rotate").value} rad/s 
+  AND x${ID("reload").value} RELOAD REDUCTION 
+  IS ${total}`
+  }
 }
 
 //Link Style
