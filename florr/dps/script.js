@@ -61,7 +61,11 @@ ID("runbutton").onclick = function() {
   
   //ROTATION RADIUS.
   function rotateResultID(num) {
-    return ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[num]}">${ID("rotate").value} rad/s</span>`
+    ID("rotateresult").innerHTML = `ROTATION RADIUS: <span style="color:#${colorRarities[num]}">${ID("rotate").value} rad/s</span>`
+    
+    //FROM HITS EACH ROTATION
+    ID("petrot1").style.color = `#${colorRarities[num]}`
+    ID("petrot4").style.color = `#${colorRarities[num]}`
   }
   if (ID("rotate").value == 2.5) { rotateResultID(11) } 
   else if (ID("rotate").value == 2.8) { rotateResultID(0) } 
@@ -130,8 +134,12 @@ ID("runbutton").onclick = function() {
   //PETAL COOLDOWN
   function reloadReductID(num) {
     ID("reloadreduct").innerHTML = `PETAL COOLDOWN: <span style="color:#${colorRarities[num]}">${petrld}s</span>`
-    ID("relred1").innerHTML = ID("petcld").value + " s"
+    ID("relred1").innerHTML = ID("petcld").value + "s"
     ID("relred2").innerHTML = "x" + ID("reload").value
+    
+    //FROM HITS EACH ROTATION
+    ID("petrot2").style.color = `#${colorRarities[num]}`
+    ID("petrot5").style.color = `#${colorRarities[num]}`
   }
   if (petrld >= 10) { reloadReductID(0) } 
   else if (petrld >= 7.5) { reloadReductID(1) } 
