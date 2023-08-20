@@ -13,11 +13,23 @@ html {
 /* adjust typography defaults */
 body {
   margin: 1rem;
-  font-family: 'Ubuntu';
+  font-family: Ubuntu;
   line-height: 1.5;
   background: #005577
 }
 
+h2 {
+  height: 20px
+}
+
+p {
+  height: 10px
+}
+@media only screen and (max-width: 600px) {
+  h2 {
+    height: 50px
+  }
+}
 a {
  display: inline-block;
   position: relative;
