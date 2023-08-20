@@ -13,7 +13,7 @@ html {
 /* adjust typography defaults */
 body {
   margin: 1rem;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu';
   line-height: 1.5;
   background: #005577
 }
