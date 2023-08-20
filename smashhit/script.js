@@ -25,7 +25,6 @@ let Songs = [
 function randomSong() {
   return Songs[Math.floor(Math.random() * Songs.length)]
 }
-
 //PLAY!!
 ID("button").onclick = function (){
 ID("button").style.visibility = "hidden"
