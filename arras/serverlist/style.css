@@ -46,6 +46,18 @@ a:active {
   height: 26px;
   box-shadow: inset 0 -25px rgba(0, 0, 0, 0.15);
 }
+a.rtgtptbtext{
+  animation-name: rgpb;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes rgpb {
+  0% {color: #d92a2a}
+  25% {color: #60e10a}
+  50% {color: #b23298}
+  75% {color: #00aaff}
+  100% {color: #d92a2a}
+}
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
