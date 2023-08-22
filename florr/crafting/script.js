@@ -292,35 +292,56 @@ eIsPRNG = false,
 eAtt = 0,
 eCombo = 0,
 eProbArray = [undefined]
-  eIsPRNG = false
-  selectId("eSuccess").innerHTML = "15% Success Chance"
-  selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance"
-}
-eOlder.onclick = function() {
+//Buttons
+eOriginal.onclick = function() {
   eProb = 25
   eIsPRNG = false
   selectId("eSuccess").innerHTML = "25% Success Chance"
   selectId("eFail").innerHTML = (100 - 25) + "% Fail Chance"
 }
-eCurrent.onclick = function() {
-  eProb = 20;
+eOlder.onclick = function() {
+  eProb = 15
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "15% Success Chance"
+  selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance"
+}
+eOld.onclick = function() {
+  eProb = 20
   eIsPRNG = false
   selectId("eSuccess").innerHTML = "20% Success Chance"
   selectId("eFail").innerHTML = (100 - 20) + "% Fail Chance"
 }
-eSP.onclick = function() {
+eOldLSP.onclick = function() {
+  eProb = 60
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "60% Success Chance"
+  selectId("eFail").innerHTML = (100 - 60) + "% Fail Chance"
+}
+eLSP.onclick = function() {
+  eProb = 33
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "33% Success Chance"
+  selectId("eFail").innerHTML = (100 - 33) + "% Fail Chance"
+}
+eMSP.onclick = function() {
+  eProb = 36
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "36% Success Chance"
+  selectId("eFail").innerHTML = (100 - 36) + "% Fail Chance"
+}
+eCurrent.onclick = function() {
   eProb = 30
   eIsPRNG = false
   selectId("eSuccess").innerHTML = "30% Success Chance"
   selectId("eFail").innerHTML = (100 - 30) + "% Fail Chance"
 }
-ePRNG.onclick = function() {
+/*ePRNG.onclick = function() {
   eIsPRNG = true
   eAtt = 0
   eProb = eProbArray[eAtt]
   selectId("eSuccess").innerHTML = eProbArray[eAtt] + "% Success Chance"
   selectId("eFail").innerHTML = (100 - eProbArray[eAtt]) + "% Fail Chance"
-}
+}*/
 //Now we hit the craft button.
 selectId("eButton").onclick = function() {
   let result = selectId("eResult");
