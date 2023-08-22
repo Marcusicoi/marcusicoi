@@ -67,7 +67,9 @@ selectId("R40FLC2").style.color = X0FL0
 selectId("E20FLC2").style.color = X0FL0
 selectId("L5FLC2").style.color = X0FL0
 selectId("M3FLC2").style.color = X0FL0
-//Normal
+
+//Normal Section
+
 //Unusual
 let uOriginal = selectId("uTypeOriginal"),
 uPRNG = selectId("uTypePRNG"),
@@ -179,34 +181,32 @@ selectId("uButton").onclick = function() {
   }
 }
 //Rare
-let rPRNG = selectId("rTypePRNG")
-let rCurrent = selectId("rTypeCurrent")
-let rOld = selectId("rTypeOld")
-let rSP = selectId("rTypeOld")
+let rOriginal = selectId("rTypeOriginal"),
+rPRNG = selectId("rTypePRNG"),
+rOld = selectId("rTypeOld"),
+rOldLSP = selectId("rTypeOldLSkill"),
+rOldMSP = selectId("rTypeOldMSkill"),
+rCurrent = selectId("rTypeCurrent"),
+rLSP = selectId("rTypeLSkill"),
+rMSP = selectId("rTypeMSkill"),
 //Stuff
-let rProb = 40
-let rIsPRNG = false
-let rAtt = 0
-let rCombo = 0
-let rProbArray = [20.15, 40.31, 60.46, 80.62, 100]
+rProb = 40,
+rIsPRNG = false,
+rAtt = 0,
+rCombo = 0,
+rProbArray = [20.15, 40.31, 60.46, 80.62, 100]
 //Buttons
-rOld.onclick = function() {
+rOriginal.onclick = function() {
   rProb = 50
   rIsPRNG = false
   selectId("rSuccess").innerHTML = "50% Success Chance"
   selectId("rFail").innerHTML = (100 - 50) + "% Fail Chance"
 }
-rCurrent.onclick = function() {
+rOld.onclick = function() {
   rProb = 40
   rIsPRNG = false
   selectId("rSuccess").innerHTML = "40% Success Chance"
   selectId("rFail").innerHTML = (100 - 40) + "% Fail Chance"
-}
-rSP.onclick = function() {
-  rProb = 60
-  rIsPRNG = false
-  selectId("rSuccess").innerHTML = "60% Success Chance"
-  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance"
 }
 rPRNG.onclick = function() {
   rIsPRNG = true
@@ -214,7 +214,25 @@ rPRNG.onclick = function() {
   rProb = rProbArray[rAtt]
   selectId("rSuccess").innerHTML = rProbArray[rAtt] + "% Success Chance"
   selectId("rFail").innerHTML = (100 - rProbArray[rAtt]) + "% Fail Chance"
-};
+}
+rOldMSP.onclick = function() {
+  rProb = 60
+  rIsPRNG = false
+  selectId("rSuccess").innerHTML = "60% Success Chance"
+  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance"
+}
+rCurrent.onclick = function() {
+  rProb = 30
+  rIsPRNG = false
+  selectId("rSuccess").innerHTML = "30% Success Chance"
+  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance"
+}
+rOldMSP.onclick = function() {
+  rProb = 60
+  rIsPRNG = false
+  selectId("rSuccess").innerHTML = "60% Success Chance"
+  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance"
+}
 //Now we hit the craft button.
 selectId("rButton").onclick = function() {
   let result = selectId("rResult");
@@ -224,20 +242,21 @@ selectId("rButton").onclick = function() {
       result.innerHTML = "Success!"
       chance.innerHTML = rIsPRNG === true ? `${rProb}% > ${((Math.random() * rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * rProb))}%`
       if (rIsPRNG === true) { 
-        rProb = rProbArray[rAtt];
+        rProb = rProbArray[rAtt]
         selectId("rSuccess").innerHTML = rProb + "% Success Chance";
-        selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance";
-      };
-      rAtt = 0;
-      rCombo = rCombo + 1;
-      if (rCombo > 1) { selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}, Combo x${rCombo}` };
-      result.style.color = X0SC0;
-      chance.style.color = X0SC0;
-      selectId("rSuccess").style.color = X0SC0;
-      selectId("rFail").style.color = "white";
+        selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance"
+      }
+      rAtt > 0 ? selectId("rAttempt").innerHTML = `Suceeded at Attempt ${(rAtt + 1)}` : selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`
+      rAtt = 0
+      rCombo = rCombo + 1
+      if (rCombo > 1) { selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}, Combo x${rCombo}` }
+      result.style.color = X0SC0
+      chance.style.color = X0SC0
+      selectId("rSuccess").style.color = X0SC0
+      selectId("rFail").style.color = "white"
   } else { //If it fails
       result.innerHTML = "Failed.";
-      chance.innerHTML = rIsPRNG === true ? `${rProb}% > ${(((Math.random() * ((100 - rProb) + 1)) + rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * ((100 - rProb) + 1)) + rProb)}%`;
+      chance.innerHTML = rIsPRNG === true ? `${rProb}% > ${(((Math.random() * ((100 - rProb) + 1)) + rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * ((100 - rProb) + 1)) + rProb)}%`
       rAtt = rAtt + 1;
       if (rIsPRNG === true) { 
         rProb = rProbArray[rAtt];
