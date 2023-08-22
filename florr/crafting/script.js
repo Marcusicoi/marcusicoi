@@ -1,89 +1,102 @@
-//Functions
 //Probability
 function probability(n) {
-  return Math.random() < (n / 100);
-};
+  return Math.random() < (n / 100)
+}
+
 //(Opposite) Of Probability
 function oProbability(n) {
-  return Math.random() > (n / 100);
-};
+  return Math.random() > (n / 100)
+}
 //Select random from array
 function choose(arg) {
   return arg[Math.floor(Math.random() * arg.length)]
-};
-//Select ID of course 
-function selectId(id) { return document.getElementById(id) };
+}
+//Select ID
+function selectId(id) { return document.getElementById(id) }
+
+//Set Probability Function
+function setProb(id, type, num, isPRNGtype, rarity) {
+  selectId(id).onclick = function() {
+    type = num
+    isPRNGtype = false
+    selectId(`${rarity}Success`).innerHTML = type + "% Success Chance"
+    selectId(`${rarity}Fail`).innerHTML = (100 - type) + "% Failing Chance"
+  }
+}
+
 //Random color from customize 
-const C0CLA0 = ["5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
-const C0CL0 = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
-selectId("C?TL1").style.color = C0CL0;
-selectId("C?IP1").style.background = C0CL0;
-selectId("C?BT1").style.background = C0CL0;
-selectId("C?SC1").style.color = C0CL0;
-selectId("C?FL1").style.color = C0CL0;
-selectId("C?TL2").style.color = C0CL0;
-selectId("C?PB2").style.background = C0CL0;
-selectId("C?IP2").style.background = C0CL0;
-selectId("C?BT2").style.background = C0CL0;
-selectId("C?SCC2").style.color = C0CL0;
-selectId("C?FLC2").style.color = C0CL0;
+const C0CLA0 = ["5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+const C0CL0 = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0)
+selectId("C?TL1").style.color = C0CL0
+selectId("C?IP1").style.background = C0CL0
+selectId("C?BT1").style.background = C0CL0
+selectId("C?SC1").style.color = C0CL0
+selectId("C?FL1").style.color = C0CL0
+selectId("C?TL2").style.color = C0CL0
+selectId("C?PB2").style.background = C0CL0
+selectId("C?IP2").style.background = C0CL0
+selectId("C?BT2").style.background = C0CL0
+selectId("C?SCC2").style.color = C0CL0
+selectId("C?FLC2").style.color = C0CL0
 //Title color changing every second
-let TitleVar = null;
+let TitleVar = null
 function TitleFunc() {
-clearInterval(TitleVar);
-TitleVar = setInterval(TitleChange, 1000);
+clearInterval(TitleVar)
+TitleVar = setInterval(TitleChange, 1000)
 function TitleChange() { 
-  document.getElementsByClassName("TITLE")[0].style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
-  document.getElementsByClassName("TITLE")[1].style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0);
-};
-}; 
-TitleFunc();
+  document.getElementsByClassName("TITLE")[0].style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0)
+  document.getElementsByClassName("TITLE")[1].style.color = "#" + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0) + choose(C0CLA0)
+}
+}
+TitleFunc()
 //Success Color
-const X0SC0 = "#52F84D";
-selectId("uSuccess").style.color = X0SC0;
-selectId("rSuccess").style.color = X0SC0;
-selectId("eSuccess").style.color = X0SC0;
-selectId("lSuccess").style.color = X0SC0;
-selectId("mSuccess").style.color = X0SC0;
-selectId("qSuccess").style.color = X0SC0;
+const X0SC0 = "#52F84D"
+selectId("uSuccess").style.color = X0SC0
+selectId("rSuccess").style.color = X0SC0
+selectId("eSuccess").style.color = X0SC0
+selectId("lSuccess").style.color = X0SC0
+selectId("mSuccess").style.color = X0SC0
+selectId("qSuccess").style.color = X0SC0
 //Fail Color
-const X0FL0 = "#F46658";
-selectId("uFail").style.color = X0FL0;
-selectId("rFail").style.color = X0FL0;
-selectId("eFail").style.color = X0FL0;
-selectId("lFail").style.color = X0FL0;
-selectId("mFail").style.color = X0FL0;
-selectId("qFail").style.color = X0FL0;
+const X0FL0 = "#F46658"
+selectId("uFail").style.color = X0FL0
+selectId("rFail").style.color = X0FL0
+selectId("eFail").style.color = X0FL0
+selectId("lFail").style.color = X0FL0
+selectId("mFail").style.color = X0FL0
+selectId("qFail").style.color = X0FL0
 //
-selectId("U60SCC2").style.color = X0SC0;
-selectId("R40SCC2").style.color = X0SC0;
-selectId("E20SCC2").style.color = X0SC0;
-selectId("L5SCC2").style.color = X0SC0;
-selectId("M3SCC2").style.color = X0SC0;
+selectId("U60SCC2").style.color = X0SC0
+selectId("R40SCC2").style.color = X0SC0
+selectId("E20SCC2").style.color = X0SC0
+selectId("L5SCC2").style.color = X0SC0
+selectId("M3SCC2").style.color = X0SC0
 //
-selectId("U60FLC2").style.color = X0FL0;
-selectId("R40FLC2").style.color = X0FL0;
-selectId("E20FLC2").style.color = X0FL0;
-selectId("L5FLC2").style.color = X0FL0;
-selectId("M3FLC2").style.color = X0FL0;
+selectId("U60FLC2").style.color = X0FL0
+selectId("R40FLC2").style.color = X0FL0
+selectId("E20FLC2").style.color = X0FL0
+selectId("L5FLC2").style.color = X0FL0
+selectId("M3FLC2").style.color = X0FL0
 //Normal
 //Unusual
-let uOriginal = selectId("uTypeOriginal");
-let uPRNG = selectId("uTypePRNG");
-let uOld = selectId("uTypeOld");
-let uOlderMSP = selectId("uTypeOlderMSkill");
-let uOldLSP = selectId("uTypeOldLSkill");
-let uOldMSP = selectId("uTypeOldMSkill");
-let uCurrent = selectId("uTypeCurrent");
-let uLSP = selectId("uTypeLSkill");
-let uMSP = selectId("uTypeMSkill");
+let uOriginal = selectId("uTypeOriginal"),
+uPRNG = selectId("uTypePRNG"),
+uOld = selectId("uTypeOld"),
+uOlderMSP = selectId("uTypeOlderMSkill"),
+uOldLSP = selectId("uTypeOldLSkill"),
+uOldMSP = selectId("uTypeOldMSkill"),
+uCurrent = selectId("uTypeCurrent"),
+luLSP = selectId("uTypeLSkill"),
+uMSP = selectId("uTypeMSkill"),
 //Stuff
-let uProb = 40;
-let uAtt = 0;
-let uCombo = 0;
-let uIsPRNG = false;
-let uProbArray = [42.26, 84.53, 100];
-uOriginal.onclick = function() {
+uProb = 40,
+uAtt = 0,
+uCombo = 0,
+uIsPRNG = false,
+uProbArray = [42.26, 84.53, 100]
+
+setProb("uOri
+/*uOriginal.onclick = function() {
   uProb = 75;
   uIsPRNG = false;
   selectId("uSuccess").innerHTML = "75% Success Chance";
@@ -137,7 +150,7 @@ uCurrent.onclick = function() {
   uIsPRNG = false;
   selectId("uSuccess").innerHTML = uProb + " Success Chance";
   selectId("uFail").innerHTML = (100 - uProb) + "% Fail Chance";
-};
+};*/
 //Now we hit the craft button.
 selectId("uButton").onclick = function() {
   let result = selectId("uResult");
