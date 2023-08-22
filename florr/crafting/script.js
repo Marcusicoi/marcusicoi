@@ -77,7 +77,7 @@ let uOldMSP = selectId("uTypeOldMSkill");
 let uCurrent = selectId("uTypeCurrent");
 let uLSP = selectId("uTypeLSkill");
 let uMSP = selectId("uTypeMSkill");
-//Stuff;
+//Stuff
 let uProb = 40;
 let uAtt = 0;
 let uCombo = 0;
