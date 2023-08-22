@@ -225,13 +225,19 @@ rCurrent.onclick = function() {
   rProb = 30
   rIsPRNG = false
   selectId("rSuccess").innerHTML = "30% Success Chance"
-  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance"
+  selectId("rFail").innerHTML = (100 - 30) + "% Fail Chance"
 }
-rOldMSP.onclick = function() {
-  rProb = 60
+rLSP.onclick = function() {
+  rProb = 33
   rIsPRNG = false
-  selectId("rSuccess").innerHTML = "60% Success Chance"
-  selectId("rFail").innerHTML = (100 - 60) + "% Fail Chance"
+  selectId("rSuccess").innerHTML = "33% Success Chance"
+  selectId("rFail").innerHTML = (100 - 33) + "% Fail Chance"
+}
+rMSP.onclick = function() {
+  rProb = 36
+  rIsPRNG = false
+  selectId("rSuccess").innerHTML = "36% Success Chance"
+  selectId("rFail").innerHTML = (100 - 36) + "% Fail Chance"
 }
 //Now we hit the craft button.
 selectId("rButton").onclick = function() {
