@@ -261,109 +261,66 @@ selectId("rButton").onclick = function() {
       selectId("rSuccess").style.color = X0SC0
       selectId("rFail").style.color = "white"
   } else { //If it fails
-      result.innerHTML = "Failed.";
+      result.innerHTML = "Failed."
       chance.innerHTML = rIsPRNG === true ? `${rProb}% > ${(((Math.random() * ((100 - rProb) + 1)) + rProb).toFixed(2))}%` : `${rProb}% > ${(Math.floor(Math.random() * ((100 - rProb) + 1)) + rProb)}%`
-      rAtt = rAtt + 1;
+      rAtt = rAtt + 1
       if (rIsPRNG === true) { 
-        rProb = rProbArray[rAtt];
-        selectId("rSuccess").innerHTML = rProb + "% Success Chance";
-        selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance";
-      };
-      selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`;
-      rCombo = 0;
-      result.style.color = X0FL0;
-      chance.style.color = X0FL0;
-      selectId("rSuccess").style.color = "white";
-      selectId("rFail").style.color = X0FL0;
-  }; 
-};
+        rProb = rProbArray[rAtt]
+        selectId("rSuccess").innerHTML = rProb + "% Success Chance"
+        selectId("rFail").innerHTML = (100 - rProb).toFixed(2) + "% Fail Chance"
+      }
+      selectId("rAttempt").innerHTML = `Attempt ${(rAtt + 1)}`
+      rCombo = 0
+      result.style.color = X0FL0
+      chance.style.color = X0FL0
+      selectId("rSuccess").style.color = "white"
+      selectId("rFail").style.color = X0FL0
+  }
+}
 //Epic
-let ePRNG = "selectId(undefined)";
-let eCurrent = selectId("eTypeCurrent");
-let eOld = selectId("eTypeOld");
-let eOlder = selectId("eTypeOlder");
-let eSP = selectId("eTypeSP");
+let eOriginal = selectId("eTypeOriginal"),
+ePRNG = undefined,
+eOlder = selectId("eTypeOlder"),
+eOld = selectId("eTypeOld"),
+eOldLSP = selectId("eTypeOldLSkill"),
+eCurrent = selectId("eTypeCurrent"),
+eLSP = selectId("eTypeLSkill"),
+eMSP = selectId("eTypeMSkill"),
 //Stuff;
-let eProb = 20;
-let eIsPRNG = false;
-let eAtt = 0;
-let eCombo = 0;
-let eProbArray = [undefined];
-let eIsSP = false;
-eCurrent.style.visibility = "hidden";
-eOlder.style.visibility = "hidden";
-eOlder.style.right = "135px";
-eSP.style.right = (135 * 1.875) + "px";
-eIsSP === true ? eOld.style.right = "0px" : eOld.style.right = "135px";
-//One disappears, one appears.
-eOld.onclick = function() {
-  eProb = 15;
-  eIsPRNG = false;
-  eIsSP = false;
-  eOld.style.visibility = "hidden";
-  eOlder.style.right = (135 / 1.3425) + "px"
-  eSP.style.right === "117.5px" && eOlder.style.visibility === "hidden" ? eSP.style.right = (135 / 1.3425) + "px" : eSP.style.right = "100px";
-  eOlder.style.visibility = "visible";
-  eCurrent.style.visibility = "visible";
-  eSP.style.visibility = "visible";
-  selectId("eSuccess").innerHTML = "15% Success Chance";
-  selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance";
-};
+eProb = 30,
+eIsPRNG = false,
+eAtt = 0,
+eCombo = 0,
+eProbArray = [undefined]
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "15% Success Chance"
+  selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance"
+}
 eOlder.onclick = function() {
-  eProb = 25;
-  eIsPRNG = false;
-  eIsSP = false;
-  eOlder.style.visibility = "hidden";
-  eOld.style.right = "0px";
-  eOld.style.visibility = "visible";
-  eCurrent.style.visibility = "visible";
-  eSP.style.right = "117.5px";
-  eSP.style.visibility = "visible";
-  selectId("eSuccess").innerHTML = "25% Success Chance";
-  selectId("eFail").innerHTML = (100 - 25) + "% Fail Chance";
-};
+  eProb = 25
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "25% Success Chance"
+  selectId("eFail").innerHTML = (100 - 25) + "% Fail Chance"
+}
 eCurrent.onclick = function() {
   eProb = 20;
-  eIsPRNG = false;
-  eIsSP === true ? eOld.style.right = "135px" : undefined;
-  eIsSP = false;
-  eCurrent.style.visibility = "hidden";
-  eOld.style.visibility = "visible";
-  if (eOld.style.right === "0px") { eOld.style.right = "135px" };
-  eOlder.style.right = "135px";
-  eSP.style.visibility = "visible";
-  eOlder.style.visibility === "visible" ? eSP.style.right = "135px" : eSP.style.right = (135 * 1.875) + "px";
-  selectId("eSuccess").innerHTML = "20% Success Chance";
-  selectId("eFail").innerHTML = (100 - 20) + "% Fail Chance";
-};
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "20% Success Chance"
+  selectId("eFail").innerHTML = (100 - 20) + "% Fail Chance"
+}
 eSP.onclick = function() {
-  eProb = 30;
-  eIsPRNG = false;
-  eIsSP = true;
-  eSP.style.visibility = "hidden";
-  eCurrent.style.visibility = "visible";
-  eOld.style.visibility = "visible";
-  eOlder.style.visibility = "visible";
-  eOld.style.right = "0px";
-  eOlder.style.right = "0px";
-  selectId("eSuccess").innerHTML = "30% Success Chance";
-  selectId("eFail").innerHTML = (100 - 30) + "% Fail Chance";
-};
+  eProb = 30
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "30% Success Chance"
+  selectId("eFail").innerHTML = (100 - 30) + "% Fail Chance"
+}
 ePRNG.onclick = function() {
-  eIsPRNG = true;
-  if (eIsSP === true){
-      eOld.style.visibility = "hidden"
-      eOld.style.right = "135px";
-      eOld.style.visibility = "visible";
-      eCurrent.style.visibility = "hidden";
-  };
-  eIsSP = false;
-  eAtt = 0;
-  eProb = eProbArray[eAtt];
-  eSP.style.visibility = "visible";
-  selectId("eSuccess").innerHTML = eProbArray[eAtt] + "% Success Chance";
-  selectId("eFail").innerHTML = (100 - eProbArray[eAtt]) + "% Fail Chance";
-};
+  eIsPRNG = true
+  eAtt = 0
+  eProb = eProbArray[eAtt]
+  selectId("eSuccess").innerHTML = eProbArray[eAtt] + "% Success Chance"
+  selectId("eFail").innerHTML = (100 - eProbArray[eAtt]) + "% Fail Chance"
+}
 //Now we hit the craft button.
 selectId("eButton").onclick = function() {
   let result = selectId("eResult");
