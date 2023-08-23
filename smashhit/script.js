@@ -2,7 +2,7 @@
 function ID(id) {
   return document.getElementById(id)
 }
-window.onload = function() { ID("reversedText").style.visibility = "hidden"}
+
 //Randomize Songs
 let Songs = [
 "C0S1", "C0S2", "C0S3",
