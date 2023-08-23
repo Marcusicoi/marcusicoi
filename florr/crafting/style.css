@@ -45,6 +45,28 @@ a {
   border-radius: 10px;
   
 }
+
+a.Old {
+  height: 34px;
+  font-size: 17px;
+  color: black;
+  -webkit-text-stroke: 0.5px white
+}
+
+a.LSkill {
+  height: 34px;
+  font-size: 17px;
+  color: #de1e1e;
+  -webkit-text-stroke: 0.5px white
+}
+
+a.MSkill {
+  height: 34px;
+  font-size: 17px;
+  color: #1edbde;
+  -webkit-text-stroke: 0.5px white
+}
+
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
