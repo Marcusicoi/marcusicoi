@@ -30,19 +30,64 @@ function randomSong() {
 let isReversed = false
 window.onload = function() { ID("reverseT").style.visibility = "hidden" }
 
-//Reversed Button
+let revSongs = [
+  "Checkpoint0_1.mp3", "Checkpoint0_2.mp3", "Checkpoint0_3.mp3",
+  "Checkpoint1_1.mp3", "Checkpoint1_2.mp3", "Checkpoint2_3.mp3",
+  "Checkpoint2_1.mp3", "Checkpoint2_2.mp3", "Checkpoint2_3.mp3", "Checkpoint2_4.mp3",
+  "Checkpoint3_1.mp3", "Checkpoint3_2.mp3", "Checkpoint3_3.mp3", "Checkpoint3_4.mp3",
+  "Checkpoint4_1.mp3", "Checkpoint4_2.mp3",
+  "Checkpoint5_1.mp3",                      "Checkpoint5_3.mp3", "Checkpoint5_4.mp3",
+  "Checkpoint6_1.mp3", "Checkpoint6_2.mp3", "Checkpoint6_3.mp3", "Checkpoint6_4.mp3",
+  "Checkpoint7_1.mp3", "Checkpoint7_2.mp3", "Checkpoint7_3.mp3",
+                                            "Checkpoint8_3.mp3",
+  "Checkpoint9_1.mp3", "Checkpoint9_2.mp3", "Checkpoint9_3_1.mp3", "Checkpoint9_3_2.mp3",
+  "Checkpoint10_1.mp3", "Checkpoint10_2.mp3", "Checkpoint10_3.mp3",
+  "Checkpoint11_1.mp3", "Checkpoint11_2.mp3", "Checkpoint11_3.mp3", "Checkpoint11_4_1.mp3", "Checkpoint11_4_2.mp3",
+]
 
+function randomReversedSong() {
+  return "/smashhit/songs/" + revSongs[Math.floor(Math.random() * revSongs.length)]                          
+}
+
+//Reversed Button
+ID("revbutton").onclick = function() {
+  if (isReversed === false) {
+    isReversed = true
+  } else if (isReversed === true) {
+    isReversed = false
+  }
+}
 //PLAY!!
 ID("button").onclick = function() {
 ID("button").style.visibility = "hidden"
-ID(randomSong()).play()
 
+if (isReversed === false) { 
+  ID(randomSong()).play() 
+} else if (isReversed === true) {
+  var context = new AudioContext(),
+  request = new XMLHttpRequest();
+  request.open('GET', randomReversedSong(), true);
+  request.responseType = 'arraybuffer';
+  request.addEventListener('load', function(){
+      context.decodeAudioData(request.response, function(buffer){
+          var source = context.createBufferSource();
+          Array.prototype.reverse.call( buffer.getChannelData(0) );
+          Array.prototype.reverse.call( buffer.getChannelData(1) );
+          source.buffer = buffer;
+      });
+  });
+}
 //Next song loop
 let i = 1
-setInterval(
-  function() {
-    ID(randomSong()).play()
-    i += 1
-  }, 
-  ((35000 * i) - 3000))
+if (isReversed === false) {
+  setInterval(
+    function() {
+      ID(randomSong()).play()
+      i += 1
+    }, 
+    ((35000 * i) - 3000))
+} else if(isReversed === true) {
+  setInterval(
+    function() {
+}
 }
