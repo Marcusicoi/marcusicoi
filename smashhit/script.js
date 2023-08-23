@@ -49,24 +49,25 @@ function randomReversedSong() {
   return "/smashhit/songs/" + revSongs[Math.floor(Math.random() * revSongs.length)]                          
 }
 
+function reverseSong() {
+  
+}
 //Reversed Button
 ID("revbutton").onclick = function() {
   if (isReversed === false) {
     isReversed = true
+    ID("reverseT").style.visibility = "visible"
   } else if (isReversed === true) {
     isReversed = false
+    ID("reverseT").style.visibility = "hidden"
   }
 }
 //PLAY!!
 ID("button").onclick = function() {
 ID("button").style.visibility = "hidden"
-
-if (isReversed === false) { 
-  ID(randomSong()).play() 
-} else if (isReversed === true) {
   var context = new AudioContext(),
   request = new XMLHttpRequest();
-  request.open('GET', randomReversedSong(), true);
+  request.open('GET', 'smashhit/songs/Versus_1.mp3', true) 
   request.responseType = 'arraybuffer';
   request.addEventListener('load', function(){
       context.decodeAudioData(request.response, function(buffer){
@@ -76,10 +77,9 @@ if (isReversed === false) {
           source.buffer = buffer;
       });
   });
-}
 //Next song loop
 let i = 1
-if (isReversed === false) {
+/*if (isReversed === false) {
   setInterval(
     function() {
       ID(randomSong()).play()
@@ -89,5 +89,19 @@ if (isReversed === false) {
 } else if(isReversed === true) {
   setInterval(
     function() {
-}
+      var context = new AudioContext(),
+      request = new XMLHttpRequest();
+      request.open('GET', randomReversedSong(), true);
+      request.responseType = 'arraybuffer';
+      request.addEventListener('load', function(){
+          context.decodeAudioData(request.response, function(buffer){
+              var source = context.createBufferSource();
+              Array.prototype.reverse.call( buffer.getChannelData(0) );
+              Array.prototype.reverse.call( buffer.getChannelData(1) );
+              source.buffer = buffer;
+          });
+      });
+      i += 1
+    },
+    ((35000 * i) - 3000))*/
 }
