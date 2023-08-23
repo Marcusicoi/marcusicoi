@@ -53,18 +53,32 @@ a.Old {
   -webkit-text-stroke: 0.5px white
 }
 
-a.LSkill {
+a.OldLSkill {
   height: 34px;
   font-size: 17px;
   color: #de1e1e;
   -webkit-text-stroke: 0.5px white
 }
 
-a.MSkill {
+a.OldMSkill {
   height: 34px;
   font-size: 17px;
   color: #1edbde;
   -webkit-text-stroke: 0.5px white
+}
+
+a.LSkill {
+  height: 34px;
+  font-size: 17px;
+  color: #de1e1e;
+  -webkit-text-stroke: 0.5px black
+}
+
+a.MSkill {
+  height: 34px;
+  font-size: 17px;
+  color: #1edbde;
+  -webkit-text-stroke: 0.5px black
 }
 
 @keyframes rainbow {
