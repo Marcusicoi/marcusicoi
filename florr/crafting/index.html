@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="Florr.io Crafting Simulator" property="og:title" />
+    <meta content="Test your luck in this simulator! See if you would get 'mythics'" property="og:description" />
+    <meta content="https://marcusicoi.glitch.me/florrcr" property="og:url" />
+    <meta content="https://cdn.glitch.global/7c11ce93-3b90-40a3-8810-34832400f1b0/20221203_163846.png?v=1670056939757" property="og:image" />
+    <meta content="#0077ff" data-react-helmet="true" name="theme-color" />
+    <link rel="icon" href="https://cdn.glitch.global/7c11ce93-3b90-40a3-8810-34832400f1b0/20221203_163846.png?v=1670056939757" />
+    <title>Hello world!</title>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/florr/crafting/style.css" />
+   <!--<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>-->
+   <!--<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <!-- import the webpage's javascript file -->
+    <script src="/florr/crafting/script.js" defer></script>
+  </head>
+  <body>
+    <!-- this is the start of content -->
+    <h1>Florr.io Crafting Chance</h1>
+    <h2 style="color:red">THIS SIMULATOR IS UNFINISHED / NOT FULLY RELEASED. MANY PETALS IS OLD VERSION + NO NEW BUTTONS ABOVE </h2>
+    <h2 class="TITLE">You can test your luck in here.</h2>
+    <h6 class="TITLE">Made by Marcusicoi (8172)</h6>
+    <h2>Normal</h2>
+    <h2 style="color:#ffe65d">Unusual</h2>
+    <h4>Older Parts</h4>
+    <a id="uTypeOriginal" class="Old" style="background:#ffe65d">Original (75%)</a>
+    <a id="uTypeOld" class="Old" style="background:#ffe65d">Old (60%)</a>
+    <a id="uTypePRNG" class="Old" style="background:#ffe65d">PRNG (42.26%)</a>
+    <a id="uTypeOldLSkill" class="OldLSkill" style="background:#ffe65d">Old LSkill (60%)</a>
+    <a id="uTypeOlderLSkill" class="OldLSkill" style="background:#ffe65d">Older LSkill (90%)</a>
+    <a id="uTypeOldMSkill" class="OldMSkill" style="background:#ffe65d">Old MSkill (80%)</a>
+    <h4>New Parts</h4>
+    <a id="uTypeLSkill" class="LSkill" style="background:#ffe65d">LSkill (44%)</a>
+    <a id="uTypeMSkill" class="MSkill" style="background:#ffe65d">MSkill (48%)</a>
+    <a id="uTypeCurrent" class="Current" style="background:#ffe65d">Current (40%)</a>
+    <h6></h6>
+    <a id="uButton" style="background:#ffe65d">Craft</a>
+    <h3 id="uResult"></h3>
+    <h3 id="uChance"></h3>
+    <h3 id="uAttempt">Attempt 1</h3>
+    <h3 id="uSuccess">40% Success Chance</h3>
+    <h3 id="uFail">60% Fail Chance</h3>
+    <h2 style="color:#534ce3">Rare</h2>
+    <h4>Old Parts</h4>
+    <a id="rTypeOriginal" class="Old" style="background:#534ce3">Original (50%)</a>
+    <a id="rTypeOld" class="Old" style="background:#534ce3">Old (40%)</a>
+    <a id="rTypePRNG" class="Old" style="background:#534ce3">PRNG (20.15%)</a>
+    <a id="rTypeOldLSkill" class="OldLSkill" style="background:#534ce3">Old LSkill (45%)</a>
+    <a id="rTypeOldMSkill" class="Normal" style="background:#534ce3">Older LSkill / Old MSkill (60%)</a>
+    <h4>New Parts</h4>
+    <a id="rTypeLSkill" class="LSkill" style="background:#534ce3">LSkill (33%)</a>
+    <a id="rTypeMSkill" class="MSkill" style="background:#534ce3">MSkill (36%)</a>
+    <a id="rTypeCurrent" class="Current" style="background:#534ce3">Current (30%)</a>
+    <h6></h6>
+    <a id="rButton" style="background:#534ce3">Craft</a>
+    <h3 id="rResult"></h3>
+    <h3 id="rChance"></h3>
+    <h3 id="rAttempt">Attempt 1</h3>
+    <h3 id="rSuccess">40% Success Chance</h3>
+    <h3 id="rFail">60% Fail Chance</h3>
+    <h5 style="color:red">BELOW RARE DOSENT HAVE PRNG OPTION UNTIL I FIND INFORMATION</h5>
+    <h2 style="color:#861ede">Epic</h2>
+    <h4>Older Parts</h4>
+    <a id="eTypeOriginal" class="Old" style="background:#861ede">Original (25%)</a>
+    <a id="eTypeOlder" class="Old" style="background:#861ede">Older (15%)</a>
+    <!--<a id="eTypePRNG" class="Old" style="background:#861ede">PRNG (20.15%)</a>-->
+    <a id="eTypeOlderLSkill" class="OldLSkill" style="background:#861ede">Older LSkill (60%)</a>
+    <a id="eTypeOldMSkill" class="OldMSkill" style="background:#861ede">(Old / Older) MSkill (30%)</a>
+    <h4>New Parts</h4>
+    <a id="eTypeLSkill" class="LSkill" style="background:#861ede">LSkill (22%)</a>
+    <a id="eTypeMSkill" class="MSkill" style="background:#861ede">MSkill (24%)</a>
+    <a id="eTypeCurrent" class="Current" style="background:#861ede">Old / Current (20%)</a>    
+    <h6></h6>
+    <a id="eButton" style="background:#861ede">Craft</a>
+    <h3 id="eResult"></h3>
+    <h3 id="eChance"></h3>
+    <h3 id="eAttempt">Attempt 1</h3>
+    <h3 id="eSuccess">20% Success Chance</h3>
+    <h3 id="eFail">80% Fail Chance</h3>
+    <h2 style="color:#de1e1e">Legendary</h2>
+    <a id="lTypeOriginal" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">Original (5%)</a>
+    <a id="lTypeOlder" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px  black">Older (15%)</a>
+    <a id="lTypeOld" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px  black">Old (20%)</a>
+    <!--<a id="lTypePRNG" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">PRNG (20.15%)</a>-->
+    <a id="lTypeOldLSkill" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">Old LSkill (60%)</a>
+    <h4>New Parts</h4>
+    <a id="lTypeLSkill" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">LSkill (33%)</a>
+    <a id="lTypeMSkill" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">MSkill (36%)</a>
+    <a id="lTypeCurrent" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">((Old / Older) MSkill) / Current (30%)</a>
+    <!-- <a id="lTypePRNG" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">PRNG (20.15%)</a> -->
+    <a id="lTypeCurrent" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px  black">Current (10%)</a>
+    <a id="lTypeOld" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">Old  (5%)</a>
+    <a id="lTypeSP" style="height:34px; font-size:17px; background:#de1e1e; -webkit-text-stroke: 0.5px black">Skill  (15%)</a>
+    <h6></h6>
+    <a id="lButton" style="background:#de1e1e">Craft</a>
+    <h3 id="lResult"></h3>
+    <h3 id="lChance"></h3>
+    <h3 id="lAttempt">Attempt 1</h3>
+    <h3 id="lSuccess">5% Success Chance</h3>
+    <h3 id="lFail">95% Fail Chance</h3>
+    <h2 style="color:#1edbde">Mythical</h2>
+   <!-- <a id="mTypePRNG" style="height:34px; font-size:17px; background:#1edbde; -webkit-text-stroke: 0.5px black">PRNG (20.15%)</a> -->
+    <a id="mTypeCurrent" style="height:34px; font-size:17px; background:#1edbde; -webkit-text-stroke: 0.5px  black">Current (3%)</a>
+    <a id="mTypeOld" style="height:34px; font-size:17px; background:#1edbde; -webkit-text-stroke: 0.5px black">Old (2%)</a>
+    <a id="mTypeOlder" style="height:34px; font-size:17px; background:#1edbde; -webkit-text-stroke: 0.5px black">Older (1%)</a>
+    <h6></h6>
+    <a id="mButton" style="background:#1edbde">Craft</a>
+    <h3 id="mResult"></h3>
+    <h3 id="mChance"></h3>
+    <h3 id="mAttempt">Attempt 1</h3>
+    <h3 id="mSuccess">3% Success Chance</h3>
+    <h3 id="mFail">97% Fail Chance</h3>
+    <h2 style="color:#de1e65">Unique</h2>
+    <a id="qHelpB" style="height:34px; font-size:17px; background:#de1e65; -webkit-text-stroke: 0.5px black; border-radius:100px">Help / Open</a>
+    <h3 id="qHelpT"></h3>
+    <a id="qButton" style="background:#de1e65">Craft</a>
+    <h3 id="qResult"></h3>
+    <h3 id="qChance"></h3>
+    <h3 id="qAttempt">Suceeded to ??%</h3>
+    <h3 id="qSuccess">99% Success Chance</h3>
+    <h3 id="qFail">1% Fail Chance</h3>
+    <h2 id="C?TL1">Customize</h2>
+    <input id="C?IP1" type="number" placeholder="Probability">
+    <a id="C?BT1">Craft</a>
+    <h3 id="C?RS1"></h3>
+    <h3 id="C?CH1"></h3>
+    <h3 id="C?SC1">8172% Success Chance</h3>
+    <h3 id="C?FL1">9064% Success Chance</h3>
+    <!--
+    <h2>-----------------------</h2>
+    <h2>Normal PRNG</h2>
+    <a id="U60BT1P" style="background:#ffe65d">Craft</a>
+    <h3 id="U60RS1P"></h3>
+    <h3 id="U60CH1P"></h3>
+    <h3>60% Success Chance</h3>
+    <h3>40% Fail Chance</h3>
+    <a id="R40BT1P" style="background:#534ce3">Craft</a>
+    <h3 id="R40RS1P"></h3>
+    <h3 id="R40CH1P"></h3>
+    <h3>40% Success Chance</h3>
+    <h3>60% Fail Chance</h3>
+    <a id="E20BT1P" style="background:#861ede">Craft</a>
+    <h3 id="E20RS1P"></h3>
+    <h3 id="E20CH1P"></h3>
+    <h3>20% Success Chance</h3>
+    <h3>80% Fail Chance</h3>
+    <a id="L5BT1P" style="background:#de1e1e">Craft</a>
+    <h3 id="L5RS1P"></h3>
+    <h3 id="L5CH1P"></h3>
+    <h3>5% Success Chance</h3>
+    <h3>95% Fail Chance</h3>
+    <a id="M3BT1P" style="background:#1edbde">Craft</a>
+    <h3 id="M3RS1P"></h3>
+    <h3 id="M3CH1P"></h3>
+    <h3>3% Success Chance</h3>
+    <h3>97% Fail Chance</h3> -->
+    <h2>-----------------------</h2>
+    <h2 style="color:red">
+      WARNING!
+      DONT PUT HIGH VALUES ON INPUT IT MAY CRASH OR LAG.
+      100,000+ WOULD LAG AND TAKE LONG PERIOD OF TIME.
+      (ALSO OUTDATED AS THE HEADPAGE SAYS)
+    </h2>
+    <h2>Many Petals TRNG</h2>
+    <h2 style="color:#ffe65d">Unusual</h2>
+    <input id="U60IP2" type="number" placeholder="Petals" style="background:#ffe65d">
+    <a id="U60BT2" style="background:#ffe65d">Craft</a>
+    <h3 id="U60SC2"></h3>
+    <h3 id="U60FL2"></h3>  
+    <h3 id="U60SCC2">60% Success Chance</h3>
+    <h3 id="U60FLC2">40% Fail Chance</h3>
+    <h2 style="color:#534ce3">Rare</h2>
+    <input id="R40IP2" type="number" placeholder="Petals" style="background:#534ce3">
+    <a id="R40BT2" style="background:#534ce3">Craft</a>
+    <h3 id="R40SC2"></h3>
+    <h3 id="R40FL2"></h3>
+    <h3 id="R40SCC2">40% Success Chance</h3>
+    <h3 id="R40FLC2">60% Fail Chance</h3>
+    <h2 style="color:#861ede">Epic</h2>
+    <input id="E20IP2" type="number" placeholder="Petals" style="background:#861ede">
+    <a id="E20BT2" style="background:#861ede">Craft</a>
+    <h3 id="E20SC2"></h3>
+    <h3 id="E20FL2"></h3>
+    <h3 id="E20SCC2">20% Success Chance</h3>
+    <h3 id="E20FLC2">80% Fail Chance</h3>
+    <h2 style="color:#de1e1e">Legendary</h2>
+    <input id="L5IP2" type="number" placeholder="Petals" style="background:#de1e1e">
+    <a id="L5BT2" style="background:#de1e1e">Craft</a>
+    <h3 id="L5SC2"></h3>
+    <h3 id="L5FL2"></h3>
+    <h3 id="L5SCC2">5% Success Chance</h3>
+    <h3 id="L5FLC2">95% Fail Chance</h3>
+    <h2 style="color:#18dbde">Mythical</h2>
+    <input id="M3IP2" type="number" placeholder="Petals" style="background:#18dbde">
+    <a id="M3BT2" style="background:#1edbde">Craft</a>
+    <h3 id="M3SC2"></h3>
+    <h3 id="M3FL2"></h3>
+    <h3 id="M3SCC2">3% Success Chance</h3>
+    <h3 id="M3FLC2">97% Fail Chance</h3>
+    <h2 id="C?TL2">Customize</h2>
+    <input id="C?PB2" type="number" placeholder="Probability">
+    <input id="C?IP2" type="number" placeholder="Petals">
+    <a id="C?BT2">Craft</a>
+    <h3 id="C?SC2"></h3>
+    <h3 id="C?FL2"></h3>
+    <h3 id="C?SCC2">8172% Success Chance</h3>
+    <h3 id="C?FLC2">9064% Fail Chance</h3>
+  </body>
+</html>

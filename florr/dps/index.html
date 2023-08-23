@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Hello world!</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+<!--<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>-->
+    <!-- import the webpage's javascript file -->
+    <script src="/florr/dps/script.js" defer></script>
+    <style>
+      body {
+        background: #000035;
+        font-family: 'Ubuntu', sans-serif;
+        color: white
+      }
+    </style>
+  </head>
+  <body>
+    <!-- this is the start of content -->
+    <h1>Build DPS Calculator</h1>
+    <h2>Calculates the damage per second to your build.</h2>
+    <h3>Thanks to christina for the formula.</h3>
+      
+    <h2>Rotation</h2>
+    <input type="number" id="rotate" value="2.5" placeholder="Rotation Radius">
+    <p></p>
+    <a id="nrotate" style="background:black">Normal (2.5)</a>
+    <a id="crotate" style="background:#72d964">Common (2.8)</a>
+    <a id="urotate" style="background:#ffe65d">Unusual (3.1)</a>
+    <a id="rrotate" style="background:#484eda">Rare (3.4)</a>
+    <a id="erotate" style="background:#861fde">Epic (3.7)</a>
+    <a id="lrotate" style="background:#dc201f">Legendary (4)</a>
+    <a id="mrotate" style="background:#1fdbdd">Mythic (4.3)</a>
+    <a id="ulrotate" style="background:#ff2b75">Ultra (4.6)</a>
+    <a id="srotate" style="background:#27fea1">Super (4.9)</a>
+    <a id="cerotate" style="background:#ffc10f">Celestial (5.2)</a>
+    <a id="chrotate" style="background:#010eb1">Chaos (5.5)</a>
+    <a id="efrotate" style="background:#f4bdf2">Effulgent (5.8)</a>
+   
+    <h2>Reload</h2>
+    <input type="number" id="reload" value="1" placeholder="Reload Reduction">
+    <p></p>
+    <a id="nreload" style="background:black">Normal (x1)</a>
+    <a id="creload" style="background:#72d964">Common (x0.93)</a>
+    <a id="ureload" style="background:#ffe65d">Unusual (x0.86)</a>
+    <a id="rreload" style="background:#484eda">Rare (x0.8)</a>
+    <a id="ereload" style="background:#861fde">Epic (x0.75)</a>
+    <a id="lreload" style="background:#dc201f">Legendary (x0.69)</a>
+    <a id="mreload" style="background:#1fdbdd">Mythic (x0.64)</a>
+    <a id="ulreload" style="background:#ff2b75">Ultra (x0.6)</a>
+    <a id="sreload" style="background:#27fea1">Super (x0.54)</a>
+    <a id="cereload" style="background:#ffc10f">Celestial (x0.49)</a>
+    <a id="chreload" style="background:#010eb1">Chaos (x0.45)</a>
+    <a id="efreload" style="background:#f4bdf2">Effulgent (x0.39)</a>
+    
+    <h2>Petal</h2>
+    <input type="number" id="petdmg" placeholder="Damage">
+    <input type="number" id="petcld" placeholder="Cooldown">
+    <input type="number" id="petnum" value="1" placeholder="Amount of petals">
+    <input type="text" id="petname" placeholder="Rarity & Name">
+      
+    <h2>Mob</h2>
+    <input type="number" id="mobhlt" placeholder="Health">
+    <input type="number" id="mobdmg" placeholder="Damage">
+    <input type="text" id="mobname" placeholder="Rarity & Name">
+    
+    <h1></h1>
+    <h2>Link</h2>
+    <h4>Petals</h4>
+    <h6>Basics</h6>
+    <a id="linkcbasic" class="link">Common Basic</a>
+    <h6>Stingers</h6>
+    <a id="linkspinger" class="link">Super Stinger</a>
+    <h6>Lights</h6>
+    <a id="linkmlight" class="link">Mythic Light</a>
+    <a id="linkullight" class="link">Ultra Light</a>
+    <a id="linkslight" class="link">Super Light</a>
+    <h6>Wings</h6>
+    <a id="linklwing" class="link">Legendary Wings</a>
+    <a id="linkmwing" class="link">Mythic Wings</a>
+    <a id="linkulwing" class="link">Ultra Wings</a>
+    <a id="linkswing" class="link">Super Wings</a>
+    <h4>Mobs</h4>
+    <a id="linkcbaby" class="link">Common Baby Ant</a>
+    <a id="linksover" class="link">Super Termite Overmind</a>
+    <h1></h1>
+    <h2>DON'T! IT'S A TRAP!</h2>
+    <a id="runbutton" style="background:blue">CALCULATE!</a>
+    
+    <div id="results">
+    <h1>RESULTS</h1>
+    <h2>STATS</h2>
+    <h4 id="rotateresult">ROTATION RADIUS: 8172 rad/s</h4>
+    <h4 id="reloadresult">RELOAD REDUCTION: </h4>
+    <h4 id="petalused">PETAL USED: </h4>
+    <h4 id="mobused">MOB ATTACK: </h4>
+    <h1></h1>
+    <h2>RESULTS</h2>
+    <a id="formbutton" style="background:red">Show Formula</a>
+    <h1></h1>
+    <h4 id="reloadreduct">PETAL COOLDOWN:</h4>
+    <h6 class="formula">(<span id="relred1">8172s</span> * <span id="relred2">x8172</span>)</h6>
+    <h6 class="formula">(<span id="relred3">PetalCooldown</span> * <span id="relred4">ReloadReduct</span>)</h6>
+      
+    <h4 id="mobstats">MOB STATS:</h4>
+    <h6 class="formula">ceiling(<span id="mobstat1">8172</span> / <span id="mobstat2">8172</span>)</h6>
+    <h6 class="formula">ceiling(<span id="mobstat3">MobHealth</span> / <span id="mobstat4">MobDamage</span>)</h6>
+      
+    <h4 id="petalrotate">HITS EACH ROTATION:</h4>
+    <h6 class="formula">ceiling((<span id="petrot1">8172 rad/s</span> * (<span id="petrot2">8172s</span> + 0.04 * (<span id="petrot3">8172</span> - 1))) / (2 * π))</h6>
+    <h6 class="formula">ceiling((<span id="petrot4">RotationRadius</span> * (<span id="petrot5">PetalReductedCooldown</span> + 0.04 * (<span id="petrot6">MobStats</span> - 1))) / (2 * π))</h6>
+      
+    <h4>
+      TOTAL DPS OF <span id="total1">8172 undefined(s)</span> 
+      FROM <span id="total2">undefined</span> 
+      WITH <span id="total3">8172 rad/s</span>
+      AND <span id="total4">x8172 -%cd</span>
+      IS <span id="total5">8172</span>
+    </h4>   
+    <h6 class="formula">(<span id="tdps1">8172</span> * <span id="tdps2">8172</span>) / ((2 * <span id="tdps3">8172</span> * π) / <span id="tdps4">8172 rad/s</span>)</h6>
+    <h6 class="formula">(<span id="tdps5">MobStats</span> * <span id="tdps6">PetalDamage</span>) / ((2 * <span id="tdps7">HitsEachRotation</span> * π) / <span id="tdps8">RotationRadius</span>)</h6>
+    </div>
+  </body>
+</html>
