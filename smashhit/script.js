@@ -25,8 +25,15 @@ let Songs = [
 function randomSong() {
   return Songs[Math.floor(Math.random() * Songs.length)]
 }
+
+//REVERSED??!
+let isReversed = false
+window.onload = function() { ID("reverseT").style.visibility = "hidden" }
+
+//Reversed Button
+
 //PLAY!!
-ID("button").onclick = function (){
+ID("button").onclick = function() {
 ID("button").style.visibility = "hidden"
 ID(randomSong()).play()
 
