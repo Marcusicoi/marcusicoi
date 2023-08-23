@@ -43,7 +43,13 @@ a {
   cursor: pointer;
   background: #DDDDDD;
   border-radius: 10px;
-  
+  -webkit-text-stroke: 0.5px black
+}
+
+a.Normal {
+  height: 34px;
+  font-size: 17px;
+  -webkit-text-stroke: 0.5px black
 }
 
 a.Old {
@@ -81,6 +87,12 @@ a.MSkill {
   -webkit-text-stroke: 0.5px black
 }
 
+a.Current {
+  height: 34px;
+  font-size: 17px;
+  color: lime;
+  -webkit-text-stroke: 0.5px black
+}
 @keyframes rainbow {
   0% {color: #ff0000}
   8% {color: #ff7700}
