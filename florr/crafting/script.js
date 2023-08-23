@@ -281,8 +281,8 @@ selectId("rButton").onclick = function() {
 let eOriginal = selectId("eTypeOriginal"),
 ePRNG = undefined,
 eOlder = selectId("eTypeOlder"),
-eOld = selectId("eTypeOld"),
-eOldLSP = selectId("eTypeOldLSkill"),
+eOlderLSP = selectId("eTypeOlderLSkill"),
+eOldMSP = selectId("eTypeOldMSkill"),
 eCurrent = selectId("eTypeCurrent"),
 eLSP = selectId("eTypeLSkill"),
 eMSP = selectId("eTypeMSkill"),
@@ -305,35 +305,35 @@ eOlder.onclick = function() {
   selectId("eSuccess").innerHTML = "15% Success Chance"
   selectId("eFail").innerHTML = (100 - 15) + "% Fail Chance"
 }
-eOld.onclick = function() {
-  eProb = 20
-  eIsPRNG = false
-  selectId("eSuccess").innerHTML = "20% Success Chance"
-  selectId("eFail").innerHTML = (100 - 20) + "% Fail Chance"
-}
-eOldLSP.onclick = function() {
+eOlderLSP.onclick = function() {
   eProb = 60
   eIsPRNG = false
   selectId("eSuccess").innerHTML = "60% Success Chance"
   selectId("eFail").innerHTML = (100 - 60) + "% Fail Chance"
 }
-eLSP.onclick = function() {
-  eProb = 33
-  eIsPRNG = false
-  selectId("eSuccess").innerHTML = "33% Success Chance"
-  selectId("eFail").innerHTML = (100 - 33) + "% Fail Chance"
-}
-eMSP.onclick = function() {
-  eProb = 36
-  eIsPRNG = false
-  selectId("eSuccess").innerHTML = "36% Success Chance"
-  selectId("eFail").innerHTML = (100 - 36) + "% Fail Chance"
-}
-eCurrent.onclick = function() {
+eOldMSP.onclick = function() {
   eProb = 30
   eIsPRNG = false
   selectId("eSuccess").innerHTML = "30% Success Chance"
   selectId("eFail").innerHTML = (100 - 30) + "% Fail Chance"
+}
+eLSP.onclick = function() {
+  eProb = 24
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "22% Success Chance"
+  selectId("eFail").innerHTML = (100 - 22) + "% Fail Chance"
+}
+eMSP.onclick = function() {
+  eProb = 22
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "24% Success Chance"
+  selectId("eFail").innerHTML = (100 - 24) + "% Fail Chance"
+}
+eCurrent.onclick = function() {
+  eProb = 20
+  eIsPRNG = false
+  selectId("eSuccess").innerHTML = "20% Success Chance"
+  selectId("eFail").innerHTML = (100 - 20) + "% Fail Chance"
 }
 /*ePRNG.onclick = function() {
   eIsPRNG = true
