@@ -50,11 +50,11 @@ function randomReversedSong() {
 }
 
 function reverseSong(file) {
-  // Create an audio context
+// Create an audio context
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 // Load the audio file
-const audioElement = new Audio('smashhit/songs/Checkpoint11_4_2.mp3');
+const audioElement = new Audio(file);
 const audioSource = audioContext.createMediaElementSource(audioElement);
 
 // Create a script processor node
@@ -74,7 +74,12 @@ scriptNode.onaudioprocess = function (audioProcessingEvent) {
     }
   }
 }
+// Connect the nodes
+audioSource.connect(scriptNode);
+scriptNode.connect(audioContext.destination);
 
+// Start playing the audio
+audioElement.play();
 }
 //Reversed Button
 ID("revbutton").onclick = function() {
@@ -90,31 +95,26 @@ ID("revbutton").onclick = function() {
 ID("button").onclick = function() {
 ID("button").style.visibility = "hidden"
 
+if (isReversed === false) {
+  ID(randomSong()).play()
+} else if (isReversed === true) {
+  reverseSong(randomReversedSong())
+}
 //Next song loop
 let i = 1
-/*if (isReversed === false) {
+  if (isReversed === false) {
   setInterval(
     function() {
       ID(randomSong()).play()
       i += 1
     }, 
     ((35000 * i) - 3000))
-} else if(isReversed === true) {
-  setInterval(
-    function() {
-      var context = new AudioContext(),
-      request = new XMLHttpRequest();
-      request.open('GET', randomReversedSong(), true);
-      request.responseType = 'arraybuffer';
-      request.addEventListener('load', function(){
-          context.decodeAudioData(request.response, function(buffer){
-              var source = context.createBufferSource();
-              Array.prototype.reverse.call( buffer.getChannelData(0) );
-              Array.prototype.reverse.call( buffer.getChannelData(1) );
-              source.buffer = buffer;
-          });
-      });
-      i += 1
-    },
-    ((35000 * i) - 3000))*/
+  } else if(isReversed === true) {
+    setInterval(
+      function() {
+        reverseSong(randomReversedSong())
+        i += 1
+      },
+      ((35000 * i) - 3000))
+  }
 }
