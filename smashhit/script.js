@@ -49,8 +49,32 @@ function randomReversedSong() {
   return "/smashhit/songs/" + revSongs[Math.floor(Math.random() * revSongs.length)]                          
 }
 
-function reverseSong() {
-  
+function reverseSong(file) {
+  // Create an audio context
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+// Load the audio file
+const audioElement = new Audio('smashhit/songs/Checkpoint11_4_2.mp3');
+const audioSource = audioContext.createMediaElementSource(audioElement);
+
+// Create a script processor node
+const scriptNode = audioContext.createScriptProcessor(4096, 1, 1);
+
+// Reverse the audio data
+scriptNode.onaudioprocess = function (audioProcessingEvent) {
+  const inputBuffer = audioProcessingEvent.inputBuffer;
+  const outputBuffer = audioProcessingEvent.outputBuffer;
+
+  for (let channel = 0; channel < outputBuffer.numberOfChannels; channel++) {
+    const inputData = inputBuffer.getChannelData(channel);
+    const outputData = outputBuffer.getChannelData(channel);
+
+    for (let i = 0; i < inputBuffer.length; i++) {
+      outputData[i] = inputData[inputBuffer.length - i - 1];
+    }
+  }
+}
+
 }
 //Reversed Button
 ID("revbutton").onclick = function() {
@@ -65,18 +89,7 @@ ID("revbutton").onclick = function() {
 //PLAY!!
 ID("button").onclick = function() {
 ID("button").style.visibility = "hidden"
-  var context = new AudioContext(),
-  request = new XMLHttpRequest();
-  request.open('GET', 'smashhit/songs/Versus_1.mp3', true) 
-  request.responseType = 'arraybuffer';
-  request.addEventListener('load', function(){
-      context.decodeAudioData(request.response, function(buffer){
-          var source = context.createBufferSource();
-          Array.prototype.reverse.call( buffer.getChannelData(0) );
-          Array.prototype.reverse.call( buffer.getChannelData(1) );
-          source.buffer = buffer;
-      });
-  });
+
 //Next song loop
 let i = 1
 /*if (isReversed === false) {
