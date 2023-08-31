@@ -25,6 +25,7 @@ function BG() {
     let dir = ["top", "top", "bottom", "left", "right", "top left", "top right", "bottom left", "bottom right"]
     return "to " + dir[Math.floor(Math.random() * dir.length)]
   }
+  
   //HEX COLORS
   function hexN() {
     //RANDOMIZERS
@@ -32,12 +33,20 @@ function BG() {
         ip = Math.floor(Math.random() * 100) + 1
     
     //Amount of color
-    let h = {
-      2: `${hex()}, ${hex()}`,
-      3: `${hex()}, ${hex()}, ${hex()}`,
-      4: `${hex()}, ${hex()}, ${hex()}, ${hex()}`,      
+    switch (ia) {
+      case 2: return `${hex()}, ${hex()}`; break
+      case 3: return `${hex()}, ${hex()}, ${hex()}`; break
+      case 4: return `${hex()}, ${hex()}, ${hex()}, ${hex()}`; break
     }
     
+    //Percentages%
+    if (ip < (100 / 3)) {
+      switch (ia) {
+        case 2: return `${hex()}, ${hex()}`; break
+        case 3: return `${hex()}, ${hex()}, ${hex()}`; break
+        case 4: return `${hex()}, ${hex()}, ${hex()}, ${hex()}`; break
+      }
+    }
   }
   return txt(`${deg()}, ${hex()}, ${hex()}`)
 }
