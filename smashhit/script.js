@@ -14,12 +14,21 @@ function hex() {
 function BG() {
   let txt = (x) => {
     return `linear-gradient(${x})`
-  }, deg = () => {
-    return Math.floor(Math.random() * 360) + "deg"
-  }, to = () => {
-    let dir = ["top", "top", "bottom", "left", "right", "top left", "top right", "bottom left", "bottom right"]
-    return "to " + dir[Math.floor(Math.random() * dir.length)]
-  }  
+  }
+  function hexF() {
+    let i = Math.floor(Math.random() * 5) + 1
+    let deg = () => {
+      return Math.floor(Math.random() * 360) + "deg"
+    }, to = () => {
+      let dir = ["bottom", "left", "right", "top left", "top right", "bottom left", "bottom right"]
+      return "to " + dir[Math.floor(Math.random() * dir.length)]
+    }
+    switch (i) {
+      case 1: return deg(); break
+      case 2: return to(); break
+      default: return "to top"; break;
+    }
+  }
   function hexN() {
     let ia = Math.floor(Math.random() * (4 - 2 + 1) + 2),
         ip = Math.floor(Math.random() * 100) + 1    
@@ -32,7 +41,7 @@ function BG() {
         p2 = () => { return ranp(25, 50) },
         p3 = () => { return ranp(50, 75) },
         p4 = () => { return ranp(75, 100) }    
-    if (ip < 50) {
+    if (ip < (100 / 3)) {
       switch (ia) {
         case 2: return `${hex()} ${p1()}, ${hex()} ${p2()}`; break
         case 3: return `${hex()} ${p1()}, ${hex()} ${p2()}, ${hex()} ${p3()}`; break
@@ -48,7 +57,7 @@ function BG() {
   }
   
   //BG text
-  let color = txt(`${hexN()}`)
+  let color = txt(`${hexF()}, ${hexN()}`)
   ID("bgtxt").innerHTML = color
   return color
 }
@@ -56,6 +65,7 @@ document.body.style.height = "100vh"
 document.body.style.background = BG()
 document.body.style["background-attachment"] = "fixed"
 
+ID("bgbg").
 //Randomize Songs
 let Songs = [
 "C0S1", "C0S2", "C0S3",
