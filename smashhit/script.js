@@ -71,19 +71,14 @@ ID("bgbg").onclick = function() {
 
 //View background color
 let isView = false
-if (isView == true) {
-  ID("overview").style.visibility = "hidden"
-} else if (isView == false) {
-  ID("overview").style.visibility = "visible"
-}
 ID("bgv").onclick = function() {
-  if (isView == true) {
-    ID("overview").style.visibility = "hidden"
-    isView = false
-  } else if (isView == false) {
+  if (isView == false) {
     ID("overview").style.visibility = "visible"
     isView = true
-  } 
+  } else if (isView == true) {
+    ID("overview").style.visibility = "hidden"
+    ID("bgv").innerHTML = "View Text"
+    isView = false
 }
 //Randomize Songs
 let Songs = [
