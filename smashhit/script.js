@@ -32,23 +32,34 @@ function BG() {
     let ia = Math.floor(Math.random() * (4 - 2 + 1) + 2),
         ip = Math.floor(Math.random() * 100) + 1
     
-    //Amount of color
-    switch (ia) {
-      case 2: return `${hex()}, ${hex()}`; break
-      case 3: return `${hex()}, ${hex()}, ${hex()}`; break
-      case 4: return `${hex()}, ${hex()}, ${hex()}, ${hex()}`; break
-    }
-    
     //Percentages%
-    if (ip < (100 / 3)) {
+    function ran(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+    }
+    let hex = () => { return ran(25, 50) }
+    let hex = () => { return ran(25, 50) }
+    if (ip < 50) {
+      switch (ia) {
+        case 2: return `${hex()} ${per()}, ${hex()} ${per()}`; break
+        case 3: return `${hex()} ${per()}, ${hex()} ${per()}, ${hex()} ${per()}`; break
+        case 4: return `${hex()} ${per()}, ${hex()} ${per()}, ${hex()} ${per()}, ${hex()} ${per()}`; break
+      }
+    } else {
+    //Amount of color
       switch (ia) {
         case 2: return `${hex()}, ${hex()}`; break
         case 3: return `${hex()}, ${hex()}, ${hex()}`; break
         case 4: return `${hex()}, ${hex()}, ${hex()}, ${hex()}`; break
       }
-    }
+    }    
   }
-  return txt(`${deg()}, ${hex()}, ${hex()}`)
+  
+  //BG text
+  let color = txt(`${hexN()}`)
+  ID("bgtxt").innerHTML = color
+  return color
 }
 document.body.style.height = "100vh"
 document.body.style.background = BG()
