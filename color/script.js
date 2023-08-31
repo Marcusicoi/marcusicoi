@@ -28,28 +28,23 @@ function hex() {
         m = 0,
         y = 0,
         k = 0
-    let r = parseInt(x.substring(0,2),16),
-        g = parseInt(x.substring(2,4),16),
-        b = parseInt(x.substring(4,6),16); 
+    let r = rgb(x).r,
+        g = rgb(x).g,
+        b = rgb(x).b
     if (r == 0 && g == 0 && b == 0) {
       k = 1;
-      return `0%, 0%, 0%, 1%`;
+      return `0%, 0%, 0%, 1%`
       }
-    c = 1 - (r/255);
-    m = 1 - (g/255);
-    y = 1 - (b/255);
-   let minCMY = Math.min(computedC,Math.min(computedM,computedY));
-
- computedC = (computedC - minCMY) / (1 - minCMY) ;
- computedM = (computedM - minCMY) / (1 - minCMY) ;
- computedY = (computedY - minCMY) / (1 - minCMY) ;
- computedK = minCMY;
-
- return [computedC,computedM,computedY,computedK];
-}
-  
+    c = 1 - (r / 255), m = 1 - (g / 255), y = 1 - (b / 255)
+    let minCMY = Math.min(c, Math.min(m, y))
+    c = (c - minCMY) / (1 - minCMY)
+    m = (m - minCMY) / (1 - minCMY)
+    y = (y - minCMY) / (1 - minCMY)
+    k = minCMY
+    return `${(c * 100)}%, ${(m * 100)}%, ${(y * 100)}%, ${(k * 100)}%`;
+  }  
   let i = "#" + ran() + ran() + ran() + ran() + ran() + ran()
-  ID("cresult").innerHTML = `${i}, rgb(${rgb(i).r}, ${rgb(i).g}, ${rgb(i).b}), ${cmyk(i)}` 
+  ID("cresult").innerHTML = `${i}, rgb(${rgb(i).r}, ${rgb(i).g}, ${rgb(i).b}), cmyk(${cmyk(i)})` 
   return i
 }
 
