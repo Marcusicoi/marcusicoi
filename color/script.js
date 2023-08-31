@@ -15,36 +15,45 @@ function hex() {
   function ran() {
     return char[Math.floor(Math.random() * char.length)]
   }
-  function rgb(x) {
+  function rgb(x, y = 0) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(x);
-    return result ? {
+    let i = {
       r: parseInt(result[1], 16),
       g: parseInt(result[2], 16),
       b: parseInt(result[3], 16)
-    } : null;
+    }
+    if (y == 0) {
+      return `rgb(${i.r}, ${i.g}, ${i.b})`
+    } else if (y == 1) {
+      return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+      } : null
+    }
   }
-  function cmyk(x) {
+  function cmyk(r,g,b) {
     let c = 0,
         m = 0,
         y = 0,
         k = 0
-    let r = rgb(x).r,
-        g = rgb(x).g,
-        b = rgb(x).b
-    if (r == 0 && g == 0 && b == 0) {
+    //remove spaces from input RGB values, convert to int
+    var r = parseInt((''+r).replace(/\s/g, ''), 10),
+        g = parseInt((''+g).replace(/\s/g, ''), 10),
+        b = parseInt((''+b).replace(/\s/g, ''), 10)
+    if ( r == 0 && g == 0 && b == 0) {
       k = 1;
-      return `0%, 0%, 0%, 1%`
-      }
-    c = 1 - (r / 255), m = 1 - (g / 255), y = 1 - (b / 255)
+    }
+    c = 1 - (r/255), m = 1 - (g/255), y = 1 - (b/255)
     let minCMY = Math.min(c, Math.min(m, y))
-    c = (c - minCMY) / (1 - minCMY)
-    m = (m - minCMY) / (1 - minCMY)
-    y = (y - minCMY) / (1 - minCMY)
-    k = minCMY
-    return `${(c * 100)}%, ${(m * 100)}%, ${(y * 100)}%, ${(k * 100)}%`;
-  }  
+    c = Math.round((c - minCMY) / (1 - minCMY) * 100) 
+    m = Math.round((m - minCMY) / (1 - minCMY) * 100)
+    y = Math.round((y - minCMY) / (1 - minCMY) * 100)
+    k = Math.round(minCMY * 100);
+    return `cmyk(${c}%, ${m}%, ${y}, ${k})`
+  }
   let i = "#" + ran() + ran() + ran() + ran() + ran() + ran()
-  ID("cresult").innerHTML = `${i}, rgb(${rgb(i).r}, ${rgb(i).g}, ${rgb(i).b}), cmyk(${cmyk(i)})` 
+  ID("cresult").innerHTML = `${i}, ${rgb(i, 0)}, ${cmyk(rgb(i, 1).r, rgb(i, 1))}` 
   return i
 }
 
