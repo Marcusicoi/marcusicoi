@@ -79,7 +79,7 @@ ID("bgv").onclick = function() {
   } else if (isView == true) {
     ID("overview").style.visibility = "hidden"
     ID("bgv").innerHTML = "Back"
-    ID("bgd").style.marginTop = "-475px"
+    ID("bgd").style.marginTop = "-337.5px"
     isView = false
   }
 }
