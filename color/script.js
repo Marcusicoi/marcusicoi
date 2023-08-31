@@ -80,6 +80,7 @@ function hex() {
                             <h6 style="height:0px">${rgb(i, 0)}</h6>
                             <h6 style="height:0px">${cmyk(rgb(i, 1).r, rgb(i, 1).g, rgb(i, 1).b)}
                             <h6 style="height:0px">${hsl(i)}</h6>`
+  ID("gresult").innerHTML = ""
   return i  
 }
 onclick("cbutton", function() { changeBG(hex())})
@@ -90,18 +91,19 @@ ID("cresult").innerHTML = `<h4 style="height:0px">${cinput}</h4>
                            <h6 style="height:0px">${rgb(cinput, 0)}</h6>
                            <h6 style="height:0px">${cmyk(rgb(cinput, 1).r, rgb(cinput, 1).g, rgb(cinput, 1).b)}
                            <h6 style="height:0px">${hsl(cinput)}</h6>`
+ID("gresult").innerHTML = ""
 }
 
 function gradient() {
   let txt = (x) => {
     return `linear-gradient(${x})`
   }
-  function hex() {
-  let char = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
-  function x() {
-    return char[Math.floor(Math.random() * char.length)]
-  }
-  return "#" + x() + x() + x() + x() + x() + x()
+  function hex2() {
+    let char = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+    function x() {
+      return char[Math.floor(Math.random() * char.length)]
+    }
+    return "#" + x() + x() + x() + x() + x() + x()
   }
   function hexF() {
     let i = Math.floor(Math.random() * 5) + 1
@@ -131,15 +133,26 @@ function gradient() {
         p4 = () => { return ranp(75, 100) }    
     if (ip < (100 / 3)) {
       switch (ia) {
-        case 2: return `${hex()} ${p1()}, ${hex()} ${p2()}`; break
-        case 3: return `${hex()} ${p1()}, ${hex()} ${p2()}, ${hex()} ${p3()}`; break
-        case 4: return `${hex()} ${p1()}, ${hex()} ${p2()}, ${hex()} ${p3()}, ${hex()} ${p4()}`; break
+        case 2: return `${hex2()} ${p1()}, ${hex2()} ${p2()}`; break
+        case 3: return `${hex2()} ${p1()}, ${hex2()} ${p2()}, ${hex2()} ${p3()}`; break
+        case 4: return `${hex2()} ${p1()}, ${hex2()} ${p2()}, ${hex2()} ${p3()}, ${hex2()} ${p4()}`; break
       }
     } else {
       switch (ia) {
-        case 2: return `${hex()}, ${hex()}`; break
-        case 3: return `${hex()}, ${hex()}, ${hex()}`; break
-        case 4: return `${hex()}, ${hex()}, ${hex()}, ${hex()}`; break
+        case 2: return `${hex2()}, ${hex2()}`; break
+        case 3: return `${hex2()}, ${hex2()}, ${hex2()}`; break
+        case 4: return `${hex2()}, ${hex2()}, ${hex2()}, ${hex2()}`; break
       }
-    }    
+    } 
   }
+  let color = txt(`${hexF()}, ${hexN()}`)
+  ID("gresult").innerHTML = color
+  ID("cresult").innerHTML = ""
+  return color
+}
+document.body.style.height = "100vh"
+onclick("gbutton", function() { changeBG(gradient()) })
+ID("ginputdir").onkeyup = function() {
+  ID
+  changeBG(ID("ginputdir"))
+}
