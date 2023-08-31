@@ -11,21 +11,13 @@ function hex() {
   }
   return "#" + x() + x() + x() + x() + x() + x()
 }
-let col = {
-  normal: `linear-gradient(${hex()}, ${hex()})`,
-  triple: `linear-gradient(${hex()}, ${hex()}, ${hex()})`  
-}
 function BG() {
-  let i = Math.floor(Math.random() * 2) + 1
-  function case2() {
-    let i2 = Math.floor(Math.random() * 2) + 1
-    switch (i2) {
-      case 1: return `linear-gradient(${hex()}, ${hex()}, ${)
-    }
-  }
-  switch(i) {
-    case 1: return `linear-gradient(${hex()}, ${hex()})`; break
-    case 2: return `linear-gradient(${hex()}, ${hex()}, ${hex()})`; break
+  let txt = (x) => {
+    return `linear-gradient(${x})`
+  }, deg = () => {
+    return Math.floor(Math.random() * 360)
+  }, to = () => {
+    let dir = ["
   }
 }
 document.body.style.height = "100vh"
