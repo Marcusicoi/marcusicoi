@@ -16,15 +16,27 @@ function BG() {
   let txt = (x) => {
     return `linear-gradient(${x})`
   }
+  
   //ADJUSTMENTS
   let deg = () => {
     return Math.floor(Math.random() * 360) + "deg"
-  }, to = () => {
+  }
+  let to = () => {
     let dir = ["top", "top", "bottom", "left", "right", "top left", "top right", "bottom left", "bottom right"]
     return "to " + dir[Math.floor(Math.random() * dir.length)]
   }
   //HEX COLORS
-  let hexN() {
+  function hexN() {
+    //RANDOMIZERS
+    let ia = Math.floor(Math.random() * (4 - 2 + 1) + 2),
+        ip = Math.floor(Math.random() * 100) + 1
+    
+    //Amount of color
+    let h = {
+      2: `${hex()}, ${hex()}`,
+      3: `${hex()}, ${hex()}, ${hex()}`,
+      4: `${hex()}, ${hex()}, ${hex()}, ${hex()}`,      
+    }
     
   }
   return txt(`${deg()}, ${hex()}, ${hex()}`)
