@@ -1,6 +1,9 @@
 function ID(x) {
   return document.getElementById(x)
 }
+function CLASS(x, y) {
+  return document.getElementsByClassName(x)[y]
+}
 const changeBG = (x) => {
   return document.body.style.background = x
 }
@@ -162,14 +165,20 @@ ID("ginputhex").onkeyup = function() { inputcolor() }
 
 let isView = false
 function checkView() {
+  let px = "-225"
   if (isView == false) {
-    ID("overview").style.visibility = "hidden"
-    ID("cresult").style.visibility = "visible"
-    ID("gresult").style.visibility = "visible"
-    ID("cresult").style.marginTop = "-325px"
+    CLASS("overview", 0).style.visibility = "hidden"
+    CLASS("overview", 1).style.visibility = "hidden"
+    ID("cresult").style.marginTop = (px - 25) + "px"
+    ID("gresult").style.marginTop = px + "px"
+    ID("view").style.marginTop = px + "px"
     isView = true
   } else if (isView == true) {
-    ID("overview").style.visibility = "visible"
+    CLASS("overview", 0).style.visibility = "visible"
+    CLASS("overview", 1).style.visibility = "visible"
+    ID("cresult").style.marginTop = "0px"
+    ID("gresult").style.marginTop = "0px"
+    ID("view").style.marginTop = "0px"
     isView = false
   }
 }
