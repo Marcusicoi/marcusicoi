@@ -152,7 +152,25 @@ function gradient() {
 }
 document.body.style.height = "100vh"
 onclick("gbutton", function() { changeBG(gradient()) })
-ID("ginputdir").onkeyup = function() {
-  ID
-  changeBG(ID("ginputdir"))
+function inputcolor() {
+  changeBG(`linear-gradient(${ID("ginputdir").value}, ${ID("ginputhex").value})`)
+  ID("gresult").innerHTML = `linear-gradient(${ID("ginputdir").value}, ${ID("ginputhex").value})`
+  ID("cresult").innerHTML = ""
 }
+ID("ginputdir").onkeyup = function() { inputcolor() }
+ID("ginputhex").onkeyup = function() { inputcolor() }
+
+let isView = false
+function checkView() {
+  if (isView == false) {
+    ID("overview").style.visibility = "hidden"
+    ID("cresult").style.visibility = "visible"
+    ID("gresult").style.visibility = "visible"
+    ID("cresult").style.marginTop = "-325px"
+    isView = true
+  } else if (isView == true) {
+    ID("overview").style.visibility = "visible"
+    isView = false
+  }
+}
+onclick("view", function() { checkView() })
