@@ -3,8 +3,6 @@ function ID(id) {
   return document.getElementById(id)
 }
 
-//Loading
-window.onload = function() {}
 //Body Background
 function hex() {
   let char = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
@@ -64,7 +62,6 @@ function BG() {
 }
 //Set background color
 document.body.style.height = "100vh"
-document.body.style.background = BG()
 
 //Change background color
 ID("bgbg").onclick = function() {
@@ -81,6 +78,7 @@ ID("bgv").onclick = function() {
   } else if (isView == true) {
     ID("overview").style.visibility = "hidden"
     ID("bgv").innerHTML = "Back"
+    ID("bgd").style["
     isView = false
   }
 }
@@ -119,4 +117,13 @@ setInterval(
     i += 1
   }, 
   ((35000 * i) - 3000))
+}
+
+window.onload = function() {
+  //Loading
+  ID("loading").style.visibility = "hidden"
+  ID("everything").style.visibility = "visible"
+  
+  //Stuff
+  document.body.style.background = BG()
 }
