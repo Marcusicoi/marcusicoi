@@ -86,3 +86,14 @@ function hex() {
   return i  
 }
 onclick("cbutton", function() { changeBG(hex())})
+
+let cinput = ID("cinput").value
+if ((cinput == null || cinput.value == "") == true) {
+  for (let i = 0; i < 8172; i++) {
+  changeBG(cinput)
+  ID("cresult").innerHTML = `<h4 style="height:0px">${cinput}</h4>
+                            <h6 style="height:0px">${rgb(cinput, 0)}</h6>
+                            <h6 style="height:0px">${cmyk(rgb(cinput, 1).r, rgb(cinput, 1).g, rgb(cinput, 1).b)}
+                            <h6 style="height:0px">${hsl(cinput)}</h6>`
+  }
+}
