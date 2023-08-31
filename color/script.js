@@ -165,9 +165,8 @@ ID("ginputhex").onkeyup = function() { inputcolor() }
 
 let isView = false
 function checkView() {
-  let px = "-50"
   let mg = (id, px1, px2)=> {
-    if (window.matchMedia('(max-device-width: 960px)').matches) {
+    if (window.matchMedia('(max-width: 960px)').matches) {
     ID(id).style.marginTop = (px1 + "px")
     } else {
     ID(id).style.marginTop = (px2 + "px")
@@ -177,17 +176,19 @@ function checkView() {
     CLASS("overview", 0).style.visibility = "hidden"
     CLASS("overview", 1).style.visibility = "hidden"
     CLASS("overview", 2).style.visibility = "hidden"
-    mg("cresult", px, px)
-    mg("gresult", px, px)
-    mg("vbutton", px, px)
+    ID("vbutton").innerHTML = "Back"
+    mg("cresult", -75, -65)
+    mg("gresult", -75, -65)
+    mg("v", -300, -200)
     isView = true
   } else if (isView == true) {
     CLASS("overview", 0).style.visibility = "visible"
     CLASS("overview", 1).style.visibility = "visible"
     CLASS("overview", 2).style.visibility = "visible"
+    ID("vbutton").innerHTML = "View"
     mg("cresult", 0, 0)
     mg("gresult", 0, 0)
-    mg("vbutton", 0, 0)
+    mg("v", 0, 0)
     isView = false
   }
 }
