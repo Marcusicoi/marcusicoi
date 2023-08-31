@@ -15,7 +15,7 @@ function hex() {
   function ran() {
     return char[Math.floor(Math.random() * char.length)]
   }
-  function rgb(x, y = 0) {
+  function rgb(x, y) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(x);
     let i = {
       r: parseInt(result[1], 16),
@@ -37,7 +37,6 @@ function hex() {
         m = 0,
         y = 0,
         k = 0
-    //remove spaces from input RGB values, convert to int
     var r = parseInt((''+r).replace(/\s/g, ''), 10),
         g = parseInt((''+g).replace(/\s/g, ''), 10),
         b = parseInt((''+b).replace(/\s/g, ''), 10)
@@ -50,11 +49,41 @@ function hex() {
     m = Math.round((m - minCMY) / (1 - minCMY) * 100)
     y = Math.round((y - minCMY) / (1 - minCMY) * 100)
     k = Math.round(minCMY * 100);
-    return `cmyk(${c}%, ${m}%, ${y}, ${k})`
+    return `cmyk(${c}%, ${m}%, ${y}%, ${k}%)`
+  }
+  function hsl(x) {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(x),
+        r = parseInt(result[1], 16),
+        g = parseInt(result[2], 16),
+        b = parseInt(result[3], 16);
+    r /= 255, g /= 255, b /= 255;
+    let max = Math.max(r, g, b), min = Math.min(r, g, b),
+    h, s, l = (max + min) / 2
+    if (max == min) {
+      h = s = 0
+    } else {
+      var d = max - min
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
+      switch(max) {
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break
+        case g: h = (b - r) / d + 2; break
+        case b: h = (r - g) / d + 4; break
+      }
+      h /= 6
+    }
+    h = Math.round(h * 360)
+    s = s * 100
+    s = Math.round(s)
+    l = l * 100
+    l = Math.round(l)
+    return 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
   }
   let i = "#" + ran() + ran() + ran() + ran() + ran() + ran()
-  ID("cresult").innerHTML = `${i}, ${rgb(i, 0)}, ${cmyk(rgb(i, 1).r, rgb(i, 1))}` 
-  return i
+  ID("cresult").innerHTML = `<h6>${i}</h6]
+                            <h6>${rgb(i, 0)}</h6>
+                            <h6>${cmyk(rgb(i, 1).r, rgb(i, 1).g, rgb(i, 1).b)}
+                            <h6>${hsl(i)}</h6>`
+  return i  
 }
 
 onclick("button", function() { changeBG(hex())})
