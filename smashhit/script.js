@@ -3,6 +3,8 @@ function ID(id) {
   return document.getElementById(id)
 }
 
+//Loading
+window.onload = function() {}
 //Body Background
 function hex() {
   let char = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
@@ -74,11 +76,13 @@ let isView = false
 ID("bgv").onclick = function() {
   if (isView == false) {
     ID("overview").style.visibility = "visible"
+    ID("bgv").innerHTML = "View Color"
     isView = true
   } else if (isView == true) {
     ID("overview").style.visibility = "hidden"
-    ID("bgv").innerHTML = "View Text"
+    ID("bgv").innerHTML = "Back"
     isView = false
+  }
 }
 //Randomize Songs
 let Songs = [
