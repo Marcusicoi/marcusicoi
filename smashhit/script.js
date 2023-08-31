@@ -12,42 +12,33 @@ function hex() {
   return "#" + x() + x() + x() + x() + x() + x()
 }
 function BG() {
-  //LINEAR TEXT
   let txt = (x) => {
     return `linear-gradient(${x})`
-  }
-  
-  //ADJUSTMENTS
-  let deg = () => {
+  }, deg = () => {
     return Math.floor(Math.random() * 360) + "deg"
-  }
-  let to = () => {
+  }, to = () => {
     let dir = ["top", "top", "bottom", "left", "right", "top left", "top right", "bottom left", "bottom right"]
     return "to " + dir[Math.floor(Math.random() * dir.length)]
-  }
-  
-  //HEX COLORS
+  }  
   function hexN() {
-    //RANDOMIZERS
     let ia = Math.floor(Math.random() * (4 - 2 + 1) + 2),
-        ip = Math.floor(Math.random() * 100) + 1
-    
-    //Percentages%
-    function ran(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
-    }
-    let hex = () => { return ran(25, 50) }
-    let hex = () => { return ran(25, 50) }
+        ip = Math.floor(Math.random() * 100) + 1    
+    function ranp(min, max) {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min + 1) + min) + "%"
+    }    
+    let p1 = () => { return ranp(0, 25) },
+        p2 = () => { return ranp(25, 50) },
+        p3 = () => { return ranp(50, 75) },
+        p4 = () => { return ranp(75, 100) }    
     if (ip < 50) {
       switch (ia) {
-        case 2: return `${hex()} ${per()}, ${hex()} ${per()}`; break
-        case 3: return `${hex()} ${per()}, ${hex()} ${per()}, ${hex()} ${per()}`; break
-        case 4: return `${hex()} ${per()}, ${hex()} ${per()}, ${hex()} ${per()}, ${hex()} ${per()}`; break
+        case 2: return `${hex()} ${p1()}, ${hex()} ${p2()}`; break
+        case 3: return `${hex()} ${p1()}, ${hex()} ${p2()}, ${hex()} ${p3()}`; break
+        case 4: return `${hex()} ${p1()}, ${hex()} ${p2()}, ${hex()} ${p3()}, ${hex()} ${p4()}`; break
       }
     } else {
-    //Amount of color
       switch (ia) {
         case 2: return `${hex()}, ${hex()}`; break
         case 3: return `${hex()}, ${hex()}, ${hex()}`; break
