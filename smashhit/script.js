@@ -5,15 +5,18 @@ function ID(id) {
 
 //Body Background
 function hex() {
-  let char = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"],
-  x = char[Math.floor(Math.random() * char.length)],
-  i = "#" + x + x + x + x + x + x
-  return i
+  let char = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+  function x() {
+    return char[Math.floor(Math.random() * char.length)]
+  }
+  return "#" + x() + x() + x() + x() + x() + x()
 }
-let body = {
-  normal: ""
+let col = {
+  normal: `linear-gradient(${hex()}, ${hex()})`
 }
-document.body.style.background = hex()
+document.body.style.height = "100vh"
+document.body.style.background = col.normal
+document.body.style["background-attachment"] = "fixed"
 
 //Randomize Songs
 let Songs = [
