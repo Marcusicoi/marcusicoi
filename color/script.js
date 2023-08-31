@@ -165,20 +165,25 @@ ID("ginputhex").onkeyup = function() { inputcolor() }
 
 let isView = false
 function checkView() {
-  let px = "-225"
+  let px = "-200"
+  let mg = (id, px, px2) => {
+    (window.innerWidth > 0) ? ID(id).style.marginTop = px + "px" : ID(id).style.marginTop = px2 + "px"
+  }
   if (isView == false) {
     CLASS("overview", 0).style.visibility = "hidden"
     CLASS("overview", 1).style.visibility = "hidden"
-    ID("cresult").style.marginTop = (px - 25) + "px"
-    ID("gresult").style.marginTop = px + "px"
-    ID("view").style.marginTop = px + "px"
+    CLASS("overview", 2).style.visibility = "hidden"
+    mg("cresult", px, px)
+    mg("gresult", px, px)
+    mg("view", ", px)
     isView = true
   } else if (isView == true) {
     CLASS("overview", 0).style.visibility = "visible"
     CLASS("overview", 1).style.visibility = "visible"
-    ID("cresult").style.marginTop = "0px"
-    ID("gresult").style.marginTop = "0px"
-    ID("view").style.marginTop = "0px"
+    CLASS("overview", 2).style.visibility = "visible"
+    mg("cresult", "0", "0")
+    mg("gresult", "0", "0")
+    mg("view", "0", "0")
     isView = false
   }
 }
