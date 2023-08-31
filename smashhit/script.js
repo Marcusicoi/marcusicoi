@@ -74,11 +74,12 @@ ID("bgv").onclick = function() {
   if (isView == false) {
     ID("overview").style.visibility = "visible"
     ID("bgv").innerHTML = "View Color"
+    ID("bgd").style.marginTop = "0px"
     isView = true
   } else if (isView == true) {
     ID("overview").style.visibility = "hidden"
     ID("bgv").innerHTML = "Back"
-    ID("bgd").style["
+    ID("bgd").style.marginTop = "-475px"
     isView = false
   }
 }
