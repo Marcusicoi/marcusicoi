@@ -56,16 +56,35 @@ function BG() {
     }    
   }
   
-  //BG text
   let color = txt(`${hexF()}, ${hexN()}`)
   ID("bgtxt").innerHTML = color
   return color
 }
+//Set background color
 document.body.style.height = "100vh"
 document.body.style.background = BG()
-document.body.style["background-attachment"] = "fixed"
 
-ID("bgbg").
+//Change background color
+ID("bgbg").onclick = function() {
+  document.body.style.background = BG()
+}
+
+//View background color
+let isView = false
+if (isView == true) {
+  ID("overview").style.visibility = "hidden"
+} else if (isView == false) {
+  ID("overview").style.visibility = "visible"
+}
+ID("bgv").onclick = function() {
+  if (isView == true) {
+    ID("overview").style.visibility = "hidden"
+    isView = false
+  } else if (isView == false) {
+    ID("overview").style.visibility = "visible"
+    isView = true
+  } 
+}
 //Randomize Songs
 let Songs = [
 "C0S1", "C0S2", "C0S3",
