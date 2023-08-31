@@ -1,15 +1,12 @@
 function ID(x) {
   return document.getElementById(x)
 }
-
 const changeBG = (x) => {
   return document.body.style.background = x
 }
-
 const onclick = (id, x) => {
   return ID(id).onclick = x
 }
-
 function rgb(x, y) {
   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(x);
   let i = {
@@ -86,13 +83,63 @@ function hex() {
   return i  
 }
 onclick("cbutton", function() { changeBG(hex())})
-
+ID("cinput").onkeyup = function() {
 let cinput = ID("cinput").value
-    if (cinput.value.length === 7) {
-      changeBG(cinput)
-      ID("cresult").innerHTML = `<h4 style="height:0px">${cinput}</h4>
-                                 <h6 style="height:0px">${rgb(cinput, 0)}</h6>
-                                 <h6 style="height:0px">${cmyk(rgb(cinput, 1).r, rgb(cinput, 1).g, rgb(cinput, 1).b)}
-                                 <h6 style="height:0px">${hsl(cinput)}</h6>`
+changeBG(cinput)
+ID("cresult").innerHTML = `<h4 style="height:0px">${cinput}</h4>
+                           <h6 style="height:0px">${rgb(cinput, 0)}</h6>
+                           <h6 style="height:0px">${cmyk(rgb(cinput, 1).r, rgb(cinput, 1).g, rgb(cinput, 1).b)}
+                           <h6 style="height:0px">${hsl(cinput)}</h6>`
+}
+
+function gradient() {
+  let txt = (x) => {
+    return `linear-gradient(${x})`
+  }
+  function hex() {
+  let char = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+  function x() {
+    return char[Math.floor(Math.random() * char.length)]
+  }
+  return "#" + x() + x() + x() + x() + x() + x()
+  }
+  function hexF() {
+    let i = Math.floor(Math.random() * 5) + 1
+    let deg = () => {
+      return Math.floor(Math.random() * 360) + "deg"
+    }, to = () => {
+      let dir = ["bottom", "left", "right", "top left", "top right", "bottom left", "bottom right"]
+      return "to " + dir[Math.floor(Math.random() * dir.length)]
     }
-  
+    switch (i) {
+      case 1: return deg(); break
+      case 2: return to(); break
+      default: return "to top"; break;
+    }
+  }
+  function hexN() {
+    let ia = Math.floor(Math.random() * (4 - 2 + 1) + 2),
+        ip = Math.floor(Math.random() * 100) + 1    
+    function ranp(min, max) {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min + 1) + min) + "%"
+    }    
+    let p1 = () => { return ranp(0, 25) },
+        p2 = () => { return ranp(25, 50) },
+        p3 = () => { return ranp(50, 75) },
+        p4 = () => { return ranp(75, 100) }    
+    if (ip < (100 / 3)) {
+      switch (ia) {
+        case 2: return `${hex()} ${p1()}, ${hex()} ${p2()}`; break
+        case 3: return `${hex()} ${p1()}, ${hex()} ${p2()}, ${hex()} ${p3()}`; break
+        case 4: return `${hex()} ${p1()}, ${hex()} ${p2()}, ${hex()} ${p3()}, ${hex()} ${p4()}`; break
+      }
+    } else {
+      switch (ia) {
+        case 2: return `${hex()}, ${hex()}`; break
+        case 3: return `${hex()}, ${hex()}, ${hex()}`; break
+        case 4: return `${hex()}, ${hex()}, ${hex()}, ${hex()}`; break
+      }
+    }    
+  }
