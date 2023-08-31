@@ -12,13 +12,22 @@ function hex() {
   return "#" + x() + x() + x() + x() + x() + x()
 }
 function BG() {
+  //LINEAR TEXT
   let txt = (x) => {
     return `linear-gradient(${x})`
-  }, deg = () => {
-    return Math.floor(Math.random() * 360)
-  }, to = () => {
-    let dir = ["
   }
+  //ADJUSTMENTS
+  let deg = () => {
+    return Math.floor(Math.random() * 360) + "deg"
+  }, to = () => {
+    let dir = ["top", "top", "bottom", "left", "right", "top left", "top right", "bottom left", "bottom right"]
+    return "to " + dir[Math.floor(Math.random() * dir.length)]
+  }
+  //HEX COLORS
+  let hexN() {
+    
+  }
+  return txt(`${deg()}, ${hex()}, ${hex()}`)
 }
 document.body.style.height = "100vh"
 document.body.style.background = BG()
