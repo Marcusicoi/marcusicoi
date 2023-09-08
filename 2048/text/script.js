@@ -28,10 +28,10 @@ function abbreviateNumber(count, withAbbr = false, decimals = 2) {
 }
 //If you click the button
 inc.onclick = function() {
-  num *= num * num / (num / (num * (num + (num / 2) * 2) / 2) + (num + (num * 2)));
+  num *= 2;
   levelc += 1;
   number.innerHTML = abbreviateNumber(num, true, 1)
   level.innerHTML = "Level " + levelc;
   //If statements
- // if (num.length >= 4) { number.innerHTML = abbreviateNumber(num)};
+  if (num.length >= 4) { number.innerHTML = abbreviateNumber(num)};
 }

@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://marcusicoi.glitch.me/icon.png" />
 
-    <title>Color Randomizer</title>
+    <title></title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/clear-sans" type="text/css"/>
-    <!-- import the webpage's javascript file -->
-    <script src="color/script.js" defer></script>
+    
+    <script defer src="color/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script defer src="https://superal.github.io/canvas2image/canvas2image.js"></script>
   </head>
   <body>
     <!-- this is the start of content -->
     <div class="overview">
     <h1>Color Randomizer</h1>
-    <h2>Generates random color!</h2>
+    <h2 class="txt">Generates random color!</h2>
     </div>
+    
     <div id="v">
     <a id="vbutton" style="background:red">View</a>
+    <a id="sbutton" style="background:red;visibility:hidden">Screenshot</a>
     </div>
+    
     <div class="overview">
     <h1></h1>
     <a id="cbutton" style="background:red">Change Color</a>
     <input id="cinput" placeholder="Input Hex color">
-    </div>
-    <h6 id="cresult"></h6>
+    </div>   
+    
+    <h6 id="cresult" class="txt"></h6>
+    
     <div class="overview">
     <a id="gbutton" style="background:red">Change Gradient</a>
-    <input id="ginputdir" placeholder="Input direction" value="to top">
-    <input id="ginputhex" placeholder="Input hex colors">
+    <input id="ginput" placeholder="Input linear-gradient">
+    </div>  
+    <h6 id="gresult" class="txt"></h6>
+    <div id="sstop" style="visibility:hidden">
+    <h2 id="ssttxt" style="height:5px">Color Randomizer</h2>
+    <h6 id="ssctxt" style="font-size:7.5px"></h6>
     </div>
-    <h6 id="gresult"></h6>
+    <div id="ssbottom" style="visibility:hidden;margin-top:616.5px">
+    <h3 id="ssbtxt" style="height:0px">Made By Marcusicoi/8172</h3>
+    <h5 id="ssltxt">https://marcusicoi.glitch.me/color/</h5>
+    </div>
   </body>
 </html>
